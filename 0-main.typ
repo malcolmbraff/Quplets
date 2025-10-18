@@ -8,38 +8,34 @@
 
 #align(center,text(size: 16pt,)[Introducing Huplets and Quplets:\
  from crest trajectories to Euclidean rhythms])
+#align(center,text(size: 11pt,)[_Malcolm Braff_, HSM Basel])
 
 
+#v(80pt)
 
-#v(30pt)
-
-#include "abstract.typ"
+#include "Abstract.typ"
 
 #pagebreak()
 #set heading(numbering: "1.") 
 #set math.equation(numbering: "(1)")
 
 
-#include "intro.typ"
+#include "Introduction.typ"
 
 #v(50pt)
-#include "section3.typ"
+#include "GridResonances.typ"
 
 #v(50pt)
-#include "section2.typ"
-
-
-#v(50pt)
-#include "section4.typ"
+#include "CrestTrajectory.typ"
 
 #v(50pt)
-#include "section5.typ"
+#include "HupleQuplet.typ"
 
 #v(50pt)
-#include "section6.typ"
+#include "RotationSelection.typ"
 
 #v(50pt)
-#include "section7.typ"
+#include "Examples.typ"
 
 #v(50pt)
-#include "section8.typ"
+#include "Conclusion.typ"
