@@ -6,7 +6,7 @@
 
 #set page(numbering: "1")
 
-#align(center,text(size: 16pt,)[Introducing Huplets and Quplets:\
+#align(center,text(size: 16pt,)[Introducing Quplets:\
  from crest trajectories to Euclidean rhythms])
 #align(center,text(size: 11pt,)[_Malcolm Braff_, HSM Basel])
 
@@ -33,6 +33,12 @@
 
 #v(50pt)
 #include "RotationSelection.typ"
+
+#v(50pt)
+#include "Order.typ"
+
+v(50pt)
+#include "Twin.typ"
 
 #v(50pt)
 #include "Examples.typ"
