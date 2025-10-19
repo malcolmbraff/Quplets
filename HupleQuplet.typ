@@ -1,7 +1,5 @@
 #let nonum(eq) = math.equation(block: true, numbering: none, eq)
-#let Huplet = math.italic("Huplet")
 
-#let nonum(eq) = math.equation(block: true, numbering: none, eq)
 #let Huplet = math.italic("Huplet")
 
 = Huplet–Quplet identity and Euclidean reduction
@@ -9,12 +7,14 @@
 
 == Huplet
 
+#v(6pt)
 For a given $k$, let the $n$ crest phases be
-$ S(k) = { X_(i,n,d)(k) }_(i=0)^(n-1) #h(7pt), $ 
+#nonum[$ S(k) = { X_(i,n,d)(k) }_(i=0)^(n-1) #h(7pt), $] 
 sorted in $[0,1)$ as $0 = x_0 ≤ … ≤ x_(n-1) < 1$.
 
 == Anchoring and orientation
 
+#v(6pt)
 We fix the anchor as the branch $X_(0,n,d)$ continued from $x=0$ at $k=0$.
 
 For any $k$, list the crest phases in *circular order starting at the anchor*:
@@ -25,6 +25,7 @@ Define the *Huplet* (harmonic tuplet) as
 
 == Quplet (definition)
 
+#v(6pt)
 With the anchor above, define the *Quplet* as the $k→∞$ limit of the Huplet:
 $ Q(n, d) := lim_(k → ∞) Huplet(n, d, k). $ <Q>
 
@@ -36,7 +37,8 @@ If $d = s n + r$ with $0 ≤ r < n$, then exactly $r$ entries of $Q(n,d)$ equal 
 
 == Threshold–extension identity
 
-*Theorem (threshold–extension).* 
+*#v(6pt)
+Theorem (threshold–extension).* 
 
 For coprime $d>n>0$ (with the anchoring above),
 #nonum[$ Huplet(n, d, n/d) = Q(n, n+d). $]
@@ -74,11 +76,12 @@ $ m ↦ d m " (mod " d+n) $
 runs uniformly on the circle; picking the arcs where $cos(2π (d m)/(d+n)) > 0$ yields a *balanced* selection of exactly $n$ sites spaced by the two steps $⌊(d+n)/n⌋$ and $⌈(d+n)/n⌉$ in $m$–index, i.e. the Euclidean pattern $E(n, d+n)$ in circular order (Christoffel property). Anchoring at $m=0$ matches the rotation in the definition of $Q(n,d+n)$.
 
 Finally, for the pair $(n, d+n)$ at $k→∞$, crest trajectories land on the $(d+n)$–grid and (by the nearest–site rule proved in the rotation–selection section) select the *same anchored rotation* as at the threshold. Therefore
-$ Huplet(n, d, n/d) = Q(n, d+n) $, as claimed. □
+$ Huplet(n, d, n/d) = Q(n, d+n) $<thresh-ext>, as claimed. □
 
 == Euclidean reduction
 
-*Corollary (Euclidean reduction).*  
+*#v(6pt)
+Corollary (Euclidean reduction).*  
 For coprime $d>n>0$ (same anchoring),
 #nonum[$ Q(n, d) = Huplet( n, d-n, n / ( d-n ) ). $]
 
@@ -86,7 +89,7 @@ For coprime $d>n>0$ (same anchoring),
 Let $d_1 = d - n$. Apply the threshold–extension theorem to $(n, d_1)$:
 #nonum[$ Huplet(n, d_1, n / d_1) = Q(n, n + d_1) = Q(n, d). $]
 This is exactly the stated identity. Iterating along the Euclidean algorithm gives
-$ Q(n, d) = Huplet( n, r, n / r ) $ with $r = d " mod " n$ and $0 < r < n$. □
+$ Q(n, d) = Huplet( n, r, n / r ) $<euc-red> with $r = d " mod " n$ and $0 < r < n$. □
 
 *Remarks.*  
 - Identities are about *spacing vectors* computed with the fixed anchor; the rotation is thus canonical.  

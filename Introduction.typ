@@ -1,32 +1,70 @@
+#let nonum(eq) = math.equation(block: true, numbering: none, eq)
+
+#let Huplet = math.italic("Huplet")
+
 = Introduction
 #v(6pt)
 
-We study the one-parameter family 
-$ F_k (x)=k cos(2π d x)+cos(2π n x) $ <Fk>
-with integers $d>n>0$ (coprime unless stated), real $k≥0$, and $x in ℝ \/ ℤ$ (phases mod $1$).
-\
-It is $1$-periodic in $x$; we write $θ=2π x$ when convenient.
+We study rhythmic “interference patterns” built from two integer frequencies.
+Fix integers $d>n>0$ (coprime unless stated). Let $x in ℝ “/” ℤ$ be the phase on the unit cycle (time modulo one bar), and let $k ≥ 0$ be a modulation (cross-fade) factor between the $n$– and $d$–components. Our model is
+$ F_k (x) = k cos(2π d x) + cos(2π n x) $<Fk> 
+Viewed musically: $cos(2π n x)$ marks the $n$–tuplet (its peaks lie at $x=i/n$), and $cos(2π d x)$ marks the $d$–tuplet. Varying $k$ morphs the accent pattern from the $n$– to the $d$–subdivision.
 
-#text(red)[définir "musicalement" et pas seulement les domaines]
+#v(6pt)
+== Crest points and their continuation
 
+#v(6pt)
+To locate accents we use the $x$–derivatives
+$ G(k,x) = ∂_x F_k(x) = - 2π ( k d sin(2π d x) + n sin(2π n x) ), $<G> 
+$ H(k,x) = ∂_(x x) F_k(x) = - (2π)^2 ( k d^2 cos(2π d x) + n^2 cos(2π n x) ). $<H> 
 
+A crest (true maximum) is a phase $x$ with $G(k,x)=0$ and $H(k,x)<0$.
+At $k=0$, $F_0(x)=cos(2π n x)$ has exactly $n$ crests at $x=i/n$ $(i=0,…,n-1)$.
 
-In order to find the crest points of $f(x)$ we use the $x$-derivatives $ G(k,x)=∂_x F_k (x)$ and $H(k,x)=∂_(x x) F_k (x)$, explicitly
-$ G(k,x)=-2π(k d sin(2π d x)+n sin(2π n x)) $ <G>
-and 
-$ H(k,x)=-(2π)^2(k d^2 cos(2π d x)+n^2 cos(2π n x)). $ <H>
-A *crest* is a point $x$ with $G(k,x)=0$ and $H(k,x)<0$.
+For each $i$ in ${0,…,n-1}$ we continue that crest in the parameter $k$: the crest trajectory $X_(i,n,d)(k)$ is the unique continuous branch satisfying
+$X_i(0)=i/n$, $G(k,X_i(k))=0$, and $H(k,X_i(k))<0$,
+on each parameter interval where no fold occurs (folds are points with $G=H=0$). On such intervals, $X_i$ is real-analytic.
 
-At $k=0$ the profile $cos(2π n x)$ has exactly $n$ crests at $x=i/n$ $(i=0,…,n-1)$.
-\
-For each $i$ we define the *crest trajectory* $X_(i,n,d)(k)$ as the continuation in $k$ of that maximum on parameter intervals with no fold (no $(k,x)$ with $G=0$ and $H=0$); on such intervals $X_(i,n,d)$ is real-analytic.
-\We also track the *crest amplitude* $A_(i,n,d)(k)=F_k (X_(i,n,d)(k))$,\
-with $A'(k)=cos(2π d X_(i,n,d)(k))$ along the branch.
+#v(6pt)
+== Phasor view and the stationarity formula
 
-A key tool is the complex parametrization $z=e^(i θ)$ with $θ=2π x$. From the stationarity condition we obtain the explicit formula $k(θ)=-(n/d) sin(n θ)/sin(d θ)$, valid when $sin(d θ)≠0$. Together with the maximum test $k d^2 cos(d θ)+n^2 cos(n θ)>0$, this lets us follow crest trajectories by continuity on\
-$θ$-intervals between the poles of $k(θ)$ (at $θ=ℓ π/d$, $ℓ in ℤ$; on $[0,2π)$: $ℓ=0,…,2d-1$).
+#v(6pt)
+Writing $θ=2π x$, the stationarity condition $G=0$ yields an explicit parametrization of the $k$–value that makes phase $θ$ stationary:
+#nonum[$ k(θ) = - (n/d) sin(n θ) / sin(d θ) $]
+(valid whenever $sin(d θ) ≠ 0$). Together with the crest test
+#nonum[$ k d^2 cos(d θ) + n^2 cos(n θ) > 0 ,$]
+this allows us to track each $X_i$ by continuity between the poles of $k(θ)$ (which occur at $θ = ℓ π / d$).
 
-*Resonant regimes.* There are exactly three parameter values where all crests lie on a single rational grid: $k=0$ (grid $1/n$), $k=n/d$ (grid $1/(n+d)$), and $k→∞$ (grid $1/d$).
-At $k=n/d$ and as $k→∞$, selecting true maxima yields the Euclidean rhythms $E(n,n+d)$ and $E(n,d)$ (maximally even placement; Toussaint, 2005).
+#v(6pt)
+== Three resonant regimes (global grid alignment)
 
-Outside these resonances the crest set is not globally aligned on one grid; nonetheless, trajectories are analytic away from *folds* (where $H=0$). We derive a practical ODE for $X'_(i,n,d)(k)$ and a reconstruction of $X$ from $A$.
+#v(6pt)
+A key phenomenon is metric locking: all crests lie on a single rational grid only at
+$k in { 0, n/d, ∞ }$ — namely on the $1/n$–grid at $k=0$, on the $1/(n+d)$–grid at $k=n/d$ (threshold), and on the $1/d$–grid as $k → ∞$ (endpoint). At the threshold and endpoint, the selected crests form the Euclidean rhythms $E(n,n+d)$ and $E(n,d)$.
+
+#v(6pt)
+== From trajectories to spacing vectors: Huplet and Quplet
+
+#v(6pt)
+Reading the $n$ crest phases in circular order from a fixed anchor (the branch continued from $x=0$ at $k=0$) defines the Huplet $Huplet(n,d,k)$, i.e. the anchored spacing vector. Its limit as $k→∞$ is the Quplet
+#nonum[$ Q(n,d) := lim_(k→∞) Huplet(n,d,k), $]
+a rotation-constrained Euclidean rhythm. We prove the threshold–extension identity
+#nonum[$ Huplet(n,d,n/d) = Q(n,n+d) $]
+and the Euclidean reduction
+#nonum[$ Q(n,d) = Huplet(n,d-n,n/(d-n)). $]
+
+#v(6pt)
+== Rotation selection and geometry in the simplex
+
+#v(6pt)
+Among all rotations of $E(n,d)$ on the $d$–grid, the crest dynamics pick the unique anchored rotation that minimizes circular distance to the regular $n$–multiplet (equivalently, maximizes a soft “alignment entropy”). Organizing Quplets by residue $r = d “mod” n$ reveals a colinearity in the $(n-1)$–simplex $Σ_n = { q in ℝ^n_+ : sum q_i = 1 }$: for fixed $n$ and $r$, all $Q(n,s n + r)$ lie on the line $t_n + λ m_(n,r)$ with $t_n=(1/n,…,1/n)$ and $λ = r(n-r)/(n d)$. A complementary projection viewpoint shows $Q(n,d)$ as the image of the $(d-1)$–simplex barycenter under a block–sum matrix determined by the anchored $d$–grid onsets.
+
+#v(6pt)
+== Roadmap
+#v(6pt)
+- _Global grid resonances: classification $k in {0, n/d, ∞}$._
+- _Crest trajectory: single ODE in $k$ with fold handling via $k(θ)$._
+- _Huplet–Quplet: threshold–extension and Euclidean reduction._
+- _Rotation selection: nearest–site rule, optimal transport, entropy view._
+- _Order & colinearity: line structure in $Σ_n$ and continuous $λ$–quplets._
+- _Projection viewpoint: block–sum matrix sending the $(d-1)$–simplex barycenter to $Q(n,d)$._

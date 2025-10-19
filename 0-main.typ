@@ -10,6 +10,8 @@
  from crest trajectories to Euclidean rhythms])
 #align(center,text(size: 11pt,)[_Malcolm Braff_, HSM Basel])
 
+#show math.equation.where(block: false): box
+
 
 #v(80pt)
 
@@ -37,8 +39,11 @@
 #v(50pt)
 #include "Order.typ"
 
-v(50pt)
+#v(50pt)
 #include "Twin.typ"
+
+#v(50pt)
+#include "Projection.typ"
 
 #v(50pt)
 #include "Examples.typ"

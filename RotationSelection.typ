@@ -1,10 +1,13 @@
 #let nonum(eq) = math.equation(block: true, numbering: none, eq)
 
+#let Huplet = math.italic("Huplet")
+
 = Rotation selection: optimal transport & an entropy view
 #v(6pt)
 
 == Setup (anchored endpoints) 
 
+#v(6pt)
 Let the regular $n$–multiplet be $U = { i/n : i=0,…,n-1 }$.
 
 At $k → ∞$, crests land on the $d$–grid ${ m/d : m=0,…,d-1 }$. 
@@ -13,12 +16,14 @@ With the anchor fixed at $X_(0,n,d)$, the *Quplet* $Q(n,d)$ corresponds to a uni
 
 == Circular distance
 
+#v(6pt)
 For $x,y in ℝ / ℤ$, define
 $ "dist"_∘(x,y) = min_(m in ℤ) | x - y + m |. $<dist>
 
 #v(4pt)
 == Nearest–site rule (geometric selection)
 
+#v(6pt)
 For $i=0,…,n-1$ set
 $ a_i = round( (d/n) i ) $<nearest> (ties fixed by the anchor convention).
 
@@ -33,6 +38,7 @@ The anchored branches $X_(i,n,d)(k)$ are monotone in $k$ near the endpoint and a
 #v(6pt)
 == Optimal transport formulation (convex losses)
 
+#v(6pt)
 Let $φ : ℝ_+ → ℝ_+$ be convex and define the alignment energy
 $ 𝔈_φ(R) = sum_(i=0)^(n-1) φ( "dist"_∘( a_i / d , i / n ) ). $<energy>
 Among all circular shifts of the $E(n,d)$ pattern on the $d$–grid, the energy $𝔈_φ$ is minimized *uniquely* by the anchored $R$ given by the nearest–site rule above.
@@ -46,6 +52,7 @@ On the circle, the optimal matching between two ordered sets is monotone. With c
 
 == Entropy (soft assignment) view
 
+#v(6pt)
 For $τ>0$, define the “alignment entropy”
 $ 𝒮_τ(R) = (1/n) sum_(i=0)^(n-1) log sum_(j=0)^(n-1) exp( - "dist"_∘( a_i / d , j / n )^2 / (2 τ) ). $<entropy>
 Then $𝒮_τ$ is maximized by the same anchored $R$ for every $τ>0$, and

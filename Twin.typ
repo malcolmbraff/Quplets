@@ -1,3 +1,7 @@
+#let nonum(eq) = math.equation(block: true, numbering: none, eq)
+
+#let Huplet = math.italic("Huplet")
+
 = Twin Quplets and structural symmetry
 #v(6pt)
 
@@ -140,16 +144,16 @@ by combining the order (given by $M$) and the amplitude (given by $λ$).
 Fix $n in ℕ$ and let $M$ be the morphing vector associated with a given order.
 Define the continuous family of quplets by
 $ Q_λ = T_n + λ · M quad ( "where"  λ in ℝ ). $
-	•	$T_n$ is the regular tuplet: $T_n = (1/n, …, 1/n)$,
-	•	$M$ encodes the combinatorial morphology of the order.
+- $T_n$ is the regular tuplet: $T_n = (1/n, …, 1/n)$,
+- $M$ encodes the combinatorial morphology of the order.
 
 As $λ$ varies continuously between two symmetric bounds $[ -λ_0, λ_0 ]$,
 we sweep all quplets of the same order along an analytic geodesic in the simplex of normalized quplets.
 
 This family
-	•	preserves the component sum ($sum Q_λ = 1$),
-	•	interpolates between two twin quplets in the lowest harmonic band,
-	•	defines a continuous affine structure based on the combinatorial template.
+- preserves the component sum ($sum Q_λ = 1$),
+- interpolates between two twin quplets in the lowest harmonic band,
+- defines a continuous affine structure based on the combinatorial template.
 
 It gives a unified interpretation of same-order quplets
 as points on the same rhythmic manifold, parametrized by $λ$.
