@@ -7,30 +7,7 @@
 
 We illustrate the three regimes $k=0$, $k=n/d$ (threshold), and $k→∞$ (Euclidean endpoint), plus parity and gcd effects. In each example, phases are *anchored* at the branch $X_(0,n,d)$ and listed in circular order.
 
-== Example 1 — $(n,d)=(5,7)$
-#v(4pt)
 
-At $k=0$: crests at $x=i/5$;  
-$ Huplet(5,7,0) = (1/5, 1/5, 1/5, 1/5, 1/5) $.
-
-At $k=n/d=5/7$: all crests lie on the $(n+d)$–grid $x=m/12$. 
-
-Selecting $H<0$ yields a rotation of $E(5,12)$; with the anchor at $0$ we get  
-$ Huplet(5,7,5/7) = (1/12) · (2, 3, 2, 3, 2) $.
-
-As $k→∞$: crests converge to the $d$–grid; the anchored continuation gives  
-$ Q(5,7) = Huplet(5,7,∞) = (1/7) · (1, 2, 1, 2, 1) $.
-
-#table(
-  columns: 2,
-  align: (left, left),
-  column-gutter: 1.2em,
-  stroke: none,
-  [Regime], [Anchored positions & Huplet],
-  [$k=0$], [positions $0, 1/5, 2/5, 3/5, 4/5$; $Huplet=(1/5,1/5,1/5,1/5,1/5)$],
-  [$k=5/7$], [positions $0, 2/12, 5/12, 7/12, 10/12$; $Huplet=(1/12)·(2,3,2,3,2)$],
-  [$k→∞$], [positions $0, 1/7, 3/7, 4/7, 6/7$; $Q=(1/7)·(1,2,1,2,1)$],
-)
 
 #v(10pt)
 == Example 2 — $(n,d)=(5,12)$ (threshold vs endpoint)
@@ -69,23 +46,7 @@ $ k_* = n^2/d^2 = 36/121 $.
 
 *Effect on the Huplet.* Across $k_*$, the anchored order $Y_j (k)$ swaps the central crest for the two newborn ones; the last gap (closing the circle) changes by approximately $± 2 Δ(k)$ near threshold.
 
-#v(10pt)
-== Example 4 — GCD reduction in action
-#v(4pt)
 
-Consider $(n,d)=(4,10)$ with $"gcd"(4,10)=2$. Reduce to $(n_0,d_0)=(2,5)$.
-
-Endpoint for the reduced pair:
-$ Q(2,5) = Huplet(2,5,∞) = (2/5, 3/5) $ (by the floor formula).
-
-GCD reduction (concatenate two copies and scale by $1/2$):
-$ Q(4,10) = (1/2) · (\, 2/5, 3/5, 2/5, 3/5 \,) = (1/5, 3/10, 1/5, 3/10). $
-
-Direct check via floor formula for $(4,10)$:
-$ q_i = (1/10) ( floor( (i+1)·10 / 4 ) - floor( i · 10 / 4 ) ), \; i=0,…,3, $
-gives the same result $(1/5, 3/10, 1/5, 3/10)$.
-
-#v(10pt)
 == What to plot
 #v(4pt)
 

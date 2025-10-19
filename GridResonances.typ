@@ -61,10 +61,10 @@ Hence, for those $m in S$ with $t_m ≠ 0$,
 $ s_m / t_m = - (k d) / n =: λ "(constant in "m) .$ 
 If $t_m = 0$ for some $m in S$, stationarity forces $s_m = 0$; therefore the ratio is well defined and constant on a nonempty subset $S’ ⊆ S$.
 
-Nonemptiness of $S’$. 
+*Nonemptiness of $S’$*. 
 
 If $t_m = 0$ for every $m in S$, then $sin(2π d m / M)=0$ for all $m in S$; since $S$ generates $ℤ "/" M$, this implies $d ≡ 0$ (mod $M$). Plugging into stationarity forces $s_m=0$ for all $m$, hence $n ≡ 0$ (mod $M$). With $gcd(n,d)=1$ this yields $M=1$, contradicting the presence of multiple crest sites. Thus $S’ ≠ ∅$.
-
+#v(6pt)
 === Characters and Euler decomposition
 #v(6pt)
 
@@ -80,9 +80,9 @@ $W_n = "Span"{ χ_n, χ_(-n) }, #h(7pt) W_d = "Span"{ χ_d, χ_(-d) } $
 of the function space on $ℤ "/ "M$.
 
 Define $f = s - λ t$. We have $f(m)=0$ for all $m in S’$ (and also at those $m in S$ with $s_m=t_m=0$).
-
+#v(6pt)
 ==== Lemma (character separation)
-#v(2pt)
+#v(6pt)
 
 If none of the congruences
 $n ≡ 0, #h(6pt) d ≡ 0, #h(6pt) d ≡ ± n #h(6pt) (mod M)$
@@ -91,9 +91,9 @@ $a χ_n + b χ_(-n) + c χ_d + e χ_(-d)$
 that vanishes at $m_1,…,m_4$ is identically zero on $ℤ "/" M$.
 
 Idea. Distinct characters on $ℤ "/" M$ are linearly independent. The determinant of the evaluation matrix is a nonzero trigonometric polynomial in the sample points; because $S$ generates $ℤ "/" M$, we can pick $m_j in S$ avoiding its (finite) zero set.
-
+#v(6pt)
 === From vanishing on a generating set to span coincidence
-#v(2pt)
+#v(6pt)
 
 By the lemma, unless one of the congruences above holds, the only combination of ${ χ_n, χ_(-n), χ_d, χ_(-d) }$ vanishing on $m_1,…,m_4$ is the zero one. Since $f$ is such a combination and $f(m)=0$ for all $m in S’$, we conclude $f≡0$ on $ℤ "/" M$, i.e.
 $s = λ t$ as functions on $ℤ "/" M$.
@@ -102,9 +102,9 @@ Therefore either $W_n = W_d$ (span coincidence), or one of the congruences holds
 $d ≡ ± n #h(4pt) (mod M),$
 or else when $n ≡ 0$ (mod $M$) or $d ≡ 0$ (mod $M$). In all cases we obtain the three options:
 #nonum[$ M = n, #h(6pt) M = d, #h(6pt) M = n + d #h(4pt) ("or" #h(4pt) M = | d - n |). $]
-
+#v(6pt)
 === Matching the grids with parameter values
-#v(2pt)
+#v(6pt)
 
 These grids occur precisely at:
 -	$k = 0$  → $M = n$ (the $n$–grid);
@@ -112,9 +112,9 @@ These grids occur precisely at:
 -	$k → ∞$ → $M = d$ (dominance of the $d$–term).
 
 The case $M = | d - n |$ corresponds to $k = - n / d$ (same factorization with opposite sign), which lies outside our range $k ≥ 0$.
-
+#v(6pt)
 === Poles do not create extra cases
-#v(2pt)
+#v(6pt)
 
 Indices with $t_m = sin(2π d m / M) = 0$ make the explicit ratio in  undefined, but then $s_m = 0$ as well; they can be discarded in forming $S’$. They do not yield any proportionality beyond the three congruence classes above.
 

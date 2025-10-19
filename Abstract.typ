@@ -8,7 +8,7 @@ We introduce quplets: rhythmic spacing vectors generated not by subdivision but 
 $F_k (x) = k cos(2π d x) + cos(2π n x)$
 with integers $d>n>0$ (coprime unless stated), phase $x in ℝ \/ ℤ$, and modulation $k≥0$. As $k$ varies, each local maximum of $F_k$ follows an analytic crest trajectory; with the phasor variable $θ=2π x$ we obtain the explicit relation
 $k(θ) = - (n/d) sin(n θ) / sin(d θ)$
-and the crest test $k d^2 cos(d θ)+n^2 cos(n θ)>0$, together with an ODE that tracks the motion $k ↦ X_i(k)$.
+and the crest test $k d^2 cos(d θ)+n^2 cos(n θ)>0$, together with an ODE that tracks the motion $k ↦ X_i (k)$.
 
 A central finding is the appearance of metric grids: all crests lie on a single rational grid only for $k in { 0, n/d, ∞ }$ — the $n^(-1)$ grid at $k=0$, the $(n+d)^(-1)$ grid at the critical value $k=n/d$, and the $d^(-1)$ grid as $k → ∞$. At the latter two regimes the selected crests form Euclidean rhythms in the sense of Toussaint#footnote[Godfried T. Toussaint, “The Euclidean algorithm generates traditional musical rhythms” (2005).]: $E(n,n+d)$ at the threshold and $E(n,d)$ at the endpoint.
 

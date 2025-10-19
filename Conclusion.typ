@@ -7,34 +7,27 @@
 #v(6pt)
 
 == Summary
-
-We proposed an analytic, anchored description of crest motion in the family @Fk
-$ F_k (x)=k cos(2π d x)+cos(2π n x) $ 
-for integers $d>n>0$. 
-
-The complex parametrization @k-theta $ k(θ)=-(n/d) sin(n θ)/sin(d θ) $ (with the maximum test) gives a clean way to *track crests*, yields an ODE for $X'(k)$, and the amplitude–position link $ A'(k)=cos(2π d X(k)) $ enables *reconstruction*. 
-
-We proved that *global grid alignment* occurs only at $k in {0,n/d,∞}$; 
-
-with the anchor at $X_(0,n,d)$ this selects a *canonical rotation*. 
-
-We introduced the *Huplet* $Huplet(n,d,k)$ (oriented spacing vector) and its endpoint *Quplet* @Q $ Q(n,d)=lim_(k→∞) Huplet(n,d,k), $ established the *threshold–extension identity* and the *Euclidean reduction*, and described a *parity-induced bifurcation* at $x=1/2$ alongside a *gcd reduction*. 
-
-An optimal-transport/entropy argument explains why the endpoint rotation is the nearest $d$–grid placement to the regular $n$–multiplet.
-
-== Limitations 
-
-Away from resonant parameters, crest branches remain analytic except at folds ($H=0$); near folds, continuation may switch branches and numerical tracking needs care.
-
 #v(6pt)
+We gave an anchored, analytic account of crest motion in the two–harmonic family @Fk. The phase parametrization @k-theta, together with the crest test @H and the evolution law @X-ode, provides a practical way to track each trajectory $k ↦ X_i(k)$ and to continue it across folds by reparametrizing in $θ$.
+
+We proved a sharp global resonance result: all crests lie on a single rational grid only for $k in { 0, n/d, ∞ }$. At the threshold $k = n/d$ the selected crests form $E(n,n+d)$ and at the endpoint $k → ∞$ they form $E(n,d)$; with anchoring this fixes a canonical rotation. The endpoint rotation is characterized by the nearest–site rule @nearest, equivalently as the unique minimizer of a convex transport energy @energy and as the zero–temperature limit of the alignment entropy @entropy and @entropy-limit.
+
+Two structural viewpoints complete the picture:
+- Order and colinearity. Grouping by the residue $r = d “mod” n$, all Quplets of the same order lie on the same line in the simplex $Σ_n$: the discrete endpoints satisfy an affine law, and the continuous family $Q_λ$ interpolates between twin Quplets (residues $r$ and $n-r$) and passes through the regular tuplet at $λ = 0$.
+- Projection viewpoint. Each anchored Quplet is a block–sum image of the barycenter $u_d$ of the $(d-1)$–simplex via a uniquely determined block–incidence matrix $Π$: $Π(n,d;R),u_d = Q(n,d)$ @P1. This linear picture explains the colinearity offset @P2 and is consistent with the threshold identity at $(n,d+n)$ @P3.
+
+== Limitations
+#v(6pt)
+- Analytic solvability. Outside the resonant values of $k$, there is no closed–form solution for $X_i(k)$; one relies on @X-ode with careful continuation at folds given by @fold-cond.
+- Anchoring and ties. The rotation and the onset set $R$ (hence $Π$) depend on the anchor and on tie–breaking at grid midpoints; our conventions make this canonical but model–dependent.
+- Affine extension. The family $Q_λ(n,r)$ is a geometric extension in $Σ_n$; only the discrete amplitudes $λ(d)=r(n-r)/(n d)$ are guaranteed to be realized by the crest dynamics for finite $k$.
+
 == Directions for future work
+#v(6pt)
+- Geometry of the crest path. Study the image ${ Huplet(n,d,k) : k ≥ 0 } ⊆ Σ_n$: piecewise–analytic arc, curvature changes at @fold-cond, and its relationship to the straight order–line $t_n + λ, m_(n,r)$ (metrics on $Σ_n$, possible geodesicity).
+- Multi–harmonic generalization. Extend to $F_a(x)=∑_j a_j cos(2π n_j x)$: classify resonant hyperplanes, derive selection rules, and generalize the block–sum map $Π$ to multi–block partitions.
+- Twin symmetry and bands. Map “harmonic bands’’ $d = s n + r$ as affine bundles in $Σ_n$, analyze crossings and continuations between twins, and quantify alternation via $Δ = |,n - 2 r,|$.
+- Irrational phenomena. Classify irrational $k$ producing rational crest sites; study Diophantine structure, density, and stability under noise.
+- Perception and computation. Relate the entropy/transport selection to listening tests; develop fast, robust algorithms for tracking @X-ode and constructing $Π(n,d;R)$ at scale.
 
-- *Topology of rhythm space.* View $\{ Huplet(n,d,k) : k≥0 \}$ as a path in the $n$–simplex (anchored spacing vectors summing to $1$). Study its homotopy type, stratification by contact with folds, and how *alternation order* (via $r=d " mod " n$ and $Δ=|\,n-2r\,|$) organizes strata. Is the image arc geodesic for a natural metric?
-
-- *Multi-harmonic generalization.* Extend to $F_a (x)=∑_j a_j cos(2π n_j x)$ with fixed coprime $n_j$ and parameters $a in ℝ_+^J$. Define anchored Huplets on this parameter space, classify *resonant hyperplanes*, and generalize the selection principle.
-
-- *“Morphing” within an order class.* Fix $n$ and remainder $r=d " mod " n$. Conjecture that anchored Huplets of the same order lie on a low-dimensional affine face and can be written as $Q(n,d)+λ · v$ with a canonical *morph vector* $v$ and $λ in [0,1]$ (to be specified), interpolating between adjacent Euclidean endpoints.
-
-- *Irrational parameters with rational crests.* Classify irrational $k$ for which one (typically two by symmetry) crest sits on a rational grid site; determine whether such $k$ form a dense subset of admissible intervals.
-
-We expect these lines to consolidate a *topology of musical rhythms* grounded in explicit analytic dynamics, and to bridge continuous crest flows with discrete Euclidean patterns through anchored Huplets and their Quplet endpoints.
+Overall, the paper links continuous crest flows to discrete Euclidean patterns through anchored Huplets and their Quplet endpoints, while revealing an underlying affine and projective geometry that organizes quplets by order, symmetry, and resonance.

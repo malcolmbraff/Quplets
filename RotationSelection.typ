@@ -13,14 +13,14 @@ Let the regular $n$–multiplet be $U = { i/n : i=0,…,n-1 }$.
 At $k → ∞$, crests land on the $d$–grid ${ m/d : m=0,…,d-1 }$. 
 
 With the anchor fixed at $X_(0,n,d)$, the *Quplet* $Q(n,d)$ corresponds to a unique choice of $n$ grid sites in circular order.
-
+#v(6pt)
 == Circular distance
 
 #v(6pt)
 For $x,y in ℝ / ℤ$, define
 $ "dist"_∘(x,y) = min_(m in ℤ) | x - y + m |. $<dist>
 
-#v(4pt)
+#v(6pt)
 == Nearest–site rule (geometric selection)
 
 #v(6pt)
