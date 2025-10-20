@@ -19,11 +19,19 @@ $ G(k,x) = ∂_x F_k(x) = - 2π ( k d sin(2π d x) + n sin(2π n x) ), $<G>
 $ H(k,x) = ∂_(x x) F_k(x) = - (2π)^2 ( k d^2 cos(2π d x) + n^2 cos(2π n x) ). $<H> 
 
 A crest (true maximum) is a phase $x$ with $G(k,x)=0$ and $H(k,x)<0$.
-At $k=0$, $F_0(x)=cos(2π n x)$ has exactly $n$ crests at $x=i/n$ $(i=0,…,n-1)$.
+At $k=0$, $F_0(x)=cos(2π n x)$ has exactly $n$ crests at $x=i/n$ $(i=0,…,n-1)$.\
+For any $k$, we select the $n$ highest crests:
+
+#figure(
+  image("Figures/F(x).svg", width: 100%),
+  caption:[$F(x)$ for $n=5$, $d=7$, and $k=3/4$],
+  ) <fig:F>
 
 For each $i$ in ${0,…,n-1}$ we continue that crest in the parameter $k$: the crest trajectory $X_(i,n,d)(k)$ is the unique continuous branch satisfying
-$X_i(0)=i/n$, $G(k,X_i(k))=0$, and $H(k,X_i(k))<0$,
+$X_i (0)=i/n$, $G(k,X_i (k))=0$, and $H(k,X_i (k))<0$,
 on each parameter interval where no fold occurs (folds are points with $G=H=0$). On such intervals, $X_i$ is real-analytic.
+
+
 
 #v(6pt)
 == Phasor view and the stationarity formula
@@ -35,6 +43,11 @@ Writing $θ=2π x$, the stationarity condition $G=0$ yields an explicit parametr
 #nonum[$ k d^2 cos(d θ) + n^2 cos(n θ) > 0 ,$]
 this allows us to track each $X_i$ by continuity between the poles of $k(θ)$ (which occur at $θ = ℓ π / d$).
 
+#figure(
+  image("Figures/Crests.svg", width: 80%),
+  caption:[$X_i (k)$ for $n=5$, $d=7$],
+  ) <fig:Crests>
+
 #v(6pt)
 == Three resonant regimes (global grid alignment)
 
@@ -42,16 +55,28 @@ this allows us to track each $X_i$ by continuity between the poles of $k(θ)$ (w
 A key phenomenon is metric locking: all crests lie on a single rational grid only at
 $k in { 0, n/d, ∞ }$ — namely on the $1/n$–grid at $k=0$, on the $1/(n+d)$–grid at $k=n/d$ (threshold), and on the $1/d$–grid as $k → ∞$ (endpoint). At the threshold and endpoint, the selected crests form the Euclidean rhythms $E(n,n+d)$ and $E(n,d)$.
 
+#figure(
+  image("Figures/Fk(x).svg", width: 100%),
+  caption:[$F_(n\/d) (x)$ for $n=5$, $d=8$],
+  ) <fig:Fk>
+
 #v(6pt)
 == From trajectories to spacing vectors: Huplet and Quplet
 
 #v(6pt)
-Reading the $n$ crest phases in circular order from a fixed anchor (the branch continued from $x=0$ at $k=0$) defines the Huplet $Huplet(n,d,k)$, i.e. the anchored spacing vector. Its limit as $k→∞$ is the Quplet
-#nonum[$ Q(n,d) := lim_(k→∞) Huplet(n,d,k), $]
+Reading the $n$ crest phases in circular order from a fixed anchor (the branch continued from $x=0$ at $k=0$) defines the Huplet $Huplet(n,d,k)$, i.e. the anchored spacing vector. 
+
+Its limit as $k→∞$ is the Quplet
+$ Q(n,d) := lim_(k→∞) Huplet(n,d,k), $
 a rotation-constrained Euclidean rhythm. We prove the threshold–extension identity
 #nonum[$ Huplet(n,d,n/d) = Q(n,n+d) $]
 and the Euclidean reduction
 #nonum[$ Q(n,d) = Huplet(n,d-n,n/(d-n)). $]
+
+#figure(
+  image("Figures/Huplet.svg", width: 100%),
+  caption:[Elements of vector $Delta X_i (k) "for" n=53 "and" d=67$],
+  ) <fig:Vector>
 
 #v(6pt)
 == Rotation selection and geometry in the simplex

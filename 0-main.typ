@@ -19,8 +19,9 @@
 
 #pagebreak()
 #set heading(numbering: "1.") 
+#outline(title: [Index], depth:4)
 #set math.equation(numbering: "(1)")
-
+#pagebreak()
 
 #include "Introduction.typ"
 

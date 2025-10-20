@@ -22,12 +22,14 @@ Two structural viewpoints complete the picture:
 - Anchoring and ties. The rotation and the onset set $R$ (hence $Π$) depend on the anchor and on tie–breaking at grid midpoints; our conventions make this canonical but model–dependent.
 - Affine extension. The family $Q_λ(n,r)$ is a geometric extension in $Σ_n$; only the discrete amplitudes $λ(d)=r(n-r)/(n d)$ are guaranteed to be realized by the crest dynamics for finite $k$.
 
-== Directions for future work
+= Directions for future work
 #v(6pt)
-- Geometry of the crest path. Study the image ${ Huplet(n,d,k) : k ≥ 0 } ⊆ Σ_n$: piecewise–analytic arc, curvature changes at @fold-cond, and its relationship to the straight order–line $t_n + λ, m_(n,r)$ (metrics on $Σ_n$, possible geodesicity).
-- Multi–harmonic generalization. Extend to $F_a(x)=∑_j a_j cos(2π n_j x)$: classify resonant hyperplanes, derive selection rules, and generalize the block–sum map $Π$ to multi–block partitions.
-- Twin symmetry and bands. Map “harmonic bands’’ $d = s n + r$ as affine bundles in $Σ_n$, analyze crossings and continuations between twins, and quantify alternation via $Δ = |,n - 2 r,|$.
-- Irrational phenomena. Classify irrational $k$ producing rational crest sites; study Diophantine structure, density, and stability under noise.
-- Perception and computation. Relate the entropy/transport selection to listening tests; develop fast, robust algorithms for tracking @X-ode and constructing $Π(n,d;R)$ at scale.
+- Crest functions.\
+  Define the class of functions $X_i (k)$ and $A_i (k)=F_k (X_i (k))$.\
+  Questions: where are they differentiable, how many derivatives exist, what happens at folds, and are there other "hidden" critical $k$s than $k=n/d$ and as $k→∞$?
+  
+- Extending Huplet trajectories.\ Study the full path $k ↦ Huplet(n,d,k)$. Can we extend it past folds, connect different orders, and densify the space around the order line $Q_λ (n,r)$?\ Does every point on that line appear as a limit of such trajectories?
+- Irrational projection.\ Can the “irrational” quplets $Q_λ(n,r)$ be understood as projections of a barycenter with a non-integer, “effective” dimension?
+  \ Is there a continuum of dimensions that produces a continuum of quplets, and what stays stable when $λ$ is irrational?
 
-Overall, the paper links continuous crest flows to discrete Euclidean patterns through anchored Huplets and their Quplet endpoints, while revealing an underlying affine and projective geometry that organizes quplets by order, symmetry, and resonance.
+- Multi-harmonic Huplets.\ For $F_a (x)=sum_j a_j cos(2π n_j x)$, do we see analogues of resonance, selection, and endpoints?\ Do new Euclidean-like patterns appear, and how do crest trajectories behave in this broader setting?

@@ -76,7 +76,7 @@ $ m ↦ d m " (mod " d+n) $
 runs uniformly on the circle; picking the arcs where $cos(2π (d m)/(d+n)) > 0$ yields a *balanced* selection of exactly $n$ sites spaced by the two steps $⌊(d+n)/n⌋$ and $⌈(d+n)/n⌉$ in $m$–index, i.e. the Euclidean pattern $E(n, d+n)$ in circular order (Christoffel property). Anchoring at $m=0$ matches the rotation in the definition of $Q(n,d+n)$.
 
 Finally, for the pair $(n, d+n)$ at $k→∞$, crest trajectories land on the $(d+n)$–grid and (by the nearest–site rule proved in the rotation–selection section) select the *same anchored rotation* as at the threshold. Therefore
-$ Huplet(n, d, n/d) = Q(n, d+n) $<thresh-ext>, as claimed. □
+$ Huplet(n, d, n/d) = Q(n, d+n), $<thresh-ext> as claimed. □
 #v(6pt)
 == Euclidean reduction
 
