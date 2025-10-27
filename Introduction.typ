@@ -4,7 +4,6 @@
 
 = Introduction
 #v(6pt)
-
 We study rhythmic “interference patterns” built from two integer frequencies.
 Fix integers $d>n>0$ (coprime unless stated). Let $x in ℝ “/” ℤ$ be the phase on the unit cycle (time modulo one bar), and let $k ≥ 0$ be a modulation (cross-fade) factor between the $n$– and $d$–components. Our model is
 $ F_k (x) = k cos(2π d x) + cos(2π n x) $<Fk> 
