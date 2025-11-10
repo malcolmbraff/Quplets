@@ -51,3 +51,6 @@
 
 #v(50pt)
 #include "Conclusion.typ"
+
+#v(50pt)
+#include "Bibliography.typ"

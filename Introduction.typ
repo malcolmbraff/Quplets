@@ -5,7 +5,7 @@
 = Introduction
 #v(6pt)
 We study rhythmic “interference patterns” built from two integer frequencies.
-Fix integers $d>n>0$ (coprime unless stated). Let $x in ℝ “/” ℤ$ be the phase on the unit cycle (time modulo one bar), and let $k ≥ 0$ be a modulation (cross-fade) factor between the $n$– and $d$–components. Our model is
+Fix integers $d>n>0$ (coprime unless stated). Let $x in ℝ \/ ℤ$ be the phase on the unit cycle (time modulo one bar), and let $k ≥ 0$ be a modulation (cross-fade) factor between the $n$– and $d$–components. Our model is
 $ F_k (x) = k cos(2π d x) + cos(2π n x) $<Fk> 
 Viewed musically: $cos(2π n x)$ marks the $n$–tuplet (its peaks lie at $x=i/n$), and $cos(2π d x)$ marks the $d$–tuplet. Varying $k$ morphs the accent pattern from the $n$– to the $d$–subdivision.
 
@@ -14,10 +14,10 @@ Viewed musically: $cos(2π n x)$ marks the $n$–tuplet (its peaks lie at $x=i/n
 
 #v(6pt)
 To locate accents we use the $x$–derivatives
-$ G(k,x) = ∂_x F_k(x) = - 2π ( k d sin(2π d x) + n sin(2π n x) ), $<G> 
-$ H(k,x) = ∂_(x x) F_k(x) = - (2π)^2 ( k d^2 cos(2π d x) + n^2 cos(2π n x) ). $<H> 
+$ G_k (x) = ∂_x F_k (x) = - 2π ( k d sin(2π d x) + n sin(2π n x) ), $<G> 
+$ H_k (x) = ∂_(x x) F_k (x) = - (2π)^2 ( k d^2 cos(2π d x) + n^2 cos(2π n x) ). $<H> 
 
-A crest (true maximum) is a phase $x$ with $G(k,x)=0$ and $H(k,x)<0$.
+A crest (true maximum) is a phase $x$ with $G_k (x)=0$ and $H–k (x)<0$.
 At $k=0$, $F_0(x)=cos(2π n x)$ has exactly $n$ crests at $x=i/n$ $(i=0,…,n-1)$.\
 For any $k$, we select the $n$ highest crests:
 
@@ -27,7 +27,7 @@ For any $k$, we select the $n$ highest crests:
   ) <fig:F>
 
 For each $i$ in ${0,…,n-1}$ we continue that crest in the parameter $k$: the crest trajectory $X_(i,n,d)(k)$ is the unique continuous branch satisfying
-$X_i (0)=i/n$, $G(k,X_i (k))=0$, and $H(k,X_i (k))<0$,
+$X_i (0)=i/n$, $G_k (X_i (k))=0$, and $H_k (X_i (k))<0$,
 on each parameter interval where no fold occurs (folds are points with $G=H=0$). On such intervals, $X_i$ is real-analytic.
 
 

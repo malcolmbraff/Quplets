@@ -75,23 +75,28 @@
 
 == potential energy //$Epsilon = sum_(i=1)^(n-1) ( X_i - i/n )^2$
 #table(
-  columns: (auto, auto),
+  columns: (50%,30%),
   inset: 10pt,
-  align: horizon,
+  align: center,
   stroke: none,
-  [#box(image("Figures/sibelius/potential1.png", width:70%))],
-[$S=0.99$],
-  [#box(image("Figures/sibelius/potential2.png", width:70%))],
-[$S=0.99$],
-  [#box(image("Figures/sibelius/potential3.png", width:70%))],
-[$S=0.99$],
+  [
+    #table(columns:(50%,50%),stroke:none,[*$X=(X_0,dots,X_4)$*],[*$T=(0,1,2,3,4)$*],)
+  
+  ],[
+   * $E = display(sum_(i=1)^4) abs(X_i-T_i)^2$*
+  ],[#box(image("Figures/sibelius/potential1.png", width:100%))],
+[$E_1 approx 2,45$],
+  [#box(image("Figures/sibelius/potential2.png", width:100%))],
+[$E_2 approx 0,3$],
+  [#box(image("Figures/sibelius/potential3.png", width:100%))],
+[$E_3 approx 0,2$],
 
 
 )
 
 == Euclidean rhythms
-    - Toussaint, 2005.
-    - obtained using Björklud's algorithm (2003): #pause
+    - Toussaint (2005), evenness maximisation
+    - Björklud's algorithm (2003): #pause
     
 #image("Figures/sibelius/bjorklund1.png")  #pause 
 #image("Figures/sibelius/bjorklund2.png") #pause 
@@ -146,19 +151,21 @@
 === interference between two weighed cosines:
 
 *$ F_k (x) = k cos(2π d x) + cos(2π n x) $*
-$  "with integers" d>n>0, " phase" x in ℝ "/" ℤ, " and modulation" k in RR^+ $.
+$  "with coprime integers" d>n>0, " phase" x in ℝ "/" ℤ, " and modulation" k in RR^+ \ "(and non-even "n")" $
 
-Musically:
+=== musically:
+- the rhythm is given by the positions (or the spacing for durations) of the *crests* in the output signal
 - $cos(2π n x)$ marks the *$n$*-tuplet, $cos(2π d x)$ the *$d$*-tuplet; 
-- varying *$k$* crossfades from the $n$– to the $d$–subdivision.
+- varying *$k$* crossfades between the $n$– and the $d$–subdivisions.
+
 ---
-=== Crest detection with 1st and 2nd derivatives:
+=== crest detection with 1st and 2nd derivatives:
 
-$ G(k,x) = ∂_x F_k (x) = - 2π ( k d sin(2π d x) + n sin(2π n x) ) $
-$ H(k,x) = ∂_(x x) F_k (x) = - (2π)^2 ( k d^2 cos(2π d x) + n^2 cos(2π n x) ) $
-A *crest* is a point with $G=0$ and $H<0$.
+*$ G_k (x) = ∂_x F_k (x) = - 2π ( k d sin(2π d x) + n sin(2π n x) ) $*
+*$ H_k (x) = ∂_(x x) F_k (x) = - (2π)^2 ( k d^2 cos(2π d x) + n^2 cos(2π n x) ) $*
+A crest is a point with *$G=0$* and *$H<0$*.
 
-=== Selecting the $n$ highest crests (example)
+=== example (_see interactive plot_)
 #figure(
   image("Figures/F(x).svg", width: 80%),
   caption: [$F(x)$ for $n=5$, $d=7$, $k=3/4$],
@@ -189,7 +196,7 @@ grid $(n+d)^(-1)$ _(threshold)_\
 grid $d^(-1)$ _(endpoint)_
 ]
 )
-=== proof
+
 ---
 === Example:
 #figure(
@@ -254,11 +261,16 @@ grid $d^(-1)$ _(endpoint)_
 )
 ---
 === observations
-
 #table(
-  columns: 2,
+  columns:( 40%,60%),
   stroke: none,
-  [#lorem(50)], [#image("Figures/Huplet.svg",width: 100%)]
+  [- crossings at _threshold_ and _endpoint_
+  
+- all elements converge to strictly two distinct durations $alpha$ and $beta$ at critical values of $k$
+
+- derivability: high-order zeros
+
+], [#image("Figures/Huplet.svg",width: 100%)]
 )
 
 ---
@@ -276,26 +288,6 @@ $O(n,d)= O(n,n i + r)=O(n,n(i+2)-r)$ .\
 
 *twins*\
 (residues $r$ and $n-r$) share the same order and swap the two values.
-
----
-=== example1: 
-#table(
-  columns: 2,
-  stroke: none,
-  [#image("Figures/Q57.png",height:40%)],
-  [#image("Figures/Q512.png",height:40%)],
-  [#image("Figures/Q517.png",height:40%)],
-  [#image("Figures/Q522.png",height:40%)],
-)
-
-
-
----
-#figure(
-  image("Figures/twins.png",width:77%),
-)
-
-
 ---
 === theorems
 *threshold–extension theorem:*\
@@ -309,12 +301,53 @@ Among all rotations of $E(n,d)$ on the $d$–grid, the crest dynamics select the
 
 *energy / entropy views*\
 Define a convex alignment energy on circular distances; the anchored rotation uniquely minimizes it.
-A soft alignment entropy has the same maximizer and, as temperature ↓ 0, converges to the same nearest assignment.
+A soft alignment entropy has the same maximizer and, as temperature ↓ 0, converges to the same nearest assignment.\  Note that for given $n$, one Quplet's energy is proportional to its order.
 
 
 ---
 
+=== example 1, encapsulation: 
+#table(
+  columns: 2,
+  stroke: none,
+  [#image("Figures/Q57.png",height:40%)],
+  [#image("Figures/Q512.png",height:40%)],
+  [#image("Figures/Q517.png",height:40%)],
+  [#image("Figures/Q522.png",height:40%)],
+)
+---
+=== example 1, encapsulation: 
+#v(15pt)
+- $Q(5,7)=N(1,2,1,2,1) =H_infinity (5,7)$
 
+- $Q(5,12) = N(2,3,2,3,2) = H_infinity (5,12)= H_(5\/7)(5,7)$ 
+
+- $Q(5,17) = N(3,4,3,4,3) = H_infinity (5,17)= H_(5\/12)(5,12)$
+
+- $Q(5,22) = N(4,5,4,5,4) = H_infinity (5,22)= H_(5\/17)(5,17)$ 
+#v(15pt)
+all Quplets share the *same order* (1st) and present the *same structure $(alpha, beta, alpha, beta, alpha)$*
+
+
+---
+=== example 2, twins:
+
+#figure(
+  image("Figures/twins.png",width:77%),
+)
+
+
+---
+=== example 2, twins:
+#v(15pt)
+- $Q(7,10)=N(1,2,1,2,1,2,1)$ and $Q(7,11)=N(2,1,2,1,2,1,2)$\ are both from the *1st order* and present the same structure *$(alpha, beta, alpha, beta, alpha,beta,alpha)$ *
+
+- $Q(7,9)=N(1,2,1,1,1,2,1)$ and $Q(7,12)=N(2,1,2,2,2,1,2)$\ are both from the *2nd order* and present the same structure *$(alpha, beta, alpha, alpha, alpha,beta,alpha)$* 
+
+- $Q(7,8)=N(1,1,1,2,1,1,1)$ and $Q(7,13)=N(2,2,2,1,2,2,2)$\ are both from the *3d order* and present the same structure *$(alpha, alpha, alpha, beta,alpha,alpha,alpha)$ *
+
+
+---
 
 = model
 
@@ -353,11 +386,33 @@ Define *$Q_lambda (n,r) = t_n + λ · m_(n,r)$ #h(5pt) for $λ in RR$* .\ This i
 // ---------------------------------------------------------
 
 === block–sum image of a barycenter
-Let $u_d = (1/d, …, 1/d)$ be the barycenter of $ Δ^(d-1) = { w in ℝ^d_+ : sum_j w_j = 1 }. $
+Let $u_d = (1/d, …, 1/d)$ be the barycenter of the $(d-1)-$_simplex_.
 
-Given the anchored $d$–grid onset set, the block–incidence matrix $Π(n,d;R) in {0,1}^(n "x" d)$  satisfies
- $Π(n,d;R) · u_d = Q(n,d) $.
+A projection matrix from the $d$ into the $n$ dimensional spaces emerges from the basic function $F_(->infinity) (x)$ and therefore from $Q(n,d)$.
+---
+=== Example: $(n,d)=(5,7)$
 
+#v(6pt)
+When $k->infinity$, selected crests from$F_k (x)$ yield positions $R = {0,1,3,4,6}$ on the $7$–grid.
+
+The blocks are
+$B_0={0}$, $B_1={1,2}$, $B_2={3}$, $B_3={4,5}$, $B_4={6}$,\
+so the block lengths are $(1,2,1,2,1)$ and
+$Q(5,7) = 1/7 (1,2,1,2,1)$.
+
+The projection matrix is
+
+$ Π(5,7) =
+mat(1, 0, 0, 0, 0, 0, 0;
+ 0, 1, 1, 0, 0, 0, 0;
+ 0, 0, 0, 1, 0, 0, 0;
+ 0, 0, 0, 0, 1, 1, 0;
+ 0, 0, 0, 0, 0, 0, 1) $
+
+Multiplying the barycenter $u_7 = (1/7,…,1/7)$ gives
+$ Π(5,7)·u_7 = 1/7(1,2,1,2,1) = Q(5,7) .$
+
+*question : what about irrational Quplets $Q_lambda$?*
 
 // Conclusion & directions
 = conclusion and directions
@@ -367,17 +422,29 @@ Given the anchored $d$–grid onset set, the block–incidence matrix $Π(n,d;R)
 ]
 
 == summary
-- *Crest tracking* by phase parametrization and a single ODE.
+- *basic function* $F_k (x)=k cos (2π d x)+cos(2π n x)$ for $k = 0->infinity$ and *crests detection*
+
 - Three *resonant grids* $k in {0, n/d, ∞}$ → Euclidean patterns at threshold/endpoint.
-- *Huplet → Quplet*, with threshold–extension and Euclidean reduction.
-- *Rotation selection* by nearest–site / e*nergy / *entropy*.
+
+- *crest trajectories*, numerical, analytical with ODE
+
+- Rotation selection by *nearest–site / energy / entropy*.
+
+- *Huplet → Quplet* vectors, with threshold–extension and Euclidean reduction.
+
 - *Order classes* are colinear; *$Q_lambda$* provides a continuous extension.
+
+- *Huplet geodesics* in vector space
+
 - *Projection* viewpoint via a block–sum from the simplex barycenter.
 
 == Future work
 - *Crest functions $X_i$, $A_i$*: differentiability strata etc.
+
 - *Huplet paths* in $Σ_n$: curvature, geodesicity, densification near $Q_lambda$.
+
 - *Irrational $Q_lambda$*: projection meaning and “continuum of dimensions”.
+
 - *Multi-harmonic generalization*: resonance/selection with several frequencies.
 ---
 = *Thank you*
