@@ -10,7 +10,7 @@ with integers $d>n>0$ (coprime unless stated), phase $x in ℝ \/ ℤ$, and modu
 $k(θ) = - (n/d) sin(n θ) / sin(d θ)$
 and the crest test $k d^2 cos(d θ)+n^2 cos(n θ)>0$, together with an ODE that tracks the motion $k ↦ X_i (k)$.
 
-A central finding is the appearance of metric grids: all crests lie on a single rational grid only for $k in { 0, n/d, ∞ }$ — the $n^(-1)$ grid at $k=0$, the $(n+d)^(-1)$ grid at the critical value $k=n/d$, and the $d^(-1)$ grid as $k → ∞$. At the latter two regimes the selected crests form Euclidean rhythms in the sense of Toussaint#footnote[Godfried T. Toussaint, “The Euclidean algorithm generates traditional musical rhythms” (2005).]: $E(n,n+d)$ at the threshold and $E(n,d)$ at the endpoint.
+A central finding is the appearance of metric grids: all crests lie on a single rational grid only for $k in { 0, n/d, ∞ }$ — the $n^(-1)$ grid at $k=0$, the $(n+d)^(-1)$ grid at the critical value $k=n/d$, and the $d^(-1)$ grid as $k → ∞$. At the latter two regimes the selected crests form Euclidean rhythms in the sense of Toussaint#cite(<toussaint_euclidean_nodate>): $E(n,n+d)$ at the threshold and $E(n,d)$ at the endpoint.
 
 To encode spacing, we define the Huplet $Huplet(n,d,k)$ as the anchored spacing vector of the $n$ crest phases, read in circular order from the branch continued from $x=0$ at $k=0$ (downbeat). Its endpoint
 $Q(n,d) := lim_(k→∞) Huplet(n,d,k)$
@@ -33,4 +33,8 @@ with $t_n=(1/n,…,1/n)$ and $λ(d)=r(n-r)/(n d)$. Thus the discrete family ${ Q
 $Q_λ (n,r) = t_n + λ m_(n,r)$ (with $λ=0$ at the regular tuplet),
 which interpolates between twin quplets and complements the Euclidean endpoints selected by the crest dynamics.
 
+
 #line(length: 100%)
+
+
+

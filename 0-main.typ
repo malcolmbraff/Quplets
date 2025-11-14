@@ -53,4 +53,8 @@
 #include "Conclusion.typ"
 
 #v(50pt)
-#include "Bibliography.typ"
+
+#bibliography("zotero.bib",style: "chicago-notes")
+
+#v(50pt)
+#include "AppendixA.typ"
