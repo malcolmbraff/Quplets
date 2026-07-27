@@ -8,7 +8,7 @@
 
 == Summary
 #v(6pt)
-We gave an anchored, analytic account of crest motion in the two–harmonic family @Fk. The phase parametrization @k-theta, together with the crest test @H and the evolution law @X-ode, provides a practical way to track each trajectory $k ↦ X_i(k)$ and to continue it across folds by reparametrizing in $θ$.
+We gave an anchored, analytic account of crest motion in the two–harmonic family @Fk. The phase parametrization  together with the crest test @H and the evolution law @X-ode, provides a practical way to track each trajectory $k ↦ X_i(k)$ and to continue it across folds by reparametrizing in $θ$.
 
 We proved a sharp global resonance result: all crests lie on a single rational grid only for $k in { 0, n/d, ∞ }$. At the threshold $k = n/d$ the selected crests form $E(n,n+d)$ and at the endpoint $k → ∞$ they form $E(n,d)$; with anchoring this fixes a canonical rotation. The endpoint rotation is characterized by the nearest–site rule @nearest, equivalently as the unique minimizer of a convex transport energy @energy and as the zero–temperature limit of the alignment entropy @entropy and @entropy-limit.
 
@@ -18,7 +18,7 @@ Two structural viewpoints complete the picture:
 
 == Limitations
 #v(6pt)
-- Analytic solvability. Outside the resonant values of $k$, there is no closed–form solution for $X_i(k)$; one relies on @X-ode with careful continuation at folds given by @fold-cond.
+- Analytic solvability. Outside the resonant values of $k$, there is no closed–form solution for $X_i(k)$; one relies on @X-ode with careful continuation at folds given by 
 - Anchoring and ties. The rotation and the onset set $R$ (hence $Π$) depend on the anchor and on tie–breaking at grid midpoints; our conventions make this canonical but model–dependent.
 - Affine extension. The family $Q_λ(n,r)$ is a geometric extension in $Σ_n$; only the discrete amplitudes $λ(d)=r(n-r)/(n d)$ are guaranteed to be realized by the crest dynamics for finite $k$.
 
