@@ -18,11 +18,15 @@ branch satisfying:
 where
 
 #nonum[
-  $G(k,x) = - 2π ( k d sin(2π d x) + n sin(2π n x) )$,  
+  $
+  G(k,x) = - 2π ( k d sin(2π d x) + n sin(2π n x) )
+  $,  
 ]
 
 #nonum[
-  $H(k,x) = - (2π)^2 ( k d^2 cos(2π d x) + n^2 cos(2π n x) )$.
+  $
+  H(k,x) = - (2π)^2 ( k d^2 cos(2π d x) + n^2 cos(2π n x) )
+  $.
 ]
 
 The implicit-function theorem guarantees existence and analyticity near $k=0$, 

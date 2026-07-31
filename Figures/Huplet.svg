@@ -208,52 +208,10 @@ z
       </g>
      </g>
      <g id="text_3">
-      <!-- $\infty$ -->
-      <g transform="translate(673.608222 395.7015) scale(0.16 -0.16)">
-       <defs>
-        <path id="DejaVuSans-221e" d="M 2916 1091 
-Q 2819 1203 2666 1466 
-Q 2456 1091 2272 925 
-Q 2041 725 1681 725 
-Q 1259 725 981 1041 
-Q 688 1372 688 1919 
-Q 688 2444 981 2800 
-Q 1244 3116 1688 3116 
-Q 1916 3116 2084 3022 
-Q 2281 2919 2416 2741 
-Q 2541 2581 2666 2366 
-Q 2875 2741 3059 2906 
-Q 3291 3106 3650 3106 
-Q 4072 3106 4350 2791 
-Q 4644 2459 4644 1913 
-Q 4644 1388 4350 1031 
-Q 4088 716 3644 716 
-Q 3416 716 3247 809 
-Q 3078 894 2916 1091 
-z
-M 1647 1134 
-Q 2163 1134 2472 1884 
-Q 2075 2703 1647 2703 
-Q 1334 2703 1175 2478 
-Q 1003 2238 1003 1919 
-Q 1003 1569 1175 1353 
-Q 1350 1134 1647 1134 
-z
-M 3684 2697 
-Q 3219 2697 2859 1947 
-Q 3253 1128 3684 1128 
-Q 3997 1128 4156 1353 
-Q 4328 1594 4328 1913 
-Q 4328 2263 4156 2478 
-Q 3981 2697 3684 2697 
-z
-" transform="scale(0.015625)"/>
-       </defs>
-       <use xlink:href="#DejaVuSans-221e" transform="translate(0 0.3125)"/>
-      </g>
+      <!-- 1 -->
+      <text x="680.328222" y="395.7015" text-anchor="middle" font-family="DejaVu Sans" font-size="16">1</text>
      </g>
-    </g>
-    <g id="text_4">
+     <g id="text_4">
      <!-- k -->
      <g transform="translate(375.454605 417.222438) scale(0.1 -0.1)">
       <defs>
@@ -17928,7 +17886,7 @@ L 709.2 376.544
 L 709.2 26.952 
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
-   <g id="text_9">
+   <g id="text_9" style="display:none">
     <!-- Elements of spacing vector $Δ X_{i,53,67}(k)$ -->
     <g transform="translate(262.009918 20.952) scale(0.12 -0.12)">
      <defs>
@@ -18369,6 +18327,7 @@ z
     </g>
    </g>
   </g>
+ </g>
  </g>
  <defs>
   <clipPath id="p1990067274">

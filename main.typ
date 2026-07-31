@@ -1,0 +1,69 @@
+#set par(
+
+  leading: 1em,
+  spacing: 2em
+)
+
+#set page(numbering: "1")
+
+#align(center,text(size: 16pt,)[Introducing Quplets:\
+ from crest trajectories to Euclidean rhythms])
+#align(center,text(size: 11pt,)[_Malcolm Braff_, HSM Basel, FHNW])
+
+
+#show math.equation.where(block: false): box
+#show figure.caption: set text(size: 8pt)
+#show heading.where(level: 1): set block(above: 2.5em)
+#show heading.where(level: 2): set block(above: 2.5em)
+
+#v(80pt)
+
+#include "Abstract.typ"
+
+#pagebreak()
+#set heading(numbering: "1.")
+#outline(title: [List of content], depth: 4)
+#set page(numbering: "1")
+
+
+#pagebreak()
+
+
+#include "Introduction.typ"
+
+#pagebreak()
+#set math.equation(numbering: "(1)")
+
+
+//#include "CrestTrajectory-updated.typ"
+#include "crest position.typ"
+
+#v(50pt)
+//#include "Threshold configuration.typ"
+
+#include "Balanced.typ"
+
+// Legacy section retained as source material only.
+// #include "GridResonances.typ"
+
+#v(50pt)
+#include "HupletQuplet.typ"
+
+#v(50pt)
+#include "RotationSelection.typ"
+
+
+#v(50pt)
+#include "Order.typ"
+
+#v(50pt)
+#include "Twin.typ"
+
+#v(50pt)
+#include "Projection.typ"
+/*
+#v(50pt)
+#include "HarmonicMorphing.typ"
+*/
+#v(50pt)
+#include "Conclusion.typ"

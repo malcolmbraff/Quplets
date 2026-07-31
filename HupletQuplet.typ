@@ -1,145 +1,522 @@
-#let nonum(eq) = math.equation(block: true, numbering: none, eq)
-#let Huplet = math.italic("Huplet")
+#import "definitions.typ": *
 
-= Huplet–Quplet identity and Euclidean reduction
-#v(6pt)
+= The Huplet trajectory and Euclidean endpoints
 
-== Huplet
-#v(6pt)
+The preceding sections describe the motion of the $n$ anchored crest branches
+and the complete stationary configuration at the balanced parameter
+$k_c=n/(n+d)$. We now pass from crest positions to their successive circular
+spacings.
 
-For a given $k$, let the $n$ crest phases be
-#nonum[$ S(k) = { X_(i,n,d)(k) }_(i=0)^(n-1) #h(7pt), $]
-sorted increasingly in $[0,1)$ as $0 = x_0 ≤ … ≤ x_(n-1) < 1$.  
-(Only later do we specify which crest is anchored at $0$.)
+Throughout this section, let $1 < n < d$. Whenever global statements about
+the anchored branches are made, we additionally assume the continuation
+properties stated in the conjecture of the crest-trajectory section.
 
-#v(6pt)
-== Anchoring and orientation
-#v(6pt)
+== Circular ordering of the anchored crests
 
-We fix the anchor as the branch $X_(0,n,d)$ continued from $x=0$ at $k=0$.  
-For any $k$, list the crest phases in *circular order starting from the anchor*:  
-$Y_0(k) = X_(0,n,d)(k)$, and for $j = 1,…,n-1$ let $Y_j (k)$ be the next crest encountered when increasing $x$ mod $1$ along the positive orientation.
+Suppose that, for a given parameter $k$, all $n$ anchored crest branches
+$X_i (k)$ are defined and have distinct values in $RR \/ ZZ$.
 
-Define the *Huplet* (harmonic tuplet) as the spacing vector
+We use the branch $X_0$, issued from the crest at $x=0$, as the anchor. Let
+
 #nonum[
-  $( Y_1(k)-Y_0(k), …, Y_(n-1)(k)-Y_(n-2)(k), 1-( Y_(n-1)(k)-Y_0(k) ) )$  
+  $
+  Y_0 (k)=X_0 (k).
+  $
 ]
 
-#v(6pt)
-== Quplet (definition)
-#v(6pt)
+Starting from $Y_0 (k)$ and moving in the positive orientation around the
+unit cycle, let
 
-With the anchor above, define the *Quplet* (quantized tuplet) as the $k→∞$ limit of the Huplet:
-$ Q(n, d) := lim_(k → ∞) Huplet(n, d, k). $ <Q>
+#nonum[
+  $
+  Y_0 (k),Y_1 (k),dots,Y_(n-1) (k)
+  $
+]
 
-Equivalently, write $Q(n,d)=(q_0,…,q_(n-1))$ with the explicit formula
-$ q_i = (1/d)( floor( (i+1) d / n ) - floor( i d / n ) ) $ <Qfloor>
-for $i=0,…,n-1$.
+be the anchored crest positions in circular order.
 
-If $d = s n + r$ with $0 ≤ r < n$, then exactly $r$ entries of $Q(n,d)$ equal $(s+1)/d$ and the other $n-r$ equal $s/d$, arranged as evenly as possible (the Euclidean rhythm $E(n,d)$) with the anchor at $X_(0,n,d)$.
+Choose lifts of these phases to $RR$ satisfying
 
-#v(10pt)
-== Threshold–extension identity
-#v(4pt)
+#nonum[
+  $
+  Y_0 (k)
+  <
+  Y_1 (k)
+  <
+  dots
+  <
+  Y_(n-1) (k)
+  <
+  Y_0 (k)+1.
+  $
+]
 
-*Theorem (threshold–extension).*  
-For coprime $d>n>0$ (with the anchoring above),
-#nonum[$ Huplet(n, d, n/d) = Q(n, n+d). $]
+The successive circular differences are independent of the chosen lifts.
+
+== The Huplet component functions
+
+Set
+
+#nonum[
+  $
+  Y_n (k)=Y_0 (k)+1.
+  $
+]
+
+For $j=0,dots,n-1$, define
+
+$
+D_j (k)
+=
+Y_(j+1) (k)-Y_j (k).
+$ <Huplet-components>
+
+The functions $D_j (k)$ are the *Huplet component functions*. Each component
+is positive, and the components sum to one:
+
+#nonum[
+  $
+  sum_(j=0)^(n-1) D_j (k)=1.
+  $
+]
+
+Wherever the ordered crest branches are differentiable,
+
+#nonum[
+  $
+  D_j ' (k)
+  =
+  Y_(j+1) ' (k)-Y_j ' (k).
+  $
+]
+
+The *Huplet* associated with $(n,d,k)$ is their spacing vector
+
+$
+Huplet(n,d,k)
+=
+(D_0 (k),dots,D_(n-1) (k)).
+$ <Huplet-def>
+
+Thus the Huplet lies in the open simplex
+
+#nonum[
+  $
+  Sigma_n^circle.stroked.small
+  =
+  {
+    (h_0,dots,h_(n-1)) in RR^n
+    mid(|)
+    h_j>0,
+    sum_(j=0)^(n-1) h_j=1
+  }.
+  $
+]
+
+At $k=0$, the anchored crests form the regular $n$-grid. Hence
+
+$
+Huplet(n,d,0)
+=
+T_n
+=
+frac(1,n)(1,dots,1).
+$ <regular-tuplet>
+
+The Huplet therefore records the deformation of the regular $n$-tuplet as the
+relative weight of the $d$-frequency increases. On every interval where the
+anchored crests remain distinct, the map $k mapsto Huplet(n,d,k)$ is a continuous
+trajectory in the open spacing simplex. This trajectory, rather than a single
+endpoint vector, is the central geometric object of this section.
+
+#figure(
+  image("Figures/Spacing Vector.svg", width: 82%),
+  caption: [
+    Huplet spacing components $Delta x_j (k)$ for $(n,d)=(53,67)$ along the
+    modulation interval $0 <= k <= 1$.
+  ],
+) <fig-huplet-trajectory>
+
+
+
+== The induced deformation of the cycle
+
+For $j in {0,dots,n-1}$ and $0<=u<=1$, write
+
+#nonum[
+  $
+  x=frac(j+u,n)
+  quad (mod 1).
+  $
+]
+
+Define the piecewise-affine map
+
+$
+Phi_k (x)
+=
+(1-u)Y_j (k)+u Y_(j+1) (k)
+quad (mod 1).
+$ <cycle-deformation>
+
+The definitions on adjacent cells agree at their common endpoints.
+
+*Proposition (induced deformation of the cycle).*  
+For every parameter at which the ordered anchored crests are defined and
+distinct, $Phi_k$ is an orientation-preserving piecewise-affine homeomorphism
+of the unit cycle. Moreover,
+
+#nonum[
+  $
+  Phi_0=id,
+  $
+]
+
+the initial grid points follow the ordered crest trajectories, and on the
+$j$-th cell,
+
+#nonum[
+  $
+  partial_x Phi_k (x)=n D_j (k).
+  $
+]
 
 *Proof.*  
-Set $k = n/d$ and write $θ = 2π x$. The stationarity condition  
-#nonum[$ k d sin(2π d x) + n sin(2π n x) = 0 $]  
-becomes
+The positivity of the Huplet components makes each affine piece strictly
+increasing, and the endpoint identities make the pieces join continuously.
+At $k=0$, one has $Y_j (0)=j/n$, so $Phi_0=id$. Since
+$x=(j+u)/n$, differentiation with respect to $x$ gives
+
 #nonum[
-  $ sin(d θ) + sin(n θ) = 0 $
-  " iff "
-  $ 2 sin((d+n) θ / 2) cos((d-n) θ / 2) = 0. $
+  $
+  partial_x Phi_k (x)
+  =
+  n
+  (
+    Y_(j+1) (k)-Y_j (k)
+  )
+  =
+  n D_j (k).
+  $
 ]
 
-Thus every stationary point belongs to one of two families:
+Thus the Huplet components are the local stretch factors of the induced
+deformation of the cycle. $square$
 
-1) $sin((d+n) θ / 2) = 0$, i.e. $θ = 2π m / (d+n)$ with $m in {0,…,d+n-1}$;
+== The quantized endpoint: the Quplet
 
-2) $cos((d-n) θ / 2) = 0$, i.e. $(d-n) θ = (2ℓ+1) π$ for some $ℓ in ℤ$.
+Assume that all anchored crest branches extend continuously to $k=1$, retain
+crest status, and remain distinct. Their endpoints then lie at distinct sites
+of the $d$-grid.
 
-Along family 1) we have $n θ ≡ - d θ$ (mod $2π$), hence  
-$cos(n θ) = cos(d θ)$ and $ sin(n θ) = - sin(d θ)$.
+The *Quplet* associated with $(n,d)$ is defined by
 
-Along family 2) we have $n θ ≡ d θ + π$ (mod $2π$), hence  
-$cos(n θ) = - cos(d θ)$ and $sin(n θ) = - sin(d θ)$.
+$
+Q(n,d)
+=
+Huplet(n,d,1).
+$ <Q>
 
-At $k = n/d$, the second derivative test reads
+Equivalently, suppose that the selected endpoint sites are
+
 #nonum[
-  $H(k, x) < 0 "iff" d cos(d θ) + n cos(n θ) > 0.$
+  $
+  frac(j_0,d),
+  frac(j_1,d),
+  dots,
+  frac(j_(n-1),d),
+  $
 ]
 
-Using the identities above:
+listed in circular order beginning with the endpoint of $X_0$. Then the
+components of $Q(n,d)$ are their successive circular gaps.
 
-- on family 1): $d cos(d θ) + n cos(n θ) = (d+n) cos(d θ)$;  
-- on family 2): $d cos(d θ) + n cos(n θ) = (d-n) cos(d θ)$.
+Each component of $Q(n,d)$ is therefore an integer multiple of $1/d$.
 
-Thus crests among grid points $θ = 2π m/(d+n)$ occur *precisely* when $cos(d θ) > 0$;
+The existence of $Q(n,d)$ as defined above depends on the global-continuation
+conjecture. The combinatorial Euclidean spacing vector introduced below,
+however, is defined independently of the crest dynamics.
 
-points of family 2) never yield crests at the threshold.
+== Euclidean endpoint classes
 
-Because multiplication by $d$ is a permutation of $ℤ/(d+n)$, the sequence  
-$m ↦ d m$ (mod $d+n$) runs uniformly on the circle. Selecting the values where  
-$cos(2π (d m)/(d+n)) > 0$ produces a balanced set of exactly $n$ sites, spaced by  
-the two steps $⌊(d+n)/n⌋$ and $⌈(d+n)/n⌉$ in $m$–index: the Euclidean pattern  
-$E(n, d+n)$ in circular order. Anchoring at $m=0$ matches the rotation in the  
-definition of $Q(n,d+n)$.
+Write the Euclidean division of $d$ by $n$ as
 
-Finally, for the pair $(n, d+n)$ as $k→∞$, crest trajectories land on the  
-$(d+n)$–grid and preserve circular order. The anchored continuation therefore  
-selects the *same anchored rotation* as at the threshold.  
-Hence
-$ Huplet(n, d, n/d) = Q(n, d+n). $ <thresh-ext>  
-□
-
-
-== Euclidean reduction
-
-
-*Corollary (Euclidean reduction).*  
-For coprime $d>n>0$ (same anchoring),
-#nonum[$ Q(n, d) = Huplet( n, d-n, n / ( d-n ) ). $]
-
-*Proof.*  
-Let $d_1 = d - n$. Coprimality ensures $gcd(n,d_1)=1$.  
-Applying the threshold–extension theorem to $(n, d_1)$ gives
 #nonum[
-  $ Huplet(n, d_1, n / d_1) = Q(n, n + d_1) = Q(n, d). $
+  $
+  d=s n+r,
+  quad
+  0 <= r < n.
+  $
 ]
-This is the stated identity. Iterating along the Euclidean algorithm gives
-$ Q(n, d) = Huplet( n, r, n / r ) $ <euc-red>
-with $r = d " mod " n$ and $0 < r < n$.  
-□
 
-*Remarks.*  
-- Identities are about *spacing vectors* computed with the fixed anchor; rotations are therefore canonical.  
-- The reduction expresses $Q(n,d)$ as the endpoint of a chain of *thresholds* with decreasing second parameter, mirroring the Euclidean algorithm.
+Thus
 
-#v(10pt)
-== Example $(n,d)=(5,7)$
-#v(6pt)
+#nonum[
+  $
+  s=floor(d/n),
+  quad
+  r=d mod n.
+  $
+]
 
-At $k=0$: crests at $x=i/5$;  
-$Huplet(5,7,0) = 1/5 ·  (1, 1, 1, 1, 1)$.
+An even distribution of $n$ points on a regular $d$-grid has circular gaps of
+the two integer lengths
 
-At $k=n/d=5/7$: crests lie on the $(n+d)$–grid $x=m/12$.  
-Selecting the phases with $H<0$ yields the anchored rotation of $E(5,12)$:  
-$Huplet(5,7,5/7) = 1/12 · (2, 3, 2, 3, 2)$.
+#nonum[
+  $
+  s
+  quad "and" quad
+  s+1.
+  $
+]
 
-As $k→∞$: crests converge to the $d$–grid; anchored continuation gives  
-$Q(5,7) = Huplet(5,7,∞) = 1/7 · (1, 2, 1, 2, 1)$.
+When $0<r<n$, exactly $r$ gaps have length $s+1$, and exactly $n-r$ gaps
+have length $s$.
+
+A standard representative of this Euclidean gap pattern is defined by
+
+$
+e_i (n,d)
+=
+floor(frac((i+1)d,n))
+-
+floor(frac(i d,n)),
+quad
+i=0,dots,n-1.
+$ <E-floor>
+
+The corresponding normalized spacing vector is
+
+$
+bold(e) (n,d)
+=
+frac(1,d)
+(
+  e_0 (n,d),
+  dots,
+  e_(n-1) (n,d)
+).
+$ <E-vector>
+
+The entries of $bold(e) (n,d)$ sum to one. They consist of $r$ copies of
+$(s+1)/d$ and $n-r$ copies of $s/d$.
+
+@E-floor selects one particular cyclic rotation of the Euclidean gap
+word. We denote its cyclic equivalence class by $E(n,d)$. Thus
+
+#nonum[
+  $
+  E(n,d)
+  =
+  [bold(e) (n,d)]_("cyc").
+  $
+]
+
+A dynamically defined Quplet may select another representative of this class,
+depending on the endpoint of the anchored branch $X_0$. The distinction between
+the Euclidean cyclic class and the anchored rotation is therefore essential.
+
+
+== Euclidean endpoint selection
+
+Numerical experiments suggest that the endpoints selected by the anchored
+crest branches form an even distribution on the $d$-grid.
+
+*Conjecture (Euclidean endpoint selection).*  
+Let $1<n<d$ be coprime, with $n$ odd. Assume that the anchored branches
+extend to $k=1$ as stated in the global-evolution conjecture. Then
+
+$
+Q(n,d) in E(n,d).
+$ <Euclidean-endpoint>
+
+Equivalently, $Q(n,d)$ is a cyclic rotation of $bold(e) (n,d)$.
+
+Thus every component of $Q(n,d)$ equals either $s/d$ or $(s+1)/d$, with
+exactly $r$ components of the larger value. The remaining question is which
+representative of $E(n,d)$ is selected by the branch anchored at
+$X_0 (0)=0$.
+
+== The threshold Huplet and its Euclidean class
+
+Assume that the anchored branches are defined at
+
+#nonum[
+  $
+  k_c=frac(n,n+d).
+  $
+]
+
+The threshold theorem of the preceding section proves that the $n$ highest
+crests of $F_(k_c)$ lie on the $(n+d)$-grid and have Euclidean circular
+spacings.
+
+*Conditional corollary.*  
+If the anchored crests are the $n$ highest crests of $F_k$ for every
+$k in [0,1)$, then
+
+$
+Huplet(n,d,k_c) in E(n,n+d).
+$ <threshold-Euclidean>
+
+Thus the Euclidean cyclic class is proved for the highest-crest selection.
+Its identification with the anchored Huplet depends only on the
+amplitude-selection statement.
+
+=== Threshold–extension conjecture
+
+The numerical evidence suggests a more precise relation between the threshold
+configuration of the pair $(n,d)$ and the endpoint configuration of the
+extended pair $(n,n+d)$.
+
+*Conjecture (threshold–extension).*  
+With a consistent anchoring convention,
+
+$
+Huplet(n,d,frac(n,n+d))
+=
+Q(n,n+d).
+$ <thresh-ext>
+
+Both sides are spacing vectors on an $(n+d)$-grid. The conjecture asserts not
+only that they belong to the same Euclidean cyclic class, but also that the
+anchored crest dynamics select the same cyclic rotation.
+
+The threshold factorization supports the common grid structure, while the
+equality of anchored rotations remains a global dynamical assertion.
+
+=== A partial threshold reduction
+
+Assume the threshold–extension conjecture and suppose additionally that
+$d>2n$. Then $d-n>n$, so the pair $(n,d-n)$ remains within the ordered
+frequency convention used in this paper.
+
+Applying @thresh-ext to $(n,d-n)$ gives
+
+$
+Q(n,d)
+=
+Huplet(
+  n,
+  d-n,
+  frac(n,d)
+).
+$ <Euclidean-reduction>
+
+Indeed, the balanced parameter for the pair $(n,d-n)$ is
+
+#nonum[
+  $
+  frac(n,n+(d-n))
+  =
+  frac(n,d).
+  $
+]
+
+When $n<d<2n$, the frequency $d-n$ is smaller than $n$, and the identity
+cannot be deduced within the present ordered convention. A general Euclidean
+reduction therefore requires either a symmetric definition allowing the two
+frequencies to exchange roles or a separate transformation rule for such
+pairs.
+
+== Example: $(n,d)=(5,7)$
+
+At $k=0$, the anchored crests form the regular $5$-grid, so
+
+#nonum[
+  $
+  Huplet(5,7,0)
+  =
+  frac(1,5)(1,1,1,1,1).
+  $
+]
+
+The balanced parameter is
+
+#nonum[
+  $
+  k_c
+  =
+  frac(5,5+7)
+  =
+  frac(5,12).
+  $
+]
+
+The $(n+d)$-grid family at this parameter is the $12$-grid. The five grid
+points
+
+#nonum[
+  $
+  0,
+  frac(2,12),
+  frac(5,12),
+  frac(7,12),
+  frac(10,12)
+  $
+]
+
+satisfy the grid-family crest test and have circular spacings
+
+#nonum[
+  $
+  frac(1,12)(2,3,2,3,2).
+  $
+]
+
+If these are precisely the sites selected by the anchored branches, then
+
+#nonum[
+  $
+  Huplet(5,7,frac(5,12))
+  =
+  frac(1,12)(2,3,2,3,2).
+  $
+]
+
+At $k=1$, the standard Euclidean representative on the $7$-grid is obtained
+from @E-floor:
+
+#nonum[
+  $
+  bold(e) (5,7)
+  =
+  frac(1,7)(1,1,2,1,2).
+  $
+]
+
+Its cyclic class is $E(5,7)$. Numerical anchored continuation may select
+another representative of this class, for example
+
+#nonum[
+  $
+  frac(1,7)(1,2,1,2,1).
+  $
+]
+
+The exact anchored rotation belongs to the rotation-selection problem studied
+in the next section.
 
 #table(
   columns: 3,
   align: (left, left, left),
   column-gutter: 1.2em,
   stroke: none,
-  [Regime], [Anchored positions], [Huplet or Quplet],
-  [$k=0$], [$0, 1/5, 2/5, 3/5, 4/5$], [$Huplet=1/5 dot (1,1,1,1,1)$],
-  [$k=5/7$], [$0, 2/12, 5/12, 7/12, 10/12$], [$Huplet=1/12·(2,3,2,3,2)$],
-  [$k→∞$], [$0, 1/7, 3/7, 4/7, 6/7$], [$Q=1/7·(1,2,1,2,1)$],
+
+  [Regime],
+  [Positions or grid],
+  [Spacing vector],
+
+  [$k=0$],
+  [$0,1/5,2/5,3/5,4/5$],
+  [$1/5 dot (1,1,1,1,1)$],
+
+  [$k=5/12$],
+  [$0,2/12,5/12,7/12,10/12$],
+  [$1/12 dot (2,3,2,3,2)$],
+
+  [$k=1$],
+  [selected sites of the $7$-grid],
+  [an element of $E(5,7)$],
 )
+

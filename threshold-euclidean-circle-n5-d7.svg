@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="840" viewBox="0 0 840 840">
+  <rect width="100%" height="100%" fill="white"/>
+  <style>
+    .grid { fill: none; stroke: #9aa0a6; stroke-width: 2; }
+    .point { fill: #9aa0a6; }
+    .chosen { fill: #c62828; stroke: white; stroke-width: 3; }
+    .label { font: 18px sans-serif; fill: #303030; text-anchor: middle; dominant-baseline: middle; }
+    .gap-label { font: bold 20px sans-serif; text-anchor: middle; dominant-baseline: middle; }
+    .caption { font: 20px sans-serif; fill: #303030; text-anchor: middle; }
+    .legend { font: 17px sans-serif; fill: #303030; }
+  </style>
+  <text x="420" y="54" class="caption" font-weight="bold">Euclidean threshold configuration</text>
+  <circle cx="420" cy="390" r="230" class="grid"/>
+
+  <!-- Coloured arcs mark the circular Euclidean gaps: 2, 3, 2, 3, 2. -->
+  <path d="M 420 160 A 260 260 0 0 1 645.2 260" fill="none" stroke="#1565c0" stroke-width="8"/>
+  <path d="M 645.2 260 A 260 260 0 0 1 550 615.2" fill="none" stroke="#ef6c00" stroke-width="8"/>
+  <path d="M 550 615.2 A 260 260 0 0 1 290 615.2" fill="none" stroke="#1565c0" stroke-width="8"/>
+  <path d="M 290 615.2 A 260 260 0 0 1 194.8 260" fill="none" stroke="#ef6c00" stroke-width="8"/>
+  <path d="M 194.8 260 A 260 260 0 0 1 420 160" fill="none" stroke="#1565c0" stroke-width="8"/>
+
+  <!-- Complete resonant 12-grid. -->
+  <g class="point">
+    <circle cx="420" cy="160" r="6"/><circle cx="535" cy="190.8" r="6"/>
+    <circle cx="619.2" cy="275" r="6"/><circle cx="650" cy="390" r="6"/>
+    <circle cx="619.2" cy="505" r="6"/><circle cx="535" cy="589.2" r="6"/>
+    <circle cx="420" cy="620" r="6"/><circle cx="305" cy="589.2" r="6"/>
+    <circle cx="220.8" cy="505" r="6"/><circle cx="190" cy="390" r="6"/>
+    <circle cx="220.8" cy="275" r="6"/><circle cx="305" cy="190.8" r="6"/>
+  </g>
+
+  <!-- The five highest threshold crests: m = 0, 2, 5, 7, 10. -->
+  <g class="chosen">
+    <circle cx="420" cy="160" r="13"/><circle cx="619.2" cy="275" r="13"/>
+    <circle cx="535" cy="589.2" r="13"/><circle cx="305" cy="589.2" r="13"/>
+    <circle cx="220.8" cy="275" r="13"/>
+  </g>
+
+  <!-- Grid-site indices. -->
+  <g class="label">
+    <text x="420" y="118">0</text><text x="556" y="154">1</text>
+    <text x="655" y="253">2</text><text x="692" y="390">3</text>
+    <text x="655" y="527">4</text><text x="556" y="626">5</text>
+    <text x="420" y="662">6</text><text x="284" y="626">7</text>
+    <text x="185" y="527">8</text><text x="148" y="390">9</text>
+    <text x="185" y="253">10</text><text x="284" y="154">11</text>
+  </g>
+
+  <text x="520" y="218" class="gap-label" fill="#1565c0">2</text>
+  <text x="635" y="438" class="gap-label" fill="#ef6c00">3</text>
+  <text x="420" y="650" class="gap-label" fill="#1565c0">2</text>
+  <text x="205" y="438" class="gap-label" fill="#ef6c00">3</text>
+  <text x="320" y="218" class="gap-label" fill="#1565c0">2</text>
+
+  <circle cx="244" cy="722" r="8" fill="#c62828"/><text x="262" y="728" class="legend">selected highest threshold crests</text>
+  <line x1="244" y1="758" x2="278" y2="758" stroke="#1565c0" stroke-width="6"/><text x="288" y="764" class="legend">gap length 2</text>
+  <line x1="485" y1="758" x2="519" y2="758" stroke="#ef6c00" stroke-width="6"/><text x="529" y="764" class="legend">gap length 3</text>
+  <text x="420" y="804" class="caption">n = 5, d = 7, N = 12, k₍c₎ = 5/12</text>
+</svg>

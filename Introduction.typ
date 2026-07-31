@@ -1,133 +1,191 @@
-#set math.equation(numbering: none)
-
-#let Huplet = math.italic("Huplet")
+#import "definitions.typ": *
 
 = Introduction
 
-Rhythmic structures may arise from the interaction of several periodic
-components. In this paper, we study such an interaction through a simple
-two-frequency model. 
+Rhythmic subdivision may be represented by an ordered collection of points on a
+cycle, or equivalently by the circular spacings between those points. In this
+paper, we study how such spacing patterns arise from the interaction of two
+regular subdivision systems.
 
-Let $n, d in NN$ satisfy $1 < n < d$, and let
-$k in [0,1]$. The integers $n$ and $d$ represent two subdivision systems
-acting on the same underlying cycle, while $k$ controls the balance between
-them.
+Let $1 < n < d$ and consider the two-frequency family
 
-We consider the interference function
-
-$
-F_k (x)
-=
-k cos(2 pi d x)
-+
-(1 - k) cos(2 pi n x),
-$
-
-where $x in RR \/ ZZ$ denotes phase on the unit cycle. At $k=0$, the function
-reduces to the regular $n"-subdivision"$ $F_0 (x)=cos(2 pi n x)$, whereas at
-$k=1$ it reduces to the regular $d"-subdivision"$
-$F_1 (x)=cos(2 pi d x)$. The parameter $k$ therefore describes a continuous
-deformation from one subdivision system to the other.
-
-We are interested in the local maxima of $F_k$, which we call *crests*. Their
-positions provide a parameter-dependent set of accent locations and hence
-determine a rhythmic spacing pattern. At $k=0$, the crests lie on the regular
-$n$-grid ${i/n : i=0, dots, n-1}$.
-
-Each of these initial crests determines a local analytic branch as $k$ begins
-to increase. We call the branches issued from these maxima the *anchored crest
-branches*. This distinction is important: the anchored branches are not
-necessarily identical to the complete set of local maxima of $F_k$ for every
-parameter value. Additional critical points may appear as $k$ varies, and an
-anchored branch may in principle encounter a degenerate stationary point.
-
-Following the anchored crests as $k$ varies produces a family of trajectories
-on the cycle. Their evolution may be studied implicitly through the
-stationarity equation or, equivalently, by expressing the modulation parameter
-as a function of phase. This phase parametrization provides a natural framework
-for studying the local continuation, possible degeneracies, and endpoint
-behaviour of the crest branches.
-
-The derivative of the interference function is
-
-$
-partial_x F_k (x)
-=
--2 pi
-(
-  k d sin(2 pi d x)
+#nonum[
+  $
+  F_k (x)
+  =
+  k cos(2 pi d x)
   +
-  (1 - k) n sin(2 pi n x)
-).
-$
+  (1-k) cos(2 pi n x),
+  $
+]
 
-A distinguished parameter occurs when the two contributions to the
+where $k in [0,1]$ and $x in RR \/ ZZ$. At $k=0$, the crests of $F_k$
+form the regular $n$-grid, whereas at $k=1$ they form the regular $d$-grid.
+The parameter $k$ therefore describes a continuous deformation between two
+rhythmic subdivision systems.
+
+Each crest of the initial $n$-grid determines a local analytic stationary
+branch. We denote the branch issued from $i/n$ by
+
+#nonum[
+  $
+  X_i (k),
+  quad
+  X_i (0)=i/n,
+  $
+]
+
+and call it an anchored crest branch. Its amplitude is
+
+#nonum[
+  $
+  A_i (k)
+  =
+  F_k (X_i (k))
+  $
+]
+
+Thus the deformation naturally gives rise to two complementary classes of
+trajectory functions: the position functions $X_i (k)$ and the amplitude
+functions $A_i (k)$. The first describe the horizontal motion of the crests,
+whereas the second describe their changing prominence in the interference
+signal.
+
+Whenever the anchored crests are defined and distinct, their circularly
+ordered positions determine successive spacing functions
+
+#nonum[
+  $
+  D_j (k)
+  =
+  Y_(j+1) (k)-Y_j (k),
+  $
+]
+
+with cyclic indexing. The normalized vector
+
+#nonum[
+  $
+  Huplet(n,d,k)
+  =
+  (D_0 (k), dots, D_(n-1) (k))
+  $
+]
+
+is called the Huplet associated with $(n,d,k)$. It is a curve in the open
+spacing simplex
+
+#nonum[
+  $
+  Sigma_n^circle.stroked.small
+  =
+  {
+    q in RR^n
+    mid(|)
+    q_j > 0,
+    sum_(j=0)^(n-1) q_j = 1
+  }.
+  $
+]
+
+At $k=0$, this curve begins at the regular tuplet
+
+#nonum[
+  $
+  t_n
+  =
+  (1/n, dots, 1/n).
+  $
+]
+
+If the anchored branches extend globally to $k=1$, remain crests, and reach
+distinct points of the final $d$-grid, their endpoint spacings define the
+dynamical Quplet
+
+#nonum[
+  $
+  Q(n,d).
+  $
+]
+
+The principal dynamical problem is to determine which $n$ sites of the final
+$d$-grid are selected by this continuation.
+
+A distinguished intermediate configuration occurs when the two terms in the
 stationarity equation have equal coefficients. This happens at
-$k_c=n/(n+d)$, since
-$k_c d=(1-k_c)n=n d/(n+d)$. 
 
-At $k=k_c$, the stationarity equation reduces to
+#nonum[
+  $
+  k_c
+  =
+  n/(n+d).
+  $
+]
 
-$
-sin(2 pi d x)+sin(2 pi n x)=0.
-$
+At $k=k_c$, the stationary equation factors into two explicit trigonometric
+families. One lies on the $(n+d)$-grid. For coprime $n$ and $d$, with $n$
+odd, we prove that the $n$ highest threshold crests belong to this grid and
+have Euclidean circular spacings. Their selection follows from a strict
+amplitude separation between the two stationary families.
 
-This equation factors into two elementary trigonometric families, one of which
-lies on the rational $(n+d)$-grid. The threshold therefore produces a
-nontrivial rational stationary configuration between the initial $n$-grid and
-the final $d$-grid. Determining which of these stationary points belong to the
-anchored crest branches, and whether this is the only nontrivial rational
-alignment in the interior of the parameter interval, are central questions of
-the paper.
+The endpoint problem contains more information than the Euclidean cyclic class
+alone. An even distribution of $n$ points on a $d$-grid determines a gap word
+only up to cyclic rotation, whereas the anchored branches retain their initial
+labels and distinguish the branch issued from $x=0$.
 
-Whenever the selected anchored crests are distinct, their successive circular
-differences define a normalised spacing vector. We call this vector the
-*Huplet*, for “harmonic tuplet”. At $k=0$, the Huplet is the regular
-$n$-tuplet $T_n=(1/n, dots, 1/n)$.
+To separate this rotation-selection problem from the unresolved global crest
+dynamics, we construct an independent canonical representative. Each initial
+grid point $i/n$ is assigned to its nearest site on the $d$-grid, and the
+circular spacings of the resulting labeled configuration define
 
-When the anchored branches extend to $k=1$, their endpoint positions lie on the
-$d$-grid. We call the corresponding spacing vector the *Quplet*, for
-“quantized tuplet”. The Huplet therefore describes the continuous deformation
-of the spacing pattern, while the Quplet describes its quantized endpoint.
+#nonum[
+  $
+  CanonicalQuplet(n,d).
+  $
+]
 
-These endpoint patterns are closely related to Euclidean rhythms. By Euclidean division, there exist unique integers $s >= 1$ and $r$ such that
+We prove that $CanonicalQuplet(n,d)$ belongs to the Euclidean cyclic class
+$E(n,d)$. It is characterized by nearest-grid displacement, a centered residue
+spectrum, and a zero-temperature selection principle. The central realization
+conjecture is
 
-$
-d=s n+r,
-quad
-0 <= r < n.
-$
+#nonum[
+  $
+  Q(n,d)
+  =
+  CanonicalQuplet(n,d).
+  $
+]
 
-Here, $s=floor(d/n)$ is the quotient and $r=d mod n$ is the remainder. The
-intervals of the corresponding spacing pattern then take the two values $s/d$
-and $(s+1)/d$. When $0 < r < n$, exactly $r$ intervals have the larger value
-and $n-r$ have the smaller value. The problem is not only to identify this
-two-valued Euclidean structure, but also to determine which cyclic rotation is
-selected by the anchored crest dynamics.
+Thus the arithmetic and geometric structure of the canonical representative
+is established independently, while its realization by the crest dynamics
+remains open.
 
-Once an anchoring convention has been fixed, Quplets associated with a common
-residue $r=d mod n$ share a common combinatorial arrangement of long and short
-intervals, up to symmetries that will be described later. Their spacing vectors
-lie on affine lines through the regular tuplet in the simplex of normalised
-rhythmic intervals. This yields a geometric description of fixed-residue
-families and suggests a continuous extension in which the contrast between
-long and short intervals becomes a real parameter.
+For fixed $n$, the canonical Quplets are organized by the residue of $d$
+modulo $n$. Fixed-residue families lie on affine lines through $t_n$,
+complementary residues determine opposite twin directions, and replacing the
+discrete contrast by a real parameter yields continuous Quplet families in the
+spacing simplex.
 
-A complementary representation views a Quplet as a block-sum image of the
-uniform distribution on the $d$-grid. The selected onset sites partition the
-cycle into $n$ contiguous blocks, and summing the uniform grid weights over
-these blocks recovers the Quplet spacing vector. This makes the relation
-between Euclidean gap patterns and affine simplex geometry explicit.
+These affine lines provide a static skeleton for the complete Huplet dynamics.
+The Huplet path generally bends away from its associated order line before
+returning to distinguished canonical configurations. This suggests a broader
+geometric study of the functions $D_j (k)$ and of the Huplet curves they define
+inside the spacing simplex.
 
-The paper has three principal aims. First, it develops the local analytic
-theory of anchored crest trajectories for the two-frequency interference
-model. Second, it studies the distinguished rational configuration at
-$k=k_c$ and the selection of endpoint sites on the $d$-grid. Third, it
-describes the combinatorial and affine organisation of the resulting spacing
-vectors.
+The same spacing vectors also admit a coarse-graining interpretation. A
+canonical Quplet is obtained by partitioning the uniform $d$-grid into $n$
+contiguous blocks and summing the uniform weights over those blocks. When a
+dynamical endpoint exists, its selected grid sites induce an analogous
+block-sum construction. The realization problem may therefore be expressed as
+the equality of a dynamically induced partition and the canonical nearest-grid
+partition.
 
-Several global properties suggested by numerical experiments remain open.
-These include the absence of folds under appropriate arithmetic hypotheses,
-the monotonicity of anchored crest branches, the uniqueness of the interior
-rational alignment, and the precise relation between dynamical continuation
-and the selected Euclidean rotation.
+The paper is organized as follows. Section 2 develops the position and
+amplitude trajectories of the anchored crests. Section 3 studies the balanced
+threshold configuration. Section 4 passes from crest motion to Huplet spacing
+trajectories and Quplet endpoints. Section 5 constructs the canonical
+constrained Euclidean representative. Sections 6 and 7 develop the affine
+residue geometry and twin relations. Section 8 gives the coarse-graining and
+block-sum interpretation. The conclusion summarizes the proved results and
+formulates the main dynamical and geometric problems that remain open.

@@ -1,88 +1,829 @@
-#let nonum(eq) = math.equation(block: true, numbering: none, eq)
+#import "definitions.typ": *
 
-#let Huplet = math.italic("Huplet")
+= Quplets as constrained Euclidean rhythms
 
+The Euclidean class $E(n,d)$ describes an even distribution of $n$ points on
+a regular $d$-grid up to cyclic rotation. By contrast, the Quplet $Q(n,d)$ is
+defined through the continuation of labeled crest branches from the initial
+$n$-grid to the endpoint $d$-grid.
 
-= Rotation selection: optimal transport & an entropy view
-#v(6pt)
+The purpose of this section is to characterize the particular Euclidean
+representative conjecturally selected by this continuation. We show that a
+natural candidate is distinguished independently of the crest dynamics: it is
+the unique labeled configuration with minimal pointwise displacement from the
+initial regular grid. Its signed displacements form a complete centered
+residue system and are globally balanced.
 
-== Setup (anchored endpoints)
-#v(6pt)
+Throughout this section, let $1<n<d$ be coprime, with $n$ odd.
 
-We fix integers $d>n>0$ with $gcd(n,d)=1$, and we work on the phase space $ℝ / ℤ$.  
-Let the regular $n$–multiplet be
-$ U = { i/n : i=0,…,n-1 }. $
+== Constrained versus unconstrained Euclidean structure
 
-From Section 2, the interference model $F_k$ produces $n$ crest branches  
-$X_(i,n,d)(k)$ that are continuous in $k$, anchored at $X_(0,n,d)(0)=0$, and satisfy:
+The Euclidean class
 
-- at $k=0$, the crests lie at $U$,
-- as $k → ∞$, all $n$ crests land on the $d$–grid  
-  ${ m/d : m=0,…,d-1 }$ (global resonance at $k=∞$).
-
-Thus the only remaining question is:
-*which $n$ of the $d$ grid sites correspond to the continuation from $k=0$ under the fixed anchor?*
-
-#v(10pt)
-== Circular distance
-#v(6pt)
-
-For $x,y in ℝ / ℤ$, define the circular distance
-$ "dist"_∘(x,y) = min_(m in ℤ) | x - y + m |. $ <dist>
-
-This is the natural notion of distance when matching phases on the circle.
-
-#v(10pt)
-== Nearest–site rule (geometric selection)
-#v(6pt)
-
-For $i=0,…,n-1$ set
-$ a_i = round( (d/n) i ) $ <nearest>
-with ties resolved by continuity from the anchored branch $X_(0,n,d)$.
-
-Define the anchored $d$–grid phases
 #nonum[
-$ R = { a_i / d : i=0,…,n-1 } $
+  $
+  E(n,d)
+  =
+  [bold(e) (n,d)]_("cyc")
+  $
 ]
-listed in circular order starting from the anchor.  
-These $R$ are exactly the crest limits as $k → ∞$, and therefore they realize the *Quplet* $Q(n,d)$.
 
-*Sketch*
+does not specify which point begins the spacing vector. It therefore identifies
+all cyclic rotations of the same Euclidean gap word.
 
-Near $k=∞$, each crest branch $X_(i,n,d)(k)$ is monotone in $k$: all crossings between branches occur at finite $k$, and no reordering is possible beyond the last crossing.  
-Therefore each branch must converge to the nearest available $d$–grid site to its starting point $i/n$.  
-Since $X_(0,n,d)$ is anchored at $0$, the tie-break is fixed consistently by continuity.
+Assuming global continuation of the anchored crest branches, the Quplet is
 
-#v(10pt)
-== Optimal transport formulation (convex losses)
-#v(6pt)
+#nonum[
+  $
+  Q(n,d)
+  =
+  Huplet(n,d,1).
+  $
+]
 
-Let $φ : ℝ_+ → ℝ_+$ be convex and define the alignment energy
-$ 𝔈_φ(R) = sum_(i=0)^(n-1) φ( "dist"_∘( a_i / d , i / n ) ). $ <energy>
+This construction retains information that is absent from the ordinary
+Euclidean class:
 
-Among all circular shifts of the $E(n,d)$ pattern on the $d$–grid, this energy $𝔈_φ$ is minimized *uniquely* by the anchored configuration $R$ given by the nearest–site rule.
+- each endpoint is inherited from a labeled branch $X_i$;
+- the branch $X_0$, issued from $0$, fixes the anchor;
+- the circular ordering is transported continuously from $k=0$ to $k=1$.
 
-*Idea of proof*
+The Euclidean endpoint-selection conjecture states that
 
-On the circle, the optimal matching between two ordered point sets is monotone.  
-For convex $φ$, each term $φ("dist"_∘(x,y))$ is minimized by choosing the nearest partner, which yields precisely the integers $a_i$.  
-The global circular shift freedom is removed by the fixed anchor at $i=0$.
+#nonum[
+  $
+  Q(n,d) in E(n,d).
+  $
+]
 
-#v(10pt)
-== Entropy (soft assignment) view
-#v(6pt)
+If true, this does not produce a new Euclidean cyclic class. Rather, it equips
+$E(n,d)$ with an additional dynamical constraint that selects one anchored
+representative.
 
-For $τ>0$, define the “alignment entropy”
-$ 𝒮_τ(R) = (1/n) sum_(i=0)^(n-1)
-    log sum_(j=0)^(n-1)
-      exp( - "dist"_∘( a_i / d , j / n )^2 / (2 τ) ). $ <entropy>
+== Circular distance
 
-This quantity measures how sharply each $a_i/d$ prefers the regular sites $j/n$.  
-For every $τ>0$, $𝒮_τ$ is *maximized* by the same anchored $R$ produced by the nearest–site rule.
+For $x,y in RR \/ ZZ$, define the circular distance
 
-As $τ ↓ 0$, the log–sum–exp tends to a soft minimum:
-$ 𝒮_τ(R) → - min_(π in S_n)
-      sum_(i=0)^(n-1)
-        "dist"_∘( a_i / d , π(i) / n )^2 , $ <entropy-limit>
-where $S_n$ is the symmetric group.  
-Thus “maximum alignment entropy’’ coincides with “minimal cumulative tension’’—the same solution selected by the geometric rule and by the crest dynamics of $F_k$.
+$
+"dist"_circle (x,y)
+=
+min_(m in ZZ)
+abs(x-y+m).
+$ <circular-distance>
+
+This distance takes values in $[0,1/2]$.
+
+== The nearest-grid configuration
+
+For each $i=0,dots,n-1$, define
+
+$
+a_i
+=
+floor(
+  i d/n
+  +
+  1/2
+).
+$ <nearest-endpoint>
+
+Thus $a_i$ is the integer nearest to $i d/n$, and $a_i/d$ is the
+$d$-grid point nearest to the initial crest $i/n$.
+
+The nearest integer is unique. Indeed, if $i d/n$ were a half-integer, then
+
+#nonum[
+  $
+  2 i d=(2q+1)n
+  $
+]
+
+for some $q in ZZ$. Since $gcd(n,d)=1$, this would imply that $n$ divides
+$2i$. Because $n$ is odd, it would follow that $n$ divides $i$, which is
+impossible for $0<i<n$.
+
+Define the ordered nearest-grid configuration
+
+$
+A_(n,d)
+=
+(
+  a_0,
+  a_1,
+  dots,
+  a_(n-1)
+).
+$ <nearest-configuration>
+
+Since $a_0=0$ and $d/n>1$,
+
+#nonum[
+  $
+  0=a_0<a_1<dots<a_(n-1)<d.
+  $
+]
+
+Hence the nearest choices are distinct and occur in the same circular order as
+the initial points. The branchwise nearest-site assignments are therefore
+globally compatible.
+
+== The canonical nearest-grid spacing vector
+
+Define the circular integer gaps of $A_(n,d)$ by
+
+#nonum[
+  $
+  g_i
+  =
+  a_(i+1)-a_i,
+  quad
+  i=0,dots,n-2,
+  $
+]
+
+and
+
+#nonum[
+  $
+  g_(n-1)
+  =
+  d+a_0-a_(n-1).
+  $
+]
+
+The *canonical nearest-grid spacing vector* is
+
+$
+CanonicalQuplet(n,d)
+=
+1/d
+(
+  g_0,
+  dots,
+  g_(n-1)
+).
+$ <canonical-Quplet>
+
+Equivalently,
+
+#nonum[
+  $
+  CanonicalQuplet(n,d)
+  =
+  1/d
+  (
+    a_1-a_0,
+    dots,
+    a_(n-1)-a_(n-2),
+    d+a_0-a_(n-1)
+  ).
+  $
+]
+
+== Euclidean structure of the nearest-grid configuration
+
+Write
+
+#nonum[
+  $
+  d=s n+r,
+  quad
+  0<r<n.
+  $
+]
+
+Define the circular integer gaps of $A_(n,d)$ by
+
+#nonum[
+  $
+  g_i
+  =
+  a_(i+1)-a_i,
+  quad
+  i=0,dots,n-2,
+  $
+]
+
+and
+
+#nonum[
+  $
+  g_(n-1)
+  =
+  d+a_0-a_(n-1).
+  $
+]
+
+For $i=0,dots,n-2$,
+
+#nonum[
+  $
+  g_i
+  =
+  floor(
+    (i+1)d/n
+    +
+    1/2
+  )
+  -
+  floor(
+    i d/n
+    +
+    1/2
+  ).
+  $
+]
+
+Since
+
+#nonum[
+  $
+  d/n=s+r/n,
+  $
+]
+
+every gap equals either $s$ or $s+1$. Since the gaps sum to $d$, exactly
+$r$ gaps have length $s+1$, and exactly $n-r$ gaps have length $s$.
+
+More importantly, their cyclic order is generated by the same rational
+floor-difference construction as the standard Euclidean word.
+
+*Proposition (canonical Euclidean representative).*  
+For coprime $1<n<d$, with $n$ odd,
+
+$
+CanonicalQuplet(n,d) in E(n,d).
+$ <canonical-Euclidean>
+
+*Proof.*  
+The standard Euclidean gap word @E-floor is obtained from the difference
+sequence
+
+#nonum[
+  $
+  i mapsto floor(i d/n).
+  $
+]
+
+The nearest-grid gap word is obtained from the shifted sequence
+
+#nonum[
+  $
+  i mapsto floor(i d/n+1/2).
+  $
+]
+
+Because $gcd(n,d)=1$, the fractional parts of $i d/n$ run once through the
+regular $n$-grid. Changing the constant offset changes the starting point of
+the resulting circular coding but not its cyclic class. Consequently,
+
+#nonum[
+  $
+  (
+    g_0,
+    dots,
+    g_(n-1)
+  )
+  $
+]
+
+is a cyclic rotation of the standard Euclidean gap word. After normalization by $d$, this gap word is precisely
+$CanonicalQuplet(n,d)$. Therefore
+
+#nonum[
+  $
+  CanonicalQuplet(n,d) in E(n,d).
+  $
+]
+
+$square$
+
+Thus $CanonicalQuplet(n,d)$ is a distinguished anchored representative of
+the Euclidean cyclic class $E(n,d)$.
+
+== Signed endpoint displacements
+
+Define the signed displacement of the $i$th nearest-grid point from its
+initial position by
+
+$
+delta_i
+=
+a_i/d-i/n
+=
+(n a_i-i d)/(n d).
+$ <endpoint-displacement>
+
+Set
+
+$
+epsilon_i
+=
+n a_i-i d.
+$ <rounding-residue>
+
+Then
+
+#nonum[
+  $
+  delta_i=epsilon_i/(n d).
+  $
+]
+
+Because $a_i$ is the nearest integer to $i d/n$,
+
+#nonum[
+  $
+  abs(epsilon_i)<n/2.
+  $
+]
+
+Since $epsilon_i$ is an integer and $n$ is odd,
+
+#nonum[
+  $
+  epsilon_i
+  in
+  {
+    -(n-1)/2,
+    dots,
+    -1,
+    0,
+    1,
+    dots,
+    (n-1)/2
+  }.
+  $
+]
+
+Moreover,
+
+#nonum[
+  $
+  epsilon_i equiv -i d quad (mod n).
+  $
+]
+
+Since multiplication by $d$ permutes the residue classes modulo $n$, the
+values $epsilon_i$ are all distinct.
+
+*Proposition (centered displacement spectrum).*  
+The rounding residues form the complete centered residue system
+
+$
+{
+  epsilon_i :
+  i=0,dots,n-1
+}
+=
+{
+  -(n-1)/2,
+  dots,
+  -1,
+  0,
+  1,
+  dots,
+  (n-1)/2
+}.
+$ <centered-residues>
+
+*Proof.*  
+The $n$ integers $epsilon_i$ are distinct modulo $n$, and each lies in the
+set of the $n$ centered representatives displayed above. They must therefore
+exhaust that set. $square$
+
+Consequently, the selected displacements are all distinct and satisfy
+
+#nonum[
+  $
+  abs(delta_i)<1/(2d).
+  $
+]
+
+Their multiset is completely determined by $n$ and $d$:
+
+#nonum[
+  $
+  {
+    delta_i :
+    i=0,dots,n-1
+  }
+  =
+  {
+    j/(n d) :
+    j=-(n-1)/2,dots,(n-1)/2
+  }.
+  $
+]
+
+The order in which these values occur is determined by $d mod n$.
+
+== Balance of the selected representative
+
+The nearest-grid indices satisfy
+
+$
+a_(n-i)=d-a_i,
+quad
+i=1,dots,n-1.
+$ <nearest-symmetry>
+
+Indeed, $d-a_i$ is the unique integer nearest to
+
+#nonum[
+  $
+  d-i d/n
+  =
+  (n-i)d/n.
+  $
+]
+
+It follows that
+
+#nonum[
+  $
+  epsilon_(n-i)=-epsilon_i
+  $
+]
+
+and therefore
+
+$
+delta_(n-i)=-delta_i.
+$ <displacement-symmetry>
+
+Since $delta_0=0$, the signed displacements sum to zero:
+
+$
+sum_(i=0)^(n-1)
+delta_i
+=
+0.
+$ <zero-displacement-sum>
+
+Thus the nearest-grid representative is balanced around the initial regular
+grid. Its deviations occur in opposite pairs and preserve the barycenter of
+the lifted labeled configuration.
+
+== Minimal-distortion characterization
+
+Consider an arbitrary labeled selection of $d$-grid indices
+
+#nonum[
+  $
+  B
+  =
+  (
+    b_0,
+    b_1,
+    dots,
+    b_(n-1)
+  ),
+  $
+]
+
+where each $b_i in {0,dots,d-1}$. Its $i$th point is paired with the initial
+point $i/n$.
+
+By construction, $a_i/d$ is the unique $d$-grid point nearest to $i/n$.
+Hence, for every $i$,
+
+$
+"dist"_circle (i/n,a_i/d)
+<=
+"dist"_circle (i/n,b_i/d).
+$ <pointwise-minimality>
+
+Let
+
+#nonum[
+  $
+  phi : RR_+ -> RR_+
+  $
+]
+
+be increasing, and define the labeled displacement energy
+
+$
+cal(E)_phi (B)
+=
+sum_(i=0)^(n-1)
+phi (
+  "dist"_circle (
+    i/n,
+    b_i/d
+  )
+).
+$ <displacement-energy>
+
+*Theorem (universal minimal distortion).*  
+For every increasing loss $phi$ and every labeled $d$-grid configuration
+$B$,
+
+$
+cal(E)_phi (A_(n,d))
+<=
+cal(E)_phi (B).
+$ <minimal-distortion>
+
+If $phi$ is strictly increasing, equality holds only when
+
+#nonum[
+  $
+  b_i=a_i
+  $
+]
+
+for every $i$.
+
+*Proof.*  
+The inequality follows term by term from @pointwise-minimality and the
+monotonicity of $phi$. If $phi$ is strictly increasing, equality of the sums
+requires equality in every pointwise comparison. Since every nearest grid site
+is unique, this implies $b_i=a_i$ for all $i$. $square$
+
+The nearest-grid configuration therefore simultaneously minimizes, among
+labeled endpoint configurations,
+
+#nonum[
+  $
+  sum_i abs(delta_i),
+  quad
+  sum_i delta_i^2,
+  quad "and" quad
+  max_i abs(delta_i).
+  $
+]
+
+It is the unique minimally displaced embedding for every strictly increasing
+separable displacement cost.
+
+== Nearest-grid endpoint-selection conjecture
+
+The preceding results characterize the nearest-grid configuration
+intrinsically, without reference to crest continuation.
+
+The dynamical claim is that the anchored branches select precisely this
+configuration.
+
+*Conjecture (dynamical realization of the canonical representative).*  
+Assume the global-continuation conjecture. Then
+
+$
+Q(n,d)
+=
+CanonicalQuplet(n,d).
+$ <Quplet-realization>
+
+Equivalently, for every $i=0,dots,n-1$,
+
+#nonum[
+  $
+  X_i (1)
+  =
+  a_i/d,
+  $
+]
+
+where $a_i$ is defined by @nearest-endpoint.
+
+Under this conjecture, the dynamically defined Quplet inherits the explicit
+nearest-grid formula
+
+#nonum[
+  $
+  Q(n,d)
+  =
+  CanonicalQuplet(n,d)
+  =
+  1/d
+  (
+    a_1-a_0,
+    dots,
+    a_(n-1)-a_(n-2),
+    d+a_0-a_(n-1)
+  ).
+  $
+]
+
+By @canonical-Euclidean, this implies
+
+#nonum[
+  $
+  Q(n,d) in E(n,d).
+  $
+]
+
+The Quplet is therefore the Euclidean rhythm constrained by the following
+additional requirements:
+
+- the grid points retain the labels of the initial crests;
+- each labeled point undergoes minimal circular displacement;
+- the anchor is fixed by $X_0 (0)=0$;
+- the signed displacements form a balanced centered residue system.
+
+This is stronger than the unconstrained statement
+$Q(n,d) in E(n,d)$, which determines only the cyclic spacing class.
+
+== Entropy of rotation selection
+
+The minimal-distortion theorem singles out $A_(n,d)$ as a unique ground
+state for every strictly increasing displacement loss. This permits an
+entropy-based description of the ambiguity among competing configurations.
+
+Let
+
+#nonum[
+  $
+  cal(C)(n,d)
+  $
+]
+
+be a finite family of competing labeled $d$-grid configurations containing
+$A_(n,d)$. Depending on the application, $cal(C)(n,d)$ may consist of all
+anchored Euclidean representatives or of all injective labeled selections of
+$n$ sites from the $d$-grid.
+
+For $tau>0$, define the partition function
+
+$
+Z_(phi,tau)
+=
+sum_(B in cal(C)(n,d))
+exp(
+  -cal(E)_phi (B)/tau
+).
+$ <rotation-partition>
+
+The corresponding Gibbs probability of a configuration is
+
+$
+p_(phi,tau) (B)
+=
+exp(-cal(E)_phi (B)/tau)
+/
+Z_(phi,tau).
+$ <rotation-Gibbs>
+
+Define the alignment entropy
+
+$
+cal(S)_(phi,tau)
+=
+-
+sum_(B in cal(C)(n,d))
+p_(phi,tau) (B)
+log p_(phi,tau) (B).
+$ <rotation-entropy>
+
+This entropy measures the ambiguity of the rotation-selection problem at
+scale $tau$:
+
+- a large value indicates that several configurations have comparable
+  displacement energies;
+- a small value indicates that one configuration strongly dominates.
+
+The associated free energy is
+
+$
+cal(F)_(phi,tau)
+=
+-tau log Z_(phi,tau).
+$ <rotation-free-energy>
+
+== Zero-temperature selection
+
+Assume that $phi$ is strictly increasing. By @minimal-distortion,
+$A_(n,d)$ is the unique minimizer of $cal(E)_phi$.
+
+*Proposition (zero-temperature concentration).*  
+As $tau$ tends to zero,
+
+$
+p_(phi,tau) (A_(n,d))
+arrow.r
+1,
+$ <ground-state-concentration>
+
+while
+
+#nonum[
+  $
+  p_(phi,tau) (B)
+  arrow.r
+  0
+  $
+]
+
+for every $B!=A_(n,d)$.
+
+Moreover,
+
+$
+cal(F)_(phi,tau)
+arrow.r
+cal(E)_phi (A_(n,d))
+$ <free-energy-limit>
+
+and
+
+$
+cal(S)_(phi,tau)
+arrow.r
+0.
+$ <entropy-limit>
+
+*Proof.*  
+Let
+
+#nonum[
+  $
+  E_min
+  =
+  cal(E)_phi (A_(n,d)).
+  $
+]
+
+For every competing configuration $B!=A_(n,d)$, strict minimality gives
+
+#nonum[
+  $
+  cal(E)_phi (B)-E_min>0.
+  $
+]
+
+Factoring $exp(-E_min/tau)$ from @rotation-partition yields
+
+#nonum[
+  $
+  Z_(phi,tau)
+  =
+  exp(-E_min/tau)
+  (
+    1
+    +
+    sum_(B!=A_(n,d))
+    exp(
+      -(cal(E)_phi (B)-E_min)/tau
+    )
+  ).
+  $
+]
+
+Every term in the remaining sum tends to zero. Hence the Gibbs distribution
+concentrates on $A_(n,d)$, the free energy tends to $E_min$, and the entropy
+tends to zero. $square$
+
+In this formulation, the selected rotation is the unique zero-temperature
+ground state of the displacement energy.
+
+The entropy defined here is an entropy of competing static configurations,
+rather than a dynamical-systems entropy. A dynamical entropy could instead be
+associated with the symbolic evolution of crest branches as $k$ varies, or
+with the sequence of selected rotations as $d$ varies. The relation between
+these possible dynamical notions and the alignment entropy above remains a
+subject for further study.
+
+== Interpretation
+
+The nearest-grid representative is distinguished by four equivalent static
+properties:
+
+1. it is obtained by rounding each initial position to its unique nearest
+   $d$-grid point;
+
+2. it is the unique minimizer of every strictly increasing separable
+   displacement energy;
+
+3. its signed errors form the complete centered residue system modulo $n$;
+
+4. it is the unique zero-temperature ground state of the associated Gibbs
+   model.
+
+The nearest-grid endpoint-selection conjecture asserts that anchored crest
+continuation selects this same representative.
+
+Accordingly, the proposed contribution is not merely the observation that
+Quplets have Euclidean gap patterns. It is the construction of a constrained
+Euclidean object:
+
+#nonum[
+  $
+  "Euclidean cyclic class"
+  +
+  "anchored minimal-displacement selection"
+  =
+  "Quplet".
+  $
+]
+
+== Transition
+
+The Euclidean class determines the cyclic arrangement of long and short gaps.
+The nearest-grid constraint supplies a canonical labeling, anchor, and
+rotation, while the entropy formulation measures the ambiguity of competing
+configurations.
+
+The next section studies how these constrained Euclidean representatives are
+organized as $d$ varies for fixed $n$, leading to residue families, order, and
+symmetry.

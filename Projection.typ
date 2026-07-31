@@ -1,71 +1,678 @@
-#let nonum(eq) = math.equation(block: true, numbering: none, eq)
+#import "definitions.typ": *
 
-#let Huplet = math.italic("Huplet")
+= Projection viewpoint: Quplets as block-sum images of a simplex barycenter
 
-= Projection viewpoint: quplets as block–sum images of a simplex barycenter
-#v(6pt)
+The canonical nearest-grid spacing vector admits a natural interpretation as
+a coarse-graining of the uniform distribution on the $d$-grid.
+
+More precisely, the selected onset sites partition the $d$-grid into $n$
+contiguous circular blocks. Summing the uniform grid weights over these blocks
+produces the canonical spacing vector.
+
+The corresponding linear map will be called a *block-sum map*. Although it
+may be viewed as a projection from a finer grid to a coarser spacing space, it
+is not a projection matrix in the strict idempotent sense.
+
 
 == Setup
-#v(6pt)
 
-Let $u_d = (1/d,dots,1/d) in ℝ^d$ be the barycenter of the $(d-1)$–simplex $Δ^(d-1) = { w in ℝ^d_+ : sum_j w_j = 1 }$.
+Let
 
-Fix $n$ and choose the anchored $d$–grid onset set
-$R = { r_0 < r_1 < … < r_(n-1) } subset { 0,…,d-1 }$
-corresponding to the rotation selected by the nearest–site rule (with our anchor).
+$
+u_d
+=
+1/d
+(
+  1,
+  dots,
+  1
+)
+in RR^d
+$ <grid-barycenter>
 
-Define the $n$ contiguous blocks (arcs) on the circle
-#nonum[$ B_i = { r_i, r_i+1, …, r_(i+1)-1 } ("indices" mod d), $]
-so that the block lengths are exactly the integers $|B_i|$ that sum to $d$ and
-#nonum[$ Q(n,d) = ( (|B_0|) /d,dots, (|B_(n-1)|)/d ). $]
+be the barycenter of the simplex
 
-== Block–sum projection matrix
+$
+Delta_(d-1)
+=
+{
+  w in RR^d :
+  w_j>=0,
+  sum_(j=0)^(d-1) w_j=1
+}.
+$ <grid-simplex>
 
-#v(6pt)
-Define the block–incidence (column–stochastic) matrix #nonum[$ Π(n,d;R) in {0,1}^(n "x" d) "by" Π_(i,j) = 1 "iff" j in B_i, "and" Π_(i,j) = 0 "otherwise" $]  Then
-$ Π(n,d;R) · u_d = Q(n,d). $<P1>
-- Each column belongs to exactly one block ⇒ column sums of $Π$ are $1$.
-- For any $w in Δ^(d-1)$, $Π w in Σ_n := { q in ℝ^n_+ : sum_i q_i = 1 }$.
-- With the canonical choice of $R$ (anchor + nearest–site rotation), $Π(n,d;R)$ is uniquely determined and $Q(n,d)$ is your anchored Quplet.
+Fix $n$ and $d$, and let
+
+#nonum[
+  $
+  R_(n,d)
+  =
+  {
+    a_0,
+    a_1,
+    dots,
+    a_(n-1)
+  }
+  subset
+  {
+    0,
+    dots,
+    d-1
+  },
+  $
+]
+
+where the nearest-grid indices $a_i$ are defined by @nearest-endpoint and
+satisfy
+
+#nonum[
+  $
+  0=a_0<a_1<dots<a_(n-1)<d.
+  $
+]
+
+These indices determine $n$ contiguous circular blocks. For
+$i=0,dots,n-2$, define
+
+#nonum[
+  $
+  B_i
+  =
+  {
+    a_i,
+    a_i+1,
+    dots,
+    a_(i+1)-1
+  },
+  $
+]
+
+and define the final circular block by
+
+#nonum[
+  $
+  B_(n-1)
+  =
+  {
+    a_(n-1),
+    dots,
+    d-1
+  }
+  union
+  {
+    0,
+    dots,
+    a_0-1
+  }.
+  $
+]
+
+Since $a_0=0$, the second set in the final union is empty in the present
+anchoring convention.
+
+The blocks form a partition of the $d$-grid:
+
+#nonum[
+  $
+  {
+    0,
+    dots,
+    d-1
+  }
+  =
+  B_0
+  union
+  dots
+  union
+  B_(n-1),
+  $
+]
+
+with pairwise disjoint blocks.
+
+Their lengths are
+
+#nonum[
+  $
+  abs(B_i)
+  =
+  a_(i+1)-a_i,
+  quad
+  i=0,dots,n-2,
+  $
+]
+
+and
+
+#nonum[
+  $
+  abs(B_(n-1))
+  =
+  d+a_0-a_(n-1).
+  $
+]
+
+Consequently,
+
+$
+CanonicalQuplet(n,d)
+=
+1/d
+(
+  abs(B_0),
+  dots,
+  abs(B_(n-1))
+).
+$ <canonical-block-lengths>
+
+
+== The block-sum matrix
+
+Define the block-incidence matrix
+
+$
+Pi(n,d)
+in
+{
+  0,
+  1
+}^(n times d)
+$ <block-sum-matrix>
+
+by
+
+#nonum[
+  $
+  Pi_(i,j)(n,d)
+  =
+  cases(
+    1 & "if" j in B_i,
+    0 & "otherwise".
+  )
+  $
+]
+
+Every grid index belongs to exactly one block. Therefore every column of
+$Pi(n,d)$ contains exactly one entry equal to $1$, and hence
+
+#nonum[
+  $
+  sum_(i=0)^(n-1)
+  Pi_(i,j)(n,d)
+  =
+  1
+  quad
+  "for every"
+  quad
+  j=0,dots,d-1.
+  $
+]
+
+Thus $Pi(n,d)$ is column-stochastic.
+
+For every $w in Delta_(d-1)$,
+
+#nonum[
+  $
+  Pi(n,d)w
+  in
+  Sigma_n,
+  $
+]
+
+where $Sigma_n$ is the spacing simplex defined in @spacing-simplex.
+
+Indeed, the entries of $Pi(n,d)w$ are nonnegative and
+
+#nonum[
+  $
+  sum_(i=0)^(n-1)
+  (
+    Pi(n,d)w
+  )_i
+  =
+  sum_(j=0)^(d-1)
+  w_j
+  =
+  1.
+  $
+]
+
+Applied to the barycenter $u_d$, the $i$th component is
+
+#nonum[
+  $
+  (
+    Pi(n,d)u_d
+  )_i
+  =
+  sum_(j in B_i)
+  1/d
+  =
+  abs(B_i)/d.
+  $
+]
+
+We therefore obtain the block-sum identity
+
+$
+Pi(n,d)u_d
+=
+CanonicalQuplet(n,d).
+$ <canonical-block-sum>
+
+If @Quplet-realization holds, then this becomes
+
+#nonum[
+  $
+  Pi(n,d)u_d
+  =
+  CanonicalQuplet(n,d)
+  =
+  Q(n,d).
+  $
+]
+
+Thus the block-sum map produces the canonical nearest-grid representative
+unconditionally and the dynamically defined Quplet conditionally.
+
 
 == Example: $(n,d)=(5,7)$
 
-#v(6pt)
-Choose the anchored onset indices $R = {0,1,3,4,6}$ on the $7$–grid.
-The blocks are
-$B_0={0}$, $B_1={1,2}$, $B_2={3}$, $B_3={4,5}$, $B_4={6}$,
-so the block lengths are $(1,2,1,2,1)$ and
-$Q(5,7) = 1/7 (1,2,1,2,1)$.
+For $(n,d)=(5,7)$, the canonical nearest-grid onset indices are
 
-The projection matrix is
+#nonum[
+  $
+  R_(5,7)
+  =
+  {
+    0,
+    1,
+    3,
+    4,
+    6
+  }.
+  $
+]
 
-#nonum($ Π(5,7) =
-mat(1, 0, 0, 0, 0, 0, 0;
- 0, 1, 1, 0, 0, 0, 0;
- 0, 0, 0, 1, 0, 0, 0;
- 0, 0, 0, 0, 1, 1, 0;
- 0, 0, 0, 0, 0, 0, 1) $)
+The corresponding blocks are
 
-Multiplying the barycenter $u_7 = (1/7,…,1/7)$ gives
-#nonum[$ Π(5,7)·u_7 = (1,2,1,2,1)/7 = Q(5,7) .$]
+#nonum[
+  $
+  B_0
+  =
+  {
+    0
+  },
+  quad
+  B_1
+  =
+  {
+    1,
+    2
+  },
+  quad
+  B_2
+  =
+  {
+    3
+  },
+  $
+]
 
-Note: the “selector” matrix that has a single 1 at the start of each block would send $u_7$ to $(1/7,1/7,1/7,1/7,1/7)$ — not the spacing vector.
-The correct projection sums over each block, hence the ones across the whole block in each row.
+and
 
-== Relation to the colinearity formula
+#nonum[
+  $
+  B_3
+  =
+  {
+    4,
+    5
+  },
+  quad
+  B_4
+  =
+  {
+    6
+  }.
+  $
+]
 
-#v(6pt)
-Write $t_n=(1/n,…,1/n)$ and let $m_(n,r)$ be the order–$r$ direction in the simplex.
+Their lengths are
 
-Since $u_d=(1/d)·1_d$ and row sums of $Π$ are the block lengths,
-$ Π u_d - t_n = (1/d)·(|B_i|)i - (1/n)·1_n = λ(d)·m(n,r) $<P2>
-with #nonum[$ λ(d) = r(n-r)/(n d) ,$] recovering
-#nonum[$ Q(n, s n + r) = t_n + λ(d) m_(n,r) .$]
+#nonum[
+  $
+  (
+    1,
+    2,
+    1,
+    2,
+    1
+  ).
+  $
+]
 
-== Threshold case
+Hence
 
-#v(6pt)
-At $k = n/d$, replace $d$ by $d’ = n + d$ and build $Π(n,d’;R’)$ from the $(n+d)$–grid onset set $R’$ (selected by the crest test). Then
-$ Π(n,n+d;R’)·u_(n+d) = Q(n,n+d) = Huplet(n,d,n/d) $<P3>
-(the threshold–extension identity).
+#nonum[
+  $
+  CanonicalQuplet(5,7)
+  =
+  1/7
+  (
+    1,
+    2,
+    1,
+    2,
+    1
+  ).
+  $
+]
 
+The block-sum matrix is
+
+#nonum[
+  $
+  Pi(5,7)
+  =
+  mat(
+    1, 0, 0, 0, 0, 0, 0;
+    0, 1, 1, 0, 0, 0, 0;
+    0, 0, 0, 1, 0, 0, 0;
+    0, 0, 0, 0, 1, 1, 0;
+    0, 0, 0, 0, 0, 0, 1
+  ).
+  $
+]
+
+Multiplying the barycenter
+
+#nonum[
+  $
+  u_7
+  =
+  1/7
+  (
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  )
+  $
+]
+
+gives
+
+$
+Pi(5,7)u_7
+=
+1/7
+(
+  1,
+  2,
+  1,
+  2,
+  1
+)
+=
+CanonicalQuplet(5,7).
+$ <example-block-sum>
+
+If @Quplet-realization holds for $(5,7)$, then this vector also equals
+$Q(5,7)$.
+
+A matrix containing a single $1$ only at the initial index of each block would
+merely select onset weights. Applied to $u_7$, it would produce
+
+#nonum[
+  $
+  1/7
+  (
+    1,
+    1,
+    1,
+    1,
+    1
+  ),
+  $
+]
+
+which is not normalized in the $5$-dimensional spacing simplex and does not
+represent the circular gap vector.
+
+The block-sum matrix must therefore contain a $1$ across every grid index
+belonging to the corresponding block.
+
+
+== Relation to fixed-residue collinearity
+
+Write
+
+#nonum[
+  $
+  d=s n+r,
+  quad
+  0<r<n.
+  $
+]
+
+The row sums of $Pi(n,d)$ are the block lengths. Therefore
+
+#nonum[
+  $
+  Pi(n,d)u_d
+  =
+  1/d
+  (
+    abs(B_0),
+    dots,
+    abs(B_(n-1))
+  ).
+  $
+]
+
+By the nearest-grid construction, each block length equals either $s$ or
+$s+1$. The indices of the blocks of length $s+1$ form $L_(n,r)$, while the
+remaining indices form $S_(n,r)$.
+
+Consequently,
+
+#nonum[
+  $
+  Pi(n,d)u_d-t_n
+  =
+  mu(d)m_(n,r),
+  $
+]
+
+where
+
+#nonum[
+  $
+  mu(d)
+  =
+  r(n-r)/(n d).
+  $
+]
+
+Combining this with @canonical-block-sum gives
+
+$
+CanonicalQuplet(n,d)
+=
+Pi(n,d)u_d
+=
+t_n
++
+mu(d)m_(n,r).
+$ <block-sum-collinearity>
+
+This recovers @canonical-collinearity from the block-sum viewpoint.
+
+If @Quplet-realization holds, then
+
+#nonum[
+  $
+  Q(n,d)
+  =
+  Pi(n,d)u_d
+  =
+  t_n
+  +
+  mu(d)m_(n,r).
+  $
+]
+
+
+== The threshold configuration
+
+Set
+
+#nonum[
+  $
+  N=n+d
+  $
+]
+
+and consider the balanced derivative parameter
+
+#nonum[
+  $
+  k_c
+  =
+  n/(n+d)
+  =
+  n/N.
+  $
+]
+
+The threshold theorem identifies the $n$ highest crests on the $N$-grid.
+Their indices are
+
+#nonum[
+  $
+  m_i
+  =
+  floor(
+    i N/n
+    +
+    1/2
+  ),
+  quad
+  i=0,dots,n-1.
+  $
+]
+
+Let
+
+#nonum[
+  $
+  R_c
+  =
+  {
+    m_0,
+    dots,
+    m_(n-1)
+  }
+  $
+]
+
+be this ordered threshold onset set, and let $Pi_c(n,d)$ be the corresponding
+block-sum matrix on the $N$-grid.
+
+The Euclidean threshold theorem gives
+
+$
+Pi_c(n,d)u_N
+=
+CanonicalQuplet(n,N)
+=
+CanonicalQuplet(n,n+d).
+$ <canonical-threshold-block-sum>
+
+This identity is unconditional: it concerns the explicitly known set of the
+$n$ highest threshold crests and the canonical nearest-grid representative on
+the $(n+d)$-grid.
+
+If the amplitude-selection conjecture holds, then the anchored crest branches
+occupy these same threshold sites, and therefore
+
+#nonum[
+  $
+  Huplet(n,d,k_c)
+  =
+  Pi_c(n,d)u_(n+d)
+  =
+  CanonicalQuplet(n,n+d).
+  $
+]
+
+If, in addition, @Quplet-realization holds for $(n,n+d)$, then
+
+#nonum[
+  $
+  Huplet(n,d,k_c)
+  =
+  CanonicalQuplet(n,n+d)
+  =
+  Q(n,n+d).
+  $
+]
+
+Equivalently, under these dynamical hypotheses,
+
+$
+Huplet(
+  n,
+  d,
+  n/(n+d)
+)
+=
+Q(n,n+d).
+$ <threshold-block-sum-extension>
+
+This is the threshold-extension relation expressed through the block-sum
+construction.
+
+
+== Interpretation
+
+The block-sum viewpoint separates three levels of structure:
+
+1. the fine simplex $Delta_(d-1)$ represents distributions on the individual
+   $d$-grid cells;
+
+2. the canonical onset set partitions the grid into $n$ contiguous blocks;
+
+3. the matrix $Pi(n,d)$ sums the fine-grid weights inside each block and maps
+   them to the spacing simplex $Sigma_n$.
+
+At the barycenter $u_d$, each fine-grid cell carries equal weight $1/d$.
+The weight of a block is therefore exactly its normalized length. This yields
+the canonical nearest-grid spacing vector.
+
+Thus the canonical Quplet is the block-sum image of a simplex barycenter:
+
+#nonum[
+  $
+  CanonicalQuplet(n,d)
+  =
+  Pi(n,d)u_d.
+  $
+]
+
+Its identification with the endpoint of the anchored crest dynamics remains
+the content of @Quplet-realization.
+
+
+== Transition
+
+The block-sum construction realizes canonical Quplets as coarse-grained
+uniform distributions on regular grids. It also connects the Euclidean gap
+structure, the fixed-residue affine geometry, and the threshold configuration
+within a single linear framework.
