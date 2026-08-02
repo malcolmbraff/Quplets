@@ -36,7 +36,7 @@ The two contributions to @stationarity have equal coefficients when
 This determines the unique parameter
 
 $
-k_c=frac(n,n+d).
+k_c = n / (n + d).
 $ <kc>
 
 Indeed,
@@ -45,9 +45,9 @@ Indeed,
   $
   k_c d
   =
-  (1-k_c)n
+  (1-k_c )n
   =
-  frac(n d,n+d).
+  (n d) / (n + d).
   $
 ]
 
@@ -58,9 +58,9 @@ terms are
 
 #nonum[
   $
-  k_c=frac(n,n+d)
+  k_c = n / (n + d)
   quad "and" quad
-  1-k_c=frac(d,n+d),
+  1-k_c = d / (n + d),
   $
 ]
 
@@ -82,8 +82,8 @@ Using
   sin(A)+sin(B)
   =
   2
-  sin(frac(A+B,2))
-  cos(frac(A-B,2)),
+  sin((A + B) / 2)
+  cos((A - B) / 2),
   $
 ]
 
@@ -93,17 +93,17 @@ $
 sin(d theta)+sin(n theta)
 =
 2
-sin(frac((d+n)theta,2))
-cos(frac((d-n)theta,2)).
+sin(((d+n)theta) / 2)
+cos(((d-n)theta) / 2).
 $ <threshold-factor>
 
 Consequently, the stationary points at $k=k_c$ belong to the two families
 
 #nonum[
   $
-  sin(frac((d+n)theta,2))=0
+  sin(((d+n)theta) / 2)=0
   quad "or" quad
-  cos(frac((d-n)theta,2))=0.
+  cos(((d-n)theta) / 2)=0.
   $
 ]
 
@@ -149,7 +149,7 @@ The first factor in @threshold-factor vanishes when
 
 #nonum[
   $
-  theta=frac(2 pi m,n+d),
+  theta= (2 pi m) / (n + d),
   quad
   m in ZZ.
   $
@@ -159,7 +159,7 @@ Equivalently,
 
 #nonum[
   $
-  x=frac(m,n+d)
+  x= m / (n + d)
   quad (mod 1).
   $
 ]
@@ -199,9 +199,9 @@ Substituting $k=k_c$ into @H gives
   =
   -(2 pi)^2
   (
-    frac(n d^2,n+d) cos(d theta)
+    (n d^2 ) / (n + d) cos(d theta)
     +
-    frac(d n^2,n+d) cos(n theta)
+    (d n^2 ) / (n + d) cos(n theta)
   ).
   $
 ]
@@ -250,61 +250,69 @@ at every resonant grid point.
 
 We therefore obtain the following intrinsic characterization.
 
-*Proposition (joint criticality of the resonant grid).*  
+#remark(
+  numbering: none,
+  name: "Joint criticality of the resonant grid",
+)[
+  Every point $x=m/(n+d)$ satisfies
 
-Every point $x=m/(n+d)$ satisfies
-
-$
-partial_x F_(k_c) (x)
-=
-partial_k F_(k_c) (x)
-=
-0.
-$ <threshold-joint-critical>
-
-Thus the resonant grid consists of joint critical points of the two-variable
-surface determined by $F_k (x)$. $square$
-
-The proposition has a direct consequence for crest-amplitude trajectories.
-
-*Corollary (threshold amplitude turning).*  
-Suppose that a nondegenerate crest branch $X_i (k)$ passes through a resonant
-grid point at $k=k_c$. Then
-
-#nonum[
   $
-  A_i ' (k_c)=0.
-  $
+  partial_x F_(k_c) (x)
+  =
+  partial_k F_(k_c) (x)
+  =
+  0.
+  $ <threshold-joint-critical>
+
+  Thus the resonant grid consists of joint critical points of the two-variable
+  surface determined by $F_k (x)$.
 ]
 
-By the convexity identity @A-second-deriv, $k_c$ is a minimum of $A_i$ on
-every interval of nondegenerate crest continuation containing $k_c$.
+This observation has a direct consequence for crest-amplitude trajectories.
 
-If $gcd(n,d)=1$ and the resonant point is not $x=0$, this minimum is strict.
+#remark(
+  numbering: none,
+  name: "Threshold amplitude turning",
+)[
+  Suppose that a nondegenerate crest branch $X_i (k)$ passes through a resonant
+  grid point at $k=k_c$. Then
 
-*Proof.*  
-The first statement follows from @threshold-joint-critical and @A-deriv.
-Convexity then gives the minimum property.
+  #nonum[
+    $
+    A_i '(k_c )=0.
+    $
+  ]
 
-For strictness, observe that on the resonant grid,
+  By the convexity identity @A-second-deriv, $k_c$ is a minimum of $A_i$ on
+  every interval of nondegenerate crest continuation containing $k_c$.
 
-#nonum[
-  $
-  partial_(k x) F_(k_c) (x)
-  =
-  -2 pi
-  (
-    d sin(d theta)-n sin(n theta)
-  )
-  =
-  -2 pi(d+n)sin(d theta).
-  $
+  If $gcd(n,d)=1$ and the resonant point is not $x=0$, this minimum is strict.
 ]
 
-If this vanishes, then $sin(d theta)=0$. At
-$theta=2 pi m/(n+d)$ and under $gcd(d,n+d)=1$, this forces
-$m=0$ modulo $n+d$. Thus the only non-strict resonant crest is the fixed
-point $x=0$. $square$
+#proof[
+  The first statement follows from @threshold-joint-critical and @A-deriv.
+  Convexity then gives the minimum property.
+
+  For strictness, observe that on the resonant grid,
+
+  #nonum[
+    $
+    partial_(k x) F_(k_c) (x)
+    =
+    -2 pi
+    (
+      d sin(d theta)-n sin(n theta)
+    )
+    =
+    -2 pi(d+n)sin(d theta).
+    $
+  ]
+
+  If this vanishes, then $sin(d theta)=0$. At
+  $theta=2 pi m/(n+d)$ and under $gcd(d,n+d)=1$, this forces
+  $m=0$ modulo $n+d$. Thus the only non-strict resonant crest is the fixed
+  point $x=0$.
+]
 
 // FIGURE PLACEHOLDER 3A
 // Possible figure: the threshold waveform F_(k_c)(x) for (n,d)=(5,7),
@@ -328,7 +336,7 @@ Equivalently,
 
 #nonum[
   $
-  theta=frac((2 ell+1)pi,d-n).
+  theta= ((2 ell+1)pi) / (d - n).
   $
 ]
 
@@ -357,7 +365,7 @@ Substitution into @H gives
   H_(k_c) (x)
   =
   -(2 pi)^2
-  frac(n d(d-n),n+d)
+  (n d(d-n)) / (n + d)
   cos(d theta).
   $
 ]
@@ -411,9 +419,9 @@ At a resonant grid point, $cos(n theta)=cos(d theta)$. Hence
   $
   F_(k_c) (x)
   =
-  frac(n,n+d) cos(d theta)
+  n / (n + d) cos(d theta)
   +
-  frac(d,n+d) cos(n theta)
+  d / (n + d) cos(n theta)
   =
   cos(d theta).
   $
@@ -429,11 +437,11 @@ $cos(n theta)=-cos(d theta)$. Hence
   $
   F_(k_c) (x)
   =
-  frac(n,n+d) cos(d theta)
+  n / (n + d) cos(d theta)
   -
-  frac(d,n+d) cos(d theta)
+  d / (n + d) cos(d theta)
   =
-  frac(n-d,n+d) cos(d theta).
+  (n - d) / (n + d) cos(d theta).
   $
  <complementary-amplitude>
 
@@ -442,11 +450,15 @@ amplitude is negative.
 
 We have therefore proved the following separation result.
 
-*Proposition (threshold amplitude separation).*  
-At $k=k_c$, every crest in the resonant $(n+d)$-grid family has positive
-amplitude, whereas every crest in the complementary family has negative
-amplitude. Consequently, every highest crest of $F_(k_c)$ belongs to the
-resonant grid family. $square$
+#remark(
+  numbering: none,
+  name: "Threshold amplitude separation",
+)[
+  At $k=k_c$, every crest in the resonant $(n+d)$-grid family has positive
+  amplitude, whereas every crest in the complementary family has negative
+  amplitude. Consequently, every highest crest of $F_(k_c)$ belongs to the
+  resonant grid family.
+]
 
 This separation gives the resonant family three simultaneous properties:
 
@@ -472,7 +484,7 @@ At the resonant grid point $x=m/N$, @resonant-amplitude gives
   $
   F_(k_c) (m/N)
   =
-  cos(frac(2 pi d m,N)).
+  cos((2 pi d m) / N).
   $
 ]
 
@@ -525,7 +537,7 @@ The $n$ highest threshold crests are therefore precisely the grid points
 $m/N$ satisfying
 
 $
-d m mod N in R_n,
+d m mod N in R_n ,
 $ <highest-threshold-sites>
 
 where the residue is taken in centered form.
@@ -540,177 +552,215 @@ Since
 ]
 
 the condition in @highest-threshold-sites is equivalent, after replacing
-$R_n$ by $-R_n=R_n$, to
+$R_n$ by $-R_n = R_n$, to
 
 #nonum[
   $
-  n m mod N in R_n.
+  n m mod N in R_n .
   $
 ]
 
-// FIGURE PLACEHOLDER 3B
-// Possible figure: amplitudes cos(2πdm/N) indexed around the N-grid,
-// with the centered residue set R_n and the n selected highest values
-// highlighted. This may be combined with Figure 3A rather than retained
-// as a separate figure.
-// Suggested label: <fig-threshold-amplitude-ranking>
+
+#remark(
+  numbering: none,
+  name: "Threshold amplitude spectrum",
+)[
+  The amplitudes of the
+  $n$ highest threshold crests form the multiset
+
+  #nonum[
+    $
+    {
+      cos((2 pi r) / N)
+      :
+      r in R_n
+    },
+    quad
+    R_n
+    =
+    {
+      - (n - 1) / 2,
+      dots,
+      (n - 1) / 2
+    }.
+    $
+  ]
+
+  Hence their distinct amplitude levels are
+
+  #nonum[
+    $
+    1,
+    cos((2 pi) / N),
+    cos((4 pi) / N),
+    dots,
+    cos(((n-1) pi) / N).
+    $
+  ]
+]
+
+Thus the balanced threshold combines rational phase alignment on
+the $N$-grid with a cosine-quantized amplitude spectrum.
 
 == Euclidean spacing of the highest threshold crests
 
-For $j=0,dots,n-1$, define
+#proposition(name: "Euclidean highest-threshold crests")[
+  Let $1<n<d$ be coprime, with $n$ odd, and set $N=n+d$. At the
+  slope-balanced parameter $k_c = n/N$, the $n$ highest crests of
+  $F_(k_c)$ lie on the resonant $N$-grid. Their indices are the nearest
+  integers to
 
-$
-m_j
-=
-floor(frac(j N,n)+frac(1,2)).
-$ <nearest-grid-sites>
+  #nonum[
+    $
+    0,
+    N / n,
+    2N / n,
+    dots,
+    ((n-1)N) / n.
+    $
+  ]
 
-Since $gcd(n,N)=gcd(n,d)=1$ and $n$ is odd, no number $j N/n$ is a
-half-integer. Thus $m_j$ is the unique nearest integer to $j N/n$.
+  Their circular gaps have lengths $floor(N/n)$ and $ceil(N/n)$ and form the
+  Euclidean spacing pattern of $n$ points on the $N$-grid.
+] <euclidean-threshold-crests>
 
-By the nearest-integer property,
-
-#nonum[
+#proof[
+  For $j=0,dots,n-1$, define
+  
   $
-  -frac(1,2)
-  <
-  m_j-frac(j N,n)
-  <
-  frac(1,2).
-  $
-]
-
-Multiplication by $n$ gives
-
-#nonum[
-  $
-  -frac(n,2)
-  <
-  n m_j-j N
-  <
-  frac(n,2).
-  $
-]
-
-Since $n m_j-j N$ is an integer and $n$ is odd,
-
-#nonum[
-  $
-  n m_j-j N in R_n.
-  $
-]
-
-Thus every index $m_j$ satisfies the centered-residue condition defining the
-$n$ highest threshold crests.
-
-The indices $m_j$ are distinct modulo $N$. Indeed, since $N/n>2$,
-nearest-integer rounding preserves the strict ordering:
-
-#nonum[
-  $
-  0=m_0<m_1<dots<m_(n-1)<N.
-  $
-]
-
-The final inequality follows from
-
-#nonum[
-  $
-  m_(n-1)
+  m_j
   =
-  floor(
-    N-frac(N,n)+frac(1,2)
-  )
-  <
-  N.
-  $
+  floor((j N) / n + 1 / 2).
+  $ <nearest-grid-sites>
+  
+  Since $gcd(n,N)=gcd(n,d)=1$ and $n$ is odd, no number $j N/n$ is a
+  half-integer. Thus $m_j$ is the unique nearest integer to $j N/n$.
+  
+  By the nearest-integer property,
+  
+  #nonum[
+    $
+    - 1 / 2
+    <
+    m_j - (j N) / n
+    <
+    1 / 2.
+    $
+  ]
+  
+  Multiplication by $n$ gives
+  
+  #nonum[
+    $
+    - n / 2
+    <
+    n m_j - j N
+    <
+    n / 2.
+    $
+  ]
+  
+  Since $n m_j - j N$ is an integer and $n$ is odd,
+  
+  #nonum[
+    $
+    n m_j - j N in R_n .
+    $
+  ]
+  
+  Thus every index $m_j$ satisfies the centered-residue condition defining the
+  $n$ highest threshold crests.
+  
+  The indices $m_j$ are distinct modulo $N$. Indeed, since $N/n>2$,
+  nearest-integer rounding preserves the strict ordering:
+  
+  #nonum[
+    $
+    0=m_0 < m_1 < dots<m_(n-1) < N.
+    $
+  ]
+  
+  The final inequality follows from
+  
+  #nonum[
+    $
+    m_(n-1)
+    =
+    floor(
+      N- N / n + 1 / 2
+    )
+    <
+    N.
+    $
+  ]
+  
+  Hence the indices $m_j$ are distinct modulo $N$.
+  
+  There are exactly $n$ such indices. They therefore exhaust the set defined by
+  @highest-threshold-sites.
+  
+  Their consecutive differences are
+  
+  #nonum[
+    $
+    m_(j+1) - m_j
+    =
+    floor(((j+1)N) / n + 1 / 2)
+    -
+    floor((j N) / n + 1 / 2).
+    $
+  ]
+  
+  Write
+  
+  #nonum[
+    $
+    N=a n+b,
+    quad
+    0<=b<n.
+    $
+  ]
+  
+  Since
+  
+  #nonum[
+    $
+    N / n =a+ b / n,
+    $
+  ]
+  
+  each consecutive difference equals either $a$ or $a+1$. The sum of all
+  $n$ circular differences is $N=a n+b$, so exactly $b$ gaps have length
+  $a+1$ and exactly $n-b$ have length $a$.
+  
+  The same conclusion includes the final circular gap
+  
+  #nonum[
+    $
+    N+m_0 - m_(n-1) .
+    $
+  ]
+  
+  Hence the circular gaps have the two integer lengths
+  
+  #nonum[
+    $
+    floor(N/n)
+    quad "and" quad
+    ceil(N/n),
+    $
+  ]
+  
+  distributed as evenly as possible. After normalization by $N$, they form the
+  Euclidean spacing pattern of $n$ points on an $N$-grid.
 ]
 
-Hence the indices $m_j$ are distinct modulo $N$.
-
-There are exactly $n$ such indices. They therefore exhaust the set defined by
-@highest-threshold-sites.
-
-Their consecutive differences are
-
-#nonum[
-  $
-  m_(j+1)-m_j
-  =
-  floor(frac((j+1)N,n)+frac(1,2))
-  -
-  floor(frac(j N,n)+frac(1,2)).
-  $
-]
-
-Write
-
-#nonum[
-  $
-  N=a n+b,
-  quad
-  0<=b<n.
-  $
-]
-
-Since
-
-#nonum[
-  $
-  frac(N,n)=a+frac(b,n),
-  $
-]
-
-each consecutive difference equals either $a$ or $a+1$. The sum of all
-$n$ circular differences is $N=a n+b$, so exactly $b$ gaps have length
-$a+1$ and exactly $n-b$ have length $a$.
-
-The same conclusion includes the final circular gap
-
-#nonum[
-  $
-  N+m_0-m_(n-1).
-  $
-]
-
-Hence the circular gaps have the two integer lengths
-
-#nonum[
-  $
-  floor(N/n)
-  quad "and" quad
-  ceil(N/n),
-  $
-]
-
-distributed as evenly as possible. After normalization by $N$, they form the
-Euclidean spacing pattern of $n$ points on an $N$-grid.
-
-*Theorem (Euclidean structure of the highest threshold crests).*  
-Let $1<n<d$ be coprime, with $n$ odd, and set $N=n+d$. At the
-slope-balanced parameter $k_c=n/N$, the $n$ highest crests of
-$F_(k_c)$ lie on the resonant $N$-grid. Their indices are the nearest
-integers to
-
-#nonum[
-  $
-  0,
-  frac(N,n),
-  frac(2N,n),
-  dots,
-  frac((n-1)N,n).
-  $
-]
-
-Their circular gaps have lengths $floor(N/n)$ and $ceil(N/n)$ and form the
-Euclidean spacing pattern of $n$ points on the $N$-grid. $square$
-
-#figure(  image(    "Figures/Fk(x).svg",    width: 82%,  ),  caption: [    The threshold profile $F_(k_c)(x)$ for $(n,d)=(5,8)$, with $N=13$ and $k_c=5/13$.    The marked rational $13$-grid points identify the five highest crests, whose positions form the Euclidean threshold configuration.         ],) <fig-threshold-euclidean-circle>
+#figure(  image(    "Figures/Fk(x).svg",    width: 82%,  ),  caption: [    The threshold profile $F_(k_c) (x)$ for $(n,d)=(5,8)$, with $N=13$ and $k_c = 5/13$.    The marked rational $13$-grid points identify the five highest crests, whose positions form the Euclidean threshold configuration.         ],) <fig-threshold-euclidean-circle>
 
 
 == Relation to the anchored branches
 
-The theorem identifies the $n$ highest crests at the threshold without using
+@euclidean-threshold-crests identifies the $n$ highest crests at the threshold without using
 global branch continuation. It is therefore an unconditional statement about
 the threshold slice $F_(k_c)$.
 
@@ -722,9 +772,9 @@ every $k in [0,1)$, then at $k=k_c$ they occupy the Euclidean threshold
 configuration described above.
 
 Under that hypothesis, every nonfixed anchored branch passes through a
-resonant joint critical point. The corollary to
-@threshold-joint-critical then implies that its amplitude reaches a strict
-minimum at $k_c$.
+resonant joint critical point. The threshold-turning observation, using
+@threshold-joint-critical and @A-second-deriv, then implies that its amplitude
+reaches a strict minimum at $k_c$.
 
 Thus the conditional dynamical picture is
 
@@ -736,12 +786,12 @@ Thus the conditional dynamical picture is
   arrow
   "resonant grid point"
   arrow
-  "amplitude minimum at " k_c.
+  "amplitude minimum at " k_c .
   $
 ]
 
-The first implication is conjectural. The remaining implications are proved in
-this section and in the convexity theorem of the preceding section.
+The first implication is conjectural. The remaining implications are proved in this section and by the convexity
+identity @A-second-deriv from the preceding section.
 
 == Transition
 
@@ -763,5 +813,5 @@ functions
 ]
 
 with cyclic indexing. Their normalized vector defines the Huplet trajectory in
-the spacing simplex, while its endpoint gives the dynamical Quplet whenever
-global continuation is available.
+the spacing simplex, while @anchored-continuation gives a globally defined endpoint Quplet.
+Its identification with the highest threshold crests still depends on amplitude selection.

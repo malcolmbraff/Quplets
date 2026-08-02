@@ -17,7 +17,7 @@ $n$-grid define anchored crest trajectories. Their circular spacings form a
 continuous family called Huplets, while their conjectural endpoint spacings on
 the $d$-grid define Quplets.
 
-At the balanced parameter $k_c=n/(n+d)$ , we determine the complete stationary
+At the balanced parameter $k_c = n/(n+d)$ , we determine the complete stationary
 set and prove that, for coprime $n$ and $d$ with $n$ odd, the $n$ highest
 crests lie on the $(n+d)$-grid and have Euclidean circular spacings.
 

@@ -4,7 +4,7 @@
 
 The preceding sections describe the motion of the $n$ anchored crest branches
 and the complete stationary configuration at the balanced parameter
-$k_c=n/(n+d)$. We now pass from crest positions to their successive circular
+$k_c = n/(n+d)$. We now pass from crest positions to their successive circular
 spacings.
 
 Throughout this section, let $1 < n < d$. Whenever global statements about
@@ -84,9 +84,9 @@ Wherever the ordered crest branches are differentiable,
 
 #nonum[
   $
-  D_j ' (k)
+  D_j '(k)
   =
-  Y_(j+1) ' (k)-Y_j ' (k).
+  Y_(j+1) '(k)-Y_j '(k).
   $
 ]
 
@@ -105,10 +105,10 @@ Thus the Huplet lies in the open simplex
   Sigma_n^circle.stroked.small
   =
   {
-    (h_0,dots,h_(n-1)) in RR^n
+    (h_0 ,dots,h_(n-1) ) in RR^n
     mid(|)
-    h_j>0,
-    sum_(j=0)^(n-1) h_j=1
+    h_j > 0,
+    sum_(j=0)^(n-1) h_j = 1
   }.
   $
 ]
@@ -120,7 +120,7 @@ Huplet(n,d,0)
 =
 T_n
 =
-frac(1,n)(1,dots,1).
+(1 / n) (1,dots,1).
 $ <regular-tuplet>
 
 The Huplet therefore records the deformation of the regular $n$-tuplet as the
@@ -145,7 +145,7 @@ For $j in {0,dots,n-1}$ and $0<=u<=1$, write
 
 #nonum[
   $
-  x=frac(j+u,n)
+  x= (j + u) / n
   quad (mod 1).
   $
 ]
@@ -161,47 +161,52 @@ $ <cycle-deformation>
 
 The definitions on adjacent cells agree at their common endpoints.
 
-*Proposition (induced deformation of the cycle).*  
-For every parameter at which the ordered anchored crests are defined and
-distinct, $Phi_k$ is an orientation-preserving piecewise-affine homeomorphism
-of the unit cycle. Moreover,
+#remark(
+  numbering: none,
+  name: "Induced deformation of the cycle",
+)[
+  For every parameter at which the ordered anchored crests are defined and
+  distinct, $Phi_k$ is an orientation-preserving piecewise-affine homeomorphism
+  of the unit cycle. Moreover,
 
-#nonum[
-  $
-  Phi_0=id,
-  $
+  #nonum[
+    $
+    Phi_0 = id,
+    $
+  ]
+
+  the initial grid points follow the ordered crest trajectories, and on the
+  $j$-th cell,
+
+  #nonum[
+    $
+    partial_x Phi_k (x)=n D_j (k).
+    $
+  ]
 ]
 
-the initial grid points follow the ordered crest trajectories, and on the
-$j$-th cell,
+#proof[
+  The positivity of the Huplet components makes each affine piece strictly
+  increasing, and the endpoint identities make the pieces join continuously.
+  At $k=0$, one has $Y_j (0)=j/n$, so $Phi_0 = id$. Since
+  $x=(j+u)/n$, differentiation with respect to $x$ gives
 
-#nonum[
-  $
-  partial_x Phi_k (x)=n D_j (k).
-  $
+  #nonum[
+    $
+    partial_x Phi_k (x)
+    =
+    n
+    (
+      Y_(j+1) (k)-Y_j (k)
+    )
+    =
+    n D_j (k).
+    $
+  ]
+
+  Thus the Huplet components are the local stretch factors of the induced
+  deformation of the cycle.
 ]
-
-*Proof.*  
-The positivity of the Huplet components makes each affine piece strictly
-increasing, and the endpoint identities make the pieces join continuously.
-At $k=0$, one has $Y_j (0)=j/n$, so $Phi_0=id$. Since
-$x=(j+u)/n$, differentiation with respect to $x$ gives
-
-#nonum[
-  $
-  partial_x Phi_k (x)
-  =
-  n
-  (
-    Y_(j+1) (k)-Y_j (k)
-  )
-  =
-  n D_j (k).
-  $
-]
-
-Thus the Huplet components are the local stretch factors of the induced
-deformation of the cycle. $square$
 
 == The quantized endpoint: the Quplet
 
@@ -221,10 +226,10 @@ Equivalently, suppose that the selected endpoint sites are
 
 #nonum[
   $
-  frac(j_0,d),
-  frac(j_1,d),
+  j_0 / d,
+  j_1 / d,
   dots,
-  frac(j_(n-1),d),
+  j_(n-1) / d,
   $
 ]
 
@@ -278,9 +283,9 @@ A standard representative of this Euclidean gap pattern is defined by
 $
 e_i (n,d)
 =
-floor(frac((i+1)d,n))
+floor(((i+1)d) / n)
 -
-floor(frac(i d,n)),
+floor((i d) / n),
 quad
 i=0,dots,n-1.
 $ <E-floor>
@@ -290,7 +295,7 @@ The corresponding normalized spacing vector is
 $
 bold(e) (n,d)
 =
-frac(1,d)
+1 / d
 (
   e_0 (n,d),
   dots,
@@ -308,7 +313,7 @@ word. We denote its cyclic equivalence class by $E(n,d)$. Thus
   $
   E(n,d)
   =
-  [bold(e) (n,d)]_("cyc").
+  [bold(e) (n,d)]_("cyc") .
   $
 ]
 
@@ -317,7 +322,106 @@ depending on the endpoint of the anchored branch $X_0$. The distinction between
 the Euclidean cyclic class and the anchored rotation is therefore essential.
 
 
-== Euclidean endpoint selection
+== Euclidean endpoint theorem
+Demaine et al. prove that, for integers $d >= n >= 2$, an $n$-onset rhythm $R=(r_0 , dots, r_(n-1))$ on the $d$-pulse circle is a rotation of the Euclidean rhythm $E(n,d)$ if and only if, for every $i in {0,dots,n-1}$ and every $ell in {1,dots,n-1}$, the clockwise distance from $r_i$ to $r_(i+ell)$ lies in ${floor((ell d) / n), ceil((ell d) / n)}$ 
+//@demaineDistanceGeometryMusic2009[Theorem 4.1]. 
+#ref(<demaineDistanceGeometryMusic2009>)
+
+
+//**************
+
+#theorem(name: "Euclidean endpoint and canonical Quplet")[  
+
+Let $1<n<d$ be coprime integers, with $n$ odd. The $n$ anchored crest  branches exist on the full interval $[0,1]$, remain distinct nondegenerate  local maxima, and end at  
+#nonum[
+  $ 
+  X_i (1) = m_i / d, quad m_i = floor((d i) / n + 1 / 2), quad  i=0,dots,n-1. 
+  $
+]  
+Hence the Quplet $Q(n,d)$ is well defined. For every  $ell in {1,dots,n-1}$ and every $i$, the clockwise distance spanning  $ell$ successive selected onsets satisfies  
+#nonum[
+  $ 
+  Delta_ell (i) in {floor((ell d) / n),ceil((ell d) / n)}. 
+  $
+]  
+Thus the endpoint configuration is cyclically balanced at every scale and,  by the standard maximally-even characterization cited above, its necklace is  the Euclidean class:
+
+#nonum[
+  $
+  Q(n,d) in E(n,d). 
+  $
+]
+
+] <euclidean-endpoint-theorem>
+
+#proof[  
+The continuation, nondegeneracy, order preservation, and endpoint formula are  @anchored-continuation and @nearest-grid-endpoints.  Extend the rounded-site formula to every integer index $j$ by
+
+#nonum[
+  $
+  m_j = floor((j d) / n + 1 / 2). 
+  $
+]  
+
+Then
+
+#nonum[
+  $
+  m_(j+n) = m_j + d. 
+  $
+]  
+
+This is the cyclic lift convention.
+
+For $ell in {1,dots,n-1}$ define  
+
+#nonum[
+  $
+  Delta_ell (i)=m_(i+ell) - m_i .
+  $
+]
+
+If $i+ell>=n$, the equality $m_(j+n) = m_j + d$ means explicitly
+
+#nonum[
+  $
+  Delta_ell (i)=m_(i+ell-n) + d-m_i ,
+  $
+]
+
+so $Delta_ell (i)$ is the clockwise $ell$-onset distance across the anchor.
+
+Directly from the rounded-site formula, 
+
+#nonum[
+  $
+  Delta_ell (i) = floor(((i+ell)d) / n + 1 / 2) - floor((i d) / n + 1 / 2).
+  $
+]
+
+For arbitrary real $x,y$, write $x=p+u$ and $y=q+v$, where $p,q$ are  integers and $0<=u,v<1$. 
+
+Then 
+#nonum[
+  $
+  floor(x+y)-floor(x)=q+floor(u+v) in {floor(y),ceil(y)}.
+  $
+]
+
+Apply this with $x=id/n+1/2$ and $y=ell d/n$.
+
+Coprimality implies that  $ell d/n$ is not an integer for $1<=ell<n$, so the two possible values are  consecutive integers.  In terms of the endpoint gap word $g_i = m_(i+1) - m_i$,
+
+#nonum[
+  $
+  Delta_ell (i) = g_i + g_(i+1) + dots+g_(i+ell-1) ,
+  $
+]
+
+with cyclic indices.
+
+Hence every cyclic block of every length $ell$ has one  of the two nearest possible sums. This is the strong cyclic balanced, or  maximally-even, condition; the fact that adjacent gaps alone have two sizes  would not suffice.  Changing the chosen starting onset only cyclically rotates the positive gap  word. By #cite(<demaineDistanceGeometryMusic2009>), the endpoint therefore has the Euclidean necklace, or cyclic gap class, $E(n,d)$.]The theorem gives both the Euclidean cyclic class and the distinguishednearest-grid representative selected by the anchored dynamics. It does notassert that the anchored crests are the $n$ highest maxima for intermediate$k$, nor does it imply /*any entropy or energy uniqueness statement. == Euclidean 
+endpoint selection
 
 Numerical experiments suggest that the endpoints selected by the anchored
 crest branches form an even distribution on the $d$-grid.
@@ -337,26 +441,26 @@ exactly $r$ components of the larger value. The remaining question is which
 representative of $E(n,d)$ is selected by the branch anchored at
 $X_0 (0)=0$.
 
+ */
 == The threshold Huplet and its Euclidean class
 
-Assume that the anchored branches are defined at
+By @anchored-continuation, the anchored branches are defined at
 
 #nonum[
   $
-  k_c=frac(n,n+d).
+  k_c = n / (n + d).
   $
 ]
 
-The threshold theorem of the preceding section proves that the $n$ highest
+@euclidean-threshold-crests proves that the $n$ highest
 crests of $F_(k_c)$ lie on the $(n+d)$-grid and have Euclidean circular
 spacings.
 
-*Conditional corollary.*  
-If the anchored crests are the $n$ highest crests of $F_k$ for every
-$k in [0,1)$, then
+Conditionally, if the anchored crests are the $n$ highest crests of $F_k$ for
+every $k in [0,1)$, then
 
 $
-Huplet(n,d,k_c) in E(n,n+d).
+Huplet(n,d,k_c ) in E(n,n+d).
 $ <threshold-Euclidean>
 
 Thus the Euclidean cyclic class is proved for the highest-crest selection.
@@ -373,7 +477,7 @@ extended pair $(n,n+d)$.
 With a consistent anchoring convention,
 
 $
-Huplet(n,d,frac(n,n+d))
+Huplet(n,d,n / (n + d))
 =
 Q(n,n+d).
 $ <thresh-ext>
@@ -399,7 +503,7 @@ Q(n,d)
 Huplet(
   n,
   d-n,
-  frac(n,d)
+  n / d
 ).
 $ <Euclidean-reduction>
 
@@ -407,9 +511,9 @@ Indeed, the balanced parameter for the pair $(n,d-n)$ is
 
 #nonum[
   $
-  frac(n,n+(d-n))
+  n / (n + (d-n))
   =
-  frac(n,d).
+  n / d.
   $
 ]
 
@@ -427,7 +531,7 @@ At $k=0$, the anchored crests form the regular $5$-grid, so
   $
   Huplet(5,7,0)
   =
-  frac(1,5)(1,1,1,1,1).
+  (1 / 5) (1,1,1,1,1).
   $
 ]
 
@@ -437,9 +541,9 @@ The balanced parameter is
   $
   k_c
   =
-  frac(5,5+7)
+  5 / (5 + 7)
   =
-  frac(5,12).
+  5 / 12.
   $
 ]
 
@@ -449,18 +553,32 @@ points
 #nonum[
   $
   0,
-  frac(2,12),
-  frac(5,12),
-  frac(7,12),
-  frac(10,12)
+  2 / 12,
+  5 / 12,
+  7 / 12,
+  10 / 12
   $
 ]
 
-satisfy the grid-family crest test and have circular spacings
+The corresponding crest heights, in this circular order, are
 
 #nonum[
   $
-  frac(1,12)(2,3,2,3,2).
+  (
+    1,
+    1 / 2,
+    sqrt(3) / 2,
+    sqrt(3) / 2,
+    1 / 2
+  ).
+  $
+]
+
+They satisfy the grid-family crest test and have circular spacings
+
+#nonum[
+  $
+  (1 / 12) (2,3,2,3,2).
   $
 ]
 
@@ -468,9 +586,9 @@ If these are precisely the sites selected by the anchored branches, then
 
 #nonum[
   $
-  Huplet(5,7,frac(5,12))
+  Huplet(5,7,5 / 12)
   =
-  frac(1,12)(2,3,2,3,2).
+  (1 / 12) (2,3,2,3,2).
   $
 ]
 
@@ -481,7 +599,7 @@ from @E-floor:
   $
   bold(e) (5,7)
   =
-  frac(1,7)(1,1,2,1,2).
+  (1 / 7) (1,1,2,1,2).
   $
 ]
 
@@ -490,7 +608,7 @@ another representative of this class, for example
 
 #nonum[
   $
-  frac(1,7)(1,2,1,2,1).
+  (1 / 7) (1,2,1,2,1).
   $
 ]
 

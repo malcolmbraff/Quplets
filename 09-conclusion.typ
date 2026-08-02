@@ -308,6 +308,50 @@ trajectories, rather than established only at the level of their conjectured
 endpoint selections.
 
 
+The amplitude trajectories in @fig-A-trajectories also display a
+marked quasi-symmetry about the balanced parameter
+$k_c=n/(n+d)$. A natural balance coordinate is the weighted
+log-odds
+
+#nonum[
+  $
+  s
+  =
+  log(frac(k d,(1-k)n)),
+  $
+]
+
+or, on a bounded interval,
+
+#nonum[
+  $
+  u
+  =
+  frac(k d,k d+(1-k)n),
+  quad
+  u(k_c)=frac(1,2).
+  $
+]
+
+In the $s$-coordinate, the stationarity equation becomes
+
+#nonum[
+  $
+  e^(s/2) sin(d theta)
+  +
+  e^(-s/2) sin(n theta)
+  =
+  0.
+  $
+]
+
+Reflection about $s=0$ exchanges the two coefficient weights but
+does not exchange the frequencies $n$ and $d$. It therefore
+explains the observed quasi-symmetry without implying an exact
+branch-independent symmetry. It remains to quantify the residual
+branch-dependent skew and to determine whether a distinguished
+common reparametrization exists.
+
 == Final perspective
 
 The interaction of two elementary periodic components therefore gives rise to

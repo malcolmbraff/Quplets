@@ -88,7 +88,7 @@ since
 
 #nonum[
   $
-  H_0 (i/n)=-(2 pi)^2 n^2<0.
+  H_0 (i/n)=-(2 pi)^2 n^2 <0.
   $
 ]
 
@@ -145,50 +145,29 @@ function $A_i (k)$ recording its amplitude.
 The local uniqueness furnished by the implicit-function theorem also prevents
 distinct anchored branches from meeting while they remain nondegenerate.
 
-*Lemma (non-collision).*  
-Let $X_i$ and $X_j$ be two anchored stationary branches, with $i != j$.
-Suppose that both branches are defined at $k_0$ and satisfy
-
+Let $X_i$ and $X_j$ be distinct anchored stationary branches. If both are
+defined at $k_0$ and
 #nonum[
   $
-  H_(k_0) (X_i (k_0)) != 0,
+  H_(k_0) (X_i (k_0 )) != 0,
   quad
-  H_(k_0) (X_j (k_0)) != 0.
+  H_(k_0) (X_j (k_0 )) != 0,
   $
 ]
+then $X_i (k_0 ) != X_j (k_0 )$.
 
-Then
-
+Indeed, equality at a point $x_0$ would give
 #nonum[
   $
-  X_i (k_0) != X_j (k_0).
-  $
-]
-
-*Proof.*  
-Assume that
-
-#nonum[
-  $
-  X_i (k_0)=X_j (k_0)=x_0.
-  $
-]
-
-Since $G_(k_0) (x_0)=0$ and $H_(k_0) (x_0)!=0$, the implicit-function
-theorem gives a unique local stationary branch through $(k_0,x_0)$. Hence
-$X_i$ and $X_j$ coincide in a neighbourhood of $k_0$. By analytic
-continuation, they coincide wherever both are defined, contradicting their
-distinct anchors
-
-#nonum[
-  $
-  X_i (0)=i/n
+  G_(k_0) (x_0 )=0
   quad "and" quad
-  X_j (0)=j/n.
+  H_(k_0) (x_0 )!=0.
   $
 ]
-
-Therefore the branches cannot meet. $square$
+The implicit-function theorem would then give a unique local stationary branch
+through $(k_0 ,x_0 )$, so $X_i$ and $X_j$ would coincide locally and hence,
+by analytic continuation, wherever both are defined. This contradicts their
+distinct anchors $X_i (0)=i/n$ and $X_j (0)=j/n$.
 
 == Evolution law in graph form
 
@@ -204,17 +183,14 @@ Differentiating the stationarity equation $G_k (X_i (k))=0$ with respect to
 $k$ gives
 
 $
-X_i ' (k)
+X_i '(k)
 =
--frac(
-  d sin(d theta_i (k))-n sin(n theta_i (k)),
-  2 pi
+- (d sin(d theta_i (k)) - n sin(n theta_i (k))) / (2 pi
   (
     k d^2 cos(d theta_i (k))
     +
     (1-k)n^2 cos(n theta_i (k))
-  )
-).
+  )).
 $ <X-ode>
 
 The denominator in @X-ode equals
@@ -237,7 +213,7 @@ Thus a branch may move rapidly when its crest approaches degeneracy.
     points of the regular $7$-grid. The upper and lower horizontal boundary
     curves represent the same fixed circular branch $X_0 (k)=0$.
     The dashed vertical line marks the slope-balanced parameter
-    $k_c=5/12$.
+    $k_c = 5/12$.
   ],
 ) <fig-X-trajectories>
 
@@ -261,10 +237,7 @@ Solving for $k$ gives
 $
 k(theta)
 =
-frac(
-  n sin(n theta),
-  n sin(n theta)-d sin(d theta)
-).
+(n sin(n theta)) / (n sin(n theta) - d sin(d theta)).
 $ <k-theta>
 
 This formula parametrizes the portions of the stationary set for which the
@@ -288,11 +261,54 @@ then the phase is stationary for every $k in [0,1]$. Otherwise, no value of
 $k$ satisfies the stationarity equation at that phase.
 
 The former unbounded modulation coordinate may still be useful as an auxiliary
-parameter. For $0 <= k < 1$, define
+parameter. On the ordinary part of the stationary set, the same phase
+parametrization also determines the crest height. Define
 
 #nonum[
   $
-  lambda=frac(k,1-k).
+  K_(n,d) (theta)
+  =
+  (n sin(n theta)) / (n sin(n theta) - d sin(d theta))
+  $
+]
+
+and
+
+#nonum[
+  $
+  cal(A)_(n,d) (theta)
+  =
+  (n sin(n theta) cos(d theta)
+-
+    d sin(d theta) cos(n theta)) / (n sin(n theta) - d sin(d theta)).
+  $
+]
+
+Then the triple
+
+#nonum[
+  $
+  (
+    K_(n,d) (theta),
+    theta / (2 pi),
+    cal(A)_(n,d) (theta)
+  )
+  $
+]
+
+parametrizes the stationary set in parameter–phase–amplitude
+space. Restricting $K_(n,d)$ to the connected phase interval of
+the branch anchored at $theta=2 pi i/n$ and inverting recovers
+$X_i (k)$ and $A_i (k)$. Thus its branchwise restrictions are exactly
+the lifted trajectories introduced in @lifted-crest. This
+description is exact on the maximal branch interval $I_i$, and is
+global on $[0,1]$ only under the global-continuation conjecture.
+
+For $0 <= k < 1$, define
+
+#nonum[
+  $
+  lambda= k / (1 - k).
   $
 ]
 
@@ -300,7 +316,7 @@ Then
 
 #nonum[
   $
-  k=frac(lambda,1+lambda),
+  k= lambda / (1 + lambda),
   $
 ]
 
@@ -318,12 +334,63 @@ Hence
   $
   lambda(theta)
   =
-  -frac(n,d) frac(sin(n theta),sin(d theta)).
+  - n / d sin(n theta) / sin(d theta).
   $
 ]
 
 Thus the compact coordinate $k in [0,1]$ and the unbounded coordinate
 $lambda in [0,infinity)$ describe the same deformation.
+
+#remark(
+  numbering: none,
+  name: "Fixed-parameter algebraic form",
+)[
+  Let $c=cos(theta)$, and let $T_m$ and $U_m$ denote the Chebyshev
+  polynomials of the first and second kind. Apart from the common
+  stationary phases $theta in pi ZZ$, the stationarity condition is
+  equivalent to
+
+  #nonum[
+    $
+    k d U_(d-1) (c)
+    +
+    (1-k) n U_(n-1) (c)
+    =
+    0.
+    $
+  ]
+
+  In particular, if $k=p/q$ with $0<p<q$, then
+
+  #nonum[
+    $
+    p d U_(d-1) (c)
+    +
+    (q-p) n U_(n-1) (c)
+    =
+    0.
+    $
+  ]
+
+  Let $c_i$ be the root selected by continuation from the branch
+  anchored at $i/n$, and let $theta_i$ be its branch-selected phase,
+  so that $cos(theta_i )=c_i$. Then
+
+  #nonum[
+    $
+    X_i (p/q)= theta_i / (2 pi),
+    quad
+    A_i (p/q)
+    =
+    (p T_d (c_i ) + (q-p)T_n (c_i )) / q.
+    $
+  ]
+
+  Consequently, at every rational modulation parameter, $c_i$ and
+  $A_i$ are algebraic. The normalized position $X_i$ is exactly
+  defined by the branch-selected angle, but need not itself be an
+  algebraic number.
+]
 
 == Behaviour at $k=1$
 
@@ -348,7 +415,7 @@ retaining crest status, then
 
 #nonum[
   $
-  X_i (1)=j_i/d
+  X_i (1)=j_i / d
   $
 ]
 
@@ -372,11 +439,11 @@ By the chain rule,
 
 #nonum[
   $
-  A_i ' (k)
+  A_i '(k)
   =
   partial_k F_k (X_i (k))
   +
-  partial_x F_k (X_i (k)) X_i ' (k).
+  partial_x F_k (X_i (k)) X_i '(k).
   $
 ]
 
@@ -393,7 +460,7 @@ The second term vanishes because $X_i (k)$ is stationary. Since
 we obtain
 
 $
-A_i ' (k)
+A_i '(k)
 =
 cos(2 pi d X_i (k))
 -
@@ -417,7 +484,7 @@ and
 
 #nonum[
   $
-  A_i ' (0)
+  A_i '(0)
   =
   cos(2 pi d i/n)-1
   <=
@@ -452,113 +519,112 @@ ends at amplitude $1$.
 The amplitude trajectories satisfy a second-order identity that does not
 require an explicit solution for $X_i (k)$.
 
-*Proposition (convexity of crest amplitude).*  
-Let $X_i (k)$ be a nondegenerate stationary branch. Then
+#remark(
+  numbering: none,
+  name: "Convexity identity for crest amplitude",
+)[
+  
+  Let $X_i (k)$ be a nondegenerate stationary branch. Then
 
-$
-A_i '' (k)
-=
--
-frac(
-  (
-    partial_(k x) F_k (X_i (k))
-  )^2,
-  H_k (X_i (k))
-).
-$ <A-second-deriv>
-
-Consequently, while the branch remains a crest,
-
-#nonum[
   $
-  A_i '' (k)>=0.
-  $
-]
-
-Equality holds precisely when
-
-#nonum[
-  $
-  partial_(k x) F_k (X_i (k))=0.
-  $
-]
-
-*Proof.*  
-Differentiating @A-deriv in its invariant form
-
-#nonum[
-  $
-  A_i ' (k)=partial_k F_k (X_i (k))
-  $
-]
-
-gives
-
-#nonum[
-  $
-  A_i '' (k)
-  =
-  partial_k^2 F_k (X_i (k))
-  +
-  partial_(k x) F_k (X_i (k)) X_i ' (k).
-  $
-]
-
-Since $F_k$ is affine in $k$,
-
-#nonum[
-  $
-  partial_k^2 F_k=0.
-  $
-]
-
-Differentiating the stationarity condition
-
-#nonum[
-  $
-  partial_x F_k (X_i (k))=0
-  $
-]
-
-gives
-
-#nonum[
-  $
-  partial_(k x) F_k (X_i (k))
-  +
-  H_k (X_i (k)) X_i ' (k)
-  =
-  0.
-  $
-]
-
-Hence
-
-#nonum[
-  $
-  X_i ' (k)
+  A_i ''(k)
   =
   -
-  frac(
-    partial_(k x) F_k (X_i (k)),
-    H_k (X_i (k))
-  ).
-  $
+  ((
+      partial_(k x) F_k (X_i (k))
+    )^2 ) / H_k (X_i (k)).
+  $ <A-second-deriv>
+
+  Consequently, while the branch remains a crest,
+
+  #nonum[
+    $
+    A_i ''(k)>=0.
+    $
+  ]
+
+  Equality holds precisely when
+
+  #nonum[
+    $
+    partial_(k x) F_k (X_i (k))=0.
+    $
+  ]
 ]
 
-Substitution yields @A-second-deriv. Since $H_k (X_i (k))<0$ along a
-nondegenerate crest branch, the right-hand side is nonnegative. $square$
+#proof[
+  Differentiating @A-deriv in its invariant form
+
+  #nonum[
+    $
+    A_i '(k)=partial_k F_k (X_i (k))
+    $
+  ]
+
+  gives
+
+  #nonum[
+    $
+    A_i ''(k)
+    =
+    partial_k^2 F_k (X_i (k))
+    +
+    partial_(k x) F_k (X_i (k)) X_i '(k).
+    $
+  ]
+
+  Since $F_k$ is affine in $k$,
+
+  #nonum[
+    $
+    partial_k^2 F_k = 0.
+    $
+  ]
+
+  Differentiating the stationarity condition
+
+  #nonum[
+    $
+    partial_x F_k (X_i (k))=0
+    $
+  ]
+
+  gives
+
+  #nonum[
+    $
+    partial_(k x) F_k (X_i (k))
+    +
+    H_k (X_i (k)) X_i '(k)
+    =
+    0.
+    $
+  ]
+
+  Hence
+
+  #nonum[
+    $
+    X_i '(k)
+    =
+    -
+    (partial_(k x) F_k (X_i (k))) / H_k (X_i (k)).
+    $
+  ]
+
+  Substitution yields @A-second-deriv. Since $H_k (X_i (k))<0$ along a
+  nondegenerate crest branch, the right-hand side is nonnegative.
+]
 
 Thus every nondegenerate crest-amplitude trajectory is convex on its interval
 of continuation.
 
-*Corollary.*  
-Every interior critical point of a nonconstant crest-amplitude trajectory is
-a minimum. More precisely, if
+It follows that every interior critical point of a nonconstant
+crest-amplitude trajectory is a minimum. More precisely, if
 
 #nonum[
   $
-  A_i ' (k_0)=0,
+  A_i '(k_0 )=0,
   $
 ]
 
@@ -590,10 +656,10 @@ for every $k in [0,1]$.
   ),
   caption: [
     Distinct anchored crest-amplitude trajectories for $(n,d)=(5,7)$.
-    Reflection symmetry gives $A_1=A_4$ and $A_2=A_3$, while
+    Reflection symmetry gives $A_1 = A_4$ and $A_2 = A_3$, while
     $A_0 (k)=1$ remains constant. The marked points are the interior
     critical points detected through @A-deriv. The dashed vertical line
-    marks the slope-balanced parameter $k_c=5/12$, at which the two nonconstant
+    marks the slope-balanced parameter $k_c = 5/12$, at which the two nonconstant
     amplitude classes reach their minima.
   ],
 ) <fig-A-trajectories>
@@ -607,68 +673,74 @@ such amplitude-critical events may occur.
 The critical points of the amplitude functions can occur only when the
 corresponding crest lies on one of two rational phase grids.
 
-*Proposition (critical phases of crest amplitude).*  
-Let $X_i (k)$ be a nondegenerate anchored crest branch. If
+#remark(
+  numbering: none,
+  name: "Critical phases of crest amplitude",
+)[
+  
+  Let $X_i (k)$ be a nondegenerate anchored crest branch. 
+  
+  If
 
-#nonum[
+  #nonum[
+    $
+    A_i '(k)=0,
+    $
+  ]
+
+  then
+
   $
-  A_i ' (k)=0,
-  $
-]
-
-then
-
-$
-X_i (k)
-in
-frac(1,d-n) ZZ
-quad "or" quad
-X_i (k)
-in
-frac(1,d+n) ZZ
-quad "mod" 1.
-$ <A-critical-grids>
-
-*Proof.*  
-By @A-deriv, the condition $A_i ' (k)=0$ is equivalent to
-
-#nonum[
-  $
-  cos(2 pi d X_i (k))
-  =
-  cos(2 pi n X_i (k)).
-  $
-]
-
-For real numbers $u$ and $v$, the equality $cos(u)=cos(v)$ holds precisely
-when
-
-#nonum[
-  $
-  u=v+2 pi ell
+  X_i (k)
+  in
+  1 / (d - n) ZZ
   quad "or" quad
-  u=-v+2 pi ell
-  $
+  X_i (k)
+  in
+  1 / (d + n) ZZ
+  quad "mod" 1.
+  $ <A-critical-grids>
 ]
 
-for some $ell in ZZ$. Therefore,
+#proof[
+  By @A-deriv, the condition $A_i '(k)=0$ is equivalent to
 
-#nonum[
-  $
-  (d-n)X_i (k) in ZZ
-  quad "or" quad
-  (d+n)X_i (k) in ZZ.
-  $
+  #nonum[
+    $
+    cos(2 pi d X_i (k))
+    =
+    cos(2 pi n X_i (k)).
+    $
+  ]
+
+  For real numbers $u$ and $v$, the equality $cos(u)=cos(v)$ holds precisely
+  when
+
+  #nonum[
+    $
+    u=v+2 pi ell
+    quad "or" quad
+    u=-v+2 pi ell
+    $
+  ]
+
+  for some $ell in ZZ$. Therefore,
+
+  #nonum[
+    $
+    (d-n)X_i (k) in ZZ
+    quad "or" quad
+    (d+n)X_i (k) in ZZ.
+    $
+  ]
 ]
 
-This proves the claim. $square$
-
-The proposition gives a necessary phase condition, not a complete
+This gives a necessary phase condition, not a complete
 classification of the critical points of $A_i$. A branch must also reach the
 corresponding phase at a compatible value of $k$.
 
-Combined with the convexity proposition, it shows that whenever a crest branch
-reaches one of these grids with $A_i ' (k)=0$, its amplitude is minimized
+Combined with the convexity identity, it shows that whenever a crest branch
+reaches one of these grids with $A_i '(k)=0$, its amplitude is minimized
 there.
 
 The $(d+n)$-grid will play a distinguished role at the balanced parameter
@@ -701,11 +773,11 @@ Its tangent vector is
 
 #nonum[
   $
-  Gamma_i ' (k)
+  Gamma_i '(k)
   =
   (
-    X_i ' (k),
-    A_i ' (k)
+    X_i '(k),
+    A_i '(k)
   ),
   $
 ]
@@ -722,7 +794,203 @@ crests in the evolving graph of $F_k$. The later Huplet construction will
 discard their amplitudes and retain only the circular differences between
 their phases.
 
-== Conjecture on global continuation and monotonicity
+== Anchored continuation by nearest-grid corridors
+
+#lemma(name: "Cotangent positivity")[
+  Let $lambda>1$ and $a,b in (0,pi)$ satisfy $lambda a+b<pi$.
+  Then
+  #nonum[
+    $ cot(a)+lambda cot(b)>0 $.
+  ]
+] <cotangent-positivity>
+
+#proof[
+  If $b<=pi/2$, then $a+b<pi$ and
+  #nonum[
+    $ cot(a)+cot(b)=sin(a+b)/(sin(a)sin(b))>0 $,
+  ]
+  while
+  #nonum[
+    $ lambda cot(b)>=cot(b) $.
+  ]
+
+  If $b>pi/2$, put $c=pi-b$. Then $0<c<pi/2$ and $a<c/lambda$.
+  Since $cot$ is decreasing,
+  #nonum[
+    $ cot(a)>cot(c/lambda) $.
+  ]
+  The strict increase of $tan(u)/u$ on $(0,pi/2)$ gives
+  #nonum[
+    $ tan(c/lambda)<tan(c)/lambda $,
+  ]
+  hence
+  #nonum[
+    $ cot(c/lambda)>lambda cot(c)=-lambda cot(b) $.
+  ]
+]
+
+#proposition(name: "Global anchored continuation")[
+  
+  Let $1<n<d$ be coprime integers, with $n$ odd. For every
+  $i in {0,dots,n-1}$, the crest of $F_0$ at $i/n$ continues uniquely to a branch $X_i : [0,1] arrow RR/ZZ$.
+  
+  Each branch is continuous on $[0,1]$,
+  real analytic on $(0,1)$ with analytic one-sided endpoint extensions, and satisfies
+  #nonum[
+    $ G_k (X_i (k))=0 quad "and" quad H_k (X_i (k))<0. $
+  ]
+    
+  The branch $X_0$ is constant. Every other branch has a strictly monotone lift, the $n$ branches remain distinct and preserve their cyclic order, and
+  #nonum[
+    $
+    X_i (1)=m_i / d,
+    quad
+    m_i = floor((d i) / n + 1 / 2).
+    $
+  ]
+  This statement concerns only the anchored components of the stationary
+  set; additional unanchored stationary points may bifurcate elsewhere.
+] <anchored-continuation>
+
+#proof[
+  
+  Put 
+  #nonum[
+    $ alpha_i = 2pi i/n $
+  ] 
+  and
+  #nonum[
+    $ m_i = floor(d i/n+1/2) $,
+  ] 
+  and set 
+  #nonum[
+    $ beta_i = 2pi m_i / d$ .
+  ]
+  
+  A rounding tie would
+  give 
+  #nonum[
+    $ d i/n=q+1/2 $,
+  ] 
+  hence $n$ divides $2i$. 
+  
+  Since $n$ is odd and
+  $0<=i<n$, this forces $i=0$, which is not a tie.
+  
+  Thus
+  #nonum[
+    $ abs(beta_i - alpha_i )<pi/d $.
+  ]
+
+  For $i!=0$, let $sigma_i$ be the sign of $beta_i - alpha_i$ and write
+  #nonum[
+    $ L_i = abs(beta_i - alpha_i ) $.
+  ] 
+  Parametrize the short corridor by
+  #nonum[
+    $ theta=alpha_i + sigma_i t $,
+  ] 
+  where $0<=t<=L_i$. 
+  
+  For $0<t<L_i$, set
+  #nonum[
+    $ a=n t$ and $b=d(L_i - t) $.
+  ] 
+  
+  Then 
+  #nonum[
+    $ a,b in (0,pi) $
+  ] 
+  and
+  #nonum[
+    $ (d / n) a + b = d L_i < pi. $
+  ]
+  Moreover
+  #nonum[
+    $
+    sin(n theta)=sigma_i sin(a),
+    quad
+    sin(d theta)=-sigma_i sin(b).
+    $
+  ]
+  Hence the stationarity equation is equivalent to
+  #nonum[
+    $
+    k=k_i (t)
+    :=
+    (n sin(a)) / (n sin(a) + d sin(b)).
+    $
+  ]
+  This function extends continuously with $k_i (0)=0$ and $k_i (L_i )=1$.
+
+  Let
+  #nonum[
+    $
+    C_i (t)
+    =
+    (1-k_i (t))n^2 cos(n theta)
+    +
+    k_i (t)d^2 cos(d theta).
+    $
+  ]
+  If
+  $R=(1-k_i (t))n sin(a)=k_i (t)d sin(b)>0$, then
+  #nonum[
+    $
+    C_i (t)
+    =
+    R(n cot(a)+d cot(b))>0
+    $
+  ]
+  by @cotangent-positivity with $lambda=d/n$. 
+  
+  Direct differentiation gives
+  #nonum[
+    $
+    k_i '(t)
+    =
+    C_i (t) / (n sin(a) + d sin(b))
+    >0.
+    $
+  ]
+  Thus $k_i$ is a bijection from $[0,L_i ]$ to $[0,1]$ and its inverse
+  defines the required strictly monotone branch. 
+  
+  Since
+  $H_k (theta/(2pi))=-4pi^2 C_i (t)$, every point of the branch is a
+  nondegenerate local maximum. The endpoint expansions of the sine factors give analytic one-sided extensions.
+
+  For $i=0$, $alpha_0 = beta_0 = 0$ and $X_0 (k)=0$; its curvature factor is
+  $(1-k)n^2 + k d^2 > 0$. 
+  
+  Finally, every corridor lies within distance $1/(2d)$ of its anchor. 
+  
+  Adjacent anchors are separated by $1/n>1/d$, so
+  the short corridors are pairwise disjoint on the circle. The branches
+  therefore remain distinct and preserve cyclic order. Nothing in this
+  corridor argument excludes degeneracies on other stationary components.
+]
+
+#corollary(name: "Nearest-grid endpoint selection")[
+  
+  Under the hypotheses of @anchored-continuation, the endpoint selected from
+  the anchor $i/n$ is the unique nearest point of the $d$-grid:
+  #nonum[
+    $
+    X_i (1)
+    =
+    1 / d
+    floor((d i) / n + 1 / 2).
+    $
+  ]
+] <nearest-grid-endpoints>
+
+The proposition is deliberately local to the $n$ anchored components. For
+example, the simultaneous equations $G_k (theta)=0$ and $H_k (theta)=0$ can
+still have solutions on other components, producing unanchored
+maximum-minimum pairs without affecting the corridors above.
+
+/*== Conjecture on global continuation and monotonicity
 
 Numerical experiments suggest that the anchored crest branches behave
 regularly on the full modulation interval when $n$ is odd and $gcd(n,d)=1$.
@@ -772,12 +1040,14 @@ nonconstant crest amplitude satisfies
 
 throughout the deformation.
 
+*/
 == Conjecture on amplitude selection
 
 Numerical experiments indicate that the anchored branches can also be
 identified from the instantaneous crest amplitudes.
 
 *Conjecture (amplitude selection).*  
+
 Let $1<n<d$ be coprime, with $n$ odd. For every $k in [0,1)$, the anchored
 crests are precisely the $n$ highest local maxima of $F_k$.
 

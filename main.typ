@@ -1,3 +1,6 @@
+#import "definitions.typ": thm-rules
+
+
 #set par(
 
   leading: 1em,
@@ -18,10 +21,11 @@
 
 #v(80pt)
 
-#include "Abstract.typ"
+#include "00-abstract.typ"
 
 #pagebreak()
 #set heading(numbering: "1.")
+#show: thm-rules
 #outline(title: [List of content], depth: 4)
 #set page(numbering: "1")
 
@@ -29,41 +33,44 @@
 #pagebreak()
 
 
-#include "Introduction.typ"
+#include "01-introduction.typ"
 
 #pagebreak()
 #set math.equation(numbering: "(1)")
 
 
 //#include "CrestTrajectory-updated.typ"
-#include "crest position.typ"
+#include "02-crest-position-and-amplitude-trajectories.typ"
 
 #v(50pt)
 //#include "Threshold configuration.typ"
 
-#include "Balanced.typ"
+#include "03-balanced-threshold-configuration.typ"
 
 // Legacy section retained as source material only.
 // #include "GridResonances.typ"
 
 #v(50pt)
-#include "HupletQuplet.typ"
+#include "04-huplet-trajectory-and-euclidean-endpoints.typ"
 
 #v(50pt)
-#include "RotationSelection.typ"
+#include "05-quplets-as-constrained-euclidean-rhythms.typ"
 
-
-#v(50pt)
-#include "Order.typ"
-
-#v(50pt)
-#include "Twin.typ"
-
-#v(50pt)
-#include "Projection.typ"
 /*
+#v(50pt)
+#include "06-order-collinearity-and-continuous-extension.typ"
+
+#v(50pt)
+#include "07-twin-quplets-and-structural-symmetry.typ"
+
+#v(50pt)
+#include "08-quplet-block-sum-projection.typ"
+
 #v(50pt)
 #include "HarmonicMorphing.typ"
 */
 #v(50pt)
-#include "Conclusion.typ"
+#include "09-conclusion.typ"
+
+#pagebreak()
+#bibliography("zotero.bib")
