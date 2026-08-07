@@ -46,9 +46,12 @@ $Huplet(n,d,k_c)=Q(n,n+d)$. Thus two-frequency crest continuation gives a
 dynamical construction of a canonical Euclidean representative. More
 generally, with
 $k_0=n^2/(n^2+2d^2)$, the anchored crests are precisely the $n$ highest local
-maxima for
-$k in [0,k_0] union [k_c,1)$. The remaining amplitude-ranking problem is
-confined to the strip $k_0<k<k_c$.
+maxima for $k in [0,k_0] union [k_c,1)$. Writing
+$A_i (k)=F_k (X_i (k))$, each anchored crest amplitude is convex in $k$ and
+reaches its global minimum at $k_c$, with the uniform bound
+$A_i (k)>=cos(pi(n-1)/(n+d))$. The remaining amplitude-ranking problem is
+confined to $k_0<k<k_c$ and reduces to controlling the additional
+unanchored crests that may coexist there.
 
 ]
 

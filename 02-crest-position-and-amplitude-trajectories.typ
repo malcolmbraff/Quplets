@@ -403,9 +403,10 @@ nearest sites on the regular $d$-grid.
 crests in the case $(n,d)=(5,7)$. The rectangular representation duplicates
 the fixed circular branch at phases $0$ and $1$.
 
-The present article retains only the position information needed for global
-continuation and endpoint selection; finer differential, algebraic, amplitude,
-and lifted-trajectory analyses lie outside its scope.
+This section retains only the position information needed for global
+continuation and endpoint selection. Section 3 derives the amplitude convexity
+and floor used in the ranking problem; finer differential, algebraic, and
+lifted-trajectory analyses remain outside the scope of the present article.
 
 // Suppressed from the present article; preserved in further_steps.
 // == Non-collision of nondegenerate branches

@@ -140,13 +140,27 @@ precisely the $n$ highest threshold crests. Their spacing vector satisfies
 Amplitude ranking is different from continuation or endpoint selection. Set
 $k_0=n^2/(n^2+2d^2)$. We prove that the anchored crests are precisely the
 $n$ highest local maxima for every
-$k in [0,k_0] union [k_c,1)$. The only unresolved parameters form the strip
-$k_0<k<k_c$.
+$k in [0,k_0] union [k_c,1)$. Writing
+$A_i (k)=F_k (X_i (k))$, their amplitudes are convex functions of $k$, reach
+their global minima at $k_c$, and satisfy
+#nonum[
+  $
+  A_i (k)
+  >=
+  cos((pi(n-1))/(n+d)).
+  $
+]
+For $k<k_c$, every anchored branch also remains inside its own quarter-width
+$n$-grid window, although additional unanchored crests may coexist. The only
+unresolved parameters form the strip $k_0<k<k_c$; within it, the top-$n$
+claim would follow if every unanchored crest stayed strictly below the common
+anchored floor. This condition is sufficient, not necessary.
 
 Section 2 proves global anchored continuation and nearest-grid endpoint
 selection. Section 3 analyzes the balanced threshold configuration, proves
-amplitude selection above slope balance and for small modulation, and isolates
-the remaining transition strip. Section 4 introduces Huplets and Quplets,
+amplitude selection above slope balance and for small modulation, derives the
+global anchored-amplitude floor and subcritical window confinement, and
+isolates the remaining transition strip. Section 4 introduces Huplets and Quplets,
 proves the Euclidean endpoint theorem, and establishes the threshold-extension
 identity. Section 5 characterizes the canonical labeled representative by
 centered displacement symmetry and labeled nearest-grid minimality. The

@@ -576,7 +576,8 @@ sites are the nearest points of the $(n+d)$-grid to the initial $n$-grid.
 This result identifies the anchored Huplet with the highest-crest threshold
 configuration at $k_c$. The full amplitude-ranking status is given by
 @amplitude-selection-range: only the strip
-$n^2/(n^2+2d^2)<k<k_c$ remains unresolved.
+$n^2/(n^2+2d^2)<k<k_c$ remains unresolved. Throughout that strip the anchored
+amplitudes retain the explicit lower bound of @anchored-amplitude-floor.
 
 /*
 == The threshold Huplet and its Euclidean class

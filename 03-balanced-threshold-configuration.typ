@@ -1092,6 +1092,8 @@ with intervals understood on the circle.
     0.
     $
   ]
+  Since $M_k$ is continuous on $[0,pi]$, this strict order also covers
+  comparisons with the endpoint $c=pi$, which occurs when $d$ is even.
 
   It remains to identify the anchored windows. Put
   #nonum[
@@ -1235,6 +1237,161 @@ A complementary estimate settles a nontrivial interval near $k=0$.
   @upper-range-amplitude-ranking on $(k_c,1)$. At $k=1$ all $d$ crest
   amplitudes are equal, so a strict top-$n$ selection is unavailable.
 ]
+
+
+== Convexity and the remaining transition strip
+
+For each anchored branch, define its crest amplitude by
+#nonum[
+  $
+  A_i (k)=F_k (X_i (k)).
+  $
+]
+
+#lemma(name: "Anchored-amplitude convexity and floor")[
+  Put
+  #nonum[
+    $
+    N=n+d,
+    quad
+    m_i=floor((d i)/n+1/2),
+    quad
+    epsilon_i=n m_i-i d.
+    $
+  ]
+  Then $A_i$ is convex on $[0,1]$ and satisfies
+  #nonum[
+    $
+    A_i '(k_c)=0,
+    quad
+    A_i (k)
+    >=
+    A_i (k_c)
+    =
+    cos((2 pi epsilon_i)/N)
+    >=
+    cos((pi(n-1))/N)
+    $
+  ]
+  for every $k in [0,1]$. Thus $A_i$ is nonincreasing on $[0,k_c]$ and
+  nondecreasing on $[k_c,1]$.
+] <anchored-amplitude-floor>
+
+#proof[
+  Along a stationary branch, the envelope identity gives
+  #nonum[
+    $
+    A_i '(k)
+    =
+    partial_k F_k (X_i (k))
+    =
+    cos(2 pi d X_i (k))-cos(2 pi n X_i (k)).
+    $
+  ]
+  Since $F_k$ is affine in $k$, differentiating once more and using
+  implicit differentiation of
+  $partial_x F_k (X_i (k))=0$ yields
+  #nonum[
+    $
+    A_i ''(k)
+    =
+    -
+    (partial_(k x) F_k (X_i (k)))^2
+    /
+    partial_(x x) F_k (X_i (k))
+    >=
+    0.
+    $
+  ]
+  The denominator is negative by @anchored-continuation, because every
+  anchored branch remains a nondegenerate crest. The calculation applies on
+  $(0,1)$, and the analytic one-sided endpoint extensions preserve convexity
+  on the closed interval.
+
+  At $k_c=n/N$, @anchored-threshold-formula gives
+  $X_i (k_c)=(i+m_i)/N$. Since $d equiv -n mod N$ and
+  $n(i+m_i) equiv epsilon_i mod N$, the two cosine values in the envelope
+  identity coincide. Hence $A_i '(k_c)=0$ and
+  #nonum[
+    $
+    A_i (k_c)=cos((2 pi epsilon_i)/N).
+    $
+  ]
+  Convexity makes this the global minimum. Finally,
+  $abs(epsilon_i)<= (n-1)/2$, so monotonicity of the cosine on $[0,pi]$
+  gives the displayed uniform lower bound. The fixed branch $i=0$ has
+  $A_0 (k)=1$ and is included.
+]
+
+The floor is positive because $d>n$. It records a global feature of the
+anchored family: every anchored amplitude reaches its minimum at slope
+balance, even though extra unanchored extrema may occur elsewhere.
+
+#proposition(name: "Subcritical anchored windows")[
+  For $k in (0,k_c)$, let
+  #nonum[
+    $
+    V_i
+    =
+    (i/n-1/(4n),i/n+1/(4n))
+    quad
+    (i=0,dots,n-1),
+    $
+  ]
+  with intervals understood on the circle. Each $V_i$ contains a crest, and
+  the anchored crest $X_i (k)$ lies in $V_i$.
+] <subcritical-anchored-windows>
+
+#proof[
+  Put
+  #nonum[
+    $
+    phi_k (x)
+    =
+    k d sin(2 pi d x)+(1-k)n sin(2 pi n x),
+    quad
+    F_k '(x)=-2 pi phi_k (x).
+    $
+  ]
+  At the quarter-points $y_s=(2s+1)/(4n)$,
+  #nonum[
+    $
+    phi_k (y_s)
+    =
+    (1-k)n(-1)^s+k d sin(2 pi d y_s).
+    $
+  ]
+  Since $k<k_c$ is equivalent to $k d<(1-k)n$, these signs alternate.
+  Therefore $F_k'$ points inward at the two endpoints of every $V_i$, and
+  an interior crest exists.
+
+  Moreover, with $N$, $m_i$, and $epsilon_i$ as in
+  @anchored-amplitude-floor, @anchored-threshold-formula gives
+  #nonum[
+    $
+    X_i (k_c)-i/n
+    =
+    epsilon_i/(n N).
+    $
+  ]
+  Its absolute value is less than $1/(4n)$ because
+  $2(n-1)<N$. The monotone corridor in @anchored-continuation joins
+  $i/n$ to $X_i (k_c)$ for $0<=k<=k_c$, so the entire anchored segment lies
+  in $V_i$.
+]
+
+This proposition does not bound the total number of crests: additional
+unanchored crests may coexist with the anchored family. Consequently the
+remaining conjecture on $k_0<k<k_c$ is only nonvacuous where such extra
+crests exist. By @anchored-amplitude-floor, it would be sufficient to prove
+that every unanchored crest in this strip has amplitude strictly below
+#nonum[
+  $
+  cos((pi(n-1))/(n+d)).
+  $
+]
+This floor condition is sufficient, not necessary, because the individual
+anchored amplitudes may lie strictly above the common lower bound.
 
 /*
 == Relation to the anchored branches

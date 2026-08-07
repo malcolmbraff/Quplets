@@ -695,9 +695,11 @@ separable displacement cost.
 ]
 
 This corollary resolves the dynamical realization of the canonical
-representative. It does not imply that the anchored crests are the $n$ highest
-maxima for intermediate $k$, and it does not supply an entropy or energy
-uniqueness statement.
+representative. Amplitude ranking is a separate question:
+@amplitude-selection-range proves it on $[0,k_0] union [k_c,1)$, where
+$k_0=n^2/(n^2+2d^2)$, while @anchored-amplitude-floor gives a uniform lower
+bound on the anchored family; only $k_0<k<k_c$ remains unresolved. No entropy or energy-uniqueness statement
+is asserted.
 
 /*
 == Nearest-grid endpoint-selection conjecture

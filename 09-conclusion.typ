@@ -113,6 +113,27 @@ strip
   $
 ]
 
+Writing $A_i (k)=F_k (X_i (k))$, the convexity result
+@anchored-amplitude-floor gives, for every anchored branch,
+#nonum[
+  $
+  A_i (k)
+  >=
+  A_i (k_c)
+  =
+  cos((2 pi epsilon_i)/(n+d))
+  >=
+  cos((pi(n-1))/(n+d)).
+  $
+]
+Here $m_i=floor(d i/n+1/2)$ and $epsilon_i=n m_i-i d$.
+Moreover, @subcritical-anchored-windows keeps one anchored crest inside each
+quarter-width $n$-grid window below $k_c$. Extra unanchored crests may still
+coexist there, so the remaining top-$n$ claim would follow from the sufficient
+condition that all such crests remain strictly below the common floor. The
+condition is not necessary because individual anchored amplitudes can be
+higher.
+
 The proved result is precise: two-frequency crest continuation selects a
 canonical labeled representative of a Euclidean rhythm necklace, and its
 prominence ranking is established outside this one remaining strip.
