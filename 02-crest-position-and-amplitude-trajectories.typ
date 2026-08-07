@@ -4,8 +4,8 @@
 
 == Anchored crest branches
 
-Let $n,d in NN$ satisfy $1 < n < d$, and let $k in [0,1]$. We define the
-interference function
+Throughout the main results, let $1<n<d$ be coprime integers with $n$ odd,
+and let $k in [0,1]$. We define the interference function
 
 $
 F_k (x)
@@ -351,6 +351,28 @@ globally and identifies their exact endpoint sites.
   ]
 ] <nearest-grid-endpoints>
 
+*Why oddness is essential.* The assumption that $n$ is odd is structural,
+not merely a rounding convention. If $n$ is even, coprimality forces $d$ to
+be odd, and the anchored point $x=1/2$ is stationary for every $k$. Its
+curvature is
+#nonum[
+  $
+  H_k (1/2)
+  =
+  -(2 pi)^2 ((1-k)n^2-k d^2).
+  $
+]
+It degenerates at $k=n^2/(n^2+d^2)$ and then changes from a crest to a
+trough. Thus the branch issued from $i=n/2$ cannot remain a nondegenerate
+crest on $[0,1]$ when $n$ is even.
+
+*Role of phase alignment.* Both cosine components in @Fk peak at $x=0$.
+Consequently $X_0 (k)=0$ is fixed and supplies the anchor from which the
+labeled endpoint rotation is read. Introducing a relative phase in one
+component generally removes this fixed branch and can change the selected
+representative. The distinguished rotation proved here therefore belongs to
+the phase-aligned family @Fk.
+
 The proposition is deliberately local to the $n$ anchored components. For
 example, the simultaneous equations $G_k (x)=0$ and $H_k (x)=0$ can
 still have solutions on other components, producing unanchored
@@ -381,9 +403,9 @@ nearest sites on the regular $d$-grid.
 crests in the case $(n,d)=(5,7)$. The rectangular representation duplicates
 the fixed circular branch at phases $0$ and $1$.
 
-The differential, phase-parametric, algebraic, amplitude, and lifted-trajectory
-analyses are preserved in the standalone files under
-#raw("further_steps/").
+The present article retains only the position information needed for global
+continuation and endpoint selection; finer differential, algebraic, amplitude,
+and lifted-trajectory analyses lie outside its scope.
 
 // Suppressed from the present article; preserved in further_steps.
 // == Non-collision of nondegenerate branches
@@ -1315,9 +1337,9 @@ nonconstant crest amplitude satisfies
 throughout the deformation.
 
 */
-The stronger claim that the anchored crests are the $n$ highest local maxima
-for every $k in [0,1)$ remains open and is recorded in
-#raw("further_steps/amplitude-selection-conjecture.typ").
+Amplitude ranking is logically separate from anchored continuation. Section 3
+proves it on two explicit parameter ranges and isolates the remaining open
+strip.
 
 // == Conjecture on amplitude selection
 // 

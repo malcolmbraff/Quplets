@@ -2,8 +2,8 @@
 
 = The balanced threshold configuration
 
-We retain the interference function $F_k$ and the notation introduced in the
-preceding section. Thus $1<n<d$, $k in [0,1]$, and
+We retain the interference function $F_k$ and the standing hypotheses of the
+preceding section: $1<n<d$ are coprime, $n$ is odd, $k in [0,1]$, and
 $x in RR \/ ZZ$ denotes phase on the unit cycle.
 
 The purpose of this section is to describe the complete stationary set at a
@@ -244,9 +244,8 @@ of the complete threshold slice.
   values are positive and hence are resonant crests.
 ]
 
-The complete complementary-family calculations, joint criticality, and
-threshold amplitude spectrum are preserved in
-#raw("further_steps/threshold-stationary-families-and-spectrum.typ").
+The calculation above contains the threshold information needed in this
+article; finer joint-criticality and spectral questions lie outside its scope.
 
 // Detailed source suppressed from the present article.
 // // == The resonant $(n+d)$-grid family
@@ -969,9 +968,273 @@ threshold amplitude spectrum are preserved in
   threshold crests.
 ]
 
-The amplitude-selection conjecture is still open for general
-$k in [0,1)$, but it is no longer needed at the distinguished parameter
-$k=k_c$.
+== Amplitude ranking outside the transition strip
+
+For the upper parameter range, it is useful to run the deformation backward
+from the regular $d$-grid. Put
+#nonum[
+  $
+  W_j
+  =
+  (j/d-1/(4d),j/d+1/(4d))
+  quad
+  (j=0,dots,d-1),
+  $
+]
+with intervals understood on the circle.
+
+#proposition(name: "Upper-range amplitude ranking")[
+  Let $k in (k_c,1)$. Then $F_k$ has exactly $d$ nondegenerate crests, one
+  in each window $W_j$. Let $C_j (k)$ be the crest in $W_j$, let
+  $B_j (k)=F_k (C_j (k))$, and let $r_j$ be the centered residue determined
+  by
+  #nonum[
+    $
+    r_j equiv n j mod d,
+    quad
+    -d/2<r_j<=d/2.
+    $
+  ]
+  Then
+  #nonum[
+    $
+    abs(r_j)<abs(r_(j'))
+    quad ==> quad
+    B_j (k)>B_(j') (k).
+    $
+  ]
+  The $n$ anchored crests are exactly the windows for which
+  $abs(r_j)<n/2$; consequently they are strictly the $n$ highest local maxima
+  of $F_k$.
+] <upper-range-amplitude-ranking>
+
+#proof[
+  Write
+  #nonum[
+    $
+    phi_k (x)
+    =
+    k d sin(2 pi d x)+(1-k)n sin(2 pi n x),
+    $
+  ]
+  so that $F_k '(x)=-2 pi phi_k (x)$. At the quarter-grid points
+  $q_s=(2s+1)/(4d)$,
+  #nonum[
+    $
+    phi_k (q_s)
+    =
+    (-1)^s k d+(1-k)n sin(2 pi n q_s).
+    $
+  ]
+  Since $k>k_c$ is equivalent to $k d>(1-k)n$, these signs alternate.
+  Hence $phi_k$ has a zero in each of the $2d$ cyclic intervals between
+  consecutive quarter-grid points. A nonzero trigonometric polynomial of
+  degree $d$ has at most $2d$ zeros counted with multiplicity, so these are
+  all the zeros and each is simple. The intervals alternate between crests
+  and troughs; because $F_k'$ points inward at the two ends of $W_j$, its
+  unique stationary point is a crest.
+
+  For $c in [-pi,pi]$, define
+  #nonum[
+    $
+    h_k (u;c)
+    =
+    k cos(2 pi d u)+(1-k)cos(c+2 pi n u),
+    quad
+    M_k (c)
+    =
+    max_(abs(u)<=1/(4d)) h_k (u;c).
+    $
+  ]
+  If $x=j/d+u$, then $F_k (x)=h_k (u;2 pi r_j/d)$. The unique crest in
+  $W_j$ is the unique interior maximizer, so
+  #nonum[
+    $
+    B_j (k)=M_k ((2 pi r_j)/d).
+    $
+  ]
+  The identity $h_k (-u;-c)=h_k (u;c)$ makes $M_k$ even.
+
+  We claim that $M_k$ is strictly decreasing on $(0,pi)$. Fix
+  $c in (0,pi)$ and let $u^*$ be its unique maximizer. At $u=0$,
+  $partial_u h_k (0;c)<0$, while at $u=-1/(4d)$,
+  #nonum[
+    $
+    partial_u h_k (-1/(4d);c)
+    >=
+    2 pi (k d-(1-k)n)
+    >
+    0.
+    $
+  ]
+  Thus $-1/(4d)<u^*<0$, and therefore
+  $c+2 pi n u^*<c<pi$. To obtain the lower bound, if
+  $c>=pi n/(2d)$ then $c+2 pi n u^*>0$ follows from the strict left-window
+  bound. If $c<pi n/(2d)$, the slow-component alignment point
+  $u_a=-c/(2 pi n)$ lies inside the window and
+  #nonum[
+    $
+    partial_u h_k (u_a;c)
+    =
+    2 pi k d sin((d c)/n)
+    >
+    0.
+    $
+  ]
+  Uniqueness of the critical point gives $u^*>u_a$, hence again
+  $c+2 pi n u^*>0$. The envelope identity now yields
+  #nonum[
+    $
+    M_k '(c)
+    =
+    -(1-k)sin(c+2 pi n u^*)
+    <
+    0.
+    $
+  ]
+
+  It remains to identify the anchored windows. Put
+  #nonum[
+    $
+    m_i=floor((d i)/n+1/2),
+    quad
+    epsilon_i=n m_i-i d.
+    $
+  ]
+  Then $abs(epsilon_i)<= (n-1)/2$, and the $n$ values $epsilon_i$ are
+  distinct modulo $n$ because $epsilon_i equiv -i d mod n$. They therefore
+  exhaust the centered residues
+  ${-(n-1)/2,dots,(n-1)/2}$. Since $d>n$, the centered residue of the site
+  $m_i$ modulo $d$ is exactly $r_(m_i)=epsilon_i$. Thus the endpoint sites
+  of the anchored branches are precisely the sites with $abs(r_j)<n/2$.
+
+  Finally, @anchored-threshold-formula gives
+  #nonum[
+    $
+    X_i (k_c)=(i+m_i)/(n+d),
+    quad
+    m_i/d-X_i (k_c)=epsilon_i/(d(n+d)).
+    $
+  ]
+  The last absolute value is less than $1/(4d)$ because
+  $2(n-1)<n+d$. Hence $X_i (k_c) in W_(m_i)$. By
+  @anchored-continuation, the branch then moves monotonically to $m_i/d$ and
+  remains in that window for $k in [k_c,1]$. It is therefore the crest
+  $C_(m_i) (k)$. The strict decrease of $M_k$ in $abs(r_j)$ proves the
+  ranking.
+]
+
+A complementary estimate settles a nontrivial interval near $k=0$.
+
+#proposition(name: "Small-modulation crest count")[
+  Set
+  #nonum[
+    $
+    k_0
+    =
+    n^2/(n^2+2d^2).
+    $
+  ]
+  For every $k in [0,k_0]$, the function $F_k$ has exactly $n$ crests, and
+  they are the anchored crests.
+] <small-modulation-ranking>
+
+#proof[
+  The case $k=0$ is immediate. For $0<k<=k_0$, set
+  #nonum[
+    $
+    sigma
+    =
+    (k d)/((1-k)n),
+    quad
+    tau
+    =
+    (k d^2)/((1-k)n^2).
+    $
+  ]
+  At every stationary point,
+  #nonum[
+    $
+    abs(sin(2 pi n x))<=sigma.
+    $
+  ]
+  Thus
+  #nonum[
+    $
+    cos(2 pi n x)
+    >=
+    sqrt(1-sigma^2)
+    quad "or" quad
+    cos(2 pi n x)
+    <=
+    -sqrt(1-sigma^2).
+    $
+  ]
+  The crest inequality
+  #nonum[
+    $
+    k d^2 cos(2 pi d x)+(1-k)n^2 cos(2 pi n x)>0
+    $
+  ]
+  implies $cos(2 pi n x)>-tau$. Hence the second alternative cannot contain
+  a crest whenever $tau<sqrt(1-sigma^2)$. In the first alternative the same
+  curvature expression is at least
+  #nonum[
+    $
+    (1-k)n^2 (sqrt(1-sigma^2)-tau)
+    >
+    0,
+    $
+  ]
+  so every stationary point there is a crest.
+
+  For $k<=k_0$,
+  #nonum[
+    $
+    sigma<=n/(2d)<1/2,
+    quad
+    tau<=1/2<sqrt(1-sigma^2).
+    $
+  ]
+  Each anchored branch starts in one of the $n$ disjoint arcs around the
+  initial $n$-grid. Because it remains a crest by @anchored-continuation, it
+  cannot enter a half-grid arc, which contains no crest under the inequality
+  above. Continuity therefore keeps one anchored crest in each original
+  anchor arc. No such arc can contain a second crest: two crests would require
+  an intervening stationary point that is not a crest, whereas every
+  stationary point in these arcs is a crest. Therefore there are exactly $n$
+  crests, all anchored.
+]
+
+#corollary(name: "Amplitude-selection range")[
+  With
+  #nonum[
+    $
+    k_0=n^2/(n^2+2d^2)
+    quad "and" quad
+    k_c=n/(n+d),
+    $
+  ]
+  the anchored crests are precisely the $n$ highest local maxima for every
+  #nonum[
+    $
+    k in [0,k_0] union [k_c,1).
+    $
+  ]
+  The genuine amplitude-selection conjecture remains open only on
+  #nonum[
+    $
+    k_0<k<k_c.
+    $
+  ]
+] <amplitude-selection-range>
+
+#proof[
+  Use @small-modulation-ranking on $[0,k_0]$,
+  @anchored-threshold-selection at $k=k_c$, and
+  @upper-range-amplitude-ranking on $(k_c,1)$. At $k=1$ all $d$ crest
+  amplitudes are equal, so a strict top-$n$ selection is unavailable.
+]
 
 /*
 == Relation to the anchored branches

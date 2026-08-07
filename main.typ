@@ -26,7 +26,7 @@
 #pagebreak()
 #set heading(numbering: "1.")
 #show: thm-rules
-#outline(title: [List of content], depth: 4)
+#outline(title: [Contents], depth: 4)
 #set page(numbering: "1")
 
 

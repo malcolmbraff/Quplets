@@ -31,20 +31,24 @@ preserve cyclic order, and end at the nearest $d$-grid sites
   $
 ]
 
-Their circular spacings define a Quplet. At every scale, its clockwise onset
-distances are the two nearest integers to the corresponding uniform distance;
-hence its cyclic gap class is the Euclidean rhythm necklace $E(n,d)$. The
-anchored dynamics select a distinguished labeled rotation, which is also the
-unique minimizer of every strictly increasing separable circular-displacement
-cost.
+Their circular spacings define a Quplet. For every
+$ell in {1,dots,n-1}$, each clockwise $ell$-onset distance lies in
+${floor((ell d) / n),ceil((ell d) / n)}$; hence the cyclic gap class is the
+Euclidean rhythm necklace $E(n,d)$. The anchored dynamics select a
+distinguished labeled rotation. Its nearest-grid placement minimizes every
+nondecreasing separable labeled displacement cost, uniquely for strictly
+increasing losses.
 
 At the slope-balanced parameter $k_c=n/(n+d)$, the stationary equation
 factors into two explicit families. We prove that the anchored crests are
 exactly the $n$ highest threshold crests and obtain the identity
 $Huplet(n,d,k_c)=Q(n,n+d)$. Thus two-frequency crest continuation gives a
-dynamical construction of a canonical Euclidean representative. The remaining
-open problem is whether the anchored crests retain the top $n$ amplitude ranks
-for every $k in [0,1)$.
+dynamical construction of a canonical Euclidean representative. More
+generally, with
+$k_0=n^2/(n^2+2d^2)$, the anchored crests are precisely the $n$ highest local
+maxima for
+$k in [0,k_0] union [k_c,1)$. The remaining amplitude-ranking problem is
+confined to the strip $k_0<k<k_c$.
 
 ]
 

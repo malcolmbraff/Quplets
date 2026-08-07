@@ -111,9 +111,10 @@ nearest-grid representative by $CanonicalQuplet(n,d)$ and prove
   $
 ]
 
-The representative is also characterized variationally: among all labeled
-$d$-grid selections, it minimizes every nondecreasing separable circular
-displacement cost, uniquely for strictly increasing losses.
+The representative also satisfies a labeled nearest-grid minimality property:
+among all labeled $d$-grid selections, it minimizes every nondecreasing
+separable circular-displacement cost, uniquely for strictly increasing
+losses.
 
 A second exact structure appears at the slope-balanced parameter
 
@@ -136,21 +137,21 @@ precisely the $n$ highest threshold crests. Their spacing vector satisfies
   $
 ]
 
-The principal remaining question is different from continuation or endpoint
-selection: whether the anchored crests are the $n$ highest local maxima for
-every $k in [0,1)$. The paper proves this ranking at $k=k_c$ but not on the
-rest of the modulation interval.
+Amplitude ranking is different from continuation or endpoint selection. Set
+$k_0=n^2/(n^2+2d^2)$. We prove that the anchored crests are precisely the
+$n$ highest local maxima for every
+$k in [0,k_0] union [k_c,1)$. The only unresolved parameters form the strip
+$k_0<k<k_c$.
 
 Section 2 proves global anchored continuation and nearest-grid endpoint
-selection. Section 3 analyzes the balanced threshold configuration and
-identifies the anchored highest crests. Section 4 introduces Huplets and
-Quplets, proves the Euclidean endpoint theorem, and establishes the
-threshold-extension identity. Section 5 characterizes the canonical labeled
-representative by centered displacement symmetry and universal minimal
-distortion. The conclusion summarizes the proved chain and isolates the
-remaining amplitude-ranking problem. More detailed analytic, geometric, and
-combinatorial directions are preserved separately under
-#raw("further_steps/").
+selection. Section 3 analyzes the balanced threshold configuration, proves
+amplitude selection above slope balance and for small modulation, and isolates
+the remaining transition strip. Section 4 introduces Huplets and Quplets,
+proves the Euclidean endpoint theorem, and establishes the threshold-extension
+identity. Section 5 characterizes the canonical labeled representative by
+centered displacement symmetry and labeled nearest-grid minimality. The
+conclusion summarizes the proved chain and the remaining amplitude-ranking
+strip.
 
 /*
 

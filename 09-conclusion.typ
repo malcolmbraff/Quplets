@@ -62,9 +62,9 @@ representative
 
 Section 5 gives this representative two complementary static
 characterizations. Its signed endpoint errors form the complete centered
-residue system, and @universal-minimal-distortion shows that it minimizes every
-nondecreasing separable circular-displacement cost among labeled $d$-grid
-selections, uniquely when the loss is strictly increasing.
+residue system, and @labeled-nearest-grid-minimality shows that it minimizes
+every nondecreasing separable circular-displacement cost among labeled
+$d$-grid selections, uniquely when the loss is strictly increasing.
 
 At the slope-balanced parameter
 
@@ -90,19 +90,32 @@ crests. Consequently, @threshold-extension-identity gives the exact relation
 Thus the threshold configuration, the endpoint construction, and the
 Euclidean spacing theorem are parts of one proved dynamical–arithmetic chain.
 
-== Remaining problem
+== Remaining amplitude-ranking strip
 
-The principal unresolved dynamical question is amplitude ranking away from the
-balanced parameter: are the anchored crests precisely the $n$ highest local
-maxima for every $k in [0,1)$? This statement is proved at $k=k_c$ but remains
-open on the rest of the interval. The detailed analytic, geometric, affine,
-block-sum, and statistical directions removed from the present article are
-preserved as standalone drafts under #raw("further_steps/").
+Set
+#nonum[
+  $
+  k_0=n^2/(n^2+2d^2).
+  $
+]
+By @amplitude-selection-range, the anchored crests are precisely the $n$
+highest local maxima on
+#nonum[
+  $
+  [0,k_0] union [k_c,1).
+  $
+]
+The remaining conjecture is therefore confined to the explicit transition
+strip
+#nonum[
+  $
+  k_0<k<k_c.
+  $
+]
 
-The proved result is therefore precise: two-frequency crest continuation
-selects a canonical labeled representative of a Euclidean rhythm necklace,
-while prominence ranking throughout the deformation remains a separate open
-problem.
+The proved result is precise: two-frequency crest continuation selects a
+canonical labeled representative of a Euclidean rhythm necklace, and its
+prominence ranking is established outside this one remaining strip.
 
 /*
 

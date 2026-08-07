@@ -7,9 +7,8 @@ and the complete stationary configuration at the balanced parameter
 $k_c = n/(n+d)$. We now pass from crest positions to their successive circular
 spacings.
 
-Throughout this section, let $1 < n < d$. Whenever global statements about
-the anchored branches are made, we assume $gcd(n,d)=1$ and $n$ odd, so
-@anchored-continuation applies.
+Throughout this section, $1<n<d$ are coprime integers and $n$ is odd, as in
+the standing hypotheses of @anchored-continuation.
 
 == Huplet spacing coordinates
 
@@ -54,9 +53,22 @@ Huplet(n,d,0)
 1/n (1,dots,1).
 $ <regular-tuplet>
 
-The detailed component dynamics, the large trajectory figure, and the induced
-piecewise-affine deformation of the cycle are preserved in
-#raw("further_steps/cycle-deformation-and-huplet-trajectory.typ").
+== Grid locking along the Huplet trajectory
+
+Call $k$ a *rational alignment parameter* when every anchored phase
+$X_i (k)$ belongs to $QQ / ZZ$. Equivalently, all anchored crests then lie on
+one finite pulse grid, and every component of $Huplet(n,d,k)$ is rational.
+The proved configurations at $k=0$, $k=k_c$, and $k=1$ are such grid-locking
+instants along an otherwise continuous Huplet trajectory. Musically, a
+rational alignment admits exact notation on a common subdivision grid. When
+no common finite grid exists, the Huplet still defines a valid continuous
+timing configuration—an irrational timing pattern rather than a quantized
+one. No uniqueness or rigidity classification of rational alignment
+parameters is asserted here.
+
+The present article retains only the ordered spacing path and its proved
+grid-locked configurations; finer component dynamics and cycle deformations
+lie outside its scope.
 
 // Geometric source suppressed from the present article.
 // == Circular ordering of the anchored crests
@@ -562,8 +574,9 @@ sites are the nearest points of the $(n+d)$-grid to the initial $n$-grid.
 ]
 
 This result identifies the anchored Huplet with the highest-crest threshold
-configuration at $k_c$. It does not prove that the anchored crests are the
-$n$ highest maxima for every intermediate $k$.
+configuration at $k_c$. The full amplitude-ranking status is given by
+@amplitude-selection-range: only the strip
+$n^2/(n^2+2d^2)<k<k_c$ remains unresolved.
 
 /*
 == The threshold Huplet and its Euclidean class

@@ -370,8 +370,8 @@ Define
   rounding gives $a_(n-i)=d-a_i$, and hence the asserted symmetry and zero sum.
 ]
 
-The complete residue-order and displacement calculations are preserved in
-#raw("further_steps/endpoint-displacement-arithmetic.typ").
+The centered-residue statement above records the arithmetic information used
+in the remainder of this section.
 
 // Expanded arithmetic source suppressed from the present article.
 // == Signed endpoint displacements
@@ -545,7 +545,7 @@ The complete residue-order and displacement calculations are preserved in
 // 
 // 
 
-== Minimal-distortion characterization
+== Labeled nearest-grid minimality
 
 Consider an arbitrary labeled selection of $d$-grid indices
 
@@ -598,7 +598,7 @@ phi (
 ).
 $ <displacement-energy>
 
-#proposition(name: "Universal minimal distortion")[
+#proposition(name: "Labeled nearest-grid minimality")[
   For every nondecreasing loss $phi:[0,1/2] -> RR$ and every labeled
   $d$-grid selection $B$ as above,
 
@@ -617,7 +617,17 @@ $ <displacement-energy>
   ]
 
   for every $i$.
-] <universal-minimal-distortion>
+  Because
+  #nonum[
+    $
+    0=a_0<a_1<dots<a_(n-1)<d,
+    $
+  ]
+  the minimizing selection is automatically injective and order-preserving.
+  The same inequality, and the same uniqueness statement for strictly
+  increasing $phi$, therefore remain valid if competitors are restricted by
+  either of these constraints.
+] <labeled-nearest-grid-minimality>
 
 #proof[
   The inequality follows term by term from @pointwise-minimality and the
@@ -765,17 +775,12 @@ The endpoint result has three distinct layers:
 
 - the Euclidean theorem determines the cyclic necklace $E(n,d)$;
 - anchored continuation selects the nearest-grid representative;
-- universal minimal distortion characterizes that representative among labeled
-  $d$-grid selections.
+- labeled nearest-grid minimality characterizes that representative among
+  labeled $d$-grid selections.
 
-The optional Gibbs, entropy, free-energy, and zero-temperature model is
-preserved separately in
-#raw("further_steps/entropy-and-zero-temperature-selection.typ"). It is a
-model of a chosen finite family of static competitors, not a consequence of
-the crest dynamics.
-
-The conclusion summarizes this dynamical, combinatorial, and variational chain
-and isolates the remaining amplitude-ranking problem.
+These three layers are the complete endpoint claims used in the present
+article. The conclusion summarizes their dynamical, combinatorial, and
+variational relation and isolates the remaining amplitude-ranking strip.
 
 // Statistical interpretation and former transition suppressed from the article.
 // == Entropy of rotation selection
