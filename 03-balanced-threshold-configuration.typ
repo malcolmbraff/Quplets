@@ -7,10 +7,10 @@ preceding section. Thus $1<n<d$, $k in [0,1]$, and
 $x in RR \/ ZZ$ denotes phase on the unit cycle.
 
 The purpose of this section is to describe the complete stationary set at a
-distinguished value of the modulation parameter. This threshold configuration
-is defined independently of the $n$ anchored crest branches issued from the
-initial $n$-grid. Its relation to those branches will remain conditional on a
-branch-selection result.
+distinguished value of the modulation parameter. The threshold slice can be
+analyzed independently of the $n$ anchored crest branches issued from the
+initial $n$-grid; @anchored-threshold-selection later identifies its $n$
+highest crests with those branches.
 
 == The slope-balanced parameter
 
@@ -143,464 +143,575 @@ and hence
 
 The curvature formulas below then imply $H_(k_c) (x)=0$.
 
-== The resonant $(n+d)$-grid family
+== Threshold stationary families and amplitude separation
 
-The first factor in @threshold-factor vanishes when
+Set $N=n+d$. The factorization @threshold-factor gives a concise description
+of the complete threshold slice.
 
-#nonum[
-  $
-  theta= (2 pi m) / (n + d),
-  quad
-  m in ZZ.
-  $
-]
-
-Equivalently,
-
-#nonum[
-  $
-  x= m / (n + d)
-  quad (mod 1).
-  $
-]
-
-Thus the resonant family is the regular $(n+d)$-grid.
-
-At such a point,
-
-#nonum[
-  $
-  n theta equiv -d theta
-  quad (mod 2 pi),
-  $
-]
-
-so that
-
-#nonum[
-  $
-  cos(n theta)=cos(d theta)
-  $
-]
-
-and
-
-#nonum[
-  $
-  sin(n theta)=-sin(d theta).
-  $
-]
-
-Substituting $k=k_c$ into @H gives
-
-#nonum[
-  $
-  H_(k_c) (x)
-  =
-  -(2 pi)^2
-  (
-    (n d^2 ) / (n + d) cos(d theta)
-    +
-    (d n^2 ) / (n + d) cos(n theta)
-  ).
-  $
-]
-
-Using $cos(n theta)=cos(d theta)$, this becomes
-
-#nonum[
-  $
-  H_(k_c) (x)
-  =
-  -(2 pi)^2 n d cos(d theta).
-  $
-]
-
-Consequently, a resonant grid point is a crest precisely when
-
-$
-cos(d theta)>0.
-$ <grid-crest-test>
-
-It is a trough when $cos(d theta)<0$ and degenerate when
-$cos(d theta)=0$.
-
-== Joint criticality of the resonant grid
-
-The resonant grid is distinguished not only by stationarity in the phase
-variable. Since
-
-#nonum[
-  $
-  partial_k F_k (x)
-  =
-  cos(d theta)-cos(n theta),
-  $
-]
-
-the identity $cos(d theta)=cos(n theta)$ implies
-
-#nonum[
-  $
-  partial_k F_(k_c) (x)=0
-  $
-]
-
-at every resonant grid point.
-
-We therefore obtain the following intrinsic characterization.
-
-#remark(
-  numbering: none,
-  name: "Joint criticality of the resonant grid",
-)[
-  Every point $x=m/(n+d)$ satisfies
-
-  $
-  partial_x F_(k_c) (x)
-  =
-  partial_k F_(k_c) (x)
-  =
-  0.
-  $ <threshold-joint-critical>
-
-  Thus the resonant grid consists of joint critical points of the two-variable
-  surface determined by $F_k (x)$.
-]
-
-This observation has a direct consequence for crest-amplitude trajectories.
-
-#remark(
-  numbering: none,
-  name: "Threshold amplitude turning",
-)[
-  Suppose that a nondegenerate crest branch $X_i (k)$ passes through a resonant
-  grid point at $k=k_c$. Then
+#proposition(name: "Threshold-family separation and highest crests")[
+  At $k_c=n/N$, every stationary point belongs either to the resonant
+  $N$-grid
 
   #nonum[
     $
-    A_i '(k_c )=0.
+    theta=(2 pi m)/N,
+    quad
+    m in ZZ,
     $
   ]
 
-  By the convexity identity @A-second-deriv, $k_c$ is a minimum of $A_i$ on
-  every interval of nondegenerate crest continuation containing $k_c$.
+  or to the complementary family
 
-  If $gcd(n,d)=1$ and the resonant point is not $x=0$, this minimum is strict.
-]
+  #nonum[
+    $
+    (d-n)theta=(2 ell+1)pi,
+    quad
+    ell in ZZ.
+    $
+  ]
+
+  Resonant crests have positive amplitude, whereas complementary crests have
+  negative amplitude. If $gcd(n,d)=1$ and $n$ is odd, the $n$ highest crests
+  are precisely the resonant sites $x=m/N$ satisfying
+
+  $
+  d m mod N in R_n,
+  quad
+  R_n={-(n-1)/2,dots,(n-1)/2},
+  $ <highest-threshold-sites>
+
+  where the residue is represented in centered form.
+] <threshold-family-separation>
 
 #proof[
-  The first statement follows from @threshold-joint-critical and @A-deriv.
-  Convexity then gives the minimum property.
-
-  For strictness, observe that on the resonant grid,
+  At a resonant point, $n theta equiv -d theta$ modulo $2 pi$. Hence
 
   #nonum[
     $
-    partial_(k x) F_(k_c) (x)
+    H_(k_c) (x)
     =
-    -2 pi
-    (
-      d sin(d theta)-n sin(n theta)
-    )
-    =
-    -2 pi(d+n)sin(d theta).
+    -(2 pi)^2 n d cos(d theta),
     $
   ]
 
-  If this vanishes, then $sin(d theta)=0$. At
-  $theta=2 pi m/(n+d)$ and under $gcd(d,n+d)=1$, this forces
-  $m=0$ modulo $n+d$. Thus the only non-strict resonant crest is the fixed
-  point $x=0$.
-]
-
-// FIGURE PLACEHOLDER 3A
-// Possible figure: the threshold waveform F_(k_c)(x) for (n,d)=(5,7),
-// with resonant-grid stationary points and complementary stationary points
-// distinguished by marker shape. Highlight the n highest resonant crests.
-// Suggested label: <fig-threshold-waveform>
-
-== The complementary stationary family
-
-The second factor in @threshold-factor vanishes when
-
-#nonum[
-  $
-  (d-n)theta=(2 ell+1)pi,
-  quad
-  ell in ZZ.
-  $
-]
-
-Equivalently,
-
-#nonum[
-  $
-  theta= ((2 ell+1)pi) / (d - n).
-  $
-]
-
-At such a point,
-
-#nonum[
-  $
-  n theta
-  =
-  d theta-(2 ell+1)pi,
-  $
-]
-
-and therefore
-
-#nonum[
-  $
-  cos(n theta)=-cos(d theta).
-  $
-]
-
-Substitution into @H gives
-
-#nonum[
-  $
-  H_(k_c) (x)
-  =
-  -(2 pi)^2
-  (n d(d-n)) / (n + d)
-  cos(d theta).
-  $
-]
-
-Since $d-n>0$, a complementary stationary point is a crest precisely when
-
-$
-cos(d theta)>0.
-$ <complementary-crest-test>
-
-It is a trough when $cos(d theta)<0$ and degenerate when
-$cos(d theta)=0$.
-
-Thus the complementary family cannot in general be discarded as a family of
-troughs: depending on phase, it may contain crests, troughs, and degenerate
-stationary points.
-
-Unlike the resonant grid family, the complementary family is generally not
-critical in the modulation direction. Indeed,
-
-#nonum[
-  $
-  partial_k F_(k_c) (x)
-  =
-  cos(d theta)-cos(n theta)
-  =
-  2 cos(d theta).
-  $
-]
-
-Consequently, every nondegenerate complementary crest satisfies
-
-#nonum[
-  $
-  partial_k F_(k_c) (x)>0.
-  $
-]
-
-A complementary crest therefore continues increasing in amplitude as the
-parameter passes through $k_c$. It is stationary in phase at the threshold
-slice, but not stationary with respect to the modulation parameter.
-
-== Amplitudes of the two threshold families
-
-The two stationary families are separated by the signs of their crest
-amplitudes.
-
-At a resonant grid point, $cos(n theta)=cos(d theta)$. Hence
-
+  so the point is a crest precisely when
 
   $
-  F_(k_c) (x)
-  =
-  n / (n + d) cos(d theta)
-  +
-  d / (n + d) cos(n theta)
-  =
-  cos(d theta).
-  $
- <resonant-amplitude>
+  cos(d theta)>0.
+  $ <grid-crest-test>
 
-A resonant grid crest satisfies $cos(d theta)>0$, and therefore has positive
-amplitude.
-
-At a complementary stationary point,
-$cos(n theta)=-cos(d theta)$. Hence
-
+  Its amplitude is
 
   $
-  F_(k_c) (x)
-  =
-  n / (n + d) cos(d theta)
-  -
-  d / (n + d) cos(d theta)
-  =
-  (n - d) / (n + d) cos(d theta).
-  $
- <complementary-amplitude>
+  F_(k_c) (x)=cos(d theta).
+  $ <resonant-amplitude>
 
-A complementary crest also satisfies $cos(d theta)>0$. Since $d>n$, its
-amplitude is negative.
-
-We have therefore proved the following separation result.
-
-#remark(
-  numbering: none,
-  name: "Threshold amplitude separation",
-)[
-  At $k=k_c$, every crest in the resonant $(n+d)$-grid family has positive
-  amplitude, whereas every crest in the complementary family has negative
-  amplitude. Consequently, every highest crest of $F_(k_c)$ belongs to the
-  resonant grid family.
-]
-
-This separation gives the resonant family three simultaneous properties:
-
-- its points lie on a regular $(n+d)$-grid;
-- its crests have positive amplitude;
-- its points are jointly critical in phase and modulation.
-
-The complementary family has none of these three properties simultaneously.
-
-== The $n$ highest threshold crests
-
-Set
-
-#nonum[
-  $
-  N=n+d.
-  $
-]
-
-At the resonant grid point $x=m/N$, @resonant-amplitude gives
-
-#nonum[
-  $
-  F_(k_c) (m/N)
-  =
-  cos((2 pi d m) / N).
-  $
-]
-
-Assume from now on that $gcd(n,d)=1$ and that $n$ is odd. Since
-
-#nonum[
-  $
-  gcd(d,N)=gcd(d,n)=1,
-  $
-]
-
-multiplication by $d$ permutes the residue classes modulo $N$.
-
-The values
-
-#nonum[
-  $
-  {
-    cos(2 pi q/N)
-    :
-    q in ZZ/N ZZ
-  }
-  $
-]
-
-decrease with the absolute value of the centered residue of $q$. Since $n$ is
-odd, the $n$ centered residues nearest to $0$ form the set
-
-#nonum[
-  $
-  R_n
-  =
-  {
-    -(n-1)/2,
-    dots,
-    -1,
-    0,
-    1,
-    dots,
-    (n-1)/2
-  }.
-  $
-]
-
-Because $d>n$, we have $N>2n$, and therefore every value indexed by
-$R_n$ is positive. These points are consequently resonant crests by
-@grid-crest-test.
-
-The $n$ highest threshold crests are therefore precisely the grid points
-$m/N$ satisfying
-
-$
-d m mod N in R_n ,
-$ <highest-threshold-sites>
-
-where the residue is taken in centered form.
-
-Since
-
-#nonum[
-  $
-  d equiv -n
-  quad (mod N),
-  $
-]
-
-the condition in @highest-threshold-sites is equivalent, after replacing
-$R_n$ by $-R_n = R_n$, to
-
-#nonum[
-  $
-  n m mod N in R_n .
-  $
-]
-
-
-#remark(
-  numbering: none,
-  name: "Threshold amplitude spectrum",
-)[
-  The amplitudes of the
-  $n$ highest threshold crests form the multiset
+  At a complementary point, $cos(n theta)=-cos(d theta)$, and therefore
 
   #nonum[
     $
-    {
-      cos((2 pi r) / N)
-      :
-      r in R_n
-    },
-    quad
-    R_n
+    H_(k_c) (x)
     =
-    {
-      - (n - 1) / 2,
-      dots,
-      (n - 1) / 2
-    }.
+    -(2 pi)^2 (n d(d-n))/N cos(d theta).
     $
   ]
 
-  Hence their distinct amplitude levels are
+  Such a point is again a crest precisely when $cos(d theta)>0$, but its
+  amplitude is
 
   #nonum[
     $
-    1,
-    cos((2 pi) / N),
-    cos((4 pi) / N),
-    dots,
-    cos(((n-1) pi) / N).
+    F_(k_c) (x)
+    =
+    (n-d)/N cos(d theta)
+    <
+    0.
     $
   ]
+
+  Thus every highest crest belongs to the resonant family. At $x=m/N$, the
+  resonant amplitude is
+
+  #nonum[
+    $
+    cos((2 pi d m)/N).
+    $
+  ]
+
+  Under coprimality, multiplication by $d$ permutes the residues modulo $N$.
+  The $n$ largest cosine values correspond to the $n$ centered residues
+  nearest $0$, namely $R_n$. Since $d>n$ gives $N>2n$, all of these selected
+  values are positive and hence are resonant crests.
 ]
 
-Thus the balanced threshold combines rational phase alignment on
-the $N$-grid with a cosine-quantized amplitude spectrum.
+The complete complementary-family calculations, joint criticality, and
+threshold amplitude spectrum are preserved in
+#raw("further_steps/threshold-stationary-families-and-spectrum.typ").
+
+// Detailed source suppressed from the present article.
+// // == The resonant $(n+d)$-grid family
+// // 
+// // The first factor in @threshold-factor vanishes when
+// // 
+// // #nonum[
+// //   $
+// //   theta= (2 pi m) / (n + d),
+// //   quad
+// //   m in ZZ.
+// //   $
+// // ]
+// // 
+// // Equivalently,
+// // 
+// // #nonum[
+// //   $
+// //   x= m / (n + d)
+// //   quad (mod 1).
+// //   $
+// // ]
+// // 
+// // Thus the resonant family is the regular $(n+d)$-grid.
+// // 
+// // At such a point,
+// // 
+// // #nonum[
+// //   $
+// //   n theta equiv -d theta
+// //   quad (mod 2 pi),
+// //   $
+// // ]
+// // 
+// // so that
+// // 
+// // #nonum[
+// //   $
+// //   cos(n theta)=cos(d theta)
+// //   $
+// // ]
+// // 
+// // and
+// // 
+// // #nonum[
+// //   $
+// //   sin(n theta)=-sin(d theta).
+// //   $
+// // ]
+// // 
+// // Substituting $k=k_c$ into @H gives
+// // 
+// // #nonum[
+// //   $
+// //   H_(k_c) (x)
+// //   =
+// //   -(2 pi)^2
+// //   (
+// //     (n d^2 ) / (n + d) cos(d theta)
+// //     +
+// //     (d n^2 ) / (n + d) cos(n theta)
+// //   ).
+// //   $
+// // ]
+// // 
+// // Using $cos(n theta)=cos(d theta)$, this becomes
+// // 
+// // #nonum[
+// //   $
+// //   H_(k_c) (x)
+// //   =
+// //   -(2 pi)^2 n d cos(d theta).
+// //   $
+// // ]
+// // 
+// // Consequently, a resonant grid point is a crest precisely when
+// // 
+// // $
+// // cos(d theta)>0.
+// // $ <grid-crest-test>
+// // 
+// // It is a trough when $cos(d theta)<0$ and degenerate when
+// // $cos(d theta)=0$.
+// // 
+// // == Joint criticality of the resonant grid
+// // 
+// // The resonant grid is distinguished not only by stationarity in the phase
+// // variable. Since
+// // 
+// // #nonum[
+// //   $
+// //   partial_k F_k (x)
+// //   =
+// //   cos(d theta)-cos(n theta),
+// //   $
+// // ]
+// // 
+// // the identity $cos(d theta)=cos(n theta)$ implies
+// // 
+// // #nonum[
+// //   $
+// //   partial_k F_(k_c) (x)=0
+// //   $
+// // ]
+// // 
+// // at every resonant grid point.
+// // 
+// // We therefore obtain the following intrinsic characterization.
+// // 
+// // #remark(
+// //   numbering: none,
+// //   name: "Joint criticality of the resonant grid",
+// // )[
+// //   Every point $x=m/(n+d)$ satisfies
+// // 
+// //   $
+// //   partial_x F_(k_c) (x)
+// //   =
+// //   partial_k F_(k_c) (x)
+// //   =
+// //   0.
+// //   $ <threshold-joint-critical>
+// // 
+// //   Thus the resonant grid consists of joint critical points of the two-variable
+// //   surface determined by $F_k (x)$.
+// // ]
+// // 
+// // This observation has a direct consequence for crest-amplitude trajectories.
+// // 
+// // // Amplitude-turning analysis moved to further_steps/crest-trajectory-analysis.typ.
+// // // #remark(
+// // //   numbering: none,
+// // //   name: "Threshold amplitude turning",
+// // // )[
+// // //   Suppose that a nondegenerate crest branch $X_i (k)$ passes through a resonant
+// // //   grid point at $k=k_c$. Then
+// // // 
+// // //   #nonum[
+// // //     $
+// // //     A_i '(k_c )=0.
+// // //     $
+// // //   ]
+// // // 
+// // //   By the convexity identity @A-second-deriv, $k_c$ is a minimum of $A_i$ on
+// // //   every interval of nondegenerate crest continuation containing $k_c$.
+// // // 
+// // //   If $gcd(n,d)=1$ and the resonant point is not $x=0$, this minimum is strict.
+// // // ]
+// // // 
+// // // #proof[
+// // //   The first statement follows from @threshold-joint-critical and @A-deriv.
+// // //   Convexity then gives the minimum property.
+// // // 
+// // //   For strictness, observe that on the resonant grid,
+// // // 
+// // //   #nonum[
+// // //     $
+// // //     partial_(k x) F_(k_c) (x)
+// // //     =
+// // //     -2 pi
+// // //     (
+// // //       d sin(d theta)-n sin(n theta)
+// // //     )
+// // //     =
+// // //     -2 pi(d+n)sin(d theta).
+// // //     $
+// // //   ]
+// // // 
+// // //   If this vanishes, then $sin(d theta)=0$. At
+// // //   $theta=2 pi m/(n+d)$ and under $gcd(d,n+d)=1$, this implies
+// // //   $(n+d) divides 2m$. If $n+d$ is odd, then $m=0$ modulo $n+d$. If $n+d$ is even, the only additional possibility is $m=(n+d)/2$, so $theta=pi$. Since $n$ and $d$ are then odd, $cos(d theta)=-1$, and @grid-crest-test shows that this point is a resonant trough, not a crest. Thus the only non-strict resonant crest is the fixed
+// // //   point $x=0$.
+// // // ]
+// // // 
+// // // 
+// // 
+// // // FIGURE PLACEHOLDER 3A
+// // // Possible figure: the threshold waveform F_(k_c)(x) for (n,d)=(5,7),
+// // // with resonant-grid stationary points and complementary stationary points
+// // // distinguished by marker shape. Highlight the n highest resonant crests.
+// // // Suggested label: <fig-threshold-waveform>
+// // 
+// // == The complementary stationary family
+// // 
+// // The second factor in @threshold-factor vanishes when
+// // 
+// // #nonum[
+// //   $
+// //   (d-n)theta=(2 ell+1)pi,
+// //   quad
+// //   ell in ZZ.
+// //   $
+// // ]
+// // 
+// // Equivalently,
+// // 
+// // #nonum[
+// //   $
+// //   theta= ((2 ell+1)pi) / (d - n).
+// //   $
+// // ]
+// // 
+// // At such a point,
+// // 
+// // #nonum[
+// //   $
+// //   n theta
+// //   =
+// //   d theta-(2 ell+1)pi,
+// //   $
+// // ]
+// // 
+// // and therefore
+// // 
+// // #nonum[
+// //   $
+// //   cos(n theta)=-cos(d theta).
+// //   $
+// // ]
+// // 
+// // Substitution into @H gives
+// // 
+// // #nonum[
+// //   $
+// //   H_(k_c) (x)
+// //   =
+// //   -(2 pi)^2
+// //   (n d(d-n)) / (n + d)
+// //   cos(d theta).
+// //   $
+// // ]
+// // 
+// // Since $d-n>0$, a complementary stationary point is a crest precisely when
+// // 
+// // $
+// // cos(d theta)>0.
+// // $ <complementary-crest-test>
+// // 
+// // It is a trough when $cos(d theta)<0$ and degenerate when
+// // $cos(d theta)=0$.
+// // 
+// // Thus the complementary family cannot in general be discarded as a family of
+// // troughs: depending on phase, it may contain crests, troughs, and degenerate
+// // stationary points.
+// // 
+// // Unlike the resonant grid family, the complementary family is generally not
+// // critical in the modulation direction. Indeed,
+// // 
+// // #nonum[
+// //   $
+// //   partial_k F_(k_c) (x)
+// //   =
+// //   cos(d theta)-cos(n theta)
+// //   =
+// //   2 cos(d theta).
+// //   $
+// // ]
+// // 
+// // Consequently, every nondegenerate complementary crest satisfies
+// // 
+// // #nonum[
+// //   $
+// //   partial_k F_(k_c) (x)>0.
+// //   $
+// // ]
+// // 
+// // A complementary crest therefore continues increasing in amplitude as the
+// // parameter passes through $k_c$. It is stationary in phase at the threshold
+// // slice, but not stationary with respect to the modulation parameter.
+// // 
+// // == Amplitudes of the two threshold families
+// // 
+// // The two stationary families are separated by the signs of their crest
+// // amplitudes.
+// // 
+// // At a resonant grid point, $cos(n theta)=cos(d theta)$. Hence
+// // 
+// // 
+// //   $
+// //   F_(k_c) (x)
+// //   =
+// //   n / (n + d) cos(d theta)
+// //   +
+// //   d / (n + d) cos(n theta)
+// //   =
+// //   cos(d theta).
+// //   $
+// //  <resonant-amplitude>
+// // 
+// // A resonant grid crest satisfies $cos(d theta)>0$, and therefore has positive
+// // amplitude.
+// // 
+// // At a complementary stationary point,
+// // $cos(n theta)=-cos(d theta)$. Hence
+// // 
+// // 
+// //   $
+// //   F_(k_c) (x)
+// //   =
+// //   n / (n + d) cos(d theta)
+// //   -
+// //   d / (n + d) cos(d theta)
+// //   =
+// //   (n - d) / (n + d) cos(d theta).
+// //   $
+// //  <complementary-amplitude>
+// // 
+// // A complementary crest also satisfies $cos(d theta)>0$. Since $d>n$, its
+// // amplitude is negative.
+// // 
+// // We have therefore proved the following separation result.
+// // 
+// // #remark(
+// //   numbering: none,
+// //   name: "Threshold amplitude separation",
+// // )[
+// //   At $k=k_c$, every crest in the resonant $(n+d)$-grid family has positive
+// //   amplitude, whereas every crest in the complementary family has negative
+// //   amplitude. Consequently, every highest crest of $F_(k_c)$ belongs to the
+// //   resonant grid family.
+// // ]
+// // 
+// // This separation gives the resonant family three simultaneous properties:
+// // 
+// // - its points lie on a regular $(n+d)$-grid;
+// // - its crests have positive amplitude;
+// // - its points are jointly critical in phase and modulation.
+// // 
+// // The complementary family has none of these three properties simultaneously.
+// // 
+// // == The $n$ highest threshold crests
+// // 
+// // Set
+// // 
+// // #nonum[
+// //   $
+// //   N=n+d.
+// //   $
+// // ]
+// // 
+// // At the resonant grid point $x=m/N$, @resonant-amplitude gives
+// // 
+// // #nonum[
+// //   $
+// //   F_(k_c) (m/N)
+// //   =
+// //   cos((2 pi d m) / N).
+// //   $
+// // ]
+// // 
+// // Assume from now on that $gcd(n,d)=1$ and that $n$ is odd. Since
+// // 
+// // #nonum[
+// //   $
+// //   gcd(d,N)=gcd(d,n)=1,
+// //   $
+// // ]
+// // 
+// // multiplication by $d$ permutes the residue classes modulo $N$.
+// // 
+// // The values
+// // 
+// // #nonum[
+// //   $
+// //   {
+// //     cos(2 pi q/N)
+// //     :
+// //     q in ZZ/N ZZ
+// //   }
+// //   $
+// // ]
+// // 
+// // decrease with the absolute value of the centered residue of $q$. Since $n$ is
+// // odd, the $n$ centered residues nearest to $0$ form the set
+// // 
+// // #nonum[
+// //   $
+// //   R_n
+// //   =
+// //   {
+// //     -(n-1)/2,
+// //     dots,
+// //     -1,
+// //     0,
+// //     1,
+// //     dots,
+// //     (n-1)/2
+// //   }.
+// //   $
+// // ]
+// // 
+// // Because $d>n$, we have $N>2n$, and therefore every value indexed by
+// // $R_n$ is positive. These points are consequently resonant crests by
+// // @grid-crest-test.
+// // 
+// // The $n$ highest threshold crests are therefore precisely the grid points
+// // $m/N$ satisfying
+// // 
+// // $
+// // d m mod N in R_n ,
+// // $ <highest-threshold-sites>
+// // 
+// // where the residue is taken in centered form.
+// // 
+// // Since
+// // 
+// // #nonum[
+// //   $
+// //   d equiv -n
+// //   quad (mod N),
+// //   $
+// // ]
+// // 
+// // the condition in @highest-threshold-sites is equivalent, after replacing
+// // $R_n$ by $-R_n = R_n$, to
+// // 
+// // #nonum[
+// //   $
+// //   n m mod N in R_n .
+// //   $
+// // ]
+// // 
+// // 
+// // #remark(
+// //   numbering: none,
+// //   name: "Threshold amplitude spectrum",
+// // )[
+// //   The amplitudes of the
+// //   $n$ highest threshold crests form the multiset
+// // 
+// //   #nonum[
+// //     $
+// //     {
+// //       cos((2 pi r) / N)
+// //       :
+// //       r in R_n
+// //     },
+// //     quad
+// //     R_n
+// //     =
+// //     {
+// //       - (n - 1) / 2,
+// //       dots,
+// //       (n - 1) / 2
+// //     }.
+// //     $
+// //   ]
+// // 
+// //   Hence their distinct amplitude levels are
+// // 
+// //   #nonum[
+// //     $
+// //     1,
+// //     cos((2 pi) / N),
+// //     cos((4 pi) / N),
+// //     dots,
+// //     cos(((n-1) pi) / N).
+// //     $
+// //   ]
+// // ]
+// // 
+// // Thus the balanced threshold combines rational phase alignment on
+// // the $N$-grid with a cosine-quantized amplitude spectrum.
+// // 
+// // 
 
 == Euclidean spacing of the highest threshold crests
 
@@ -620,8 +731,18 @@ the $N$-grid with a cosine-quantized amplitude spectrum.
     $
   ]
 
-  Their circular gaps have lengths $floor(N/n)$ and $ceil(N/n)$ and form the
-  Euclidean spacing pattern of $n$ points on the $N$-grid.
+  For every $ell in {1,dots,n-1}$, the clockwise distance spanning $ell$
+  successive selected onsets lies in
+
+  #nonum[
+    $
+    {floor((ell N) / n), ceil((ell N) / n)}.
+    $
+  ]
+
+  In particular, their circular gaps have lengths $floor(N/n)$ and
+  $ceil(N/n)$, and the selected configuration is a rotation of the Euclidean
+  rhythm with $n$ onsets on the $N$-grid.
 ] <euclidean-threshold-crests>
 
 #proof[
@@ -699,65 +820,160 @@ the $N$-grid with a cosine-quantized amplitude spectrum.
   There are exactly $n$ such indices. They therefore exhaust the set defined by
   @highest-threshold-sites.
   
-  Their consecutive differences are
-  
+  Extend @nearest-grid-sites to every integer $j$ by the same formula. Then
+
   #nonum[
     $
-    m_(j+1) - m_j
+    m_(j+n) = m_j + N,
+    $
+  ]
+
+  which is the cyclic-lift convention. For $ell in {1,dots,n-1}$, define the
+  clockwise $ell$-onset distance by
+
+  #nonum[
+    $
+    Delta_ell (j) = m_(j+ell) - m_j.
+    $
+  ]
+
+  If $j+ell>=n$, the cyclic-lift identity reads
+  $Delta_ell (j) = m_(j+ell-n) + N - m_j$, so this formula also covers the wrap
+  across the origin. Directly from @nearest-grid-sites,
+
+  #nonum[
+    $
+    Delta_ell (j)
     =
-    floor(((j+1)N) / n + 1 / 2)
+    floor(((j+ell)N) / n + 1 / 2)
     -
     floor((j N) / n + 1 / 2).
     $
   ]
-  
-  Write
-  
+
+  For arbitrary real $x,y$,
+
   #nonum[
     $
-    N=a n+b,
-    quad
-    0<=b<n.
+    floor(x+y)-floor(x)
+    in
+    {floor(y),ceil(y)}.
     $
   ]
-  
-  Since
-  
+
+  Indeed, writing $x=p+u$ and $y=q+v$ with $p,q in ZZ$ and
+  $0<=u,v<1$, the difference is $q+floor(u+v)$; it equals $q$ or $q+1$,
+  and when $v=0$ only the value $q$ occurs. Applying this identity with
+  $x=(j N)/n+1/2$ and $y=(ell N)/n$ gives
+
   #nonum[
     $
-    N / n =a+ b / n,
+    Delta_ell (j)
+    in
+    {floor((ell N) / n),ceil((ell N) / n)}.
     $
   ]
-  
-  each consecutive difference equals either $a$ or $a+1$. The sum of all
-  $n$ circular differences is $N=a n+b$, so exactly $b$ gaps have length
-  $a+1$ and exactly $n-b$ have length $a$.
-  
-  The same conclusion includes the final circular gap
-  
-  #nonum[
-    $
-    N+m_0 - m_(n-1) .
-    $
-  ]
-  
-  Hence the circular gaps have the two integer lengths
-  
-  #nonum[
-    $
-    floor(N/n)
-    quad "and" quad
-    ceil(N/n),
-    $
-  ]
-  
-  distributed as evenly as possible. After normalization by $N$, they form the
-  Euclidean spacing pattern of $n$ points on an $N$-grid.
+
+  Thus the selected configuration is cyclically balanced at every scale, not
+  merely adjacent-gap balanced. Taking $ell=1$ shows that its circular gaps
+  have lengths $floor(N/n)$ and $ceil(N/n)$. Their sum is $N$, so if
+  $N=a n+b$ with $0<=b<n$, exactly $b$ gaps have length $a+1$ and the
+  remaining $n-b$ have length $a$.
+
+  By Demaine et al.'s all-scale characterization of Euclidean rhythms
+  #footnote[Theorem 4.1 in #cite(<demaineDistanceGeometryMusic2009>)], this
+  condition identifies the cyclic configuration, up to rotation, as the
+  Euclidean rhythm with $n$ onsets on the $N$-grid.
 ]
 
-#figure(  image(    "Figures/Fk(x).svg",    width: 82%,  ),  caption: [    The threshold profile $F_(k_c) (x)$ for $(n,d)=(5,8)$, with $N=13$ and $k_c = 5/13$.    The marked rational $13$-grid points identify the five highest crests, whose positions form the Euclidean threshold configuration.         ],) <fig-threshold-euclidean-circle>
+// Threshold figure moved to further_steps/threshold-stationary-families-and-spectrum.typ.
+// #figure(  image(    "Figures/Fk(x).svg",    width: 82%,  ),  caption: [    The threshold profile $F_(k_c) (x)$ for $(n,d)=(5,8)$, with $N=13$ and $k_c = 5/13$.    The marked rational $13$-grid points identify the five highest crests, whose positions form the Euclidean threshold configuration.         ],) <fig-threshold-euclidean-circle>
+// 
+// 
+// 
 
+== Anchored selection at the balanced threshold
 
+#corollary(name: "Anchored threshold selection")[
+  Let $1<n<d$ be coprime, with $n$ odd, and set $N=n+d$ and
+  $k_c=n/N$. For each $i in {0,dots,n-1}$, put
+
+  #nonum[
+    $
+    q_i = floor((d i) / n + 1 / 2).
+    $
+  ]
+
+  Then
+
+  $
+  X_i (k_c)
+  =
+  (i+q_i) / N
+  =
+  1 / N floor((N i) / n + 1 / 2).
+  $ <anchored-threshold-formula>
+
+  These positions are precisely the $n$ highest crests of $F_(k_c)$.
+] <anchored-threshold-selection>
+
+#proof[
+  Let
+
+  #nonum[
+    $
+    z_i=(i+q_i)/N.
+    $
+  ]
+
+  The anchor is $i/n$, and @nearest-grid-endpoints identifies $q_i/d$ as
+  the endpoint of the same short corridor. Direct calculation gives
+
+  #nonum[
+    $
+    z_i-i/n
+    =
+    d/N (q_i/d-i/n).
+    $
+  ]
+
+  Since $0<d/N<1$, the point $z_i$ lies on that corridor, strictly between
+  its endpoints when $i!=0$. At $theta=2 pi z_i$,
+
+  #nonum[
+    $
+    N theta=2 pi(i+q_i),
+    $
+  ]
+
+  and hence $sin(n theta)=-sin(d theta)$. At $k_c=n/N$, the two derivative
+  coefficients are equal, so the stationarity equation becomes
+  $sin(n theta)+sin(d theta)=0$. Thus $z_i$ is stationary at $k_c$.
+
+  The short-corridor parametrization in @anchored-continuation is strictly
+  monotone and contains exactly one stationary point for each $k in [0,1]$.
+  Therefore $X_i (k_c)=z_i$. Finally,
+
+  #nonum[
+    $
+    i+q_i
+    =
+    floor(i+(d i)/n+1/2)
+    =
+    floor((N i)/n+1/2).
+    $
+  ]
+
+  Hence the anchored positions are exactly the nearest $N$-grid sites used in
+  @euclidean-threshold-crests, which proves that they are the $n$ highest
+  threshold crests.
+]
+
+The amplitude-selection conjecture is still open for general
+$k in [0,1)$, but it is no longer needed at the distinguished parameter
+$k=k_c$.
+
+/*
 == Relation to the anchored branches
 
 @euclidean-threshold-crests identifies the $n$ highest crests at the threshold without using
@@ -792,7 +1008,9 @@ Thus the conditional dynamical picture is
 
 The first implication is conjectural. The remaining implications are proved in this section and by the convexity
 identity @A-second-deriv from the preceding section.
+*/
 
+/*
 == Transition
 
 The slope-balanced parameter yields a completely explicit configuration for
@@ -800,18 +1018,10 @@ the $n$ highest crests of $F_(k_c)$. These crests lie on the resonant
 $(n+d)$-grid, are jointly critical in phase and modulation, and have
 Euclidean circular spacing.
 
-The next section passes from labeled crest branches to their circular order.
-Writing the ordered positions as $Y_j (k)$, it introduces the spacing
-functions
-
-#nonum[
-  $
-  D_j (k)
-  =
-  Y_(j+1) (k)-Y_j (k)
-  $
-]
-
-with cyclic indexing. Their normalized vector defines the Huplet trajectory in
-the spacing simplex, while @anchored-continuation gives a globally defined endpoint Quplet.
-Its identification with the highest threshold crests still depends on amplitude selection.
+The next section uses the order-preserving lifts
+$X_0 (k),dots,X_(n-1) (k)$ to define the circular spacing functions
+$D_i (k)=X_(i+1) (k)-X_i (k)$, with cyclic closure. Their vector is the Huplet,
+and @anchored-continuation gives its globally defined endpoint Quplet.
+By @anchored-threshold-selection, the Huplet at $k_c$ is already identified
+with the highest threshold crests.
+*/

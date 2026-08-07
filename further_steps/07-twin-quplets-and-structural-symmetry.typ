@@ -1,4 +1,4 @@
-#import "definitions.typ": *
+#import "../definitions.typ": *
 
 = Twin Quplets and structural symmetry
 

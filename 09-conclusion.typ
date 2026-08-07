@@ -2,6 +2,116 @@
 
 = Conclusion
 
+For coprime integers $1<n<d$ with $n$ odd, this paper studies the
+two-frequency family
+
+#nonum[
+  $
+  F_k (x)
+  =
+  k cos(2 pi d x)
+  +
+  (1-k) cos(2 pi n x),
+  quad
+  k in [0,1].
+  $
+]
+
+The $n$ crests issued from the regular $n$-grid continue uniquely throughout
+the full modulation interval. By @anchored-continuation, they remain distinct
+nondegenerate local maxima, preserve cyclic order, and move monotonically
+inside pairwise disjoint nearest-grid corridors. Their exact endpoints are
+
+#nonum[
+  $
+  X_i (1)
+  =
+  1 / d floor((d i) / n + 1 / 2),
+  quad
+  i=0,dots,n-1.
+  $
+]
+
+Their circular spacing vector therefore defines the Quplet $Q(n,d)$ without
+any continuation hypothesis.
+
+The endpoint theorem @euclidean-endpoint-theorem proves more than the
+two-adjacent-gap property. At every scale $ell in {1,dots,n-1}$, each
+clockwise $ell$-onset distance belongs to
+
+#nonum[
+  $
+  {floor((ell d) / n),ceil((ell d) / n)}.
+  $
+]
+
+By the Demaine distance criterion, the endpoint gap necklace is the Euclidean
+class $E(n,d)$. The dynamics also retain the labels and the anchor inherited
+from the initial grid, so they select the distinguished nearest-grid
+representative
+
+#nonum[
+  $
+  Q(n,d)
+  =
+  CanonicalQuplet(n,d),
+  quad
+  CanonicalQuplet(n,d) in E(n,d).
+  $
+]
+
+Section 5 gives this representative two complementary static
+characterizations. Its signed endpoint errors form the complete centered
+residue system, and @universal-minimal-distortion shows that it minimizes every
+nondecreasing separable circular-displacement cost among labeled $d$-grid
+selections, uniquely when the loss is strictly increasing.
+
+At the slope-balanced parameter
+
+#nonum[
+  $
+  k_c=n/(n+d),
+  $
+]
+
+the stationary equation factors into resonant and complementary families.
+The resonant calculation identifies the $n$ highest threshold crests, and
+@anchored-threshold-selection proves that these are exactly the anchored
+crests. Consequently, @threshold-extension-identity gives the exact relation
+
+#nonum[
+  $
+  Huplet(n,d,k_c)
+  =
+  Q(n,n+d).
+  $
+]
+
+Thus the threshold configuration, the endpoint construction, and the
+Euclidean spacing theorem are parts of one proved dynamical–arithmetic chain.
+
+== Remaining problem
+
+The principal unresolved dynamical question is amplitude ranking away from the
+balanced parameter: are the anchored crests precisely the $n$ highest local
+maxima for every $k in [0,1)$? This statement is proved at $k=k_c$ but remains
+open on the rest of the interval. The detailed analytic, geometric, affine,
+block-sum, and statistical directions removed from the present article are
+preserved as standalone drafts under #raw("further_steps/").
+
+The proved result is therefore precise: two-frequency crest continuation
+selects a canonical labeled representative of a Euclidean rhythm necklace,
+while prominence ranking throughout the deformation remains a separate open
+problem.
+
+/*
+
+Previous extended conclusion preserved for source history.
+
+#import "definitions.typ": *
+
+= Conclusion
+
 This paper has studied the deformation of rhythmic spacing patterns generated
 by the two-frequency interference function
 
@@ -113,24 +223,43 @@ This vector belongs to the Euclidean cyclic class $E(n,d)$, but contains more
 information than the cyclic class alone: it fixes the labeling, anchoring, and
 rotation determined by nearest-grid displacement.
 
-The canonical configuration is distinguished by several closely related
-static properties. It is obtained by nearest-grid rounding, uniquely minimizes
-every strictly increasing separable displacement energy, has a balanced
-centered system of signed endpoint errors, and is the unique zero-temperature
-ground state of the corresponding Gibbs model.
+The canonical configuration is distinguished by three static properties retained
+in the present article. It is obtained by nearest-grid rounding, uniquely
+minimizes every strictly increasing separable displacement energy, and has a
+balanced centered system of signed endpoint errors.
 
-The central dynamical conjecture of the paper is
+By @Quplet-realization, anchored crest continuation selects exactly this
+canonical representative:
 
 $
-Q(n,d)
-=
-CanonicalQuplet(n,d).
+Q(n,d)=CanonicalQuplet(n,d).
 $ <conclusion-dynamical-realization>
 
-Thus the remaining problem is not whether an explicit canonical Euclidean
-representative exists, but whether anchored crest continuation selects that
-representative.
+This endpoint realization is therefore proved, not conjectural. The optional
+Gibbs and zero-temperature interpretation is preserved as follow-up material
+under #raw("further_steps/").
 
+// Superseded endpoint-conjecture summary.
+// // The canonical configuration is distinguished by several closely related
+// // static properties. It is obtained by nearest-grid rounding, uniquely minimizes
+// // every strictly increasing separable displacement energy, has a balanced
+// // centered system of signed endpoint errors, and is the unique zero-temperature
+// // ground state of the corresponding Gibbs model.
+// // 
+// // The central dynamical conjecture of the paper is
+// // 
+// // $
+// // Q(n,d)
+// // =
+// // CanonicalQuplet(n,d).
+// // $ <conclusion-dynamical-realization>
+// // 
+// // Thus the remaining problem is not whether an explicit canonical Euclidean
+// // representative exists, but whether anchored crest continuation selects that
+// // representative.
+// // 
+// // 
+// // 
 
 == Affine organization
 
@@ -272,43 +401,55 @@ interpretation of the fixed-residue collinearity formula.
 
 == Open problems
 
-The principal unresolved questions concern the global dynamics of the anchored
-crest branches.
+The global continuation, nearest-grid endpoint selection, canonical Quplet
+realization, and threshold-extension identity are proved in the present paper.
 
-The first is whether, under the coprimality and parity assumptions considered
-here, every anchored crest branch extends throughout $[0,1]$, remains a crest,
-and moves monotonically after choosing a continuous lift.
+The remaining dynamical selection problem is whether the anchored branches are
+precisely the $n$ highest crests for every $k in [0,1)$. At the balanced
+parameter $k_c=n/(n+d)$ this identification is already proved by
+@anchored-threshold-selection; the open problem concerns the rest of the
+modulation interval.
 
-The second is whether the anchored branches are precisely the $n$ highest
-crests for every $k in [0,1)$. A proof of this statement would identify the
-anchored Huplet with the explicitly known highest-crest configuration at the
-balanced parameter.
+// Superseded list of continuation and endpoint conjectures.
+// // The principal unresolved questions concern the global dynamics of the anchored
+// // crest branches.
+// // 
+// // The first is whether, under the coprimality and parity assumptions considered
+// // here, every anchored crest branch extends throughout $[0,1]$, remains a crest,
+// // and moves monotonically after choosing a continuous lift.
+// // 
+// // The second is whether the anchored branches are precisely the $n$ highest
+// // crests for every $k in [0,1)$. A proof of this statement would identify the
+// // anchored Huplet with the explicitly known highest-crest configuration at the
+// // balanced parameter.
+// // 
+// // The third and central question is the endpoint-selection problem expressed in
+// // @conclusion-dynamical-realization. A proof would transfer all canonical
+// // Euclidean, variational, affine, twin, and block-sum properties directly to the
+// // dynamically defined Quplets.
+// // 
+// // A further question is whether the threshold–extension identity
+// // 
+// // #nonum[
+// //   $
+// //   Huplet(
+// //     n,
+// //     d,
+// //     n/(n+d)
+// //   )
+// //   =
+// //   Q(n,n+d)
+// //   $
+// // ]
+// // 
+// // can be derived from a structural relation between the corresponding crest
+// // trajectories, rather than established only at the level of their conjectured
+// // endpoint selections.
+// // 
+// // 
+// // 
 
-The third and central question is the endpoint-selection problem expressed in
-@conclusion-dynamical-realization. A proof would transfer all canonical
-Euclidean, variational, affine, twin, and block-sum properties directly to the
-dynamically defined Quplets.
-
-A further question is whether the threshold–extension identity
-
-#nonum[
-  $
-  Huplet(
-    n,
-    d,
-    n/(n+d)
-  )
-  =
-  Q(n,n+d)
-  $
-]
-
-can be derived from a structural relation between the corresponding crest
-trajectories, rather than established only at the level of their conjectured
-endpoint selections.
-
-
-The amplitude trajectories in @fig-A-trajectories also display a
+The amplitude trajectories preserved in the follow-up analysis also display a
 marked quasi-symmetry about the balanced parameter
 $k_c=n/(n+d)$. A natural balance coordinate is the weighted
 log-odds
@@ -369,10 +510,13 @@ several distinct but connected structures:
 
 - and a block-sum realization from a uniform fine-grid distribution.
 
-The proved results establish the arithmetic and geometric structure of the
-canonical representatives. The remaining conjectures ask whether the
-continuous crest dynamics realize precisely this canonical structure.
+The proved results establish both the dynamical realization and the arithmetic
+and geometric structure of the canonical representatives. The remaining
+conjectures concern prominence ranking throughout the modulation interval and
+finer analytic symmetries of the trajectories.
 
 In this sense, the Quplet construction provides a bridge between harmonic
 interference, Euclidean distribution, variational selection, and affine rhythm
 geometry.
+
+*/

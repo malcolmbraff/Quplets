@@ -2,6 +2,164 @@
 
 = Introduction
 
+Rhythmic subdivision can be represented by points on a circle, or equivalently
+by the cyclic spacings between consecutive points. This paper asks how a
+distinguished discrete rhythm can be selected dynamically when two regular
+subdivision systems interfere.
+
+Let $1<n<d$ be coprime integers, with $n$ odd, and consider
+
+#nonum[
+  $
+  F_k (x)
+  =
+  k cos(2 pi d x)
+  +
+  (1-k) cos(2 pi n x),
+  quad
+  k in [0,1],
+  quad
+  x in RR / ZZ.
+  $
+]
+
+At $k=0$, the crests form the regular $n$-grid; at $k=1$, they form the regular
+$d$-grid. For each $i in {0,dots,n-1}$, let $X_i (k)$ denote the crest branch
+issued from $i/n$.
+
+The first problem is global: an initially defined branch could, in principle,
+degenerate, collide with another branch, or cease to be a local maximum.
+@anchored-continuation rules out all three possibilities for the anchored
+branches. Each $X_i$ exists uniquely on $[0,1]$, remains a nondegenerate local
+maximum, preserves cyclic order, and moves monotonically inside a short
+nearest-grid corridor. Its endpoint is
+
+#nonum[
+  $
+  X_i (1)
+  =
+  1 / d floor((d i) / n + 1 / 2).
+  $
+]
+
+Additional unanchored stationary points may bifurcate elsewhere; the result
+concerns only the $n$ components issued from the initial crests.
+
+Because cyclic order is preserved, choose lifts satisfying
+
+#nonum[
+  $
+  0=X_0 (k)<X_1 (k)<dots<X_(n-1) (k)<1
+  $
+]
+
+and set $X_n (k)=1$. Their successive spacings are
+
+#nonum[
+  $
+  D_i (k)=X_(i+1) (k)-X_i (k),
+  quad
+  i=0,dots,n-1.
+  $
+]
+
+The spacing vector
+
+#nonum[
+  $
+  Huplet(n,d,k)
+  =
+  (D_0 (k),dots,D_(n-1) (k))
+  $
+]
+
+is the *Huplet*. It is a continuous path in the open spacing simplex. Its
+endpoint
+
+#nonum[
+  $
+  Q(n,d)=Huplet(n,d,1)
+  $
+]
+
+is the *Quplet*.
+
+The endpoint formula selects the unique nearest $d$-grid site to each labeled
+initial point. The resulting gaps satisfy a stronger property than merely
+having two adjacent sizes: for every $ell in {1,dots,n-1}$, every clockwise
+distance spanning $ell$ successive selected onsets belongs to
+
+#nonum[
+  $
+  {floor((ell d) / n),ceil((ell d) / n)}.
+  $
+]
+
+By the all-scale distance criterion of Demaine et al., this identifies the
+endpoint necklace, up to cyclic rotation, with the Euclidean rhythm class
+$E(n,d)$. The labels and the fixed branch $X_0 (k)=0$ retain additional
+information and select one distinguished rotation. We denote this labeled
+nearest-grid representative by $CanonicalQuplet(n,d)$ and prove
+
+#nonum[
+  $
+  Q(n,d)
+  =
+  CanonicalQuplet(n,d),
+  quad
+  CanonicalQuplet(n,d) in E(n,d).
+  $
+]
+
+The representative is also characterized variationally: among all labeled
+$d$-grid selections, it minimizes every nondecreasing separable circular
+displacement cost, uniquely for strictly increasing losses.
+
+A second exact structure appears at the slope-balanced parameter
+
+#nonum[
+  $
+  k_c=n/(n+d).
+  $
+]
+
+There the stationary equation factors into a resonant $(n+d)$-grid family and
+a complementary family. We determine the complete threshold stationary set,
+separate the two families by amplitude, and prove that the anchored crests are
+precisely the $n$ highest threshold crests. Their spacing vector satisfies
+
+#nonum[
+  $
+  Huplet(n,d,k_c)
+  =
+  Q(n,n+d).
+  $
+]
+
+The principal remaining question is different from continuation or endpoint
+selection: whether the anchored crests are the $n$ highest local maxima for
+every $k in [0,1)$. The paper proves this ranking at $k=k_c$ but not on the
+rest of the modulation interval.
+
+Section 2 proves global anchored continuation and nearest-grid endpoint
+selection. Section 3 analyzes the balanced threshold configuration and
+identifies the anchored highest crests. Section 4 introduces Huplets and
+Quplets, proves the Euclidean endpoint theorem, and establishes the
+threshold-extension identity. Section 5 characterizes the canonical labeled
+representative by centered displacement symmetry and universal minimal
+distortion. The conclusion summarizes the proved chain and isolates the
+remaining amplitude-ranking problem. More detailed analytic, geometric, and
+combinatorial directions are preserved separately under
+#raw("further_steps/").
+
+/*
+
+Previous introduction preserved for source history.
+
+#import "definitions.typ": *
+
+= Introduction
+
 Rhythmic subdivision may be represented by an ordered collection of points on a
 cycle, or equivalently by the circular spacings between those points. In this
 paper, we study how such spacing patterns arise from the interaction of two
@@ -189,3 +347,5 @@ constrained Euclidean representative. Sections 6 and 7 develop the affine
 residue geometry and twin relations. Section 8 gives the coarse-graining and
 block-sum interpretation. The conclusion summarizes the proved results and
 formulates the main dynamical and geometric problems that remain open.
+
+*/

@@ -1,4 +1,4 @@
-#import "definitions.typ": *
+#import "../definitions.typ": *
 
 = Projection viewpoint: Quplets as block-sum images of a simplex barycenter
 
