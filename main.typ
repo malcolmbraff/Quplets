@@ -9,9 +9,9 @@
 
 #set page(numbering: "1")
 
-#align(center,text(size: 16pt,)[Introducing Quplets:\
- from crest trajectories to Euclidean rhythms])
-#align(center,text(size: 11pt,)[_Malcolm Braff_, HSM Basel, FHNW])
+#align(center,text(size: 16pt,)[Crest continuation and canonical Euclidean-rhythm selection:\
+ a two-frequency cosine model])
+#align(center,text(size: 11pt,)[_Malcolm Braff_, HSM Basel, FHNW #linebreak() #link("https://orcid.org/0009-0007-0699-0737")[ORCID: 0009-0007-0699-0737]])
 
 
 #show math.equation.where(block: false): box
@@ -55,6 +55,9 @@
 
 #v(50pt)
 #include "05-quplets-as-constrained-euclidean-rhythms.typ"
+
+#v(50pt)
+#include "06-secondary-amplitude-ranking.typ"
 
 /*
 #v(50pt)

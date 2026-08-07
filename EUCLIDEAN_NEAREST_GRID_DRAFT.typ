@@ -135,9 +135,13 @@ $ Delta_ell(i)=g_i+g_(i+1)+dots.c+g_(i+ell-1), $
 
 with gap indices read cyclically, the proposition controls the sum of every block of $ell$ consecutive gaps, for every scale $ell=1,dots.c,n-1$. This is the strong cyclic balanced, or maximally-even, condition. The earlier conclusion $g_i in {s,s+1}$ is only its scale-$1$ case; two adjacent gap lengths alone do not establish balance at larger scales.
 
-With the manuscript's Euclidean-rhythm convention, the external identification to cite is that an $n$-onset necklace on the $d$-grid satisfying this all-scale cyclic balance condition is the Euclidean rhythm necklace, up to cyclic rotation. The proposition above proves the required balance directly for the nearest-grid configuration.
-
-// CITATION PLACEHOLDER: Demaine et al., "The Distance Geometry of Music" — cite the theorem identifying the all-scale cyclic balance / maximally-even condition with the Euclidean rhythm necklace, up to rotation. Verify the exact theorem number and final bibliographic metadata before introducing a bibliography key.
+The terminology *maximally even* follows Clough and Douthett
+#cite(<cloughMaximallyEvenSets1991>). With the manuscript's Euclidean-rhythm
+convention, Theorem 4.1 of Demaine et al.
+#cite(<demaineDistanceGeometryMusic2009>) identifies an $n$-onset necklace on
+the $d$-grid satisfying this all-scale cyclic balance condition with the
+Euclidean rhythm necklace, up to cyclic rotation. The proposition above proves
+the required balance directly for the nearest-grid configuration.
 
 == Mechanical-word form (optional parallel route)
 
@@ -255,7 +259,10 @@ where $r=d " mod " n$. Consequently its gap necklace belongs to $E(n,d)$.
 
 If a Euclidean rhythm is represented instead by a binary word of length $d$ with $n$ ones, the theorem has the equivalent formulation obtained by placing ones at the partial sums of $G^(1/2)$. The gap necklace and binary onset necklace encode the same circular configuration.
 
-// CITATION PLACEHOLDER: add a source for the equivalence, under the manuscript's chosen convention, between Bjorklund rhythms, rational mechanical words, and Euclidean necklaces.
+For the Bjorklund pulse-distribution procedure and its musical Euclidean-rhythm
+interpretation, see Bjorklund #cite(<bjorklundTheoryRepratePattern2003>) and
+Toussaint #cite(<toussaintEuclideanAlgorithmGenerates2005>). The precise
+mechanical-word rotation used here is proved directly in Lemma 2.
 
 #reviewer-note[
   Please confirm whether the manuscript's symbol $E(n,d)$ denotes a binary onset necklace, a gap-word necklace, or a particular anchored representative. These are closely related but are not identical objects. The theorem above is stated first for gap necklaces, where the rotation statement is exact.
@@ -307,3 +314,5 @@ The proved content is exactly:
 - the resulting circular configuration belongs to the Euclidean necklace $E(n,d)$.
 
 For even $n$, half-integer ties may occur and a tie-breaking convention must be specified. The dynamical endpoint statement remains a conjecture or a conditional hypothesis until a separate continuation-and-selection proof is supplied.
+
+#bibliography("zotero.bib", title: "Bibliography", style: "ieee")

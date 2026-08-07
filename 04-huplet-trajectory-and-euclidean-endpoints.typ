@@ -379,6 +379,13 @@ word. We denote its cyclic equivalence class by $E(n,d)$. Thus
   $
 ]
 
+Throughout this article, $E(n,d)$ denotes the cyclic class of normalized
+integer gap vectors. By the one-to-one correspondence between a cyclic onset
+set and its positive cyclic gap word, this is equivalent to the usual Euclidean
+onset necklace. Accordingly, $Q(n,d) in E(n,d)$ is a statement about the
+normalized endpoint gap vector, while the labeled endpoint sites retain the
+additional anchor and onset labels.
+
 A dynamically defined Quplet may select another representative of this class,
 depending on the endpoint of the anchored branch $X_0$. The distinction between
 the Euclidean cyclic class and the anchored rotation is therefore essential.
@@ -431,6 +438,34 @@ class:
 ]
 
 ] <euclidean-endpoint-theorem>
+
+#proof[
+  The continuation, nondegeneracy, order preservation, and endpoint formula are
+  @anchored-continuation and @nearest-grid-endpoints. The endpoint indices are
+  precisely
+  #nonum[
+    $
+    m_i=floor((i d) / n+1 / 2).
+    $
+  ]
+  Apply @nearest-grid-all-scale-balance with $M=d$. It gives the cyclic-lift
+  identity $m_(i+n)=m_i+d$ and, for every $1<=ell<n$,
+  #nonum[
+    $
+    m_(i+ell)-m_i
+    in
+    {floor((ell d) / n),ceil((ell d) / n)}.
+    $
+  ]
+  These are exactly the clockwise distances between the selected endpoint
+  onsets. The same lemma, using the Demaine characterization, identifies their
+  cyclic gap class as the Euclidean rhythm. Dividing the integer gap word by
+  $d$ gives the normalized spacing vector $Q(n,d)$, hence $Q(n,d) in E(n,d)$.
+]
+
+/*
+Superseded expanded proof of the floor-difference calculation; retained in
+source history after consolidation into @nearest-grid-all-scale-balance.
 
 #proof[  
 The continuation, nondegeneracy, order preservation, and endpoint formula are  @anchored-continuation and @nearest-grid-endpoints.  Extend the rounded-site formula to every integer index $j$ by
@@ -505,6 +540,7 @@ Changing the chosen starting onset only cyclically rotates the positive gap
 word. By the Demaine et al. characterization, the endpoint therefore has the
 Euclidean necklace, or cyclic gap class, $E(n,d)$.
 ]
+*/
 
 The theorem determines both the Euclidean cyclic class and the distinguished
 nearest-grid representative selected by the anchored dynamics. // Redundant scope caveat preserved for source history.

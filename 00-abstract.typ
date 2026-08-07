@@ -1,59 +1,37 @@
 #import "definitions.typ": nonum, Huplet
 
 = Abstract
-
+#line(length: 100%)
 #block[
   #set par(justify: true)
 
-For coprime integers $1<n<d$ with $n$ odd, we study the two-frequency family
-
-#nonum[
-  $
-  F_k (x)
-  =
-  k cos(2 pi d x)
-  +
-  (1-k) cos(2 pi n x),
-  quad
-  k in [0,1].
-  $
+For coprime integers $1<n<d$ with $n$ odd, consider the cyclic two-frequency
+profile
+  $F_k (x) = k cos(2 pi d x) + (1-k) cos(2 pi n x)$, $k in [0,1].$
+  We track the $n$ local maxima issued from the regular $n$-grid. Each continues
+uniquely through the full parameter interval as a distinct nondegenerate crest,
+preserves cyclic order, and moves monotonically inside a short corridor to the
+unique nearest $d$-grid site 
+$X_i (1) = 1 / d floor((d i) / n + 1 / 2).$
+The rounded endpoint configuration is balanced at every cyclic scale: every
+clockwise distance spanning $ell$ selected onsets belongs to
+${floor((ell d) / n),ceil((ell d) / n)}.$
+Consequently its cyclic gap class is the Euclidean rhythm necklace $E(n,d)$,
+while the labels and the fixed phase anchor select a distinguished
+representative, the Quplet $Q(n,d)$.
+At the slope-balanced parameter $k_c=n/(n+d)$, the stationary equation factors
+into two explicit families. The anchored crests are exactly the $n$ highest
+threshold crests and satisfy $Huplet(n,d,k_c)=Q(n,n+d)$. We also prove
+amplitude ranking near both ends of the deformation and on an explicit
+interval below $k_c$; only a possibly empty subcritical interval remains
+unresolved. Thus a continuous trigonometric deformation supplies a rigorous
+selection mechanism for a canonical Euclidean rhythm representative.
 ]
+#line(length: 100%)
+#text(weight: "bold")[Keywords:] Euclidean rhythms; trigonometric polynomials;
+critical-point continuation; nearest-grid rounding; maximal evenness.
 
-We prove that the $n$ local maxima issued from the regular $n$-grid continue
-uniquely throughout the modulation interval as distinct nondegenerate crests,
-preserve cyclic order, and end at the nearest $d$-grid sites
-
-#nonum[
-  $
-  X_i (1)
-  =
-  1 / d floor((d i) / n + 1 / 2).
-  $
-]
-
-Their circular spacings define a Quplet. For every
-$ell in {1,dots,n-1}$, each clockwise $ell$-onset distance lies in
-${floor((ell d) / n),ceil((ell d) / n)}$; hence the cyclic gap class is the
-Euclidean rhythm necklace $E(n,d)$. The anchored dynamics select a
-distinguished labeled rotation. Its nearest-grid placement minimizes every
-nondecreasing separable labeled displacement cost, uniquely for strictly
-increasing losses.
-
-At the slope-balanced parameter $k_c=n/(n+d)$, the stationary equation
-factors into two explicit families. We prove that the anchored crests are
-exactly the $n$ highest threshold crests and obtain the identity
-$Huplet(n,d,k_c)=Q(n,n+d)$. Thus two-frequency crest continuation gives a
-dynamical construction of a canonical Euclidean representative. More
-generally, with
-$k_0=n^2/(n^2+2d^2)$, the anchored crests are precisely the $n$ highest local
-maxima for $k in [0,k_0] union [k_c,1)$. Writing
-$A_i (k)=F_k (X_i (k))$, each anchored crest amplitude is convex in $k$ and
-reaches its global minimum at $k_c$, with the uniform bound
-$A_i (k)>=cos(pi(n-1)/(n+d))$. The remaining amplitude-ranking problem is
-confined to $k_0<k<k_c$ and reduces to controlling the additional
-unanchored crests that may coexist there.
-
-]
+#text(weight: "bold")[2020 Mathematics Subject Classification:] 00A65; 42A05.
 
 /*
 

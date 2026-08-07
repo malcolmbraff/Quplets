@@ -16,6 +16,14 @@ residue system and are globally balanced.
 
 Throughout this section, let $1<n<d$ be coprime, with $n$ odd.
 
+The surrounding literature offers complementary descriptions of the same
+Euclidean class: the Bjorklund--Toussaint construction
+#cite(<bjorklundTheoryRepratePattern2003>) #cite(<toussaintEuclideanAlgorithmGenerates2005>),
+maximal evenness #cite(<cloughMaximallyEvenSets1991>), and Fourier-space
+characterizations #cite(<amiotMusicFourierSpace2016>). Our result does not
+define a new necklace class; it explains how the deformation selects one
+labeled, anchored representative of that class.
+
 == The canonical nearest-grid representative
 
 The Euclidean class $E(n,d)$ determines a cyclic gap class but does not retain
@@ -354,7 +362,7 @@ Define
   {-(n-1)/2,dots,(n-1)/2}.
   $ <centered-residues>
 
-  Moreover, $delta_(n-i)=-delta_i$ and
+  Moreover, for $1<=i<n$, $delta_(n-i)=-delta_i$, and
 
   #nonum[
     $
@@ -636,6 +644,9 @@ $ <displacement-energy>
   is unique, this implies $b_i = a_i$ for all $i$.
 ]
 
+This proposition records the variational meaning of pointwise nearest rounding;
+it is not an independent global energy-selection principle.
+
 The nearest-grid configuration therefore simultaneously minimizes, among all
 labeled endpoint selections without injectivity or order constraints,
 
@@ -696,10 +707,11 @@ separable displacement cost.
 
 This corollary resolves the dynamical realization of the canonical
 representative. Amplitude ranking is a separate question:
-@amplitude-selection-range proves it on $[0,k_0] union [k_c,1)$, where
-$k_0=n^2/(n^2+2d^2)$, while @anchored-amplitude-floor gives a uniform lower
-bound on the anchored family; only $k_0<k<k_c$ remains unresolved. No entropy or energy-uniqueness statement
-is asserted.
+@amplitude-selection-range proves it on
+$[0,k_0] union (k_c-h_0,1)$, where $k_0=n^2/(n^2+2d^2)$ and $h_0$ is defined
+in @subcritical-strip-ranking. The unresolved set is contained in
+$(k_0,k_c-h_0]$ when this interval is nonempty. No entropy or
+energy-uniqueness statement is asserted.
 
 /*
 == Nearest-grid endpoint-selection conjecture

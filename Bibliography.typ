@@ -1,2 +1,2 @@
-#bibliography("zotero.bib")
+#bibliography("zotero.bib",style: "ieee")
 

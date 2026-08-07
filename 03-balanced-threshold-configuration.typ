@@ -712,6 +712,60 @@ article; finer joint-criticality and spectral questions lie outside its scope.
 // // 
 // // 
 
+#lemma(name: "Nearest-grid rounding is balanced at every scale")[
+  Let $1<n<M$ be coprime integers, with $n$ odd, and define, for every
+  $j in ZZ$,
+  #nonum[
+    $
+    a_j=floor((j M) / n+1 / 2).
+    $
+  ]
+  Then no rounding tie occurs,
+  #nonum[
+    $
+    a_(j+n)=a_j+M,
+    $
+  ]
+  and $0=a_0<a_1<dots<a_(n-1)<M$. For every
+  $ell in {1,dots,n-1}$, the cyclic-lift distance
+  #nonum[
+    $
+    Delta_ell (j)=a_(j+ell)-a_j
+    $
+  ]
+  belongs to
+  #nonum[
+    $
+    {floor((ell M) / n),ceil((ell M) / n)}.
+    $
+  ]
+  Consequently the selected sites $a_j/M$, viewed up to cyclic rotation,
+  form the Euclidean rhythm with $n$ onsets on the $M$-pulse grid.
+] <nearest-grid-all-scale-balance>
+
+#proof[
+  If $j M / n$ were a half-integer, then $n$ would divide $2j$. Because $n$ is
+  odd, this forces $j equiv 0 mod n$, where the quotient is an integer rather
+  than a tie. The identity $a_(j+n)=a_j+M$ is immediate.
+
+  For arbitrary real $x,y$,
+  #nonum[
+    $
+    floor(x+y)-floor(x)
+    in
+    {floor(y),ceil(y)}.
+    $
+  ]
+  Apply this with $x=j M / n+1/2$ and $y=ell M/n$. Since $M/n>1$, the case
+  $ell=1$ also gives $a_(j+1)-a_j>=1$, proving strict order; the final site is
+  below $M$ by nearest rounding of $(n-1)M/n<M$.
+
+  The displayed two-value condition holds for every starting onset and every
+  cyclic scale. By Theorem 4.1 of
+  #cite(<demaineDistanceGeometryMusic2009>), it characterizes the Euclidean
+  rhythm up to rotation.
+]
+
 == Euclidean spacing of the highest threshold crests
 
 #proposition(name: "Euclidean highest-threshold crests")[
@@ -819,70 +873,11 @@ article; finer joint-criticality and spectral questions lie outside its scope.
   There are exactly $n$ such indices. They therefore exhaust the set defined by
   @highest-threshold-sites.
   
-  Extend @nearest-grid-sites to every integer $j$ by the same formula. Then
-
-  #nonum[
-    $
-    m_(j+n) = m_j + N,
-    $
-  ]
-
-  which is the cyclic-lift convention. For $ell in {1,dots,n-1}$, define the
-  clockwise $ell$-onset distance by
-
-  #nonum[
-    $
-    Delta_ell (j) = m_(j+ell) - m_j.
-    $
-  ]
-
-  If $j+ell>=n$, the cyclic-lift identity reads
-  $Delta_ell (j) = m_(j+ell-n) + N - m_j$, so this formula also covers the wrap
-  across the origin. Directly from @nearest-grid-sites,
-
-  #nonum[
-    $
-    Delta_ell (j)
-    =
-    floor(((j+ell)N) / n + 1 / 2)
-    -
-    floor((j N) / n + 1 / 2).
-    $
-  ]
-
-  For arbitrary real $x,y$,
-
-  #nonum[
-    $
-    floor(x+y)-floor(x)
-    in
-    {floor(y),ceil(y)}.
-    $
-  ]
-
-  Indeed, writing $x=p+u$ and $y=q+v$ with $p,q in ZZ$ and
-  $0<=u,v<1$, the difference is $q+floor(u+v)$; it equals $q$ or $q+1$,
-  and when $v=0$ only the value $q$ occurs. Applying this identity with
-  $x=(j N)/n+1/2$ and $y=(ell N)/n$ gives
-
-  #nonum[
-    $
-    Delta_ell (j)
-    in
-    {floor((ell N) / n),ceil((ell N) / n)}.
-    $
-  ]
-
-  Thus the selected configuration is cyclically balanced at every scale, not
-  merely adjacent-gap balanced. Taking $ell=1$ shows that its circular gaps
-  have lengths $floor(N/n)$ and $ceil(N/n)$. Their sum is $N$, so if
-  $N=a n+b$ with $0<=b<n$, exactly $b$ gaps have length $a+1$ and the
-  remaining $n-b$ have length $a$.
-
-  By Demaine et al.'s all-scale characterization of Euclidean rhythms
-  #footnote[Theorem 4.1 in #cite(<demaineDistanceGeometryMusic2009>)], this
-  condition identifies the cyclic configuration, up to rotation, as the
-  Euclidean rhythm with $n$ onsets on the $N$-grid.
+  Applying @nearest-grid-all-scale-balance with $M=N$ gives, for every
+  $ell in {1,dots,n-1}$, the two-value cyclic-distance condition in the
+  proposition. The same lemma, through the Demaine characterization, identifies
+  the selected configuration up to rotation as the Euclidean rhythm with $n$
+  onsets on the $N$-grid.
 ]
 
 // Threshold figure moved to further_steps/threshold-stationary-families-and-spectrum.typ.
@@ -967,6 +962,41 @@ article; finer joint-criticality and spectral questions lie outside its scope.
   @euclidean-threshold-crests, which proves that they are the $n$ highest
   threshold crests.
 ]
+
+/*
+#remark(
+  numbering: none,
+  name: "Arithmetic rigidity and its limits",
+)[
+  Call $k in (0,1)$ a *full rational alignment* if
+  $X_i (k) in QQ / ZZ$ for every anchored branch $i$. By
+  @anchored-threshold-formula, $k_c$ is always a full rational alignment.
+  Its uniqueness, however, depends essentially on $n$.
+
+  For $n=3$, mirror symmetry leaves one independent branch, and full rational
+  alignments are dense. For $n=5$, every admissible $d$ has a further interior
+  full rational alignment distinct from $k_c$; uniqueness of that additional
+  alignment remains open. For odd $n >= 7$, arithmetic rigidity is proved only
+  in the trivial Conway--Jones regime: if the coincidence equation for the
+  independent corridor pair with lengths $1$ and $2$ decomposes into trivial
+  vanishing subsums in the sense of
+  #cite(<conwayTrigonometricDiophantineEquations1976>), then a full rational
+  alignment must satisfy $k=k_c$. Exceptional Conway--Jones relations have not
+  been excluded.
+
+  Thus $k_c$ is a distinguished rational grid-locking parameter, but no
+  unconditional uniqueness theorem is asserted or used in the endpoint and
+  amplitude-ranking arguments.
+]
+*/
+
+The threshold and Euclidean-selection results needed for the main theorem are
+now complete. The technically separate amplitude-ranking analysis is collected
+in @secondary-amplitude-ranking-section.
+
+/*
+Moved to 06-secondary-amplitude-ranking.typ so that the balanced-threshold
+section ends with the threshold selection result.
 
 == Amplitude ranking outside the transition strip
 
@@ -1054,6 +1084,17 @@ with intervals understood on the circle.
     $
   ]
   The identity $h_k (-u;-c)=h_k (u;c)$ makes $M_k$ even.
+
+  The maximizer is unique for every $c in [-pi,pi]$, not only for the discrete
+  residue phases above. Indeed, at each fast quarter-point
+  $u_s=(2s+1)/(4d)$, the fast derivative term has magnitude $2 pi k d$ and
+  the slow term has magnitude at most $2 pi(1-k)n$. Because
+  $k d>(1-k)n$, the signs of $partial_u h_k (u_s;c)$ alternate with $s$,
+  independently of $c$. Thus there is a critical point in every interval
+  between consecutive quarter-points. Since $partial_u h_k$ is a nonzero
+  trigonometric polynomial of degree $d$, it has at most $2d$ zeros counted
+  with multiplicity. Hence every such interval contains exactly one simple
+  critical point, and the central interval contains one unique maximizer.
 
   We claim that $M_k$ is strictly decreasing on $(0,pi)$. Fix
   $c in (0,pi)$ and let $u^*$ be its unique maximizer. At $u=0$,
@@ -1217,29 +1258,33 @@ A complementary estimate settles a nontrivial interval near $k=0$.
     k_c=n/(n+d),
     $
   ]
-  the anchored crests are precisely the $n$ highest local maxima for every
+  and with $h_0>0$ defined in @subcritical-strip-ranking, the anchored crests
+  are precisely the $n$ highest local maxima for every
   #nonum[
     $
-    k in [0,k_0] union [k_c,1).
+    k in [0,k_0] union (k_c-h_0,1).
     $
   ]
-  The genuine amplitude-selection conjecture remains open only on
+  At $k=1$ all $d$ crest amplitudes are equal. The unresolved parameter set is
+  therefore contained in
   #nonum[
     $
-    k_0<k<k_c.
+    (k_0,k_c-h_0]
     $
   ]
+  when $k_0<k_c-h_0$, and is empty otherwise.
 ] <amplitude-selection-range>
 
 #proof[
   Use @small-modulation-ranking on $[0,k_0]$,
+  @subcritical-strip-ranking on $(k_c-h_0,k_c)$,
   @anchored-threshold-selection at $k=k_c$, and
   @upper-range-amplitude-ranking on $(k_c,1)$. At $k=1$ all $d$ crest
   amplitudes are equal, so a strict top-$n$ selection is unavailable.
 ]
 
 
-== Convexity and the remaining transition strip
+== Convexity and subcritical amplitude control
 
 For each anchored branch, define its crest amplitude by
 #nonum[
@@ -1381,17 +1426,184 @@ balance, even though extra unanchored extrema may occur elsewhere.
 ]
 
 This proposition does not bound the total number of crests: additional
-unanchored crests may coexist with the anchored family. Consequently the
-remaining conjecture on $k_0<k<k_c$ is only nonvacuous where such extra
-crests exist. By @anchored-amplitude-floor, it would be sufficient to prove
-that every unanchored crest in this strip has amplitude strictly below
-#nonum[
-  $
-  cos((pi(n-1))/(n+d)).
-  $
+unanchored crests may coexist with the anchored family. The next lemma controls
+the height at which any nontrivial stationary degeneracy can occur.
+
+#lemma(name: "Degenerate stationary values below slope balance")[
+  Let $N=n+d$ and $k_c=n/N$. Suppose
+  $F_(k^*) '(x^*)=H_(k^*) (x^*)=0$ with
+  $x^* in.not {0,1/2}$, and put $u=k_c-k^*$. Then $k^*<=k_c$ and
+  #nonum[
+    $
+    F_(k^*) (x^*)^2
+    =
+    ((d^2-n^2) N u ((1-k^*) n+k^* d))/(n^2 d^2)
+    <=
+    (2 N (d-n))/(n d) u.
+    $
+  ]
+] <degenerate-values-below-balance>
+
+#proof[
+  At $k^*=0$ or $k^*=1$, stationarity and degeneracy would require a sine and
+  cosine of the same phase to vanish simultaneously, which is impossible.
+  Hence $0<k^*<1$. Set $a=2 pi d x^*$, $b=2 pi n x^*$, and
+  #nonum[
+    $
+    rho=((1-k^*) n)/(k^* d).
+    $
+  ]
+  The stationarity and degeneracy equations give
+  #nonum[
+    $
+    sin(a)=-rho sin(b),
+    quad
+    cos(a)=-rho n/d cos(b).
+    $
+  ]
+  Squaring and adding yields
+  #nonum[
+    $
+    1=rho^2 (1-(1-n^2/d^2)cos(b)^2).
+    $
+  ]
+  Hence $rho>=1$, which is equivalent to $k^*<=k_c$, and
+  #nonum[
+    $
+    cos(b)^2
+    =
+    (rho^2-1)/(rho^2(1-n^2/d^2)).
+    $
+  ]
+  Substitution into
+  #nonum[
+    $
+    F_(k^*) (x^*)
+    =
+    (1-k^*)(1-n^2/d^2)cos(b)
+    $
+  ]
+  gives the displayed identity. Finally,
+  #nonum[
+    $
+    (1-k^*)n+k^* d
+    =
+    2 n d/N-u(d-n)
+    <=
+    2 n d/N,
+    $
+  ]
+  which proves the bound.
 ]
-This floor condition is sufficient, not necessary, because the individual
-anchored amplitudes may lie strictly above the common lower bound.
+
+#lemma(name: "Stationary-branch continuation alternative")[
+  Let $a<b$ and suppose that $(a,x_a)$ is a nondegenerate stationary point of
+  $F_a$. Follow its stationary graph toward increasing $k$ while the curvature
+  remains nonzero. Either the graph reaches $k=b$, or its maximal parameter
+  interval ends at some $k^* in (a,b)$ and the closure of the graph contains a
+  degenerate stationary point $(k^*,x^*)$.
+] <stationary-branch-alternative>
+
+#proof[
+  The implicit-function theorem gives a unique local graph wherever
+  $H_k (x)!=0$. Let $[a,k^*)$ be its maximal interval before $b$. If
+  $k^*<b$, compactness of the phase circle supplies a limit point
+  $(k^*,x^*)$ of the graph. Continuity gives $G_(k^*) (x^*)=0$. If
+  $H_(k^*) (x^*)!=0$, the implicit-function theorem extends the same graph
+  beyond $k^*$, contradicting maximality. Hence $H_(k^*) (x^*)=0$.
+]
+
+#theorem(name: "Subcritical amplitude-ranking strip")[
+  Put
+  #nonum[
+    $
+    phi=cos((pi(n-1))/N),
+    quad
+    c_0=max(cos((pi(n+1))/N),0),
+    quad
+    C=sqrt((2 N (d-n))/(n d)),
+    $
+  ]
+  and define
+  #nonum[
+    $
+    h_0
+    =
+    min(
+      (phi-c_0)/2,
+      ((sqrt(C^2+8 phi)-C)/4)^2
+    ).
+    $
+  ]
+  Then $h_0>0$. For every $k in (k_c-h_0,k_c)$, every unanchored
+  local maximum of $F_k$, including a degenerate one, has amplitude strictly
+  below $phi$. Consequently, the anchored crests
+  are precisely the $n$ highest local maxima for every
+  $k in (k_c-h_0,1)$.
+] <subcritical-strip-ranking>
+
+#proof[
+  Since $d>n$, one has $phi>c_0>=0$ and $C>0$, so both quantities in the
+  minimum defining $h_0$ are positive. Hence $h_0>0$.
+
+  Fix $k in (k_c-h_0,k_c)$ and put $h=k_c-k$. By
+  @anchored-amplitude-floor, every anchored crest has amplitude at least $phi$.
+  Let $x$ be an unanchored local maximum. If $H_k (x)=0$ and
+  $x in.not {0,1/2}$, @degenerate-values-below-balance gives
+  $F_k (x)<=C sqrt(h)<phi$. The point $x=0$ is the fixed anchored crest. At
+  $x=1/2$, the standing assumption that $n$ is odd gives
+  $cos(2 pi n x)=-1$. If $d$ is odd, both cosine values are $-1$, so the point
+  is always a trough. If $d$ is even, its unique degeneracy occurs at
+  $k=n^2/(n^2+d^2)<1/2$ and has amplitude $2k-1<0<phi$. Thus every degenerate
+  local maximum already satisfies the required bound.
+
+  It remains to treat a nondegenerate unanchored crest. Follow its stationary
+  graph toward increasing $k$. By @stationary-branch-alternative, the graph
+  either reaches $k_c$ or has a terminal degenerate stationary point before
+  $k_c$.
+
+  If the branch reaches $k_c$, it cannot meet a nondegenerate anchored crest,
+  by local uniqueness of stationary continuation. Therefore
+  @threshold-family-separation bounds its limiting amplitude by $c_0$. Along every nondegenerate stationary branch, the envelope
+  identity gives
+  #nonum[
+    $
+    abs(dif/(dif k) F_k (X(k)))<=2.
+    $
+  ]
+  Therefore its amplitude at $k$ is at most
+  $c_0+2h<phi$, because $h<h_0<=(phi-c_0)/2$.
+
+  Otherwise, let $k^* in [k,k_c)$ be the terminal parameter and put
+  $u=k_c-k^*<=h$. If a terminal limit point is different from $0$ and $1/2$,
+  @degenerate-values-below-balance bounds its amplitude by $C sqrt(u)$. The
+  point $0$ cannot occur because it is nondegenerate and anchored; at $1/2$
+  the terminal amplitude is negative, so the same upper bound still holds.
+  The envelope bound gives
+  #nonum[
+    $
+    F_k (x)
+    <=
+    C sqrt(u)+2(h-u)
+    <=
+    C sqrt(h)+2h
+    <
+    phi.
+    $
+  ]
+  The last inequality follows from the second term in the definition of
+  $h_0$. Hence every unanchored crest lies strictly below the common anchored
+  floor. Combining this result below $k_c$ with
+  @anchored-threshold-selection and @upper-range-amplitude-ranking proves the
+  final statement.
+]
+
+The theorem requires no bound on the number of subcritical crests and permits
+additional stationary pairs to appear. The remaining conjecture is only
+nonvacuous below the proved strip. The common floor remains a sufficient, not
+necessary, comparison level because individual anchored amplitudes can lie
+strictly above it.
+*/
 
 /*
 == Relation to the anchored branches

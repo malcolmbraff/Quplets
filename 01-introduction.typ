@@ -7,6 +7,15 @@ by the cyclic spacings between consecutive points. This paper asks how a
 distinguished discrete rhythm can be selected dynamically when two regular
 subdivision systems interfere.
 
+We interpret $F_k$ as a cyclic accent or salience profile: its local maxima are
+candidate onset phases, while $k$ continuously changes the relative influence
+of two regular subdivision layers. This is a mathematical selection model, not
+a psychoacoustic claim. It is relevant whenever a composer or analyst wishes
+to deform one regular pulse organization toward another while retaining the
+identity and cyclic order of the original $n$ labeled onsets. For example, the
+pair $(n,d)=(5,7)$ produces a continuous five-onset timing path whose endpoint
+is a distinguished five-onset representative on the seven-pulse grid.
+
 Let $1<n<d$ be coprime integers, with $n$ odd, and consider
 
 #nonum[
@@ -84,6 +93,28 @@ endpoint
 
 is the *Quplet*.
 
+The Euclidean-rhythm terminology used below follows Toussaint
+#cite(<toussaintEuclideanAlgorithmGenerates2005>), who connected musical
+onset patterns with Bjorklund's pulse-distribution algorithm
+#cite(<bjorklundTheoryRepratePattern2003>). The related notion of maximal
+evenness was developed by Clough and Douthett
+#cite(<cloughMaximallyEvenSets1991>). Structural decompositions and
+interlocking operations for Euclidean rhythms were subsequently studied by
+Gómez-Martín, Taslakian, and Toussaint
+#footnote[“Structural properties of Euclidean rhythms,” _Journal of Mathematics
+and Music_ 3 (2009), 1–14,
+#link("https://doi.org/10.1080/17459730902819566")[doi:10.1080/17459730902819566];
+“Interlocking and Euclidean rhythms,” _Journal of Mathematics and Music_ 3
+(2009), 15–30,
+#link("https://doi.org/10.1080/17459730902916545")[doi:10.1080/17459730902916545].].
+// Zotero: replace this manual DOI footnote with synchronized citation keys once added.
+
+Those works characterize and manipulate discrete Euclidean rhythm classes.
+The contribution here is different: we solve a continuous critical-point
+continuation problem for a two-frequency trigonometric family and prove that
+its anchored dynamics select both the Euclidean necklace and one labeled,
+phase-anchored rotation of it.
+
 The endpoint formula selects the unique nearest $d$-grid site to each labeled
 initial point. The resulting gaps satisfy a stronger property than merely
 having two adjacent sizes: for every $ell in {1,dots,n-1}$, every clockwise
@@ -138,11 +169,11 @@ precisely the $n$ highest threshold crests. Their spacing vector satisfies
 ]
 
 Amplitude ranking is different from continuation or endpoint selection. Set
-$k_0=n^2/(n^2+2d^2)$. We prove that the anchored crests are precisely the
-$n$ highest local maxima for every
-$k in [0,k_0] union [k_c,1)$. Writing
-$A_i (k)=F_k (X_i (k))$, their amplitudes are convex functions of $k$, reach
-their global minima at $k_c$, and satisfy
+$k_0=n^2/(n^2+2d^2)$. We prove that there is an explicit $h_0>0$ for which the
+anchored crests are precisely the $n$ highest local maxima for every
+$k in [0,k_0] union (k_c-h_0,1)$. At $k=1$ all $d$ crest amplitudes tie.
+Writing $A_i (k)=F_k (X_i (k))$, the anchored amplitudes are convex functions
+of $k$, reach their global minima at $k_c$, and satisfy
 #nonum[
   $
   A_i (k)
@@ -150,22 +181,25 @@ their global minima at $k_c$, and satisfy
   cos((pi(n-1))/(n+d)).
   $
 ]
-For $k<k_c$, every anchored branch also remains inside its own quarter-width
-$n$-grid window, although additional unanchored crests may coexist. The only
-unresolved parameters form the strip $k_0<k<k_c$; within it, the top-$n$
-claim would follow if every unanchored crest stayed strictly below the common
-anchored floor. This condition is sufficient, not necessary.
+For $k<k_c$, every anchored branch remains inside its own quarter-width
+$n$-grid window, although additional unanchored crests may coexist. A
+degenerate stationary point can occur only at or below slope balance, and its
+amplitude satisfies an exact square-root bound in $k_c-k$. This bounds every
+unanchored crest below the common anchored floor throughout
+$(k_c-h_0,k_c)$. The unresolved set is therefore contained in
+$(k_0,k_c-h_0]$ when this interval is nonempty. On that residual set, keeping
+all unanchored crests below the floor remains sufficient, but not necessary,
+for the top-$n$ property.
 
 Section 2 proves global anchored continuation and nearest-grid endpoint
 selection. Section 3 analyzes the balanced threshold configuration, proves
-amplitude selection above slope balance and for small modulation, derives the
-global anchored-amplitude floor and subcritical window confinement, and
-isolates the remaining transition strip. Section 4 introduces Huplets and Quplets,
-proves the Euclidean endpoint theorem, and establishes the threshold-extension
-identity. Section 5 characterizes the canonical labeled representative by
-centered displacement symmetry and labeled nearest-grid minimality. The
-conclusion summarizes the proved chain and the remaining amplitude-ranking
-strip.
+that its highest crests are Euclidean, and identifies them with the anchored
+branches. Section 4 introduces Huplets and Quplets, proves the Euclidean
+endpoint theorem, and establishes the threshold-extension identity. Section 5
+characterizes the canonical labeled representative by centered displacement
+symmetry and labeled nearest-grid minimality. Section 6 develops the logically
+separate amplitude-ranking theory and isolates the residual interval. The
+conclusion summarizes the complete proved chain.
 
 /*
 

@@ -90,31 +90,32 @@ crests. Consequently, @threshold-extension-identity gives the exact relation
 Thus the threshold configuration, the endpoint construction, and the
 Euclidean spacing theorem are parts of one proved dynamical–arithmetic chain.
 
-== Remaining amplitude-ranking strip
+== Residual amplitude-ranking interval
 
 Set
 #nonum[
   $
-  k_0=n^2/(n^2+2d^2).
+  k_0=n^2/(n^2+2d^2),
   $
 ]
-By @amplitude-selection-range, the anchored crests are precisely the $n$
-highest local maxima on
+and let $h_0>0$ be the explicit width defined in
+@subcritical-strip-ranking. By @amplitude-selection-range, the anchored crests
+are precisely the $n$ highest local maxima on
 #nonum[
   $
-  [0,k_0] union [k_c,1).
+  [0,k_0] union (k_c-h_0,1).
   $
 ]
-The remaining conjecture is therefore confined to the explicit transition
-strip
+At $k=1$ all $d$ crest amplitudes tie. The unresolved parameter set is
+therefore contained in
 #nonum[
   $
-  k_0<k<k_c.
+  (k_0,k_c-h_0]
   $
 ]
+when this interval is nonempty.
 
-Writing $A_i (k)=F_k (X_i (k))$, the convexity result
-@anchored-amplitude-floor gives, for every anchored branch,
+Writing $A_i (k)=F_k (X_i (k))$, @anchored-amplitude-floor gives
 #nonum[
   $
   A_i (k)
@@ -128,15 +129,22 @@ Writing $A_i (k)=F_k (X_i (k))$, the convexity result
 ]
 Here $m_i=floor(d i/n+1/2)$ and $epsilon_i=n m_i-i d$.
 Moreover, @subcritical-anchored-windows keeps one anchored crest inside each
-quarter-width $n$-grid window below $k_c$. Extra unanchored crests may still
-coexist there, so the remaining top-$n$ claim would follow from the sufficient
-condition that all such crests remain strictly below the common floor. The
-condition is not necessary because individual anchored amplitudes can be
-higher.
+quarter-width $n$-grid window below $k_c$.
 
-The proved result is precise: two-frequency crest continuation selects a
-canonical labeled representative of a Euclidean rhythm necklace, and its
-prominence ranking is established outside this one remaining strip.
+The new ingredient is independent of the number or arrangement of additional
+crests. By @degenerate-values-below-balance, every nontrivial stationary
+degeneracy lies at or below $k_c$ and its squared amplitude is bounded
+linearly by $k_c-k$. @subcritical-strip-ranking combines this
+square-root bound with the envelope estimate and the common anchored floor to
+control every unanchored crest on $(k_c-h_0,k_c)$. On the residual interval,
+if any, keeping all unanchored crests below the common floor remains a
+sufficient condition for the top-$n$ property; it is not necessary because
+individual anchored amplitudes can be higher.
+
+The proved result is therefore precise: two-frequency crest continuation
+selects a canonical labeled representative of a Euclidean rhythm necklace,
+and its prominence ranking is established except possibly on the residual
+interval above.
 
 /*
 

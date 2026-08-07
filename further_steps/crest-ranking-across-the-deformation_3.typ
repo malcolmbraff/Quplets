@@ -37,8 +37,13 @@ to $n$ through a cascade of annihilations; each of the $n$ windows around
 the $n$-grid retains a crest containing the anchored branch, but the total
 distance ranking fails among the doomed crests, so the correct statement
 below slope balance is the top-$n$ property alone. That property is proved
-for $k <= n^2\/(n^2+2d^2)$, holds at every sampled parameter of the cascade
-with subcritical margins never more than about $8%$ below the resonant gap
+for $k <= n^2\/(n^2+2d^2)$ and on an explicit strip $(k_c - h_0, k_c)$:
+degeneracies of $F_k$ occur only at or below slope balance, with amplitude
+at most $C sqrt(k_c - k)$, too low to bridge the resonant gap within the
+strip, whether the branch reaches $k_c$ or first meets a degeneracy. For two of the
+five cascade pairs tested the strip contains the entire observed cascade.
+Elsewhere the property holds at every sampled parameter, with subcritical
+margins never more than about $8%$ below the resonant gap
 $2 sin(pi\/N) sin(pi n\/N)$ inherited at $k_c$, and would follow everywhere
 from the sufficient condition that doomed crests stay below the floor until
 annihilation. A final section lists the remaining revision items for the
@@ -54,8 +59,9 @@ $X_i (1) = m_i\/d$, $m_i = floor(d i\/n + 1\/2)$, rounding residues
 $epsilon_i = n m_i - i d$ forming the complete centered residue system modulo
 $n$, and $k_c = n\/(n+d)$. The main paper now proves that the $n$ anchored
 crests are the $n$ highest local maxima of $F_k$ on $[k_c, 1)$ and on
-$(0, n^2\/(n^2+2d^2)]$; the remaining open region is the subcritical
-cascade. This note supplies the detailed proofs of the upper-interval
+$(0, n^2\/(n^2+2d^2)]$; Theorem 7.5 below extends the proven region by an
+explicit strip $(k_c - h_0, k_c)$, so the remaining open region is the part
+of the subcritical cascade beneath the strip. This note supplies the detailed proofs of the upper-interval
 ranking (Sections 2--6), the convexity floor (Section 7.2), and the
 corrected empirical anatomy of the cascade (Section 7.4), and closes with
 the remaining revision items.
@@ -426,14 +432,120 @@ the $n$ highest. Below slope balance the correct invariant is anchoring
 (continuation), not momentary proximity, and the correct statement is the
 top-$n$ property alone.
 
+== A proven strip below slope balance
+
+The obstruction of Section 7.1 (no upper bound on the crest count) can be
+bypassed on an explicit strip below $k_c$, without positional control of the
+doomed branches, because degeneracies are amplitude-starved near slope
+balance.
+
+#block(above: 1.1em, below: 1.1em)[
+*Lemma 7.4* (Degeneracies are low).
+Suppose $F'_(k^*)(x^*) = F''_(k^*)(x^*) = 0$ with $x^* in.not {0, 1\/2}$.
+Then $k^* <= k_c$, and with $u = k_c - k^*$,
+$ F_(k^*)(x^*)^2
+  = ((d^2-n^2) thin N u thin ((1-k^*)n + k^* d))/(n^2 d^2)
+  <= (2 N (d-n))/(n d) thin u, $
+so $F_(k^*)(x^*) <= C sqrt(u)$ with $C = sqrt(2N(d-n)\/(n d))$.
+]
+
+_Proof._
+Write $a = 2 pi d x^*$, $b = 2 pi n x^*$, $rho = (1-k^*)n\/(k^* d)$. The two
+degeneracy equations read $k^* d sin a + (1-k^*) n sin b = 0$ and
+$k^* d^2 cos a + (1-k^*) n^2 cos b = 0$, i.e. $sin a = -rho sin b$ and
+$cos a = -rho (n\/d) cos b$ (the sine and cosine of $b$ do not both vanish
+since $x^* != 0, 1\/2$). Squaring and adding,
+$1 = rho^2 (1 - (1 - n^2\/d^2) cos^2 b)$; hence $rho >= 1$, which is
+$k^* <= k_c$, and $cos^2 b = (rho^2 - 1)\/(rho^2 (1 - n^2\/d^2))$.
+Substituting $k^* cos a = -(1-k^*)(n^2\/d^2) cos b$ into
+$F_(k^*)(x^*) = k^* cos a + (1-k^*) cos b$ gives
+$F_(k^*)(x^*) = (1-k^*)(1 - n^2\/d^2) cos b$; squaring and using
+$(1-k^*)\/rho = k^* d\/n$ and $(1-k^*)n - k^* d = N(k_c - k^*)$ yields the
+identity. The inequality is
+$(1-k^*)n + k^* d = 2 n d\/N - u(d-n) <= 2 n d\/N$.
+#qed
+
+The identity is exact at real events: for $(7,12)$ the mirror pair meets
+its degeneracy at $k^* = 0.339158463$, $x^* = 0.307215$, with amplitude
+$0.255135138$; the identity reproduces this value to all computed digits,
+and the bound $C sqrt(u)$ gives $0.257273$. As a byproduct, $rho >= 1$
+re-proves that no degeneracy of any kind occurs above slope balance.
+
+#block(above: 1.1em, below: 1.1em)[
+*Theorem 7.5* (Strip below slope balance).
+Let $phi = cos(pi (n-1)\/N)$, $c_0 = max(cos(pi (n+1)\/N), 0)$, $C$ as
+above, and
+$ h_0 = min{ (phi - c_0)/2, #h(0.6em) ((sqrt(C^2 + 8 phi) - C)/4)^2 }. $
+Then for every $k in (k_c - h_0, k_c)$ every unanchored crest of $F_k$ has
+amplitude strictly below $phi$; combined with Lemma 7.2, the anchored
+crests are strictly the $n$ highest local maxima of $F_k$ for every
+$k in (k_c - h_0, 1)$.
+]
+
+_Proof._
+Fix $k$ with $h = k_c - k < h_0$ and an unanchored crest, and follow its
+branch upward in the parameter. The only stationary points where the sines
+of both frequencies vanish are $x = 0$, which carries the anchored branch
+$X_0$, nondegenerate for every $k$, and $x = 1\/2$, which for $d$ even is a
+crest exactly for $k > n^2\/(n^2+d^2)$, whose branch then continues to
+$k_c$; the transition at $x = 1\/2$ absorbs that crest into a trough and
+creates none (the fourth derivative is positive at the critical parameter).
+Hence exactly one of two cases holds.
+
+(i) _The branch continues to $k_c$._ Its limit is an unanchored crest or a
+degenerate stationary point of $F_(k_c)$, whose value is at most $c_0$: the
+unanchored stationary values at $k_c$ are the resonant heights
+$cos(2 pi r\/N)$ with $|r| >= (n+1)\/2$, the negative values of the
+complementary family (Propositions 3.1 and Corollary 3.3 of the main
+paper), and the value $0$ at degenerate quarter-points. Along the branch
+$|dif A\/dif k| = |cos(2 pi d X) - cos(2 pi n X)| <= 2$, so
+$A(k) <= c_0 + 2h < c_0 + 2 h_0 <= phi$, strictly because $h < h_0$.
+
+(ii) _The branch first meets a degeneracy at some $k^* in (k, k_c)$._
+There $F'_(k^*) = F''_(k^*) = 0$ at the limit point $x^*$, and $A$ is
+continuous along the branch up to $k^*$, so by Lemma 7.4 the value there is
+at most $C sqrt(u)$, $u = k_c - k^*$. The climb bound then gives
+$A(k) <= C sqrt(u) + 2 (h - u) <= C sqrt(h) + 2 h
+      < C sqrt(h_0) + 2 h_0 <= phi, $
+strictly because $t |-> C t + 2 t^2$ is strictly increasing and
+$t = sqrt(h_0)$ satisfies $2 t^2 + C t <= phi$ by the second term in
+$h_0$.
+#qed
+
+The theorem assumes nothing about the cascade: degeneracies below $k_c$,
+of any kind, are permitted (none beyond the observed annihilations were
+detected) and are handled by Lemma 7.4. Explicit
+strips for the pairs of Section 7.4:
+
+#table(
+  columns: (auto, auto, auto, auto, auto),
+  align: (center, center, center, center, center),
+  stroke: 0.4pt,
+  table.header([$(n,d)$], [$h_0$], [proven strip], [cascade observed], [coverage]),
+  [$(5,7)$],  [$0.082$], [$(0.335, 0.417)$], [none],             [---],
+  [$(7,9)$],  [$0.064$], [$(0.374, 0.438)$], [none],             [---],
+  [$(9,11)$], [$0.052$], [$(0.398, 0.450)$], [none],             [---],
+  [$(7,12)$], [$0.072$], [$(0.297, 0.368)$], [$[0.254, 0.368]$], [upper part],
+  [$(5,11)$], [$0.083$], [$(0.229, 0.312)$], [$[0.265, 0.312]$], [*entire cascade*],
+  [$(3,10)$], [$0.085$], [$(0.146, 0.231)$], [$[0.083, 0.230]$], [upper part],
+  [$(5,13)$], [$0.082$], [$(0.196, 0.278)$], [$[0.211, 0.277]$], [*entire cascade*],
+  [$(7,16)$], [$0.076$], [$(0.228, 0.304)$], [$[0.161, 0.304]$], [upper part],
+)
+
+For $(5,11)$ and $(5,13)$ the strip contains every observed bifurcation
+event, so on those pairs the top-$n$ property is proved on an interval
+containing the entire visible cascade; what remains unproven there is the
+empirically event-free window between $n^2\/(n^2+2d^2)$ and $k_c - h_0$.
+
 == Status and reduction
 
 #block(above: 1.1em, below: 1.1em)[
-*Conjecture 7.4* (Main conjecture, sharpened status).
+*Conjecture 7.6* (Main conjecture, sharpened status).
 For every $k in (0, 1)$ the anchored crests are strictly the $n$ highest
-local maxima of $F_k$. This is proved on $[k_c, 1)$ (Theorem 5.1; at $k = 1$
-all $d$ heights tie) and on $(0, n^2\/(n^2+2d^2)]$ (Proposition 7.3), and
-holds vacuously wherever the crest count equals $n$. On the cascade it
+local maxima of $F_k$. This is proved on $(k_c - h_0, 1)$ (Theorems 5.1 and
+7.5; at $k = 1$ all $d$ heights tie) and on $(0, n^2\/(n^2+2d^2)]$
+(Proposition 7.3), and holds vacuously wherever the crest count equals
+$n$. On the cascade it
 would follow from the sufficient condition that no doomed crest amplitude
 reaches $cos(pi (n-1)\/N)$ before annihilation; the condition is not
 necessary, since anchored amplitudes may exceed the floor.
@@ -464,16 +576,23 @@ small-$k$ proposition are now integrated in the main paper; remaining:
   $A_i (k) >= cos(2 pi epsilon_i \/ N)$ on $[0, 1)$ and proves the
   unimodality with minimum at $k_c$.
 
++ _Strip theorem._ Theorem 7.5 with Lemma 7.4 belongs in the paper: an
+  explicit strip $(k_c - h_0, k_c)$ of the subcritical region is proved,
+  with the byproduct that degeneracies of $F_k$ exist only at or below
+  slope balance; for $(5,11)$ and $(5,13)$ the strip already contains the
+  entire observed cascade.
+
 + _Open-problem statement._ Ensure the paper describes the remaining open
-  region as the subcritical cascade only (Conjecture 7.4 here), states the
-  floor condition as sufficient (not equivalent), and cites this note for
-  the cascade numerics. Whole-interval strictness claims should read
+  region as the part of the subcritical cascade beneath the strip of
+  Theorem 7.5 (Conjecture 7.6 here), states the floor condition as
+  sufficient (not equivalent), and cites this note for the cascade
+  numerics. Whole-interval strictness claims should read
   $[k_c, 1)$, all $d$ heights tying at $k = 1$.
 
 + _Rational alignment._ Add a remark after Corollary 3.3 citing the first
   companion note #cite(<rigidity>, form: "normal"): $k_c$ is conjecturally
   the unique interior parameter at which all anchored crests are rational
-  (proved in the trivial Conway--Jones regime #cite(<conwayTrigonometricDiophantineEquations1976>) for odd $n >= 7$; exact
+  (proved in the trivial Conway--Jones regime for odd $n >= 7$; exact
   counterexample family for $n = 5$; density for $n = 3$).
 
 *B. Hypotheses and framing.*
@@ -502,21 +621,17 @@ small-$k$ proposition are now integrated in the main paper; remaining:
 
 *C. Literature.*
 
-+ Add and discuss: Toussaint
-  #cite(<toussaintEuclideanAlgorithmGenerates2005>) and Bjorklund
-  #cite(<bjorklundTheoryRepratePattern2003>) for the origin of Euclidean
-  rhythms; Clough--Douthett #cite(<cloughMaximallyEvenSets1991>) for maximal
-  evenness, the correct lineage of the two-value distance property invoked
-  through Demaine et al. #cite(<demaineDistanceGeometryMusic2009>); Amiot #cite(<amiotMusicFourierSpace2016>) for the
-  DFT characterization of maximally even sets, which sits close to the
-  two-term Fourier construction and may yield an alternative proof of the
-  selection at $k_c$; the three-distance theorem, for example Slater
-  #cite(<slaterGapsStepsSequence1967>); mechanical and Christoffel words (the
-  endpoint sequence $m_i = floor(i d\/n + 1\/2)$ is a centered Beatty
-  sequence, and parts of Section 5's arithmetic should be positioned against
-  that literature, the novel contribution being the dynamical selection);
-  Conway--Jones #cite(<conwayTrigonometricDiophantineEquations1976>) for the
-  rigidity remark.
++ Add and discuss: Toussaint (2005) and Bjorklund (origin of Euclidean
+  rhythms); Clough--Douthett (1991) for maximal evenness, the correct
+  lineage of the two-value distance property invoked through Demaine et al.;
+  Amiot (2016) for the DFT characterization of maximally even sets, which
+  sits close to the two-term Fourier construction and may yield an
+  alternative proof of the selection at $k_c$; the three-distance theorem;
+  mechanical and Christoffel words (the endpoint sequence
+  $m_i = floor(i d\/n + 1\/2)$ is a centered Beatty sequence, and parts of
+  Section 5's arithmetic should be positioned against that literature, the
+  novel contribution being the dynamical selection); Conway--Jones (1976)
+  for the rigidity remark.
 
 *D. Numerics and supplementary material.*
 
@@ -538,7 +653,7 @@ small-$k$ proposition are now integrated in the main paper; remaining:
 
 #v(1em)
 
-#bibliography((bytes("@unpublished{quplets,
+#bibliography(bytes("@unpublished{quplets,
   author = {Braff, Malcolm},
   title = {Introducing Quplets: from crest trajectories to Euclidean rhythms},
   note = {Manuscript, HSM Basel, FHNW},
@@ -549,4 +664,4 @@ small-$k$ proposition are now integrated in the main paper; remaining:
   title = {Rational alignment rigidity of anchored crests},
   note = {Companion note, further\\_steps},
   year = {2026}
-}"), "../zotero.bib"), title: "Bibliography", style: "ieee")
+}"), title: "Bibliography", style: "ieee")

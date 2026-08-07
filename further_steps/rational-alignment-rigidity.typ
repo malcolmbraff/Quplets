@@ -88,7 +88,7 @@ The results are as follows.
 
 - For odd $n >= 7$ we prove: any full rational alignment whose pairwise
   coincidence equations decompose _trivially_ in the sense of Conway and Jones
-  #cite(<cj>, form: "normal") occurs at $k = k_c$ (Theorems 6.1 and 6.2). The
+  #cite(<conwayTrigonometricDiophantineEquations1976>, form: "normal") occurs at $k = k_c$ (Theorems 6.1 and 6.2). The
   exceptional regime remains open but is a finite verification
   (Section 8), and all numerical scans are consistent with full rigidity
   (Section 7).
@@ -241,7 +241,7 @@ $ u_1 = a_i - b_j, quad u_2 = a_i + b_j, quad u_3 = a_j - b_i, quad u_4 = a_j + 
 with all $u_m in pi bb(Q)$.
 
 Vanishing rational-coefficient sums of cosines of rational angles are
-completely classified by Conway and Jones #cite(<cj>, form: "normal"): every
+completely classified by Conway and Jones #cite(<conwayTrigonometricDiophantineEquations1976>, form: "normal"): every
 such sum decomposes into minimal vanishing subsums, and every minimal subsum
 is either
 
@@ -251,7 +251,7 @@ is either
   $phi' = pi minus.plus phi ("mod" 2 pi)$; or
 + an _exceptional_ relation from their finite list, whose angles are odd
   multiples of $pi\/3$ together with rational angles of denominator dividing
-  $15$ or $21$ (numerators as in #cite(<cj>, form: "normal"), Theorem 7).
+  $15$ or $21$ (numerators as in #cite(<conwayTrigonometricDiophantineEquations1976>, form: "normal"), Theorem 7).
 
 #statement("def")[
 *Definition 4.1.*
@@ -516,7 +516,7 @@ evaluation instead. Any future scan should take $q >= 4 n d$.
 What remains open is the exceptional case of the Conway--Jones dichotomy: a
 full rational alignment at $k != k_c$ in which the coincidence equation of the
 $\{1,2\}$-pair vanishes through an exceptional relation. By
-#cite(<cj>, form: "normal"), the normalized angles of such a relation are odd
+#cite(<conwayTrigonometricDiophantineEquations1976>, form: "normal"), the normalized angles of such a relation are odd
 multiples of $pi\/3$ together with angles of denominator dividing $15$ or
 $21$; each admissible assignment of these angles to
 $|u_1|, u_2, |u_3|, u_4$ imposes, through the relations (R$""_i$),
@@ -554,17 +554,9 @@ for some $m$, for every odd $n >= 5$.
 
 #v(1em)
 
-#bibliography(bytes("@article{cj,
-  author = {Conway, J. H. and Jones, A. J.},
-  title = {Trigonometric diophantine equations ({O}n vanishing sums of roots of unity)},
-  journal = {Acta Arithmetica},
-  volume = {30},
-  year = {1976},
-  pages = {229--240}
-}
-@unpublished{quplets,
+#bibliography((bytes("@unpublished{quplets,
   author = {Braff, Malcolm},
   title = {Introducing Quplets: from crest trajectories to Euclidean rhythms},
   note = {Manuscript, HSM Basel, FHNW},
   year = {2026}
-}"), title: "Bibliography", style: "ieee")
+}"), "../zotero.bib"), title: "Bibliography", style: "ieee")

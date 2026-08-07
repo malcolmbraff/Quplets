@@ -388,17 +388,21 @@ touch several sections. Concretely, in suggested order of execution:
 
 *C. Literature.*
 
-+ Add and discuss: Toussaint (2005) and Bjorklund (origin of Euclidean
-  rhythms); Clough--Douthett (1991) for maximal evenness, the correct
-  lineage of the two-value distance property invoked through Demaine et al.;
-  Amiot (2016) for the DFT characterization of maximally even sets, which
-  sits close to the two-term Fourier construction and may yield an
-  alternative proof of the selection at $k_c$; the three-distance theorem;
-  mechanical and Christoffel words (the endpoint sequence
-  $m_i = floor(i d\/n + 1\/2)$ is a centered Beatty sequence, and parts of
-  Section 5's arithmetic should be positioned against that literature, the
-  novel contribution being the dynamical selection); Conway--Jones (1976)
-  for the rigidity remark.
++ Add and discuss: Toussaint
+  #cite(<toussaintEuclideanAlgorithmGenerates2005>) and Bjorklund
+  #cite(<bjorklundTheoryRepratePattern2003>) for the origin of Euclidean
+  rhythms; Clough--Douthett #cite(<cloughMaximallyEvenSets1991>) for maximal
+  evenness, the correct lineage of the two-value distance property invoked
+  through Demaine et al. #cite(<demaineDistanceGeometryMusic2009>); Amiot #cite(<amiotMusicFourierSpace2016>) for the
+  DFT characterization of maximally even sets, which sits close to the
+  two-term Fourier construction and may yield an alternative proof of the
+  selection at $k_c$; the three-distance theorem, for example Slater
+  #cite(<slaterGapsStepsSequence1967>); mechanical and Christoffel words (the
+  endpoint sequence $m_i = floor(i d\/n + 1\/2)$ is a centered Beatty
+  sequence, and parts of Section 5's arithmetic should be positioned against
+  that literature, the novel contribution being the dynamical selection);
+  Conway--Jones #cite(<conwayTrigonometricDiophantineEquations1976>) for the
+  rigidity remark.
 
 *D. Numerics and supplementary material.*
 
@@ -418,7 +422,7 @@ touch several sections. Concretely, in suggested order of execution:
 
 #v(1em)
 
-#bibliography(bytes("@unpublished{quplets,
+#bibliography((bytes("@unpublished{quplets,
   author = {Braff, Malcolm},
   title = {Introducing Quplets: from crest trajectories to Euclidean rhythms},
   note = {Manuscript, HSM Basel, FHNW},
@@ -429,4 +433,4 @@ touch several sections. Concretely, in suggested order of execution:
   title = {Rational alignment rigidity of anchored crests},
   note = {Companion note, further\\_steps},
   year = {2026}
-}"), title: "Bibliography", style: "ieee")
+}"), "../zotero.bib"), title: "Bibliography", style: "ieee")
