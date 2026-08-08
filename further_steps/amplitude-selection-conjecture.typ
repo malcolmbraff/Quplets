@@ -1,37 +1,59 @@
 #import "../definitions.typ": *
 
-= Amplitude-selection conjecture
+= Remaining amplitude-selection problem
 
-#emph[Open dynamical problem extracted from the main article. Global anchored
-continuation and nearest-grid endpoint selection are proved; the instantaneous
-ranking statement below remains conjectural.]
+#emph[Open dynamical problem extracted from the main article. Global anchored continuation and nearest-grid endpoint selection are proved. The amplitude-selection theorem is proved in two outer parameter ranges; only the transition strip below remains open.]
 
-Let $1<n<d$ be coprime, with $n$ odd, and let $X_i (k)$ denote the anchored
-crest branches of
+Let $1<n<d$ be coprime, with $n$ odd, and let $X_i(k)$ denote the anchored crest branches of
 
 $
-F_k (x)
-=
-k cos(2 pi d x)
-+
-(1-k) cos(2 pi n x).
+F_k(x)=k cos(2 pi d x)+(1-k) cos(2 pi n x).
 $
 
-== Conjecture on amplitude selection
+Set
 
-Numerical experiments indicate that the anchored branches can also be
-identified from the instantaneous crest amplitudes.
+$
+k_c = n/(n+d),
+quad
+k_0 = n^2/(n^2+2 d^2).
+$
 
-*Conjecture (amplitude selection).*  
+== Proved amplitude-selection ranges
 
-Let $1<n<d$ be coprime, with $n$ odd. For every $k in [0,1)$, the anchored
-crests are precisely the $n$ highest local maxima of $F_k$.
+The anchored crests are precisely the $n$ highest local maxima of $F_k$ for
 
-At $k=1$, all $d$ crests have amplitude $1$, so amplitude ranking no longer
-selects a unique subset. The selected $n$ endpoint sites are instead inherited
-from the continuous anchored branches.
+$
+k in [0,k_0] union [k_c,1).
+$
 
-This conjecture links branch continuation to the amplitude ordering of all
-local maxima. The next section identifies the highest stationary points at the
-balanced parameter and shows that the resonant $(n+d)$-grid points are joint
-critical points of the surface $(k,x) mapsto F_k (x)$.
+Near $k=0$, there are exactly $n$ crests and all are anchored. At the balanced threshold and throughout the upper range, the anchored crests are selected by the threshold and residue-ordering arguments.
+
+At $k=1$, all $d$ crests have amplitude $1$, so an amplitude ranking does not select a distinguished $n$-subset at the endpoint itself.
+
+== Remaining conjecture
+
+*Conjecture (transition-strip amplitude selection).* For every
+
+$
+k in (k_0,k_c),
+$
+
+the anchored crests are precisely the $n$ highest local maxima of $F_k$.
+
+The issue is not continuation: the anchored branches are already known to exist globally and remain nondegenerate. The missing step is to show that residual crests born in the transition region never overtake the lowest anchored crest in amplitude.
+
+== A promising comparison principle
+
+With the backward parameter $q=(1-k)/k$, write
+
+$
+G_q(x)=cos(2 pi d x)+q cos(2 pi n x).
+$
+
+Along any stationary crest branch $Y(q)$,
+
+$
+(d/dq) G_q(Y(q))=cos(2 pi n Y(q)).
+$
+
+Thus a crest closer to an $n$-grid peak gains amplitude faster as the $n$-component is increased. A proof that every anchored crest remains more $n$-aligned than every residual crest would make the anchored--residual amplitude gap increase and would settle the conjecture.

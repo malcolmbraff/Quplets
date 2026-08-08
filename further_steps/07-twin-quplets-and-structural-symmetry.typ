@@ -66,7 +66,7 @@ is called a pair of *canonical twin Quplets*.
 The two members have complementary residues and belong to the same quotient
 band $s$.
 
-If @Quplet-realization holds for both pairs $(n,d_r)$ and
+If the Quplet-realization result holds for both pairs $(n,d_r)$ and
 $(n,d_(n-r))$, then
 
 #nonum[
@@ -176,7 +176,7 @@ reversal of the cyclic order.
 
 == Affine twin relation
 
-By @canonical-collinearity,
+By the fixed-residue collinearity formula,
 
 #nonum[
   $
@@ -198,7 +198,7 @@ where
   $
 ]
 
-For the complementary residue, @opposite-directions gives
+For the complementary residue, the opposite-orientation corollary gives
 
 #nonum[
   $
@@ -548,7 +548,7 @@ nearest-grid construction and does not require a claim about the crest
 trajectories.
 
 Its realization by the dynamically defined Quplets remains conditional on
-@Quplet-realization.
+the Quplet-realization result.
 
 Moreover, the twin relation should not be described as symmetry about a
 single balanced derivative parameter. The two frequency pairs have distinct
@@ -596,7 +596,7 @@ spacing vectors with the following properties:
 Thus the twin relation combines a combinatorial complementation of the gap
 word with an affine opposition in the spacing simplex.
 
-Under @Quplet-realization, this same structure is inherited by the
+Under the Quplet-realization result, this same structure is inherited by the
 dynamically defined Quplets.
 
 

@@ -12,7 +12,7 @@ the Euclidean class $E(n,d)$: the canonical nearest-grid spacing vector
   $
 ]
 
-By @Quplet-realization, this canonical representative is precisely the
+By the Quplet-realization result, this canonical representative is precisely the
 dynamically defined Quplet:
 
 #nonum[
@@ -36,7 +36,7 @@ is the residue
 For a fixed residue, the positions of the long and short gaps remain unchanged,
 while their numerical contrast decreases as $d$ increases. This places the
 corresponding canonical representatives on an affine line through the regular
-tuplet. By @Quplet-realization, the dynamically defined Quplets inherit the
+tuplet. By the Quplet-realization result, the dynamically defined Quplets inherit the
 same affine organization.
 
 Throughout this section, let $1 < n < d$ be coprime integers, and assume that $n$
@@ -203,7 +203,7 @@ Then
 
 For the nearest-grid construction, these index sets depend only on $n$ and
 $r$, not on the quotient $s$. Extend the rounded-site formula to $i=n$ by
-using the same expression as in @nearest-endpoint. Then
+using the same expression as in the nearest-endpoint theorem. Then
 
 #nonum[
   $
@@ -331,7 +331,7 @@ contrast direction associated with the residue $r$.
 
 We first state the affine formula for the canonical nearest-grid spacing
 vector, then transfer it to the dynamically defined Quplet by
-@Quplet-realization.
+the Quplet-realization result.
 
 #theorem(name: "Fixed-residue collinearity")[
   Under the standing hypotheses, write
@@ -400,7 +400,7 @@ vector, then transfer it to the dynamically defined Quplet by
 ] <dynamic-fixed-residue-collinearity>
 
 #proof[
-  Combine @Quplet-realization with @fixed-residue-collinearity.
+  Combine the Quplet-realization result with @fixed-residue-collinearity.
 ]
 
 == Variation of the quotient
@@ -425,7 +425,7 @@ Then
 
 so the long-index set $L_(n,r)$ and the direction $m_(n,r)$ remain fixed.
 
-By @canonical-collinearity,
+By the fixed-residue collinearity formula,
 
 $
 CanonicalQuplet(n,d+i n)
@@ -457,7 +457,7 @@ CanonicalQuplet(n,d+i n)
 t_n.
 $ <canonical-fixed-residue-limit>
 
-By @Quplet-realization, the same identities hold for the dynamically defined
+By the Quplet-realization result, the same identities hold for the dynamically defined
 Quplets:
 
 #nonum[
@@ -471,7 +471,8 @@ Quplets:
 and therefore
 
 #nonum[
-  $
+432
+$
   lim_(i arrow.r infinity)
   Q(n,d+i n)
   =
@@ -481,14 +482,14 @@ and therefore
 
 Thus increasing the quotient $s$ preserves the cyclic long–short arrangement
 while reducing its contrast. The canonical representatives approach the
-regular tuplet along a straight line in the simplex. By @Quplet-realization,
+regular tuplet along a straight line in the simplex. By the Quplet-realization result,
 the dynamically defined Quplets follow the same family.
 
 
 == Complementary residues
 
 The residues $r$ and $n - r$ exchange long and short gaps. We now compare
-the binary words $c_i (r)$ from @residue-binary-word.
+the binary words $c_i (r)$ from the residue binary-word construction.
 
 Because $n$ is odd and $gcd(n,r) = 1$, none of the numbers $(i r) / n$ is a
 half-integer. Hence
@@ -567,8 +568,8 @@ $ <opposite-directions>
 
 #proof[
   Apply @fixed-residue-collinearity to the two residues and use
-  @opposite-directions. The Quplet identities then follow from
-  @Quplet-realization.
+  the opposite-orientation corollary. The Quplet identities then follow from
+  the Quplet-realization result.
 ]
 
 The residue determines an oriented half-line from $t_n$, while the associated
@@ -694,7 +695,7 @@ ContinuousQuplet_(mu(d)) (n,r)
 CanonicalQuplet(n,d).
 $ <canonical-discrete-continuous-identification>
 
-By @Quplet-realization,
+By the Quplet-realization result,
 
 #nonum[
   $
@@ -719,7 +720,7 @@ section.
 
 == Twin extension across the regular tuplet
 
-Because of @opposite-directions,
+Because of the opposite-orientation corollary,
 
 #nonum[
   $
@@ -896,7 +897,7 @@ The canonical family is therefore not an arbitrary collection of points in
 the simplex. It consists of discrete collinear families whose contrast
 parameters decrease reciprocally as the quotient increases.
 
-By @Quplet-realization, the dynamically defined Quplets coincide with these
+By the Quplet-realization result, the dynamically defined Quplets coincide with these
 canonical points and inherit the same affine organization.
 
 The continuous vectors $ContinuousQuplet_mu (n,r)$ extend the discrete

@@ -63,7 +63,7 @@ Fix $n$ and $d$, and let
   $
 ]
 
-where the nearest-grid indices $a_i$ are defined by @nearest-endpoint and
+where the nearest-grid indices $a_i$ are defined by the nearest-endpoint theorem and
 satisfy
 
 #nonum[
@@ -221,7 +221,7 @@ For every $w in Delta_(d-1)$,
   $
 ]
 
-where $Sigma_n$ is the spacing simplex defined in @spacing-simplex.
+where $Sigma_n$ is the spacing simplex defined in the spacing simplex.
 
 Indeed, the entries of $Pi(n,d)w$ are nonnegative and
 
@@ -262,7 +262,7 @@ Pi(n,d)u_d
 CanonicalQuplet(n,d).
 $ <canonical-block-sum>
 
-If @Quplet-realization holds, then this becomes
+If the Quplet-realization statement holds, then this becomes
 
 #nonum[
   $
@@ -423,7 +423,7 @@ Pi(5,7)u_7
 CanonicalQuplet(5,7).
 $ <example-block-sum>
 
-If @Quplet-realization holds for $(5,7)$, then this vector also equals
+If the Quplet-realization statement holds for $(5,7)$, then this vector also equals
 $Q(5,7)$.
 
 A matrix containing a single $1$ only at the initial index of each block would
@@ -500,7 +500,7 @@ where
   $
 ]
 
-Combining this with @canonical-block-sum gives
+Combining this with the canonical block-sum identity gives
 
 $
 CanonicalQuplet(n,d)
@@ -512,9 +512,9 @@ t_n
 mu(d)m_(n,r).
 $ <block-sum-collinearity>
 
-This recovers @canonical-collinearity from the block-sum viewpoint.
+This recovers the fixed-residue collinearity formula from the block-sum viewpoint.
 
-If @Quplet-realization holds, then
+If the Quplet-realization statement holds, then
 
 #nonum[
   $
@@ -612,7 +612,7 @@ occupy these same threshold sites, and therefore
   $
 ]
 
-If, in addition, @Quplet-realization holds for $(n,n+d)$, then
+If, in addition, the Quplet-realization statement holds for $(n,n+d)$, then
 
 #nonum[
   $
@@ -667,7 +667,7 @@ Thus the canonical Quplet is the block-sum image of a simplex barycenter:
 ]
 
 Its identification with the endpoint of the anchored crest dynamics remains
-the content of @Quplet-realization.
+the content of the Quplet-realization statement.
 
 
 == Transition
