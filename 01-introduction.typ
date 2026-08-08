@@ -16,7 +16,17 @@ identity and cyclic order of the original $n$ labeled onsets. For example, the
 pair $(n,d)=(5,7)$ produces a continuous five-onset timing path whose endpoint
 is a distinguished five-onset representative on the seven-pulse grid.
 
-Let $1<n<d$ be coprime integers, with $n$ odd, and consider
+Let $1<n<d$ be coprime integers with $n$ odd.#footnote[
+Coprimality is only a primitive-period normalization. For arbitrary
+frequencies, let $g=gcd(n,d)$, $p=n/g$, and $q=d/g$. With $u=g x$, the signal
+reduces to
+$F_k (x)=k cos(2 pi q u)+(1-k) cos(2 pi p u)$, so it has period $1/g$ and
+consists of $g$ translated copies of the coprime $(p,q)$ profile. All
+critical-point trajectories and nearest-grid endpoints lift through
+$x=(u+r)/g$, $r=0,dots,g-1$. We assume $gcd(n,d)=1$ only to work on one
+primitive period and avoid repeated notation.
+]
+Consider
 
 #nonum[
   $
@@ -31,6 +41,7 @@ Let $1<n<d$ be coprime integers, with $n$ odd, and consider
   x in RR / ZZ.
   $
 ]
+
 
 At $k=0$, the crests form the regular $n$-grid; at $k=1$, they form the regular
 $d$-grid. For each $i in {0,dots,n-1}$, let $X_i (k)$ denote the crest branch
