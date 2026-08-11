@@ -94,6 +94,8 @@ The threshold configuration, the endpoint construction, and the
 Euclidean spacing theorem therefore form one complete proved
 dynamical--arithmetic chain.
 
+For even $n$, the sole central rounding tie is accompanied by a symmetric pitchfork of the central anchored crest. The two resulting arms continue globally to the reflected nearest $d$-grid sites, yielding two reflected canonical Euclidean representatives. A signed infinitesimal sine perturbation can select either member of this canonical mirror pair.
+
 /*
 
 Previous extended conclusion preserved for source history.
@@ -510,3 +512,6 @@ interference, Euclidean distribution, variational selection, and affine rhythm
 geometry.
 
 */
+
+
+
