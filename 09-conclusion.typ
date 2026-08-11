@@ -90,61 +90,9 @@ crests. Consequently, @threshold-extension-identity gives the exact relation
 Thus the threshold configuration, the endpoint construction, and the
 Euclidean spacing theorem are parts of one proved dynamical–arithmetic chain.
 
-== Residual amplitude-ranking interval
-
-Set
-#nonum[
-  $
-  k_0=n^2/(n^2+2d^2),
-  $
-]
-and let $h_0>0$ be the explicit width defined in
-@subcritical-strip-ranking. By @amplitude-selection-range, the anchored crests
-are precisely the $n$ highest local maxima on
-#nonum[
-  $
-  [0,k_0] union (k_c-h_0,1).
-  $
-]
-At $k=1$ all $d$ crest amplitudes tie. The unresolved parameter set is
-therefore contained in
-#nonum[
-  $
-  (k_0,k_c-h_0]
-  $
-]
-when this interval is nonempty.
-
-Writing $A_i (k)=F_k (X_i (k))$, @anchored-amplitude-floor gives
-#nonum[
-  $
-  A_i (k)
-  >=
-  A_i (k_c)
-  =
-  cos((2 pi epsilon_i)/(n+d))
-  >=
-  cos((pi(n-1))/(n+d)).
-  $
-]
-Here $m_i=floor(d i/n+1/2)$ and $epsilon_i=n m_i-i d$.
-Moreover, @subcritical-anchored-windows keeps one anchored crest inside each
-quarter-width $n$-grid window below $k_c$.
-
-The new ingredient is independent of the number or arrangement of additional
-crests. By @degenerate-values-below-balance, every nontrivial stationary
-degeneracy lies at or below $k_c$ and its squared amplitude is bounded
-linearly by $k_c-k$. @subcritical-strip-ranking combines this
-square-root bound with the envelope estimate and the common anchored floor to
-control every unanchored crest on $(k_c-h_0,k_c)$. On the residual interval,
-if any, keeping all unanchored crests below the common floor remains a
-sufficient condition for the top-$n$ property; it is not necessary because
-individual anchored amplitudes can be higher.
-
-The proved result is therefore precise: two-frequency crest continuation
-selects a canonical labeled representative of a Euclidean rhythm necklace,
-and its prominence ranking is established except possibly on the residual
-interval above.
+The threshold configuration, the endpoint construction, and the
+Euclidean spacing theorem therefore form one complete proved
+dynamical--arithmetic chain.
 
 /*
 

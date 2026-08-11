@@ -2,13 +2,8 @@
 
 = The Huplet trajectory and Euclidean endpoints
 
-The preceding sections describe the motion of the $n$ anchored crest branches
-and the complete stationary configuration at the balanced parameter
-$k_c = n/(n+d)$. We now pass from crest positions to their successive circular
-spacings.
+The preceding sections describe the motion of the $n$ anchored crest branches and the complete stationary configuration at the balanced parameter $k_c = n/(n+d)$. We now pass from absolute crest positions to their successive circular spacings, since rhythm is determined by the clockwise gaps between consecutive labelled crests. This produces a spacing vector along the trajectory; at the endpoint, we prove that its gaps satisfy the stronger all-scale criterion for a Euclidean rhythm. Throughout this section, $1<n<d$ are coprime integers and $n$ is odd, as in the standing hypotheses of @anchored-continuation.
 
-Throughout this section, $1<n<d$ are coprime integers and $n$ is odd, as in
-the standing hypotheses of @anchored-continuation.
 
 == Huplet spacing coordinates
 
@@ -52,6 +47,20 @@ Huplet(n,d,0)
 =
 1/n (1,dots,1).
 $ <regular-tuplet>
+
+#figure(
+  image(
+    "Figures/Spacing Vector.svg",
+    width: 78%,
+  ),
+  caption: [
+    Components of the Huplet spacing vector for $(n,d)=(53,67)$. At the
+    slope-balanced parameter $k_c=53/120$, the components take two values,
+    corresponding to the threshold Euclidean configuration on the $120$-grid.\
+    As $k$ tends to $1$, they converge to the two endpoint lengths on the
+    $67$-grid.
+  ],
+) <fig-huplet-spacing-vector>
 
 == Grid locking along the Huplet trajectory
 
@@ -610,10 +619,7 @@ sites are the nearest points of the $(n+d)$-grid to the initial $n$-grid.
 ]
 
 This result identifies the anchored Huplet with the highest-crest threshold
-configuration at $k_c$. The full amplitude-ranking status is given by
-@amplitude-selection-range: only the strip
-$n^2/(n^2+2d^2)<k<k_c$ remains unresolved. Throughout that strip the anchored
-amplitudes retain the explicit lower bound of @anchored-amplitude-floor.
+configuration at $k_c$.
 
 /*
 == The threshold Huplet and its Euclidean class

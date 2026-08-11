@@ -2,19 +2,7 @@
 
 = Introduction
 
-Rhythmic subdivision can be represented by points on a circle, or equivalently
-by the cyclic spacings between consecutive points. This paper asks how a
-distinguished discrete rhythm can be selected dynamically when two regular
-subdivision systems interfere.
-
-We interpret $F_k$ as a cyclic accent or salience profile: its local maxima are
-candidate onset phases, while $k$ continuously changes the relative influence
-of two regular subdivision layers. This is a mathematical selection model, not
-a psychoacoustic claim. It is relevant whenever a composer or analyst wishes
-to deform one regular pulse organization toward another while retaining the
-identity and cyclic order of the original $n$ labeled onsets. For example, the
-pair $(n,d)=(5,7)$ produces a continuous five-onset timing path whose endpoint
-is a distinguished five-onset representative on the seven-pulse grid.
+A cyclic rhythm can be represented by points on a circle, or equivalently by the cyclic spacings between consecutive points. This paper asks how a distinguished discrete rhythm can be selected dynamically when two regular subdivisions interfere. We interpret $F_k$ as a cyclic accent profile: its local maxima are candidate onset phases, $k$ continuously shifts the relative influence of the two subdivision layers, and continuation follows $n$ of the maxima across the deformation. For example, the pair $(n,d) = (5,7)$ produces a continuous five-onset timing path whose endpoint is a distinguished five-onset representative on the seven-pulse grid.
 
 Let $1<n<d$ be coprime integers with $n$ odd.#footnote[
 Coprimality is only a primitive-period normalization. For arbitrary
@@ -25,6 +13,10 @@ consists of $g$ translated copies of the coprime $(p,q)$ profile. All
 critical-point trajectories and nearest-grid endpoints lift through
 $x=(u+r)/g$, $r=0,dots,g-1$. We assume $gcd(n,d)=1$ only to work on one
 primitive period and avoid repeated notation.
+The assumption that $n$ is odd isolates the generic parity case used in the
+threshold analysis. When $n$ is even, the central half-grid point produces a
+symmetric pitchfork at the lower degeneracy threshold; we return briefly to
+that even-$n$ case at the end of the paper.
 ]
 Consider
 
@@ -38,7 +30,7 @@ Consider
   quad
   k in [0,1],
   quad
-  x in RR / ZZ.
+  x in RR \/ ZZ.
   $
 ]
 
@@ -120,7 +112,7 @@ and Music_ 3 (2009), 1–14,
 #link("https://doi.org/10.1080/17459730902916545")[doi:10.1080/17459730902916545].].
 // Zotero: replace this manual DOI footnote with synchronized citation keys once added.
 
-Those works characterize and manipulate discrete Euclidean rhythm classes.
+Those works characterize and manipulate discrete Euclidean rhythm classes. #footnote[For rational densities, Farey sequences organize the associated mechanical and Christoffel word classes; see @lothaireAlgebraicCombinatoricsWords2002. The present paper instead derives one such configuration by crest continuation.]
 The contribution here is different: we solve a continuous critical-point
 continuation problem for a two-frequency trigonometric family and prove that
 its anchored dynamics select both the Euclidean necklace and one labeled,
@@ -179,38 +171,14 @@ precisely the $n$ highest threshold crests. Their spacing vector satisfies
   $
 ]
 
-Amplitude ranking is different from continuation or endpoint selection. Set
-$k_0=n^2/(n^2+2d^2)$. We prove that there is an explicit $h_0>0$ for which the
-anchored crests are precisely the $n$ highest local maxima for every
-$k in [0,k_0] union (k_c-h_0,1)$. At $k=1$ all $d$ crest amplitudes tie.
-Writing $A_i (k)=F_k (X_i (k))$, the anchored amplitudes are convex functions
-of $k$, reach their global minima at $k_c$, and satisfy
-#nonum[
-  $
-  A_i (k)
-  >=
-  cos((pi(n-1))/(n+d)).
-  $
-]
-For $k<k_c$, every anchored branch remains inside its own quarter-width
-$n$-grid window, although additional unanchored crests may coexist. A
-degenerate stationary point can occur only at or below slope balance, and its
-amplitude satisfies an exact square-root bound in $k_c-k$. This bounds every
-unanchored crest below the common anchored floor throughout
-$(k_c-h_0,k_c)$. The unresolved set is therefore contained in
-$(k_0,k_c-h_0]$ when this interval is nonempty. On that residual set, keeping
-all unanchored crests below the floor remains sufficient, but not necessary,
-for the top-$n$ property.
-
 Section 2 proves global anchored continuation and nearest-grid endpoint
 selection. Section 3 analyzes the balanced threshold configuration, proves
 that its highest crests are Euclidean, and identifies them with the anchored
 branches. Section 4 introduces Huplets and Quplets, proves the Euclidean
 endpoint theorem, and establishes the threshold-extension identity. Section 5
 characterizes the canonical labeled representative by centered displacement
-symmetry and labeled nearest-grid minimality. Section 6 develops the logically
-separate amplitude-ranking theory and isolates the residual interval. The
-conclusion summarizes the complete proved chain.
+symmetry and labeled nearest-grid minimality. The conclusion summarizes this
+complete proved chain.
 
 /*
 
@@ -344,7 +312,7 @@ At $k=k_c$, the stationary equation factors into two explicit trigonometric
 families. One lies on the $(n+d)$-grid. For coprime $n$ and $d$, with $n$
 odd, we prove that the $n$ highest threshold crests belong to this grid and
 have Euclidean circular spacings. Their selection follows from a strict
-amplitude separation between the two stationary families.
+amplitude separation between the two stationary families. #footnote[The reduced density $n/(n+d)$ places this balanced grid configuration in the standard rational mechanical-word and Christoffel-word setting; Farey sequences organize the associated reduced rational densities @lothaireAlgebraicCombinatoricsWords2002. The present theorem concerns the analytic selection of this configuration by crest continuation.]
 
 The endpoint problem contains more information than the Euclidean cyclic class
 alone. An even distribution of $n$ points on a $d$-grid determines a gap word

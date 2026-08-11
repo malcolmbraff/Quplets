@@ -9,13 +9,19 @@ main Quplet article. None of these files is included by #raw("../main.typ").]
 
 - #raw("crest-trajectory-analysis.typ"): position ODE, phase parametrization,
   amplitude convexity, critical phases, and lifted trajectories.
+- #raw("anchored-continuation-conjecture.typ"): historical conjectural
+  formulation of global anchored continuation, retained after the theorem
+  was proved.
 - #raw("fixed-parameter-algebraic-characterization.typ"): Chebyshev-polynomial
   characterization at fixed rational modulation parameters.
-- #raw("crest-ranking-across-the-deformation_1.typ"): detailed upper-range
-  amplitude ranking, the global anchored-amplitude floor, subcritical window
-  confinement, and numerical evidence for the remaining transition strip.
 - #raw("amplitude-selection-conjecture.typ"): background for the residual
   conjecture on $n^2/(n^2+2d^2)<k<n/(n+d)$.
+
+== Amplitude selection
+
+- #raw("monotone-amplitudes-full-interval.typ"): conditional full-interval
+  ranking via the degeneracy window, convexity, and the crossing argument.
+- #raw("secondary-amplitude-ranking.typ"): former main-paper Section 6, preserving the proved outer amplitude-ranking ranges and the remaining open transition strip.
 
 == Threshold structure
 
@@ -32,8 +38,15 @@ main Quplet article. None of these files is included by #raw("../main.typ").]
   cycle.
 - #raw("endpoint-displacement-arithmetic.typ"): centered rounding residues,
   displacement order, reflection symmetry, and barycentric balance.
+- #raw("canonical-euclidean-structure.typ"): expanded Section 5 derivation of the
+  constrained-versus-unconstrained Euclidean distinction, nearest-grid construction,
+  and Euclidean-gap argument.
+- #raw("nearest-grid-endpoint-selection-conjecture.typ"): former conditional Section 5
+  formulation of dynamical realization and its strengthened, anchored interpretation.
 - #raw("rational-alignment-rigidity.typ"): rational grid-locking equations,
   proved small-case families, and conditional rigidity reductions.
+
+- #raw("HarmonicMorphing.typ"): affine organization of canonical Quplets by residue order class, including the continuous harmonic-morphing interpolation.
 
 == Deferred manuscript sections
 

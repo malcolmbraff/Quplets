@@ -21,11 +21,9 @@ while the labels and the fixed phase anchor select a distinguished
 representative, the Quplet $Q(n,d)$.
 At the slope-balanced parameter $k_c=n/(n+d)$, the stationary equation factors
 into two explicit families. The anchored crests are exactly the $n$ highest
-threshold crests and satisfy $Huplet(n,d,k_c)=Q(n,n+d)$. We also prove
-amplitude ranking near both ends of the deformation and on an explicit
-interval below $k_c$; only a possibly empty subcritical interval remains
-unresolved. Thus a continuous trigonometric deformation supplies a rigorous
-selection mechanism for a canonical Euclidean rhythm representative.
+threshold crests and satisfy $Huplet(n,d,k_c)=Q(n,n+d)$. Thus a continuous
+trigonometric deformation supplies a rigorous selection mechanism for a
+canonical Euclidean rhythm representative.
 ]
 #line(length: 100%)
 #text(weight: "bold")[Keywords:] Euclidean rhythms; trigonometric polynomials;
