@@ -1,6 +1,6 @@
 #import "definitions.typ": *
 
-= Quplets as constrained Euclidean rhythms
+= Quplets as constrained Euclidean rhythms<section5>
 
 The Euclidean class $E(n,d)$ describes an even distribution of $n$ points on
 a regular $d$-grid up to cyclic rotation. By contrast, the Quplet $Q(n,d)$ is
@@ -14,7 +14,7 @@ the unique labeled configuration with minimal pointwise displacement from the
 initial regular grid. Its signed displacements form a complete centered
 residue system and are globally balanced.
 
-Throughout this section, let $1<n<d$ be coprime, with $n$ odd.
+Throughout this section, let $1<n<d$ be coprime positive integers, with $n$ odd.
 
 The surrounding literature offers complementary descriptions of the same
 Euclidean class: the Bjorklund--Toussaint construction
@@ -290,3 +290,72 @@ These three layers are the complete endpoint claims used in the present
 article. The conclusion summarizes their dynamical, combinatorial, and
 variational relation.
 
+
+
+== Even $n$: paired canonical representatives
+
+Let $n$ be even. Define the upper and lower nearest-grid index selections by
+#nonum[
+  $
+  a_i^+=floor((i d)/n+1/2),
+  quad
+  a_i^-=ceil((i d)/n-1/2),
+  quad
+  i=0,dots,n-1.
+  $
+]
+They agree for $i != n/2$, while
+#nonum[
+  $
+  a_(n/2)^+=(d+1)/2,
+  quad
+  a_(n/2)^-=(d-1)/2.
+  $
+]
+Let $A_(n,d)^+$ and $A_(n,d)^-$ be the corresponding labeled configurations,
+and let $CanonicalQuplet^+(n,d)$ and $CanonicalQuplet^-(n,d)$ be their
+normalized cyclic gap vectors.
+
+#proposition(name: "Even paired nearest-grid minimality")[
+  Let $1<n<d$ be coprime with $n$ even. Both paired canonical representatives
+  are Euclidean:
+  #nonum[
+    $
+    CanonicalQuplet^+(n,d),
+    CanonicalQuplet^-(n,d)
+    in E(n,d).
+    $
+  ]
+  For every strictly increasing loss $phi:[0,1/2] -> RR$, the two labeled
+  selections $A_(n,d)^+$ and $A_(n,d)^-$ are exactly the minimizers of
+  $cal(E)_phi$ among all labeled $d$-grid selections. Their signed rounding
+  residues are respectively
+  #nonum[
+    $
+    {-n/2+1,dots,n/2}
+    quad "and" quad
+    {-n/2,dots,n/2-1}.
+    $
+  ]
+  The selected endpoint Quplets satisfy
+  #nonum[
+    $
+    Q^s (n,d)=CanonicalQuplet^s(n,d),
+    quad
+    s in {-1,1},
+    $
+  ]
+  after matching $s=1$ with the upper choice and $s=-1$ with the lower choice.
+] <even-paired-nearest-grid-minimality>
+
+#proof[
+  The only nearest-grid tie occurs at $i=n/2$; all other labels have a unique
+  nearest site. Thus pointwise minimization gives both displayed selections,
+  and strict increase of $phi$ forces every minimizing coordinate to be a
+  nearest site. There are consequently exactly two minimizers. The stated
+  residue systems follow by multiplying the upper and lower rounding errors
+  by $n$. The floor-difference balance identity proves that the upper gap word
+  is Euclidean, and reflection proves the same for the lower word. Finally,
+  the endpoint realization is precisely the paired endpoint result of
+  @even-paired-Huplet-identities.
+]

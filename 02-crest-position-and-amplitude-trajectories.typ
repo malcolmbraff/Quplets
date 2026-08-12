@@ -1,11 +1,11 @@
 #import "definitions.typ": *
 
-= Anchored crest continuation and nearest-grid endpoints
+= Anchored crest continuation and nearest-grid endpoints <section2> 
 
 == Anchored crest branches
 
-Throughout the main results, let $1<n<d$ be coprime integers with $n$ odd,
-and let $k in [0,1]$. We define the interference function
+Throughout the main results, let $1<n<d$ be coprime positive integers with $n$ odd,
+and let $k in [0,1]$ be a real modulation parameter. We define the interference function
 
 $
 F_k (x)
@@ -221,9 +221,9 @@ Local continuation follows from the implicit-function theorem, but it does not b
   A rounding tie would
   give 
   #nonum[
-    $ d i/n=q+1/2 $,
+    $ d i/n=q+1/2 $
   ] 
-  hence $n$ divides $2i$. 
+  for some $q in ZZ$, hence $n$ divides $2i$. 
   
   Since $n$ is odd and
   $0<=i<n$, this forces $i=0$, which is not a tie.

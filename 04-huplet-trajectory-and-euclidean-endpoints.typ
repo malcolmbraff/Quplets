@@ -1,8 +1,8 @@
 #import "definitions.typ": *
 
-= The Huplet trajectory and Euclidean endpoints
+= The Huplet trajectory and Euclidean endpoints<section4>
 
-The preceding sections describe the motion of the $n$ anchored crest branches and the complete stationary configuration at the balanced parameter $k_c = n/(n+d)$. We now pass from absolute crest positions to their successive circular spacings, since rhythm is determined by the clockwise gaps between consecutive labelled crests. This produces a spacing vector along the trajectory; at the endpoint, we prove that its gaps satisfy the stronger all-scale criterion for a Euclidean rhythm. Throughout this section, $1<n<d$ are coprime integers and $n$ is odd, as in the standing hypotheses of @anchored-continuation.
+The preceding sections describe the motion of the $n$ anchored crest branches and the complete stationary configuration at the balanced parameter $k_c = n/(n+d)$. We now pass from absolute crest positions to their successive circular spacings, since rhythm is determined by the clockwise gaps between consecutive labelled crests. This produces a spacing vector along the trajectory; at the endpoint, we prove that its gaps satisfy the stronger all-scale criterion for a Euclidean rhythm. Throughout this section, $1<n<d$ are coprime positive integers, $n$ is odd, and $k in [0,1]$ is the real modulation parameter, as in the standing hypotheses of @anchored-continuation.
 
 
 == Huplet spacing coordinates
@@ -834,3 +834,50 @@ cyclic rotation of it and therefore represents $E(5,7)$.
   [$1 / 7 dot (1,2,1,2,1)$],
 )
 
+
+
+== Even $n$: paired Huplets and Quplets
+
+Let $n$ be even. The central pitchfork gives two selected crest families,
+indexed by $s in {-1,1}$, as in @section6. Denote their ordered spacing
+vectors by
+#nonum[
+  $
+  Huplet^s (n,d,k),
+  quad
+  s in {-1,1},
+  $
+]
+and their endpoint vectors by
+#nonum[
+  $
+  Q^s (n,d)=Huplet^s (n,d,1).
+  $
+]
+The two paths agree up to the pitchfork parameter $k_*$ and then follow the
+reflected central arms. They therefore give two continuous selected Huplets,
+not one single-valued continuation through the central tie.
+
+#proposition(name: "Even paired endpoint and threshold identities")[
+  Let $1<n<d$ be coprime with $n$ even, and put $N=n+d$. For each
+  $s in {-1,1}$,
+  #nonum[
+    $
+    Q^s (n,d) in E(n,d)
+    quad "and" quad
+    Huplet^s (n,d,n/N)=Q^s (n,N) in E(n,N).
+    $
+  ]
+  The two choices are exchanged by reflection.
+] <even-paired-Huplet-identities>
+
+#proof[
+  @section6 gives the two selected endpoint sets: all noncentral endpoints
+  are the unique nearest $d$-grid sites, while the central endpoint is one of
+  the two nearest sites. The floor-difference criterion therefore gives
+  $Q^s (n,d) in E(n,d)$. At the threshold, the selected sites are the
+  corresponding upper or lower nearest sites on the $N$-grid by
+  @even-anchored-threshold-selections. These are exactly the endpoint sites
+  for the pair $(n,N)$ with the same choice of central arm, so their ordered
+  gap vectors agree. Reflection exchanges the two choices throughout.
+]

@@ -56,23 +56,10 @@
 #v(50pt)
 #include "05-quplets-as-constrained-euclidean-rhythms.typ"
 
-
-/*
-#v(50pt)
-#include "further_steps/06-order-collinearity-and-continuous-extension.typ"
-
-#v(50pt)
-#include "further_steps/07-twin-quplets-and-structural-symmetry.typ"
-
-#v(50pt)
-#include "further_steps/08-quplet-block-sum-projection.typ"
-
-#v(50pt)
-#include "HarmonicMorphing.typ"
-*/
-#v(50pt)
 #v(50pt)
 #include "06-even-n-central-branch.typ"
+
+#v(50pt)
 #include "09-conclusion.typ"
 
 #pagebreak()

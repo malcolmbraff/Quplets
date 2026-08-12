@@ -1,6 +1,6 @@
 #import "definitions.typ": *
 
-= The balanced threshold configuration
+= The balanced threshold configuration<section3>
 
 We retain the interference function $F_k$ and the standing hypotheses of the
 preceding section: $1<n<d$ are coprime, $n$ is odd, $k in [0,1]$, and
@@ -251,7 +251,7 @@ The threshold calculation identifies which $N$-grid sites are highest; to show t
 
 
 #lemma(name: "Nearest-grid all-scale balance")[
-  Let $M>n$ be an integer with $gcd(n,M)=1$, and suppose $n$ is odd. Define
+  Let $M>n$ be an integer with $gcd(n,M)=1$. Define
   #nonum[
     $
     a_j=floor(j M/n+1/2)
@@ -271,9 +271,7 @@ belongs to
 ] <nearest-grid-all-scale-balance>
 
 #proof[
-  If $j M / n$ were a half-integer, then $n$ would divide $2j$. Because $n$ is
-  odd, this forces $j equiv 0 mod n$, where the quotient is an integer rather
-  than a tie. The identity $a_(j+n)=a_j+M$ is immediate.
+  At a half-integer, the floor formula makes the upper nearest-grid choice. The identity $a_(j+n)=a_j+M$ is immediate.
 
   For arbitrary real $x,y$,
   #nonum[
@@ -503,6 +501,85 @@ belongs to
   threshold crests.
 ]
 
+
+== The even-$n$ threshold tie
+
+#proposition(name: "Even threshold mirror pair")[
+  Let $1<n<d$ be coprime with $n$ even, set $N=n+d$, and let $k_c=n/N$.
+  At $k_c$, there are $n-1$ resonant crests whose amplitudes are strictly
+  greater than those of every remaining crest. Their centered residues
+  $d m mod N$ are
+  #nonum[
+    $
+    -n/2+1,
+    -n/2+2,
+    dots,
+    n/2-1.
+    $
+  ]
+  The next amplitude occurs at exactly two reflected resonant crests, with
+  centered residues $-n/2$ and $n/2$. Consequently there are exactly two
+  $n$-crest highest-amplitude selections, exchanged by reflection.
+
+  The upper selection has indices
+  #nonum[
+    $
+    m_j^+=floor(j N/n+1/2),
+    quad
+    j=0,dots,n-1,
+    $
+  ]
+  including $m_(n/2)^+=(N+1)/2$. The lower selection is its reflection and
+  has central index $(N-1)/2$. Both selections are Euclidean rhythms on the
+  $N$-grid.
+] <even-threshold-mirror-pair>
+
+#proof[
+  The stationary-family calculation and the amplitude formulas in
+  @threshold-family-separation do not use the parity of $n$. Since $n$ is
+  even, the cosine values associated with centered residues of absolute value
+  less than $n/2$ give $n-1$ strictly largest resonant amplitudes. The two
+  residues $-n/2$ and $n/2$ give the same next value, while every remaining
+  residue has larger absolute value and hence smaller cosine. Complementary
+  crests have negative amplitude and cannot enter the selection. This proves
+  the claimed two-way cutoff tie.
+
+  The formula for $m_j^+$ is upper nearest-integer rounding. At $j=n/2$,
+  $j N/n=N/2$ is a half-integer because $N$ is odd, and therefore
+  $m_(n/2)^+=(N+1)/2$. Multiplying the rounding error by $n$ shows that
+  #nonum[
+    $
+    n m_j^+-j N
+    $
+  ]
+  runs through the centered integers from $-n/2+1$ to $n/2$. Since
+  $d=-n$ modulo $N$, the centered residues $d m_j^+$ run through
+  #nonum[
+    $
+    -n/2,
+    dots,
+    n/2-1.
+    $
+  ]
+  Thus this is one of the two tied highest selections. Reflection gives the
+  other. Finally, @nearest-grid-all-scale-balance applies to the upper
+  rounding formula and gives the Euclidean distance condition; reflection
+  preserves it.
+]
+
+#corollary(name: "Even anchored threshold selections")[
+  Under the hypotheses of @even-threshold-mirror-pair, the two selected
+  crest families of @section6 meet the threshold slice in exactly the two
+  highest-amplitude selections of @even-threshold-mirror-pair.
+] <even-anchored-threshold-selections>
+
+#proof[
+  The noncentral labels follow their unique nearest-grid corridors. The
+  central label follows either branch of @even-central-arm-continuation.
+  Substituting $k=k_c$ in the corridor formula gives the upper or lower
+  nearest $N$-grid index, respectively. These are precisely the two sets
+  identified in @even-threshold-mirror-pair.
+]
 
 
 The threshold and Euclidean-selection results needed for the main theorem are

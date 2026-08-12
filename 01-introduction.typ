@@ -1,10 +1,10 @@
 #import "definitions.typ": *
-
+#import "@preview/tiptoe:0.4.0":*
 = Introduction
 
 A cyclic rhythm can be represented by points on a circle, or equivalently by the cyclic spacings between consecutive points. This paper asks how a distinguished discrete rhythm can be selected dynamically when two regular subdivisions interfere. We interpret $F_k$ as a cyclic accent profile: its local maxima are candidate onset phases, $k$ continuously shifts the relative influence of the two subdivision layers, and continuation follows $n$ of the maxima across the deformation. For example, the pair $(n,d) = (5,7)$ produces a continuous five-onset timing path whose endpoint is a distinguished five-onset representative on the seven-pulse grid.
 
-Let $1<n<d$ be coprime integers with $n$ odd.#footnote[
+Let $1<n<d$ be coprime positive integers with $n$ odd. Let $k in [0,1]$ be a real modulation parameter, and let $x in RR \/ ZZ$ denote phase on the unit cycle.#footnote[
 Coprimality is only a primitive-period normalization. For arbitrary
 frequencies, let $g=gcd(n,d)$, $p=n/g$, and $q=d/g$. With $u=g x$, the signal
 reduces to
@@ -15,8 +15,8 @@ $x=(u+r)/g$, $r=0,dots,g-1$. We assume $gcd(n,d)=1$ only to work on one
 primitive period and avoid repeated notation.
 The assumption that $n$ is odd isolates the generic parity case used in the
 threshold analysis. When $n$ is even, the central half-grid point produces a
-symmetric pitchfork at the lower degeneracy threshold; we return briefly to
-that even-$n$ case at the end of the paper.
+symmetric pitchfork at the lower degeneracy threshold; the final section proves
+the corresponding reflected two-choice result.
 ]
 Consider
 
@@ -85,8 +85,9 @@ The spacing vector
   $
 ]
 
-is the *Huplet*. It is a continuous path in the open spacing simplex. Its
-endpoint
+will be called the *Huplet* in this paper, a contraction of *harmonic
+tuplet*. It records the continuously varying spacing pattern produced by the
+two-frequency deformation. Its endpoint
 
 #nonum[
   $
@@ -94,29 +95,34 @@ endpoint
   $
 ]
 
-is the *Quplet*.
+will be called the *Quplet*, a contraction of *quantized tuplet*: the
+corresponding spacing pattern on the endpoint grid.
 
-The Euclidean-rhythm terminology used below follows Toussaint
-#cite(<toussaintEuclideanAlgorithmGenerates2005>), who connected musical
-onset patterns with Bjorklund's pulse-distribution algorithm
-#cite(<bjorklundTheoryRepratePattern2003>). The related notion of maximal
-evenness was developed by Clough and Douthett
-#cite(<cloughMaximallyEvenSets1991>). Structural decompositions and
-interlocking operations for Euclidean rhythms were subsequently studied by
-Gómez-Martín, Taslakian, and Toussaint
-#footnote[“Structural properties of Euclidean rhythms,” _Journal of Mathematics
-and Music_ 3 (2009), 1–14,
-#link("https://doi.org/10.1080/17459730902819566")[doi:10.1080/17459730902819566];
-“Interlocking and Euclidean rhythms,” _Journal of Mathematics and Music_ 3
-(2009), 15–30,
-#link("https://doi.org/10.1080/17459730902916545")[doi:10.1080/17459730902916545].].
-// Zotero: replace this manual DOI footnote with synchronized citation keys once added.
 
-Those works characterize and manipulate discrete Euclidean rhythm classes. #footnote[For rational densities, Farey sequences organize the associated mechanical and Christoffel word classes; see @lothaireAlgebraicCombinatoricsWords2002. The present paper instead derives one such configuration by crest continuation.]
-The contribution here is different: we solve a continuous critical-point
-continuation problem for a two-frequency trigonometric family and prove that
-its anchored dynamics select both the Euclidean necklace and one labeled,
-phase-anchored rotation of it.
+
+Euclidean rhythms are discrete cyclic onset patterns. We use the terminology
+in the sense of Toussaint #cite(<toussaintEuclideanAlgorithmGenerates2005>),
+which connects musical onset patterns with Bjorklund's pulse-distribution
+algorithm #cite(<bjorklundTheoryRepratePattern2003>), and of the later
+geometric account #cite(<toussaintGeometryMusicalRhythm2020>). The present
+paper does not propose another Euclidean-generation algorithm. It derives a
+selected Euclidean configuration from continuous crest dynamics.
+
+The neighboring static theory includes maximal evenness
+#cite(<cloughMaximallyEvenSets1991>), all-scale distance characterizations
+#cite(<demaineDistanceGeometryMusic2009>), structural decompositions and
+interlocking operations #cite(<gomez-martinStructuralPropertiesEuclidean2009>)
+and #cite(<gomez-martinInterlockingEuclideanRhythms2009>), and variational
+characterizations of maximally even configurations
+#cite(<douthettMaximallyEvenSets2007>). These works characterize or manipulate
+discrete cyclic classes. By contrast, our nearest-grid result is a labeled,
+phase-anchored selection principle; it is not another definition of maximal
+evenness.
+
+Amiot's Fourier-space approach to rhythm #cite(<amiotMusicFourierSpace2016>)
+is also nearby. Here, however, continuity concerns the critical-point
+trajectories of the two-frequency accent profile, rather than a Fourier-space
+metric or a discrete transformation system.
 
 The endpoint formula selects the unique nearest $d$-grid site to each labeled
 initial point. The resulting gaps satisfy a stronger property than merely
@@ -129,7 +135,7 @@ distance spanning $ell$ successive selected onsets belongs to
   $
 ]
 
-By the all-scale distance criterion of Demaine et al., this identifies the
+By the all-scale distance criterion of Demaine et al. #cite(<demaineDistanceGeometryMusic2009>), this identifies the
 endpoint necklace, up to cyclic rotation, with the Euclidean rhythm class
 $E(n,d)$. The labels and the fixed branch $X_0 (k)=0$ retain additional
 information and select one distinguished rotation. We denote this labeled
@@ -171,209 +177,17 @@ precisely the $n$ highest threshold crests. Their spacing vector satisfies
   $
 ]
 
-Section 2 proves global anchored continuation and nearest-grid endpoint
-selection. Section 3 analyzes the balanced threshold configuration, proves
+@section2 proves global anchored continuation and nearest-grid endpoint
+selection.\
+@section3 analyzes the balanced threshold configuration, proves
 that its highest crests are Euclidean, and identifies them with the anchored
-branches. Section 4 introduces Huplets and Quplets, proves the Euclidean
-endpoint theorem, and establishes the threshold-extension identity. Section 5
-characterizes the canonical labeled representative by centered displacement
-symmetry and labeled nearest-grid minimality. The conclusion summarizes this
-complete proved chain.
+branches. \
+@section4 introduces Huplets and Quplets, proves the Euclidean
+endpoint theorem, and establishes the threshold-extension identity. \
+@section5 characterizes the canonical labeled representative by centered displacement
+symmetry and labeled nearest-grid minimality. \
+@section6 extends the endpoint selection to even $n$, where a central pitchfork
+produces a reflected canonical pair. \
+The conclusion in @conclusion summarizes this complete proved chain.
 
-/*
 
-Previous introduction preserved for source history.
-
-#import "definitions.typ": *
-
-= Introduction
-
-Rhythmic subdivision may be represented by an ordered collection of points on a
-cycle, or equivalently by the circular spacings between those points. In this
-paper, we study how such spacing patterns arise from the interaction of two
-regular subdivision systems.
-
-Let $1 < n < d$ and consider the two-frequency family
-
-#nonum[
-  $
-  F_k (x)
-  =
-  k cos(2 pi d x)
-  +
-  (1-k) cos(2 pi n x),
-  $
-]
-
-where $k in [0,1]$ and $x in RR \/ ZZ$. At $k=0$, the crests of $F_k$
-form the regular $n$-grid, whereas at $k=1$ they form the regular $d$-grid.
-The parameter $k$ therefore describes a continuous deformation between two
-rhythmic subdivision systems.
-
-Each crest of the initial $n$-grid determines a local analytic stationary
-branch. We denote the branch issued from $i/n$ by
-
-#nonum[
-  $
-  X_i (k),
-  quad
-  X_i (0)=i/n,
-  $
-]
-
-and call it an anchored crest branch. Its amplitude is
-
-#nonum[
-  $
-  A_i (k)
-  =
-  F_k (X_i (k))
-  $
-]
-
-Thus the deformation naturally gives rise to two complementary classes of
-trajectory functions: the position functions $X_i (k)$ and the amplitude
-functions $A_i (k)$. The first describe the horizontal motion of the crests,
-whereas the second describe their changing prominence in the interference
-signal.
-
-Whenever the anchored crests are defined and distinct, their circularly
-ordered positions determine successive spacing functions
-
-#nonum[
-  $
-  D_j (k)
-  =
-  Y_(j+1) (k)-Y_j (k),
-  $
-]
-
-with cyclic indexing. The normalized vector
-
-#nonum[
-  $
-  Huplet(n,d,k)
-  =
-  (D_0 (k), dots, D_(n-1) (k))
-  $
-]
-
-is called the Huplet associated with $(n,d,k)$. It is a curve in the open
-spacing simplex
-
-#nonum[
-  $
-  Sigma_n^circle.stroked.small
-  =
-  {
-    q in RR^n
-    mid(|)
-    q_j > 0,
-    sum_(j=0)^(n-1) q_j = 1
-  }.
-  $
-]
-
-At $k=0$, this curve begins at the regular tuplet
-
-#nonum[
-  $
-  t_n
-  =
-  (1/n, dots, 1/n).
-  $
-]
-
-If the anchored branches extend globally to $k=1$, remain crests, and reach
-distinct points of the final $d$-grid, their endpoint spacings define the
-dynamical Quplet
-
-#nonum[
-  $
-  Q(n,d).
-  $
-]
-
-The principal dynamical problem is to determine which $n$ sites of the final
-$d$-grid are selected by this continuation.
-
-A distinguished intermediate configuration occurs when the two terms in the
-stationarity equation have equal coefficients. This happens at
-
-#nonum[
-  $
-  k_c
-  =
-  n/(n+d).
-  $
-]
-
-At $k=k_c$, the stationary equation factors into two explicit trigonometric
-families. One lies on the $(n+d)$-grid. For coprime $n$ and $d$, with $n$
-odd, we prove that the $n$ highest threshold crests belong to this grid and
-have Euclidean circular spacings. Their selection follows from a strict
-amplitude separation between the two stationary families. #footnote[The reduced density $n/(n+d)$ places this balanced grid configuration in the standard rational mechanical-word and Christoffel-word setting; Farey sequences organize the associated reduced rational densities @lothaireAlgebraicCombinatoricsWords2002. The present theorem concerns the analytic selection of this configuration by crest continuation.]
-
-The endpoint problem contains more information than the Euclidean cyclic class
-alone. An even distribution of $n$ points on a $d$-grid determines a gap word
-only up to cyclic rotation, whereas the anchored branches retain their initial
-labels and distinguish the branch issued from $x=0$.
-
-To separate this rotation-selection problem from the unresolved global crest
-dynamics, we construct an independent canonical representative. Each initial
-grid point $i/n$ is assigned to its nearest site on the $d$-grid, and the
-circular spacings of the resulting labeled configuration define
-
-#nonum[
-  $
-  CanonicalQuplet(n,d).
-  $
-]
-
-We prove that $CanonicalQuplet(n,d)$ belongs to the Euclidean cyclic class
-$E(n,d)$. It is characterized by nearest-grid displacement, a centered residue
-spectrum, and a zero-temperature selection principle. The central realization
-conjecture is
-
-#nonum[
-  $
-  Q(n,d)
-  =
-  CanonicalQuplet(n,d).
-  $
-]
-
-Thus the arithmetic and geometric structure of the canonical representative
-is established independently, while its realization by the crest dynamics
-remains open.
-
-For fixed $n$, the canonical Quplets are organized by the residue of $d$
-modulo $n$. Fixed-residue families lie on affine lines through $t_n$,
-complementary residues determine opposite twin directions, and replacing the
-discrete contrast by a real parameter yields continuous Quplet families in the
-spacing simplex.
-
-These affine lines provide a static skeleton for the complete Huplet dynamics.
-The Huplet path generally bends away from its associated order line before
-returning to distinguished canonical configurations. This suggests a broader
-geometric study of the functions $D_j (k)$ and of the Huplet curves they define
-inside the spacing simplex.
-
-The same spacing vectors also admit a coarse-graining interpretation. A
-canonical Quplet is obtained by partitioning the uniform $d$-grid into $n$
-contiguous blocks and summing the uniform weights over those blocks. When a
-dynamical endpoint exists, its selected grid sites induce an analogous
-block-sum construction. The realization problem may therefore be expressed as
-the equality of a dynamically induced partition and the canonical nearest-grid
-partition.
-
-The paper is organized as follows. Section 2 develops the position and
-amplitude trajectories of the anchored crests. Section 3 studies the balanced
-threshold configuration. Section 4 passes from crest motion to Huplet spacing
-trajectories and Quplet endpoints. Section 5 constructs the canonical
-constrained Euclidean representative. Sections 6 and 7 develop the affine
-residue geometry and twin relations. Section 8 gives the coarse-graining and
-block-sum interpretation. The conclusion summarizes the proved results and
-formulates the main dynamical and geometric problems that remain open.
-
-*/

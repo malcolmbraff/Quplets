@@ -7,7 +7,7 @@
 
 For coprime integers $1<n<d$ with $n$ odd, consider the cyclic two-frequency
 profile
-  $F_k (x) = k cos(2 pi d x) + (1-k) cos(2 pi n x)$, $k in [0,1].$
+  $F_k (x) = k cos(2 pi d x) + (1-k) cos(2 pi n x)$, where $k in [0,1]$ is real and $x in RR / ZZ$ is phase on the unit cycle.
   We track the $n$ local maxima issued from the regular $n$-grid. Each continues
 uniquely through the full parameter interval as a distinct nondegenerate crest,
 preserves cyclic order, and moves monotonically inside a short corridor to the
@@ -23,7 +23,7 @@ At the slope-balanced parameter $k_c=n/(n+d)$, the stationary equation factors
 into two explicit families. The anchored crests are exactly the $n$ highest
 threshold crests and satisfy $Huplet(n,d,k_c)=Q(n,n+d)$. Thus a continuous
 trigonometric deformation supplies a rigorous selection mechanism for a
-canonical Euclidean rhythm representative.
+canonical Euclidean rhythm representative. For even $n$, the central pitchfork yields a reflected pair of equally canonical Euclidean endpoint selections.
 ]
 #line(length: 100%)
 #text(weight: "bold")[Keywords:] Euclidean rhythms; trigonometric polynomials;

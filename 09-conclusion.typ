@@ -1,6 +1,6 @@
 #import "definitions.typ": *
 
-= Conclusion
+= Conclusion<conclusion>
 
 For coprime integers $1<n<d$ with $n$ odd, this paper studies the
 two-frequency family
@@ -60,7 +60,7 @@ representative
   $
 ]
 
-Section 5 gives this representative two complementary static
+@section5 gives this representative two complementary static
 characterizations. Its signed endpoint errors form the complete centered
 residue system, and @labeled-nearest-grid-minimality shows that it minimizes
 every nondecreasing separable circular-displacement cost among labeled
@@ -88,13 +88,10 @@ crests. Consequently, @threshold-extension-identity gives the exact relation
 ]
 
 Thus the threshold configuration, the endpoint construction, and the
-Euclidean spacing theorem are parts of one proved dynamical–arithmetic chain.
+Euclidean spacing theorem form one complete proved dynamical--arithmetic
+chain.
 
-The threshold configuration, the endpoint construction, and the
-Euclidean spacing theorem therefore form one complete proved
-dynamical--arithmetic chain.
-
-For even $n$, the sole central rounding tie is accompanied by a symmetric pitchfork of the central anchored crest. The two resulting arms continue globally to the reflected nearest $d$-grid sites, yielding two reflected canonical Euclidean representatives. A signed infinitesimal sine perturbation can select either member of this canonical mirror pair.
+For even $n$, the sole central rounding tie is accompanied by a symmetric pitchfork of the central anchored crest. The two resulting arms continue globally to the reflected nearest $d$-grid sites, yielding two reflected canonical Euclidean representatives. A signed infinitesimal sine perturbation can distinguish the two members of this canonical mirror pair.
 
 /*
 

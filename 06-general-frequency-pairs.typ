@@ -310,7 +310,7 @@ $
 
 This is the elementary floor-difference identity. Since $d/n>1$, the
 selected sites are strictly ordered. The all-scale distance
-characterization used in Section 4 therefore identifies this endpoint
+characterization used in @section4 therefore identifies this endpoint
 necklace with $E(n,d)$. Reflection gives the coherent lower completion and
 preserves the same condition. Finally, @repeated-nearest-grid-word proves
 that both period-respecting endpoint words repeat with primitive period
