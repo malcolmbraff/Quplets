@@ -98,8 +98,55 @@ two-frequency deformation. Its endpoint
 will be called the *Quplet*, a contraction of *quantized tuplet*: the
 corresponding spacing pattern on the endpoint grid.
 
+Euclidean rhythms are discrete cyclic onset patterns. We use the terminology
+in the sense of Toussaint #cite(<toussaintEuclideanAlgorithmGenerates2005>),
+which connects musical onset patterns with Bjorklund's pulse-distribution
+algorithm #cite(<bjorklundTheoryRepratePattern2003>), and of the later
+geometric account #cite(<toussaintGeometryMusicalRhythm2020>). The present
+paper does not propose another Euclidean-generation algorithm. It derives a
+selected Euclidean configuration from continuous crest dynamics.
 
+The endpoint configuration, taken as an unlabeled point set, is itself
+classical. Since $n$ is odd, the nearest-grid endpoint sites of
+@anchored-continuation rewrite as
 
+#nonum[
+  $
+  X_i (1)
+  =
+  1 / d floor((d i + (n - 1) / 2) / n),
+  $
+]
+
+which is a Clough--Douthett $J$-function representation, with shift
+$(n - 1) \/ 2$, of a maximally even set of $n$ onsets on the
+$d$-grid #cite(<cloughMaximallyEvenSets1991>).#footnote[
+For integers $m$ and $q >= 1$, $floor(m / q) = floor((m - 1) / q)$ unless
+$q$ divides $m$. With $m = 2 d i + n$ and $q = 2 n$, the numerator is odd,
+hence
+$floor((d i) / n + 1 / 2)
+= floor((2 d i + n) / (2 n))
+= floor((2 d i + n - 1) / (2 n))
+= floor((d i + (n - 1) / 2) / n)$.
+]
+Maximally even sets coincide with Euclidean rhythms up to cyclic rotation
+#cite(<demaineDistanceGeometryMusic2009>). The neighboring static theory also
+includes structural decompositions and interlocking operations
+#cite(<gomez-martinStructuralPropertiesEuclidean2009>) and
+#cite(<gomez-martinInterlockingEuclideanRhythms2009>), and variational
+characterizations of maximally even configurations
+#cite(<douthettMaximallyEvenSets2007>). Accordingly, this paper claims no new
+characterization of maximal evenness. Its combinatorial layer
+(@nearest-grid-all-scale-balance) is elementary and kept self-contained, and the
+all-scale distance criterion of Demaine et al.
+#cite(<demaineDistanceGeometryMusic2009>) enters only to identify the
+endpoint class. The claimed novelty is the selection mechanism: global
+anchored continuation through the full deformation (@anchored-continuation);
+the exact threshold identity of @threshold-extension-identity, which identifies the
+slope-balanced spacing vector with $Q(n, n + d)$; and the labeled,
+phase-anchored selection of a distinguished rotation of $E(n, d)$
+(@section5).
+/*
 Euclidean rhythms are discrete cyclic onset patterns. We use the terminology
 in the sense of Toussaint #cite(<toussaintEuclideanAlgorithmGenerates2005>),
 which connects musical onset patterns with Bjorklund's pulse-distribution
@@ -118,7 +165,7 @@ characterizations of maximally even configurations
 discrete cyclic classes. By contrast, our nearest-grid result is a labeled,
 phase-anchored selection principle; it is not another definition of maximal
 evenness.
-
+*/
 Amiot's Fourier-space approach to rhythm #cite(<amiotMusicFourierSpace2016>)
 is also nearby. Here, however, continuity concerns the critical-point
 trajectories of the two-frequency accent profile, rather than a Fourier-space
