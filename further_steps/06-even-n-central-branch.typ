@@ -160,19 +160,8 @@ replaced locally by two crest arms, exchanged by reflection.
     (k/(1-k)-R(y)).
     $
   ]
-  This derivative is positive before $y_+ (k)$ and negative afterwards, so
-  the unique stationary point is a strict local maximum. Nondegeneracy is
-  direct: with $R=k d sin(2 pi d y_+)=(1-k)n sin(2 pi n y_+)>0$, the second
-  derivative is
-  #nonum[
-    $
-    partial_y^2 F_k (1/2+y_+)
-    =
-    (2 pi)^2 R (d cot(2 pi d y_+)-n cot(2 pi n y_+))
-    <0
-    $
-  ]
-  by the displayed cotangent inequality. The
+  This derivative is positive before $y_+ (k)$ and negative afterwards.
+  Thus the unique stationary point is a nondegenerate local maximum. The
   implicit-function theorem gives its analyticity for $k in (k_*,1)$; its
   endpoint limits give the stated continuous extension. Set
   #nonum[
@@ -185,32 +174,12 @@ replaced locally by two crest arms, exchanged by reflection.
 
 == The two selected families
 
-#proposition(name: "Noncentral anchored continuation")[
-  Let $1<n<d$ be coprime with $n$ even. For every
-  $i in {0,dots,n-1}$ with $i != n/2$, the crest of $F_0$ at $i/n$
-  continues uniquely to a branch $X_i : [0,1] -> RR \/ ZZ$ with all the
-  properties of @anchored-continuation, and
-  #nonum[
-    $
-    X_i (1)
-    =
-    1 / d floor((d i) / n + 1 / 2).
-    $
-  ]
-] <noncentral-continuation>
-
-#proof[
-  The proof of @anchored-continuation is local to the short corridor joining
-  the anchor $i/n$ to its unique nearest $d$-grid site, and it uses the
-  oddness of $n$ only to exclude a rounding tie, that is, $n | 2i$ with
-  $0<i<n$. For even $n$ this exclusion holds precisely when $i != n/2$, so
-  the corridor argument applies verbatim to every noncentral label. Every
-  corridor lies within distance $1/(2d)$ of its anchor while adjacent
-  anchors, including the central one, are $1/n>1/d$ apart; the corridors are
-  therefore pairwise disjoint, and the $n-1$ noncentral branches remain
-  distinct, preserve cyclic order, and stay clear of the central arms of
-  @even-central-arm-continuation.
-]
+For every noncentral label $i$, a nearest $d$-grid tie would imply
+$n | 2i$, which is impossible for $i != n/2$. The proof of
+@anchored-continuation is local to the short corridor joining an anchor to
+its unique nearest $d$-grid site; its only use of oddness is to exclude this
+rounding tie. Repeating that proof therefore continues each of the $n-1$
+noncentral labels as a unique nondegenerate crest branch.
 
 For $s in {-1,1}$, define an $n$-crest selected family by taking these
 $n-1$ noncentral branches and the central component
@@ -293,9 +262,10 @@ $F_k$.
 ] <parity-unified-endpoint-selection>
 
 #proof[
-  The odd case is @euclidean-endpoint-theorem. Let $n$ be even.
-  @noncentral-continuation gives all unique noncentral endpoints, while
-  @even-central-arm-continuation gives exactly two central endpoints. Thus there are exactly two endpoint selections.
+  The odd case is @euclidean-endpoint-theorem. Let $n$ be even. The
+  noncentral corridor argument in the preceding section gives all unique
+  noncentral endpoints, while @even-central-arm-continuation gives exactly
+two central endpoints. Thus there are exactly two endpoint selections.
 
   For the upper midpoint choice, put
   #nonum[
@@ -313,8 +283,7 @@ $F_k$.
     a_(n/2)^+=(d+1)/2.
     $
   ]
-  By @nearest-grid-all-scale-balance with $M=d$, whose upper-rounding
-  convention covers the central half-integer, the difference
+  For every $ell in {1,dots,n-1}$, the difference
   #nonum[
     $
     a_(j+ell)^+-a_j^+
@@ -326,7 +295,8 @@ $F_k$.
     {floor(ell d/n),ceil(ell d/n)}.
     $
   ]
-  for every $ell in {1,dots,n-1}$. Hence the upper selection is Euclidean. Reflection sends it to the lower
+  This floor-difference identity remains valid at the central half-integer.
+  Hence the upper selection is Euclidean. Reflection sends it to the lower
   selection, with central index $(d-1)/2$, and preserves the same distance
   condition.
 ]

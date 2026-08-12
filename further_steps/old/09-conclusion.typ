@@ -33,10 +33,7 @@ inside pairwise disjoint nearest-grid corridors. Their exact endpoints are
 ]
 
 Their circular spacing vector therefore defines the Quplet $Q(n,d)$ without
-any continuation hypothesis. As an unlabeled point set, the endpoint
-configuration is the classical Clough--Douthett maximally even set; the
-contribution of the paper is the continuous selection chain, gathered as the
-Main theorem in the introduction.
+any continuation hypothesis.
 
 The endpoint theorem @euclidean-endpoint-theorem proves more than the
 two-adjacent-gap property. At every scale $ell in {1,dots,n-1}$, each
@@ -65,8 +62,7 @@ representative
 
 @section5 gives this representative two complementary static
 characterizations. Its signed endpoint errors form the complete centered
-residue system (@centered-displacement-symmetry), and
-@labeled-nearest-grid-minimality shows that it minimizes
+residue system, and @labeled-nearest-grid-minimality shows that it minimizes
 every nondecreasing separable circular-displacement cost among labeled
 $d$-grid selections, uniquely when the loss is strictly increasing.
 
@@ -95,14 +91,7 @@ Thus the threshold configuration, the endpoint construction, and the
 Euclidean spacing theorem form one complete proved dynamical--arithmetic
 chain.
 
-For even $n$, the sole central rounding tie is accompanied by a symmetric
-pitchfork of the central anchored crest
-(@even-central-arm-continuation). The noncentral labels continue exactly as
-in the odd case (@noncentral-continuation), and the two resulting arms reach
-the reflected nearest $d$-grid sites, yielding the two reflected canonical
-Euclidean representatives of @parity-unified-endpoint-selection. A signed
-infinitesimal sine perturbation can distinguish the two members of this
-canonical mirror pair.
+For even $n$, the sole central rounding tie is accompanied by a symmetric pitchfork of the central anchored crest. The two resulting arms continue globally to the reflected nearest $d$-grid sites, yielding two reflected canonical Euclidean representatives. A signed infinitesimal sine perturbation can distinguish the two members of this canonical mirror pair.
 
 /*
 

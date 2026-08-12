@@ -575,10 +575,9 @@ belongs to
   highest-amplitude selections of @even-threshold-mirror-pair.
 ] <even-anchored-threshold-selections>
 
-The proof uses the noncentral continuation @noncentral-continuation and the
-central-arm continuation @even-central-arm-continuation, which are
-established in @section6 without reference to the present section; no
-circularity arises.
+The proof uses the central-arm continuation @even-central-arm-continuation,
+which is established in @section6 without reference to the present section;
+no circularity arises.
 
 #proof[
   The noncentral labels follow their unique nearest-grid corridors. The

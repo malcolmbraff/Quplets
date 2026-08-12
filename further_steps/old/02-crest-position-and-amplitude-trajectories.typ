@@ -156,12 +156,14 @@ Local continuation follows from the implicit-function theorem, but it does not b
 ] <cotangent-positivity>
 
 #proof[
-  If $b<=pi/2$, then $a+b<lambda a+b<pi$ and
+  If $b<=pi/2$, then $a+b<pi$ and
   #nonum[
     $ cot(a)+cot(b)=sin(a+b)/(sin(a)sin(b))>0 $,
   ]
-  while $lambda cot(b)>=cot(b)$ since $cot(b)>=0$. Hence
-  $cot(a)+lambda cot(b)>=cot(a)+cot(b)>0$.
+  while
+  #nonum[
+    $ lambda cot(b)>=cot(b) $.
+  ]
 
   If $b>pi/2$, put $c=pi-b$. Then $0<c<pi/2$ and $a<c/lambda$.
   Since $cot$ is decreasing,
@@ -176,7 +178,6 @@ Local continuation follows from the implicit-function theorem, but it does not b
   #nonum[
     $ cot(c/lambda)>lambda cot(c)=-lambda cot(b) $.
   ]
-  Combining the two displayed inequalities gives $cot(a)>-lambda cot(b)$.
 ]
 
 #proposition(name: "Global anchored continuation")[
@@ -184,7 +185,8 @@ Local continuation follows from the implicit-function theorem, but it does not b
   Let $1<n<d$ be coprime integers, with $n$ odd. For every
   $i in {0,dots,n-1}$, the crest of $F_0$ at $i/n$ continues uniquely to a branch $X_i : [0,1] arrow RR \/ ZZ$.
   
-  Each branch is real analytic on $[0,1]$, one-sidedly at the endpoints, and satisfies
+  Each branch is continuous on $[0,1]$,
+  real analytic on $(0,1)$ with analytic one-sided endpoint extensions, and satisfies
   #nonum[
     $ G_k (X_i (k))=0 quad "and" quad H_k (X_i (k))<0. $
   ]
@@ -282,8 +284,8 @@ Local continuation follows from the implicit-function theorem, but it does not b
     k_i (t)d^2 cos(d theta).
     $
   ]
-  For $0<t<L_i$, set $R=(1-k_i (t))n sin(a)$; the stationarity relation
-  gives equally $R=k_i (t)d sin(b)$, and $R>0$. Then
+  If
+  $R=(1-k_i (t))n sin(a)=k_i (t)d sin(b)>0$, then
   #nonum[
     $
     C_i (t)
@@ -293,35 +295,22 @@ Local continuation follows from the implicit-function theorem, but it does not b
   ]
   by @cotangent-positivity with $lambda=d/n$. 
   
-  Differentiating the quotient, with $a'=n$ and $b'=-d$, gives
+  Direct differentiation gives
   #nonum[
     $
     k_i '(t)
     =
-    (n d (n cos(a) sin(b) + d sin(a) cos(b)))
-    /
-    (n sin(a) + d sin(b))^2
-    =
-    (C_i (t)) / (n sin(a) + d sin(b))
-    >0,
+    C_i (t) / (n sin(a) + d sin(b))
+    >0.
     $
   ]
-  since the numerator equals $C_i (t)(n sin(a)+d sin(b))$.
   Thus $k_i$ is a bijection from $[0,L_i ]$ to $[0,1]$ and its inverse
-  defines the required strictly monotone branch. Any continuation of the
-  anchored crest in graph form coincides locally with this curve by the
-  implicit-function theorem, hence globally; the branch is therefore unique.
+  defines the required strictly monotone branch. 
   
   Since
   $H_k (theta/(2pi))=-4pi^2 C_i (t)$, every point of the branch is a
-  nondegenerate local maximum.
-
-  The denominator $n sin(a)+d sin(b)$ equals $d sin(d L_i)>0$ at $t=0$ and
-  $n sin(n L_i)>0$ at $t=L_i$, where both sines are positive because
-  $0<n L_i<d L_i<pi$; it is positive on all of $[0,L_i ]$. The quotient
-  defining $k_i$ is therefore real analytic on a neighborhood of $[0,L_i ]$.
-  Evaluating the derivative formula at the endpoints, where
-  $C_i (0)=n^2$ and $C_i (L_i)=d^2$, gives
+  nondegenerate local maximum. At the corridor endpoints, the sine-factor
+  expansions give the one-sided derivatives
   #nonum[
     $
     k_i '(0)
@@ -335,10 +324,12 @@ Local continuation follows from the implicit-function theorem, but it does not b
     >0.
     $
   ]
-  In particular $C_i >0$ on the closed interval, so the crest condition
-  holds up to the endpoints. The analytic inverse-function theorem, applied
-  one-sidedly at $t=0$ and $t=L_i$, gives the analyticity of the inverse
-  $t_i (k)$, and hence of $X_i (k)$, on $[0,1]$.
+  Indeed, $sin(d L_i)>0$ and $sin(n L_i)>0$ because
+  $0<L_i<pi/d$ and $n<d$. The quotient defining $k_i$ therefore has analytic
+  one-sided extensions at $t=0$ and $t=L_i$, with nonzero derivative at both
+  endpoints. The analytic inverse-function theorem applied at each endpoint
+  gives analytic one-sided extensions of the inverse $t_i (k)$, and hence of
+  $X_i (k)$.
 
   For $i=0$, $alpha_0 = beta_0 = 0$ and $X_0 (k)=0$; its curvature factor is
   $(1-k)n^2 + k d^2 > 0$. 
@@ -363,10 +354,6 @@ Local continuation follows from the implicit-function theorem, but it does not b
     $
   ]
 ] <nearest-grid-endpoints>
-
-@fig-X-trajectories illustrates the anchored trajectories for
-$(n,d)=(5,7)$: the five branches start on the regular $5$-grid, stay in
-their disjoint corridors, and end at the selected sites of the $7$-grid.
 
 
 

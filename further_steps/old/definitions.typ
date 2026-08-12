@@ -49,6 +49,7 @@
 #let Huplet = math.italic("Huplet")
 #let Quplet = math.italic("Quplet")
 #let CanonicalQuplet = math.sans("Q")
+#let ContinuousQuplet = math.sans("Q")
 
 #let show-review-notes = true
 

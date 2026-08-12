@@ -13,9 +13,7 @@ uniquely through the full parameter interval as a distinct nondegenerate crest,
 preserves cyclic order, and moves monotonically inside a short corridor to the
 unique nearest $d$-grid site 
 $X_i (1) = 1 / d floor((d i) / n + 1 / 2).$
-As an unlabeled point set, the endpoint configuration is the classical
-maximally even set of Clough and Douthett.
-The rounded configuration is balanced at every cyclic scale: every
+The rounded endpoint configuration is balanced at every cyclic scale: every
 clockwise distance spanning $ell$ selected onsets belongs to
 ${floor((ell d) / n),ceil((ell d) / n)}.$
 Consequently its cyclic gap class is the Euclidean rhythm necklace $E(n,d)$,

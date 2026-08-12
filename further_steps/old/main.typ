@@ -63,4 +63,4 @@
 #include "09-conclusion.typ"
 
 #pagebreak()
-#bibliography("zotero.bib", style: "ieee")
+#bibliography("zotero.bib")

@@ -103,7 +103,6 @@ Here $E(n,d)$ denotes the cyclic class of the Euclidean rhythm with $n$
 onsets on the $d$-pulse grid, recalled in @section4.
 
 #theorem(name: [Main theorem, odd $n$], numbering: none)[
-  #set enum(numbering: "(i)")
   Let $1<n<d$ be coprime integers with $n$ odd.
 
   + *Global continuation.* Each crest of $F_0$ at $i/n$ continues uniquely on
@@ -153,15 +152,16 @@ classical. Since $n$ is odd, the nearest-grid endpoint sites of
 ]
 
 which is a Clough--Douthett $J$-function representation, with shift
-$(n - 1) \/ 2$, of a maximally even set of $n$ onsets on the
-$d$-grid #cite(<cloughMaximallyEvenSets1991>).#footnote[
+$(n - 1) / 2$, of a maximally even set of $n$ onsets on the
+$d$-grid #cite(<cloughMaximallyEvenSets1991>).
+#footnote[
 For integers $m$ and $q >= 1$, $floor(m / q) = floor((m - 1) / q)$ unless
-$q$ divides $m$. With $m = 2 d i + n$ and $q = 2 n$, the numerator is odd,
+$q$ divides $m$. \ With $m = 2 d i + n$ and $q = 2 n$, the numerator is odd,
 hence
-$floor((d i) / n + 1 / 2)
+$ floor((d i) / n + 1 / 2)
 = floor((2 d i + n) / (2 n))
 = floor((2 d i + n - 1) / (2 n))
-= floor((d i + (n - 1) / 2) / n)$.
+= floor((d i + (n - 1) / 2) / n) $.
 ]
 Maximally even sets coincide with Euclidean rhythms up to cyclic rotation
 #cite(<demaineDistanceGeometryMusic2009>). The neighboring static theory also

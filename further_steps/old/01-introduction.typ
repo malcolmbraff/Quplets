@@ -98,40 +98,6 @@ two-frequency deformation. Its endpoint
 will be called the *Quplet*, a contraction of *quantized tuplet*: the
 corresponding spacing pattern on the endpoint grid.
 
-The following statement gathers the exact results proved in this paper.
-Here $E(n,d)$ denotes the cyclic class of the Euclidean rhythm with $n$
-onsets on the $d$-pulse grid, recalled in @section4.
-
-#theorem(name: [Main theorem, odd $n$], numbering: none)[
-  #set enum(numbering: "(i)")
-  Let $1<n<d$ be coprime integers with $n$ odd.
-
-  + *Global continuation.* Each crest of $F_0$ at $i/n$ continues uniquely on
-    $[0,1]$ as a nondegenerate local maximum $X_i (k)$ of $F_k$. The $n$
-    branches remain distinct, preserve cyclic order, move monotonically inside
-    pairwise disjoint corridors, and end at the unique nearest $d$-grid sites
-    $X_i (1) = 1 / d floor((d i) / n + 1 / 2)$
-    (@anchored-continuation, @nearest-grid-endpoints).
-
-  + *Euclidean endpoint.* For every $i$ and every $ell in {1,dots,n-1}$, the
-    clockwise distance spanning $ell$ successive endpoint onsets lies in
-    ${floor((ell d) / n), ceil((ell d) / n)}$. Hence the endpoint spacing
-    vector satisfies $Q(n,d) = CanonicalQuplet(n,d) in E(n,d)$, where
-    $CanonicalQuplet(n,d)$ is the labeled nearest-grid representative
-    constructed in @section5 (@euclidean-endpoint-theorem,
-    @Quplet-realization).
-
-  + *Threshold identity.* At $k_c = n/(n+d)$, the anchored crests are exactly
-    the $n$ highest crests of $F_(k_c)$, and
-    $Huplet(n,d,k_c) = Q(n,n+d)$
-    (@anchored-threshold-selection, @threshold-extension-identity).
-]
-
-For even $n$, the unique central rounding tie is accompanied by a pitchfork
-of the central branch, and the same construction yields exactly two canonical
-endpoint selections, exchanged by reflection
-(@parity-unified-endpoint-selection).
-
 Euclidean rhythms are discrete cyclic onset patterns. We use the terminology
 in the sense of Toussaint #cite(<toussaintEuclideanAlgorithmGenerates2005>),
 which connects musical onset patterns with Bjorklund's pulse-distribution
@@ -153,8 +119,9 @@ classical. Since $n$ is odd, the nearest-grid endpoint sites of
 ]
 
 which is a Clough--Douthett $J$-function representation, with shift
-$(n - 1) \/ 2$, of a maximally even set of $n$ onsets on the
-$d$-grid #cite(<cloughMaximallyEvenSets1991>).#footnote[
+$(n - 1) / 2$, of a maximally even set of $n$ onsets on the
+$d$-grid #cite(<cloughMaximallyEvenSets1991>).
+#footnote[
 For integers $m$ and $q >= 1$, $floor(m / q) = floor((m - 1) / q)$ unless
 $q$ divides $m$. With $m = 2 d i + n$ and $q = 2 n$, the numerator is odd,
 hence
@@ -175,10 +142,11 @@ characterization of maximal evenness. Its combinatorial layer
 all-scale distance criterion of Demaine et al.
 #cite(<demaineDistanceGeometryMusic2009>) enters only to identify the
 endpoint class. The claimed novelty is the selection mechanism: global
-anchored continuation through the full deformation (part (i) of the Main
-theorem); the labeled, phase-anchored selection of a distinguished rotation
-of $E(n,d)$ (part (ii) and @section5); and the exact threshold identity of
-part (iii).
+anchored continuation through the full deformation (@anchored-continuation);
+the exact threshold identity of @threshold-extension-identity, which identifies the
+slope-balanced spacing vector with $Q(n, n + d)$; and the labeled,
+phase-anchored selection of a distinguished rotation of $E(n, d)$
+(@section5).
 /*
 Euclidean rhythms are discrete cyclic onset patterns. We use the terminology
 in the sense of Toussaint #cite(<toussaintEuclideanAlgorithmGenerates2005>),
@@ -199,28 +167,63 @@ discrete cyclic classes. By contrast, our nearest-grid result is a labeled,
 phase-anchored selection principle; it is not another definition of maximal
 evenness.
 */
-
 Amiot's Fourier-space approach to rhythm #cite(<amiotMusicFourierSpace2016>)
 is also nearby. Here, however, continuity concerns the critical-point
 trajectories of the two-frequency accent profile, rather than a Fourier-space
 metric or a discrete transformation system.
 
-Part (ii) of the Main theorem rests on the all-scale distance criterion of
-Demaine et al. #cite(<demaineDistanceGeometryMusic2009>): the two-value
-condition at every span $ell$ characterizes the Euclidean necklace up to
-cyclic rotation. The labels and the fixed branch $X_0 (k)=0$ retain
-additional information and select one distinguished rotation, the labeled
-nearest-grid representative $CanonicalQuplet(n,d)$.
+The endpoint formula selects the unique nearest $d$-grid site to each labeled
+initial point. The resulting gaps satisfy a stronger property than merely
+having two adjacent sizes: for every $ell in {1,dots,n-1}$, every clockwise
+distance spanning $ell$ successive selected onsets belongs to
+
+#nonum[
+  $
+  {floor((ell d) / n),ceil((ell d) / n)}.
+  $
+]
+
+By the all-scale distance criterion of Demaine et al. #cite(<demaineDistanceGeometryMusic2009>), this identifies the
+endpoint necklace, up to cyclic rotation, with the Euclidean rhythm class
+$E(n,d)$. The labels and the fixed branch $X_0 (k)=0$ retain additional
+information and select one distinguished rotation. We denote this labeled
+nearest-grid representative by $CanonicalQuplet(n,d)$ and prove
+
+#nonum[
+  $
+  Q(n,d)
+  =
+  CanonicalQuplet(n,d),
+  quad
+  CanonicalQuplet(n,d) in E(n,d).
+  $
+]
 
 The representative also satisfies a labeled nearest-grid minimality property:
 among all labeled $d$-grid selections, it minimizes every nondecreasing
 separable circular-displacement cost, uniquely for strictly increasing
 losses.
 
-The threshold identity in part (iii) comes from an exact factorization: at
-$k_c$ the stationary equation splits into a resonant $(n+d)$-grid family and
-a complementary family, separated by amplitude, and the anchored crests are
-identified with the $n$ highest threshold crests (@section3).
+A second exact structure appears at the slope-balanced parameter
+
+#nonum[
+  $
+  k_c=n/(n+d).
+  $
+]
+
+There the stationary equation factors into a resonant $(n+d)$-grid family and
+a complementary family. We determine the complete threshold stationary set,
+separate the two families by amplitude, and prove that the anchored crests are
+precisely the $n$ highest threshold crests. Their spacing vector satisfies
+
+#nonum[
+  $
+  Huplet(n,d,k_c)
+  =
+  Q(n,n+d).
+  $
+]
 
 @section2 proves global anchored continuation and nearest-grid endpoint
 selection.\

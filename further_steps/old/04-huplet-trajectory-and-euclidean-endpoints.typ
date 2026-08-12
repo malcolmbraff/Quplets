@@ -48,10 +48,6 @@ Huplet(n,d,0)
 1/n (1,dots,1).
 $ <regular-tuplet>
 
-@fig-huplet-spacing-vector shows the full spacing trajectory for
-$(n,d)=(53,67)$; the two grid-locked two-value configurations, at $k_c$ and
-at $k=1$, are visible.
-
 #figure(
   image(
     "Figures/Spacing Vector.svg",
@@ -315,11 +311,7 @@ Each component of $Q(n,d)$ is therefore an integer multiple of $1/d$.
 
 By @anchored-continuation and @nearest-grid-endpoints, $Q(n,d)$ is well
 defined. The combinatorial Euclidean spacing vector introduced below,
-however, is defined independently of the crest dynamics. Throughout, the
-italic $Q(n,d)$ denotes this dynamical endpoint vector, while the sans-serif
-$CanonicalQuplet(n,d)$ of @section5 denotes the combinatorially defined
-labeled nearest-grid representative; their equality is part of the content
-of @Quplet-realization.
+however, is defined independently of the crest dynamics.
 
 == Euclidean endpoint classes
 
@@ -428,12 +420,6 @@ distance in grid pulses from $r_i$ to $r_(i+ell)$ belongs to
   $
 ]
 
-In the source, the criterion appears with $k$ onsets on an $n$-pulse circle
-and spans $ell in {1,dots,k}$; the case $ell=k$ is the trivial full cycle
-and is omitted above. Their theorem further lists equivalent
-characterizations, including maximum evenness and three generating
-algorithms; only the displayed criterion is used here.
-
 //**************
 
 #theorem(name: "Euclidean endpoint and canonical Quplet")[  
@@ -444,10 +430,7 @@ Let $1<n<d$ be coprime integers, with $n$ odd. The $n$ anchored crest  branches 
   X_i (1) = m_i / d, quad m_i = floor((d i) / n + 1 / 2), quad  i=0,dots,n-1. 
   $
 ]  
-Hence the Quplet $Q(n,d)$ is well defined. Extend the endpoint indices by
-the cyclic lift $m_(i+n)=m_i+d$ and set $Delta_ell (i)=m_(i+ell)-m_i$, the
-clockwise distance in grid pulses spanning $ell$ successive selected onsets.
-For every $ell in {1,dots,n-1}$ and every $i$,  
+Hence the Quplet $Q(n,d)$ is well defined. For every  $ell in {1,dots,n-1}$ and every $i$, the clockwise distance spanning  $ell$ successive selected onsets satisfies  
 #nonum[
   $ 
   Delta_ell (i) in {floor((ell d) / n),ceil((ell d) / n)}. 
@@ -889,12 +872,10 @@ not one single-valued continuation through the central tie.
 ] <even-paired-Huplet-identities>
 
 #proof[
-  @noncentral-continuation and @even-central-arm-continuation give the two
-  selected endpoint sets: all noncentral endpoints
+  @section6 gives the two selected endpoint sets: all noncentral endpoints
   are the unique nearest $d$-grid sites, while the central endpoint is one of
-  the two nearest sites. The floor-difference criterion, applied to the upper selection and
-  transported by reflection as in @parity-unified-endpoint-selection,
-  therefore gives $Q^s (n,d) in E(n,d)$. At the threshold, the selected sites are the
+  the two nearest sites. The floor-difference criterion therefore gives
+  $Q^s (n,d) in E(n,d)$. At the threshold, the selected sites are the
   corresponding upper or lower nearest sites on the $N$-grid by
   @even-anchored-threshold-selections. These are exactly the endpoint sites
   for the pair $(n,N)$ with the same choice of central arm, so their ordered

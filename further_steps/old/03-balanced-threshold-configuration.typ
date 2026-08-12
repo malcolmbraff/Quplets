@@ -247,7 +247,7 @@ of the complete threshold slice.
   values are positive and hence are resonant crests.
 ]
 
-The threshold calculation identifies which $N$-grid sites are highest; to show that their spacing is Euclidean in the stronger all-scale sense, we now isolate the needed rounding fact for an arbitrary grid size $M$, before applying it with $M=N=n+d$. @fig-threshold-profile illustrates the two threshold families and their amplitude separation for $(n,d)=(5,8)$. Finer joint-criticality and spectral questions lie outside this article’s scope.
+The threshold calculation identifies which $N$-grid sites are highest; to show that their spacing is Euclidean in the stronger all-scale sense, we now isolate the needed rounding fact for an arbitrary grid size $M$, before applying it with $M=N=n+d$. Finer joint-criticality and spectral questions lie outside this article’s scope.
 
 
 #lemma(name: "Nearest-grid all-scale balance")[
@@ -380,10 +380,8 @@ belongs to
     $
   ]
   
-  Since $d equiv -n$ modulo $N$, the centered residue of $d m_j$ is
-  $-(n m_j - j N)$; as $R_n$ is invariant under negation, every index $m_j$
-  satisfies the centered-residue condition @highest-threshold-sites defining
-  the $n$ highest threshold crests.
+  Thus every index $m_j$ satisfies the centered-residue condition defining the
+  $n$ highest threshold crests.
   
   The indices $m_j$ are distinct modulo $N$. Indeed, since $N/n>2$,
   nearest-integer rounding preserves the strict ordering:
@@ -555,7 +553,7 @@ belongs to
     $
   ]
   runs through the centered integers from $-n/2+1$ to $n/2$. Since
-  $d equiv -n$ modulo $N$, the centered residues $d m_j^+$ run through
+  $d=-n$ modulo $N$, the centered residues $d m_j^+$ run through
   #nonum[
     $
     -n/2,
@@ -574,11 +572,6 @@ belongs to
   crest families of @section6 meet the threshold slice in exactly the two
   highest-amplitude selections of @even-threshold-mirror-pair.
 ] <even-anchored-threshold-selections>
-
-The proof uses the noncentral continuation @noncentral-continuation and the
-central-arm continuation @even-central-arm-continuation, which are
-established in @section6 without reference to the present section; no
-circularity arises.
 
 #proof[
   The noncentral labels follow their unique nearest-grid corridors. The

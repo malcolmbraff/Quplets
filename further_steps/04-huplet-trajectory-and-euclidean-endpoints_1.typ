@@ -889,8 +889,7 @@ not one single-valued continuation through the central tie.
 ] <even-paired-Huplet-identities>
 
 #proof[
-  @noncentral-continuation and @even-central-arm-continuation give the two
-  selected endpoint sets: all noncentral endpoints
+  @section6 gives the two selected endpoint sets: all noncentral endpoints
   are the unique nearest $d$-grid sites, while the central endpoint is one of
   the two nearest sites. The floor-difference criterion, applied to the upper selection and
   transported by reflection as in @parity-unified-endpoint-selection,

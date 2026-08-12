@@ -48,11 +48,7 @@ floor((i d)/n+1/2).
 $ <nearest-endpoint>
 
 Then $a_i/d$ is the unique $d$-grid point nearest to $i/n$. A tie would imply
-$n$ divides $2i$; since $n$ is odd and $0<i<n$, this is impossible. As noted
-in the introduction, $a_i = floor((i d + (n-1)/2)/n)$: the configuration is
-the Clough--Douthett maximally even set in its $J$-function parametrization
-#cite(<cloughMaximallyEvenSets1991>), here carrying the anchor and the
-labels inherited from the initial grid. Moreover,
+$n$ divides $2i$; since $n$ is odd and $0<i<n$, this is impossible. Moreover,
 
 #nonum[
   $
@@ -98,7 +94,7 @@ Define
   $
 ]
 
-#lemma(name: "Centered displacement symmetry")[
+#corollary(name: "Centered displacement symmetry")[
   The rounding residues form the centered residue system
 
   $
@@ -179,12 +175,6 @@ phi (
 ).
 $ <displacement-energy>
 
-The following statement is elementary: it is pointwise nearest rounding read
-variationally, not an independent global selection principle. It is recorded
-because it is the precise sense in which the anchored representative is
-distinguished among all labeled $d$-grid selections, including non-injective
-ones.
-
 #proposition(name: "Labeled nearest-grid minimality")[
   For every nondecreasing loss $phi:[0,1/2] -> RR$ and every labeled
   $d$-grid selection $B$ as above,
@@ -222,6 +212,9 @@ ones.
   requires equality in every pointwise comparison. Since every nearest grid site
   is unique, this implies $b_i = a_i$ for all $i$.
 ]
+
+This proposition records the variational meaning of pointwise nearest rounding;
+it is not an independent global energy-selection principle.
 
 The nearest-grid configuration therefore simultaneously minimizes, among all
 labeled endpoint selections without injectivity or order constraints,
@@ -276,8 +269,9 @@ separable displacement cost.
 #proof[
   The endpoint identity is @nearest-grid-endpoints. Since
   @anchored-continuation preserves cyclic order, the successive endpoint gaps
-  are exactly the displayed differences; these are precisely the components
-  of $CanonicalQuplet(n,d)$ in @canonical-Quplet.
+  are exactly the displayed differences. The equality with the canonical
+  nearest-grid configuration also follows directly from
+  @euclidean-endpoint-theorem.
 ]
 
 This corollary resolves the dynamical realization of the canonical
@@ -287,12 +281,10 @@ representative. No entropy or energy-uniqueness statement is asserted.
 
 The endpoint result has three distinct layers:
 
-- the Euclidean endpoint theorem (@euclidean-endpoint-theorem; part (ii) of
-  the Main theorem) determines the cyclic necklace $E(n,d)$;
-- anchored continuation (@anchored-continuation; part (i)) selects the
-  nearest-grid representative;
-- labeled nearest-grid minimality (@labeled-nearest-grid-minimality)
-  characterizes that representative among labeled $d$-grid selections.
+- the Euclidean theorem determines the cyclic necklace $E(n,d)$;
+- anchored continuation selects the nearest-grid representative;
+- labeled nearest-grid minimality characterizes that representative among
+  labeled $d$-grid selections.
 
 These three layers are the complete endpoint claims used in the present
 article. The conclusion summarizes their dynamical, combinatorial, and
