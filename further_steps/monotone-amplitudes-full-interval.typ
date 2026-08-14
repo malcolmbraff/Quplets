@@ -1,4 +1,4 @@
-// Monotone unanchored amplitudes and the full-interval ranking theorem
+// Quantitative birth margins and monotone unanchored amplitudes
 // Companion note to "Crest continuation and canonical Euclidean-rhythm selection: a two-frequency cosine model"
 // Intended location: further_steps/monotone-amplitudes-full-interval.typ
 
@@ -10,7 +10,7 @@
 #let qed = [#h(1fr) $square$]
 
 #align(center)[
-  #text(size: 15pt)[*Monotone unanchored amplitudes and the full-interval ranking theorem*] \
+  #text(size: 15pt)[*Quantitative birth margins and monotone unanchored amplitudes*] \
   #v(0.3em)
   #text(size: 11pt)[Companion note to _Crest continuation and canonical Euclidean-rhythm selection_] \
   #v(0.3em)
@@ -19,44 +19,18 @@
 
 #v(1em)
 
-*Abstract.*
-The main paper proves that the anchored crests of
-$F_k (x) = k cos(2 pi d x) + (1-k) cos(2 pi n x)$ are the $n$ highest local
-maxima for $k$ in $[0, k_0] union (k_c - h_0, 1)$ and leaves a subcritical
-interval open. This note closes that interval for an explicit family of
-pairs, replacing the strip machinery by a monotonicity theorem. The
-ingredients are: an exact window for stationary degeneracies,
-$k^* in [k_"pf", k_c]$ with $k_"pf" = n^2\/(n^2+d^2)$, together with the
-factored value $plus.minus D(k^*)$,
-$D(k) = (1-k) sqrt((1-n^2\/d^2)(1-sigma(k)^2))$; a two-sided type
-dichotomy for subcritical stationary points; the convexity of the
-amplitude along _any_ nondegenerate crest branch; and the sign of the
-envelope derivative at branch endpoints. Together these show that every
-unanchored crest amplitude is strictly monotone on its lifetime:
-half-grid-side crests rise and remain negative, grid-side crests fall from
-their birth value $D(k^*) <= D_max = (d^2-n^2)\/(d^2+n^2)$. Consequently,
-whenever $(star)$: $D_max < cos(pi(n-1)\/(n+d))$ holds, the anchored
-crests are the $n$ highest local maxima for every $k in [0, 1)$; a
-four-line crossing argument derives this from the window, the convexity,
-and the threshold ranking alone, the monotonicity theorem being the finer
-portrait.
-Unconditionally, the possibly unresolved set is confined to an explicit
-window of width at most $(D_max - phi.alt)\/2$ above $k_"pf"$, and $F_k$
-has exactly $n$ crests for all $k < k_"pf"$, sharply.
+*Status and scope.*
+The main paper now proves the full prominence theorem unconditionally for every odd coprime pair $1<n<d$ and every $0<k<1$. The condition $(star)$ and the crossing argument below are therefore retained as a historical sufficient route, not as hypotheses of the theorem.
+
+This note remains useful as a quantitative supplement. It gives the exact stationary-degeneracy window $k^* in [k_"pf",k_c]$, the factored birth value $plus.minus D(k^*)$, lifetime monotonicity and convexity of unanchored crest amplitudes, the sharp crest count below $k_"pf"$, explicit localization and numerical margins, and the far-skew Adler scaling limit with its birth-deficit estimate. Proved statements, numerical evidence, and open sharp-margin questions are separated below.
 
 #v(0.5em)
 
-= Setting and statement of results
+= Setting and quantitative results
 
 Throughout, $1 < n < d$ are coprime, $n$ is odd, $k in [0,1]$, and
 $F_k (x) = k cos(2 pi d x) + (1-k) cos(2 pi n x)$ on $x in RR\/ZZ$.
-We freely use the main paper's notation and results: the anchored branches
-$X_i (k)$ with amplitudes $A_i (k) = F_k (X_i (k))$, the slope-balanced
-parameter $k_c = n\/N$ with $N = n + d$, the anchored floor
-$ A_i (k) >= phi.alt := cos((pi (n-1))/N) > 0 $
-(Lemma 6.4 of the paper), the threshold ranking at $k_c$
-(Proposition 3.1, Corollary 3.4), and the upper-range window ranking on
-$(k_c, 1)$ (Proposition 6.1). Set
+We use the main paper's anchored branches $X_i(k)$ with amplitudes $A_i(k)=F_k(X_i(k))$, the slope-balanced parameter $k_c=n/N$ with $N=n+d$, the uniform anchored floor $A_i(k)>=phi.alt:=cos((pi(n-1))/N)>0$, the threshold ranking at $k_c$, and the upper-range ranking for $k>k_c$. Set
 $ sigma(k) = (k d)/((1-k) n), quad
   tau(k) = (k d^2)/((1-k) n^2), quad
   rho(k) = 1/(sigma(k)), $
@@ -66,7 +40,7 @@ $ k_"pf" := n^2/(n^2 + d^2), quad
   D_max := D(k_"pf") = (d^2 - n^2)/(d^2 + n^2). $
 
 #block(above: 1.1em, below: 1.1em)[
-*Theorem 1.1* (Full-interval ranking).
+*Theorem 1.1* (Historical sufficient criterion).
 Assume
 $ (star): quad (d^2 - n^2)/(d^2 + n^2) < cos((pi (n-1))/(n+d)). $
 Then for every $k in [0, 1)$ the anchored crests are precisely the $n$
@@ -97,12 +71,7 @@ Equivalently: if no grid-side degeneracy occurs in that window, the
 conclusion of Theorem 1.1 holds for the pair on all of $[0, 1)$.
 ]
 
-These results supersede the subcritical strip theorem of the paper
-(Theorem 6.8) on the domain of $(star)$, and supersede the small-modulation
-threshold $k_0 = n^2\/(n^2 + 2 d^2)$ (Proposition 6.2) everywhere. The
-proofs use the branch-continuation alternative (Lemma 6.7 of the paper)
-and sharpen its degeneracy lemma (Lemma 6.6) into an exact window-and-value
-statement.
+Historically, these results sharpened the paper's former strip and small-modulation bounds. The main paper's phase-sheet proof now supersedes this route qualitatively; the exact degeneracy window, factored birth value, and localization estimate below remain independent quantitative refinements.
 
 = The degeneracy window and the amplitude formula
 
@@ -461,7 +430,7 @@ pair studied in the paper and in the companion notes satisfies $(star)$.
 (script `hunt.py`) find no violation: the conjecture holds numerically
 with thin margins concentrated exactly in the window of Corollary 1.3
 (for $(3,100)$: minimal margin $0.0039$ near $k approx 0.0022$, window
-width $<= 3 dot 10^(-5)$). The remaining open ingredient is a
+width $<= 3 dot 10^(-5)$). For this historical sufficient route, the missing quantitative ingredient was a
 nonexistence or displacement lemma for grid-side degeneracies in
 $[k_"pf", k_D]$: at such a degeneracy
 $cos(2 pi n x^*) = sqrt((1-sigma^2)\/(1-n^2\/d^2)) -> 1$ as
@@ -471,7 +440,7 @@ $c_i = d i mod n != 0$, $xi = x^* - i\/n$, obstructs small $xi$; the
 companion cosine equation further confines candidates to the residues
 $c_i = (n plus.minus 1)\/2$. Quantifying this Diophantine gap
 $k^* >= k_"pf" + gamma(n, d)$ with $D(k_"pf" + gamma) < phi.alt$ would
-remove $(star)$ entirely; Section 9 turns this heuristic into an exact
+remove $(star)$ from that route; Section 9 turns this heuristic into an exact
 scaling limit, and Section 10 collects the resulting research program.
 
 *The even case.* For $n$ even, the mirror-pair companion note shows the
@@ -482,16 +451,7 @@ odd $n$ is precisely the source of the Diophantine gap above. The even
 case thus saturates both the window edge and the value bound; oddness of
 $n$ is what forbids saturation.
 
-*Supersession.* Within the paper's numbering: Lemma 2.1 sharpens
-Lemma 6.6 (window lower edge, factored equality, no exclusions);
-Lemma 4.1 generalizes the computation of Lemma 6.4; Corollary 1.2
-supersedes Proposition 6.2; Theorem 1.1 supersedes Theorem 6.8 on the
-domain of $(star)$, where Corollary 6.3 upgrades to an empty unresolved
-set; in general the unresolved set shrinks to the window of
-Corollary 1.3. The subcritical strip constant $h_0$, the small-modulation
-constant $k_0$, and the climb-rate estimates of earlier working notes are
-no longer needed.
-
+*Current relation to the main theorem.* The phase-sheet and centered-residue argument in the main paper proves the top-$n$ result unconditionally, so neither $(star)$ nor the displacement lemma proposed above is needed for qualitative ranking. The results retained here are quantitative refinements: the exact degeneracy window and birth values, the monotonic branch portrait, explicit localization bounds, and asymptotic margins. Earlier comparisons with superseded paper numbering are historical only.
 
 = The skew scaling limit
 
@@ -583,7 +543,7 @@ and the size of the minimal margins:
   [$(7, 100)$], [$0.00836$], [$0.00842$], [$0.0073$], [$0.0073$],
 )
 
-= Grounds for further inquiry
+= Quantitative questions beyond the prominence theorem
 
 The following problems, in increasing distance from the proved results,
 constitute the full analysis of the model. Each is stated so that a
@@ -599,12 +559,7 @@ solution slots directly into the framework above.
   $E_"unanchored" (tau) > max_c E_c (tau)$ for all $tau >= tau^*$, not
   only at birth. Both sides grow by the envelope law
   $E' = 1 - cos("phase")$; the statement is a comparison of locking
-  phases in the Adler equation. For $n <= 7$ it is unnecessary
-  ($E_"birth" > E_phi.alt$), so its resolution for $n >= 9$, matched at
-  $tau tilde d\/n$ onto the resonant regime of Proposition 6.1, removes
-  $(star)$ and proves the conjecture for every coprime pair. Problems 1
-  and 2 together are the complete remaining content of the top-$n$
-  conjecture.
+  phases in the Adler equation. For $n <= 7$ the comparison already gives quantitative separation from the threshold floor. For $n >= 9$ it remains an open sharp-margin problem, but no longer an obstruction to the qualitative top-$n$ theorem. Problems 1 and 2 now concern quantitative control of the ranking gap and its asymptotics.
 
 + _Finite-$d$ birth threshold._ Sharpen Lemma 2.1 to
   $k^* >= k_"pf" (1 + gamma(n, d))$ for actual degeneracies, with
@@ -642,7 +597,7 @@ solution slots directly into the framework above.
   factored degeneracy value does not), and what replaces $D$ for other
   waveforms?
 
-Problems 1--3 close the model's own conjecture; problems 4--7 open it
+Problems 1--3 sharpen the model's quantitative theory; problems 4--7 open it
 outward: to bifurcation theory (the cascade as a phase-locking cascade),
 to Diophantine analysis (the oddness obstruction), and to the arithmetic
 of iterated mediants. The rational-alignment classification and the even

@@ -34,18 +34,20 @@ $ <G>
 
 and
 
-$
-H_k (x)
-=
-partial_x^2 F_k (x)
-=
--(2 pi)^2
-(
-  k d^2 cos(2 pi d x)
-  +
-  (1-k)n^2 cos(2 pi n x)
-).
-$ <H>
+#nonum[
+  $
+  H_k (x)
+  =
+  partial_x^2 F_k (x)
+  =
+  -(2 pi)^2
+  (
+    k d^2 cos(2 pi d x)
+    +
+    (1-k)n^2 cos(2 pi n x)
+  ).
+  $
+]
 
 A stationary point of $F_k$ is a phase $x in RR \/ ZZ$ satisfying
 $G_k (x)=0$. It is a crest when $H_k (x)<0$, a trough when

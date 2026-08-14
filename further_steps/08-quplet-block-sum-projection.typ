@@ -274,8 +274,9 @@ If the Quplet-realization statement holds, then this becomes
   $
 ]
 
-Thus the block-sum map produces the canonical nearest-grid representative
-unconditionally and the dynamically defined Quplet conditionally.
+Thus the block-sum map produces the canonical nearest-grid representative,
+which the main paper's endpoint theorem identifies with the dynamically defined
+Quplet.
 
 
 == Example: $(n,d)=(5,7)$
@@ -599,8 +600,8 @@ This identity is unconditional: it concerns the explicitly known set of the
 $n$ highest threshold crests and the canonical nearest-grid representative on
 the $(n+d)$-grid.
 
-If the amplitude-selection conjecture holds, then the anchored crest branches
-occupy these same threshold sites, and therefore
+By the main paper's threshold-selection and full-prominence theorems, the
+anchored crest branches occupy these same threshold sites, and therefore
 
 #nonum[
   $

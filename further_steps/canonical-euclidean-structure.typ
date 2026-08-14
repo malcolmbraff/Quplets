@@ -36,7 +36,7 @@ Euclidean class:
 - the branch $X_0$, issued from $0$, fixes the anchor;
 - the circular ordering is transported continuously from $k=0$ to $k=1$.
 
-Theorem @euclidean-endpoint-theorem proves that/* Superseded wording: The Euclidean endpoint-selection conjecture states that */
+Theorem @euclidean-endpoint-theorem proves that
 
 #nonum[
   $

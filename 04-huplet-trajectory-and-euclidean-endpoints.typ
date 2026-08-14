@@ -18,19 +18,23 @@ $n$-grid is preserved. We therefore choose the unique lifts satisfying
 
 and set $X_n (k)=1$. For $i=0,dots,n-1$, define
 
-$
-D_i (k)
-=
-X_(i+1) (k)-X_i (k).
-$ <Huplet-components>
+#nonum[
+  $
+  D_i (k)
+  =
+  X_(i+1) (k)-X_i (k).
+  $
+]
 
 The *Huplet* is the spacing vector
 
-$
-Huplet(n,d,k)
-=
-(D_0 (k),dots,D_(n-1) (k)).
-$ <Huplet-def>
+#nonum[
+  $
+  Huplet(n,d,k)
+  =
+  (D_0 (k),dots,D_(n-1) (k)).
+  $
+]
 
 Every component is positive and
 
@@ -42,11 +46,13 @@ Every component is positive and
 
 Thus $Huplet(n,d,k)$ lies in the open spacing simplex. Initially,
 
-$
-Huplet(n,d,0)
-=
-1/n (1,dots,1).
-$ <regular-tuplet>
+#nonum[
+  $
+  Huplet(n,d,0)
+  =
+  1/n (1,dots,1).
+  $
+]
 
 @fig-huplet-spacing-vector shows the full spacing trajectory for
 $(n,d)=(53,67)$; the two grid-locked two-value configurations, at $k_c$ and
@@ -291,11 +297,13 @@ of the $d$-grid.
 
 The *Quplet* associated with $(n,d)$ is defined by
 
-$
-Q(n,d)
-=
-Huplet(n,d,1).
-$ <Q>
+#nonum[
+  $
+  Q(n,d)
+  =
+  Huplet(n,d,1).
+  $
+]
 
 Equivalently, suppose that the selected endpoint sites are
 
@@ -371,16 +379,18 @@ $ <E-floor>
 
 The corresponding normalized spacing vector is
 
-$
-bold(e) (n,d)
-=
-1 / d
-(
-  e_0 (n,d),
-  dots,
-  e_(n-1) (n,d)
-).
-$ <E-vector>
+#nonum[
+  $
+  bold(e) (n,d)
+  =
+  1 / d
+  (
+    e_0 (n,d),
+    dots,
+    e_(n-1) (n,d)
+  ).
+  $
+]
 
 The entries of $bold(e) (n,d)$ sum to one. They consist of $r$ copies of
 $(s+1)/d$ and $n-r$ copies of $s/d$.
@@ -605,13 +615,15 @@ sites are the nearest points of the $(n+d)$-grid to the initial $n$-grid.
 #corollary(name: "Threshold-extension identity")[
   Let $1<n<d$ be coprime, with $n$ odd, and set $N=n+d$. Then
 
-  $
-  Huplet(n,d,n/N)
-  =
-  Q(n,N),
-  quad
-  Q(n,N) in E(n,N).
-  $ <threshold-extension-formula>
+  #nonum[
+    $
+      Huplet(n,d,n/N)
+      =
+      Q(n,N),
+      quad
+      Q(n,N) in E(n,N).
+      $
+  ]
 
   The equality uses the anchoring at $0$ and the cyclic order transported by
   the anchored branches.

@@ -5,7 +5,7 @@
 The preceding section shows that complementary residues $r$ and $n-r$
 determine opposite orientations of the same affine line through the regular
 tuplet $t_n$. We now use this relation to define twin canonical
-representatives and, conditionally, twin dynamically defined Quplets.
+representatives and the corresponding dynamically defined twin Quplets.
 
 Throughout this section, let $n>=2$, let $0<r<n$, and let $s>=1$. Define
 
@@ -547,8 +547,8 @@ The canonical twin relation is combinatorial and affine. It follows from the
 nearest-grid construction and does not require a claim about the crest
 trajectories.
 
-Its realization by the dynamically defined Quplets remains conditional on
-the Quplet-realization result.
+The main paper's nearest-grid endpoint theorem identifies the dynamically
+defined Quplets with these canonical representatives.
 
 Moreover, the twin relation should not be described as symmetry about a
 single balanced derivative parameter. The two frequency pairs have distinct

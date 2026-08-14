@@ -265,23 +265,19 @@ balance, even though extra unanchored extrema may occur elsewhere.
 == Fixed-parameter phase sheets below slope balance <fixed-parameter-phase-sheets>
 
 
-Write $epsilon=n/d$ and $k_c=n/(n+d)=epsilon/(1+epsilon)$. The threshold and upper-range ranking are already known for $k >= k_c$, so the only open range is $0<k<k_c$.
+Write $mu=n/d$ and $k_c=n/(n+d)=mu/(1+mu)$. The threshold and upper-range ranking are already known for $k >= k_c$, so the only open range is $0<k<k_c$.
 
 
-Normalize the low-frequency phase by
-#nonum[
-  $ a=alpha/(2 pi), quad phi=s/(2 pi), $
-]
-with phase represented in the full fundamental interval $[-1/2,1/2]$. Fix $k<k_c$ and a grid-side crest in the $p$-th $d$-cell relative to the $n$-grid crest $i/n$. As above, put
+ Fix $k<k_c$ and a grid-side crest in the $p$-th $d$-cell relative to the $n$-grid crest $i/n$. As above, put
 #nonum[
   $ t=2 pi d(x-p/d), quad
     s=2 pi n(x-i/n), quad
     alpha=2 pi n(p/d-i/n), $
 ]
-so that $s=alpha+epsilon t$ and $-pi<t<pi$. By reflection it is enough to consider $s>0$. Stationarity then forces $t<0$. Set
+so that $s=alpha+mu t$ and $-pi<t<pi$. By reflection it is enough to consider $s>0$. Stationarity then forces $t<0$. Set
 #nonum[
   $ u=-t in (0,pi), quad
-    sigma=(k d)/((1-k)n)=k/((1-k)epsilon)<1. $
+    sigma=(k d)/((1-k)n)=k/((1-k)mu)<1. $
 ]
 The stationary equation becomes
 #nonum[
@@ -292,17 +288,17 @@ The stationary equation becomes
 On the grid-side sheet, $0<s<pi/2$, hence
 #nonum[
   $ s=arcsin(sigma sin u), quad
-    alpha(u)=arcsin(sigma sin u)+epsilon u. $
+    alpha(u)=arcsin(sigma sin u)+mu u. $
 ]
 The crest condition is
 #nonum[
-  $ C(u):=k cos u+(1-k)epsilon^2 cos s>0. $
+  $ C(u):=k cos u+(1-k)mu^2 cos s>0. $
 ]
 Differentiating the phase gives
 #nonum[
   $ alpha'(u)
-    =epsilon+(sigma cos u)/sqrt(1-sigma^2 sin^2 u)
-    =C(u)/((1-k)epsilon cos s). $
+    =mu+(sigma cos u)/sqrt(1-sigma^2 sin^2 u)
+    =C(u)/((1-k)mu cos s). $
 ]
 Since $cos s>0$, a stationary point on this sheet is a nondegenerate crest exactly when $alpha'(u)>0$.
 
@@ -316,15 +312,15 @@ Then
   $ (dif B)/(dif z)
     =(sigma(1-sigma^2))/(1-sigma^2+sigma^2 z^2)^(3/2)>0, $
 ]
-and $alpha'(u)=epsilon-B(z)$. Thus $alpha'$ has at most one zero on $(pi/2,pi)$. Because it is positive at $u=pi/2$, the crest set on the grid-side sheet is an interval beginning at $u=0$. Consequently, if a grid-side crest exists at $u=u_p$, then every $u in [0,u_p]$ lies on the same nondegenerate crest sheet and $alpha(u)$ is strictly increasing there. Inverting $alpha(u)$ gives the required continuation at the same fixed parameter $k$ from the crest's cell phase to $alpha=0$.
+and $alpha'(u)=mu-B(z)$. Thus $alpha'$ has at most one zero on $(pi/2,pi)$. Because it is positive at $u=pi/2$, the crest set on the grid-side sheet is an interval beginning at $u=0$. Consequently, if a grid-side crest exists at $u=u_p$, then every $u in [0,u_p]$ lies on the same nondegenerate crest sheet and $alpha(u)$ is strictly increasing there. Inverting $alpha(u)$ gives the required continuation at the same fixed parameter $k$ from the crest's cell phase to $alpha=0$.
 
 
 This continuation remains in the full phase interval. For $u<=pi/2$ we have
-$alpha<(1+epsilon)pi/2<pi$. If no fold occurs, then
-$alpha(u)<=alpha(pi)=epsilon pi<pi$. At a fold, write $v=pi-u$.
-The fold equation gives $tan s=epsilon tan v$, hence $s<v$, and therefore
+$alpha<(1+mu)pi/2<pi$. If no fold occurs, then
+$alpha(u)<=alpha(pi)=mu pi<pi$. At a fold, write $v=pi-u$.
+The fold equation gives $tan s=mu tan v$, hence $s<v$, and therefore
 #nonum[
-  $ alpha=epsilon pi+s-epsilon v<pi. $
+  $ alpha=mu pi+s-mu v<pi. $
 ]
 The negative phase side follows by the symmetry $(alpha,t) mapsto (-alpha,-t)$.
 
@@ -334,30 +330,30 @@ The full phase interval also contains the second sine branch
   $ s_"out"(u)=pi-arcsin(sigma sin u). $
 ]
 For $sigma<1$, this outer branch contains a crest segment only when
-$epsilon<sigma<1$. It is the half-grid-side component. At its phase endpoint
+$mu<sigma<1$. It is the half-grid-side component. At its phase endpoint
 $u=0$, its height is
 #nonum[
   $ M=2k-1<0, $
 ]
 because $k<k_c<1/2$. At its terminal fold, $C(u)=0$, and therefore
 #nonum[
-  $ M=-(1-k)(1-epsilon^2) abs(cos s)<0. $
+  $ M=-(1-k)(1-mu^2) abs(cos s)<0. $
 ]
-Since $partial M/partial alpha=-(1-k)sin s<0$ for $0<s<pi$, the height is monotone between these two endpoints. Hence the entire disconnected outer crest component has negative height. Thus every crest capable of competing with the anchored family lies on the central grid-side sheet proved above.
+Since $partial M/partial alpha=-(1-k)sin s<0$ for $0<s<pi$, the height is monotone between these two endpoints. Hence the entire disconnected outer crest component has negative height. The boundary values introduce no further crest: $s=0$ forces $x$ onto both grids, hence $x=0=X_0$ by coprimality, while $s=pi$ is the $u=0$ endpoint of the outer component. Thus every crest capable of competing with the anchored family lies on the central grid-side sheet proved above.
 
 
 == Global phase ordering
 
 
-Let $M_k(alpha)$ be the height on the central fixed-$k$ crest sheet. The envelope identity gives
+Let $M_k (alpha)$ be the height on the central fixed-$k$ crest sheet. The envelope identity gives
 #nonum[
   $ partial M_k/partial alpha=-(1-k)sin s. $
 ]
 On the positive phase side this derivative is strictly negative. Reflection gives
 #nonum[
-  $ M_k(-alpha)=M_k(alpha). $
+  $ M_k (-alpha) = M_k (alpha). $
 ]
-Therefore $M_k(alpha)$ is a strictly decreasing function of $abs(alpha)$ throughout the central sheet.
+Therefore $M_k (alpha)$ is a strictly decreasing function of $abs(alpha)$ throughout the central sheet.
 
 
 == Centered-residue separation <centered-residue-phase-gap>
@@ -372,13 +368,40 @@ Because $n$ is odd and $gcd(n,d)=1$, the centered residues are exactly
   $ {r_i:0<=i<n}
     ={-(n-1)/2,dots,(n-1)/2}. $
 ]
+For $0<k<k_c$, every anchored branch lies on the central grid-side sheet,
+in the cell of its endpoint. Along the corridor of @anchored-continuation,
+the slow phase
+#nonum[
+$ s=2 pi n (X_i (k)-i/n) $
+]
+increases in absolute value with $k$. At the threshold,
+@anchored-threshold-formula gives
+#nonum[
+$ abs(s) <= abs(s(k_c))
+= (2 pi abs(r_i))/N
+<= (pi(n-1))/N
+< pi/2 $
+]
+for every $k<=k_c$. Moreover, $X_i (k)$ lies between $i/n$ and $q_i/d$, and
+#nonum[
+$ abs((d i)/n-q_i)
+= abs(r_i)/n
+<= (n-1)/(2 n)
+< 1/2, $
+]
+so the anchored crest occupies the cell $p=q_i$.
+
 Thus every anchored cell phase satisfies
 #nonum[
   $ abs(alpha_i)= (2 pi abs(r_i))/d <= (pi(n-1))/d. $
 ]
 
 
-Now let $p/d$ label an unanchored crest in the $i$-th $n$-lobe. Since the $p$-cell is not the selected cell $q_i$, there is a nonzero integer $ell$ such that
+Now let $p/d$ label an unanchored crest in the $i$-th $n$-lobe. Because $alpha(u)$ is strictly increasing along the crest portion of the
+sheet, each pair of lobe and cell carries at most one grid-side crest; the
+anchored crest occupies the pair $(i, q_i)$, so an unanchored crest in the
+$i$-th lobe has $p != q_i$.
+Since the $p$-cell is not the selected cell $q_i$, there is a nonzero integer $ell$ such that
 #nonum[
   $ n p-d i=r_i+n ell. $
 ]
@@ -399,10 +422,10 @@ for every anchored cell $j$.
 
 Every grid-side unanchored crest and every anchored crest lie on the same universal central height sheet. The strict phase ordering therefore gives
 #nonum[
-  $ F_k(Y)=M_k(alpha_p)
-    <M_k(alpha_j)=F_k(X_j(k)) $
+  $ F_k (Y) = M_k (alpha_p)
+    < M_k (alpha_j) = F_k (X_j (k)) $
 ]
-for every anchored crest $X_j(k)$. In particular, a grid-side unanchored crest lies below the lowest anchored crest, not merely below the anchored crest in its own lobe.
+for every anchored crest $X_j (k)$. In particular, a grid-side unanchored crest lies below the lowest anchored crest, not merely below the anchored crest in its own lobe.
 
 
 

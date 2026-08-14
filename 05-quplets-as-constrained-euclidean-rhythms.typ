@@ -33,19 +33,23 @@ representative by nearest-grid selection.
 
 For $x,y in RR / ZZ$, define
 
-$
-"dist"_circle (x,y)
-=
-min_(m in ZZ) abs(x-y+m).
-$ <circular-distance>
+#nonum[
+  $
+  "dist"_circle (x,y)
+  =
+  min_(m in ZZ) abs(x-y+m).
+  $
+]
 
 For $i=0,dots,n-1$, set
 
-$
-a_i
-=
-floor((i d)/n+1/2).
-$ <nearest-endpoint>
+#nonum[
+  $
+  a_i
+  =
+  floor((i d)/n+1/2).
+  $
+]
 
 Then $a_i/d$ is the unique $d$-grid point nearest to $i/n$. A tie would imply
 $n$ divides $2i$; since $n$ is odd and $0<i<n$, this is impossible. As noted
@@ -61,9 +65,11 @@ labels inherited from the initial grid. Moreover,
 ]
 
 The corresponding labeled index configuration is
-$
-A_(n,d)=(a_0 ,dots,a_(n-1)).
-$ <nearest-configuration>
+#nonum[
+  $
+  A_(n,d)=(a_0 ,dots,a_(n-1)).
+  $
+]
 
 Write $a_n=a_0+d$ and define the normalized circular gap vector
 
@@ -75,13 +81,15 @@ $ <canonical-Quplet>
 
 By @nearest-grid-endpoints and @euclidean-endpoint-theorem,
 
-$
-Q(n,d)
-=
-CanonicalQuplet(n,d),
-quad
-CanonicalQuplet(n,d) in E(n,d).
-$ <canonical-Euclidean>
+#nonum[
+  $
+  Q(n,d)
+  =
+  CanonicalQuplet(n,d),
+  quad
+  CanonicalQuplet(n,d) in E(n,d).
+  $
+]
 
 Thus the ordinary Euclidean necklace is supplemented by a canonical anchor,
 labeling, and rotation.
@@ -101,11 +109,13 @@ Define
 #lemma(name: "Centered displacement symmetry")[
   The rounding residues form the centered residue system
 
-  $
-  {epsilon_i : i=0,dots,n-1}
-  =
-  {-(n-1)/2,dots,(n-1)/2}.
-  $ <centered-residues>
+  #nonum[
+    $
+      {epsilon_i : i=0,dots,n-1}
+      =
+      {-(n-1)/2,dots,(n-1)/2}.
+      $
+  ]
 
   Moreover, for $1<=i<n$, $delta_(n-i)=-delta_i$, and
 
@@ -167,17 +177,19 @@ Let
 
 be nondecreasing, and define the labeled displacement energy
 
-$
-cal(E)_phi (B)
-=
-sum_(i=0)^(n-1)
-phi (
-  "dist"_circle (
-    i/n,
-    b_i / d
-  )
-).
-$ <displacement-energy>
+#nonum[
+  $
+  cal(E)_phi (B)
+  =
+  sum_(i=0)^(n-1)
+  phi (
+    "dist"_circle (
+      i/n,
+      b_i / d
+    )
+  ).
+  $
+]
 
 The following statement is elementary: it is pointwise nearest rounding read
 variationally, not an independent global selection principle. It is recorded
@@ -189,11 +201,13 @@ ones.
   For every nondecreasing loss $phi:[0,1/2] -> RR$ and every labeled
   $d$-grid selection $B$ as above,
 
-  $
-  cal(E)_phi (A_(n,d) )
-  <=
-  cal(E)_phi (B).
-  $ <minimal-distortion>
+  #nonum[
+    $
+      cal(E)_phi (A_(n,d) )
+      <=
+      cal(E)_phi (B).
+      $
+  ]
 
   If $phi$ is strictly increasing, equality holds only when
 
@@ -287,7 +301,7 @@ representative. No entropy or energy-uniqueness statement is asserted.
 
 The endpoint result has three distinct layers:
 
-- the Euclidean endpoint theorem (@euclidean-endpoint-theorem; part (ii) of
+- the Euclidean endpoint theorem (@euclidean-endpoint-theorem; part (iii) of
   the Main theorem) determines the cyclic necklace $E(n,d)$;
 - anchored continuation (@anchored-continuation; part (i)) selects the
   nearest-grid representative;
@@ -321,7 +335,7 @@ They agree for $i != n/2$, while
   $
 ]
 Let $A_(n,d)^+$ and $A_(n,d)^-$ be the corresponding labeled configurations,
-and let $CanonicalQuplet^+(n,d)$ and $CanonicalQuplet^-(n,d)$ be their
+and let $CanonicalQuplet^+ (n,d)$ and $CanonicalQuplet^- (n,d)$ be their
 normalized cyclic gap vectors.
 
 #proposition(name: "Even paired nearest-grid minimality")[
@@ -329,8 +343,8 @@ normalized cyclic gap vectors.
   are Euclidean:
   #nonum[
     $
-    CanonicalQuplet^+(n,d),
-    CanonicalQuplet^-(n,d)
+    CanonicalQuplet^+ (n,d),
+    CanonicalQuplet^- (n,d)
     in E(n,d).
     $
   ]
@@ -348,7 +362,7 @@ normalized cyclic gap vectors.
   The selected endpoint Quplets satisfy
   #nonum[
     $
-    Q^s (n,d)=CanonicalQuplet^s(n,d),
+    Q^s (n,d)=CanonicalQuplet^s (n,d),
     quad
     s in {-1,1},
     $

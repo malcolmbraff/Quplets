@@ -199,15 +199,19 @@ of the complete threshold slice.
 
   so the point is a crest precisely when
 
-  $
-  cos(d theta)>0.
-  $ <grid-crest-test>
+  #nonum[
+    $
+      cos(d theta)>0.
+      $
+  ]
 
   Its amplitude is
 
-  $
-  F_(k_c) (x)=cos(d theta).
-  $ <resonant-amplitude>
+  #nonum[
+    $
+      F_(k_c) (x)=cos(d theta).
+      $
+  ]
 
   At a complementary point, $cos(n theta)=-cos(d theta)$, and therefore
 
@@ -339,11 +343,13 @@ belongs to
 #proof[
   For $j=0,dots,n-1$, define
   
-  $
-  m_j
-  =
-  floor((j N) / n + 1 / 2).
-  $ <nearest-grid-sites>
+  #nonum[
+    $
+      m_j
+      =
+      floor((j N) / n + 1 / 2).
+      $
+  ]
   
   Since $gcd(n,N)=gcd(n,d)=1$ and $n$ is odd, no number $j N/n$ is a
   half-integer. Thus $m_j$ is the unique nearest integer to $j N/n$.
@@ -551,7 +557,7 @@ belongs to
   $m_(n/2)^+=(N+1)/2$. Multiplying the rounding error by $n$ shows that
   #nonum[
     $
-    n m_j^+-j N
+    n m_j^+ - j N
     $
   ]
   runs through the centered integers from $-n/2+1$ to $n/2$. Since

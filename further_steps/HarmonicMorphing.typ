@@ -364,7 +364,7 @@ affine line, with different contrast magnitudes.
 The affine structure described above is proved for the canonical nearest-grid
 representatives.
 
-If @Quplet-realization holds, then
+By the main paper's nearest-grid endpoint theorem,
 
 #nonum[
   $
@@ -401,7 +401,7 @@ and
   $
 ]
 
-These statements remain conditional on the endpoint-selection conjecture.
+Thus the dynamically defined Quplets inherit this affine structure under the standing odd-coprime hypotheses.
 
 
 == Interpretation
@@ -429,4 +429,29 @@ simplex.
 The affine description developed in the preceding sections completes the
 combinatorial and geometric organization of the canonical Quplets. The
 conclusion summarizes the analytic, arithmetic, and dynamical results of the
-paper and separates the proved statements from the remaining conjectures.
+paper and points toward the remaining quantitative and geometric questions.
+
+== Affine dimension of a fixed symbolic family
+
+The two-gap Quplet families above are instances of a general elementary fact.
+Let $P_1,dots,P_r$ be a fixed partition of the index set $1,dots,n$ into
+nonempty blocks, and let $v_j in RR^n$ be the indicator vector of $P_j$.
+Consider normalized spacing vectors of the form
+
+$ q=a_1 v_1+dots+a_r v_r,
+  quad a_j>0,
+  quad sum_(j=1)^r |P_j| a_j=1. $
+
+*Proposition.* The family of all such $q$ is a relatively open affine simplex
+of dimension $r-1$.
+
+*Proof.* The disjoint nonempty supports make $v_1,dots,v_r$ linearly
+independent, so their span has dimension $r$. Normalization imposes the single
+nonzero affine constraint $sum_j |P_j|a_j=1$. Its intersection with that span
+therefore has affine dimension $r-1$; positivity selects its relative
+interior. $square$
+
+For a fixed two-gap word, $r=2$, so its normalized realizations lie on an
+affine line. The fixed-residue Quplet rays are distinguished one-dimensional
+subfamilies of this general symbolic stratum.
+

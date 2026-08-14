@@ -65,25 +65,6 @@ The numerator measures the phase imbalance between the two subdivision
 systems, while the denominator measures the local curvature of the waveform.
 Thus a branch may move rapidly when its crest approaches degeneracy.
 
-#figure(
-  image(
-    "../Figures/crest-trajectories-n5-d7.svg",
-    width: 72%,
-  ),
-  caption: [
-    Anchored crest-position trajectories $X_i (k)$ for $(n,d)=(5,7)$.
-    The curves begin at the regular $5$-grid and terminate on selected
-    points of the regular $7$-grid. The upper and lower horizontal boundary
-    curves represent the same fixed circular branch $X_0 (k)=0$.
-    The dashed vertical line marks the slope-balanced parameter
-    $k_c = 5/12$.
-  ],
-) <fig-X-trajectories>
-
-@fig-X-trajectories illustrates the phase evolution of the anchored
-crests in the case $(n,d)=(5,7)$. The rectangular representation duplicates
-the fixed circular branch at phases $0$ and $1$.
-
 == Phase parametrization
 
 Along the stationary set, it is useful to regard $k$ as a function of the
@@ -528,6 +509,29 @@ there.
 The $(d+n)$-grid will play a distinguished role at the balanced parameter
 introduced in the next section. At that parameter, its stationary points are
 simultaneously critical with respect to phase and modulation.
+
+== Level-set flow away from crests
+
+The same implicit-differentiation framework extends from stationary branches to
+ordinary level sets. Fix $c in [-1,1]$ and a point $x_0$ with
+$F_0(x_0)=c$. Wherever a local branch $x_c(k)$ satisfies
+$F_k(x_c(k))=c$ and $partial_x F_k(x_c(k)) != 0$, the implicit-function
+theorem gives
+
+$ x_c'(k)
+  =
+  (cos(2 pi d x_c(k))-cos(2 pi n x_c(k)))
+  /
+  (2 pi(
+    k d sin(2 pi d x_c(k))
+    +(1-k)n sin(2 pi n x_c(k))
+  )). $
+
+Thus the evolving waveform induces a flow of every regular level, not only of
+its crests. The denominator vanishes exactly when the level becomes tangent to
+the graph. At such a stationary tangency the graph representation
+$k mapsto x_c(k)$ can fold or split. Crest and trough trajectories are the
+singular boundary of this more general level-set flow.
 
 == Lifted crest trajectories
 

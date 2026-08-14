@@ -39,16 +39,11 @@
 #set math.equation(numbering: "(1)")
 
 
-//#include "CrestTrajectory-updated.typ"
+
 #include "02-crest-position-and-amplitude-trajectories.typ"
 
 #v(50pt)
-//#include "Threshold configuration.typ"
-
 #include "03-balanced-threshold-configuration.typ"
-
-// Legacy section retained as source material only.
-// #include "GridResonances.typ"
 
 #v(50pt)
 #include "04-huplet-trajectory-and-euclidean-endpoints.typ"
@@ -60,10 +55,12 @@
 #include "06-secondary-amplitude-ranking.typ"
 
 #v(50pt)
-#include "06-even-n-central-branch.typ"
+#include "07-even-n-central-branch.typ"
 
 #v(50pt)
-#include "09-conclusion.typ"
+#include "08-conclusion.typ"
+
 
 #pagebreak()
+
 #bibliography("zotero.bib", style: "ieee")

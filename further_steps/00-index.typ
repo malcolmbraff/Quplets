@@ -1,79 +1,61 @@
-#let Huplet = math.italic("Huplet")
+= Further steps and companion results
 
-= Further steps
+This folder contains only material that is mathematically additional to the
+current paper. Superseded manuscript copies, resolved conjecture notes, and
+proof routes duplicated verbatim in the article have been removed.
 
-#emph[Standalone research directions, proof companions, and historical derivations
-extracted from the main Quplet article. None of these files is included by #raw("../main.typ").]
+== Analytic and quantitative supplements
 
-== Analytic trajectories
-
-- #raw("crest-trajectory-analysis.typ"): position ODE, phase parametrization,
-  amplitude convexity, critical phases, and lifted trajectories.
-- #raw("anchored-continuation-conjecture.typ"): historical conjectural
-  formulation of global anchored continuation, retained after the theorem
-  was proved.
+- #raw("crest-trajectory-analysis.typ"): position, phase, amplitude, convexity,
+  critical-grid, lifted-trajectory, and level-set-flow analysis beyond the
+  continuation theorem used in the paper.
+- #raw("d-cell-corridors-and-nearest-cell-comparison.typ"): structural
+  fixed-cell results: ordinary degeneracies are births, cell labels persist,
+  and crest height decreases with cell-centre displacement. The duplicate
+  full-prominence proof has been removed.
+- #raw("monotone-amplitudes-full-interval.typ"): quantitative birth values,
+  degeneracy windows, monotone unanchored amplitudes, localization estimates,
+  numerical margins, and the far-skew Adler scaling limit.
 - #raw("fixed-parameter-algebraic-characterization.typ"): Chebyshev-polynomial
-  characterization at fixed rational modulation parameters.
-- #raw("amplitude-selection-conjecture.typ"): historical formulation of the
-  amplitude-selection conjecture, now resolved by the full prominence theorem.
-
-== Amplitude selection
-
-- #raw("monotone-amplitudes-full-interval.typ"): historical conditional route to
-  full-interval ranking via the degeneracy window, convexity, and crossing.
-- #raw("secondary-amplitude-ranking.typ"): historical partial version of the
-  amplitude-ranking section, retained for comparison with the completed proof.
-
-== Threshold structure
-
-- #raw("threshold-stationary-families-and-spectrum.typ"): complete resonant and
-  complementary stationary families, joint criticality, amplitude separation,
-  and threshold spectrum.
-- #raw("threshold-reduction-and-symmetric-extension.typ"): proved reduction for
-  $d>2n$ and the open symmetric-frequency formulation for $n<d<2n$.
+  characterization and algebraicity at rational modulation parameters.
+- #raw("threshold-stationary-families-and-spectrum.typ"): detailed threshold
+  stationary families, joint criticality, and amplitude spectrum.
+- #raw("threshold-reduction-and-symmetric-extension.typ"): proved large-skew
+  reduction and the open symmetric-frequency extension.
+- #raw("rational-alignment-rigidity.typ"): rational-grid rigidity results and
+  the remaining rigidity problem.
 
 == Geometric and arithmetic structure
 
-- #raw("cycle-deformation-and-huplet-trajectory.typ"): the full Huplet component
-  dynamics, large trajectory figure, and piecewise-affine deformation of the
-  cycle.
-- #raw("endpoint-displacement-arithmetic.typ"): centered rounding residues,
-  displacement order, reflection symmetry, and barycentric balance.
-- #raw("canonical-euclidean-structure.typ"): expanded Section 5 derivation of the
-  constrained-versus-unconstrained Euclidean distinction, nearest-grid construction,
-  and Euclidean-gap argument.
-- #raw("nearest-grid-endpoint-selection-conjecture.typ"): former conditional Section 5
-  formulation of dynamical realization and its strengthened, anchored interpretation.
-- #raw("rational-alignment-rigidity.typ"): rational grid-locking equations,
-  proved small-case families, and conditional rigidity reductions.
+- #raw("canonical-euclidean-structure.typ"): full constrained-versus-
+  unconstrained Euclidean comparison and nearest-grid geometry.
+- #raw("endpoint-displacement-arithmetic.typ"): centered endpoint residues,
+  signed displacements, and reflection symmetry.
+- #raw("cycle-deformation-and-huplet-trajectory.typ"): Huplet component
+  trajectories and the induced piecewise-affine circle deformation.
+- #raw("HarmonicMorphing.typ"): fixed-residue affine rays, twin orientations,
+  continuous contrast, and the general affine-dimension proposition for a
+  fixed symbolic family.
+- #raw("07-twin-quplets-and-structural-symmetry.typ"): complementary-residue
+  twin structure and its dynamical realization.
+- #raw("08-quplet-block-sum-projection.typ"): block-sum projection from the
+  fine grid simplex to canonical Quplet spacings.
 
-- #raw("HarmonicMorphing.typ"): affine organization of canonical Quplets by residue order class, including the continuous harmonic-morphing interpolation.
+== Even case
 
-== Deferred manuscript sections
+- #raw("even-case-mirror-pair.typ"): quantitative pitchfork analysis, central
+  rounding tie, and the two canonical mirror outcomes when $n$ is even.
 
-- #raw("06-order-collinearity-and-continuous-extension.typ"): residue and order
-  classes, fixed-residue collinearity, complementary directions, and continuous
-  contrast extension in the spacing simplex.
-- #raw("07-twin-quplets-and-structural-symmetry.typ"): twin Quplets,
-  complementary gap structures, affine opposition, and their proposed relation
-  to crest dynamics.
-- #raw("08-quplet-block-sum-projection.typ"): block-sum matrices, simplex
-  barycenters, fixed-residue collinearity, and threshold coarse-graining.
+== General frequency pairs
 
-== Statistical selection model
+- #raw("general-frequency-pairs.typ"): formal reduction from arbitrary integer
+  frequencies to the primitive pair, repeated nearest-grid words, and the
+  generalized Euclidean endpoint theorem distinguishing $2^g$ local branch
+  resolutions from the two coherent period-respecting outputs.
 
-- #raw("entropy-and-zero-temperature-selection.typ"): Gibbs weights, alignment
-  entropy, free energy, and the zero-temperature limit for a chosen finite
-  family of static competitors.
+== Additional models
 
-The proved threshold identity
-$Huplet(n,d,n/(n+d))=Q(n,n+d)$ remains in the main article. Only its broader
-reduction and symmetric-frequency extensions are deferred here.
-
-- #raw("d-cell-corridors-and-nearest-cell-comparison.typ"): proof companion for
-  fold orientation, fixed $d$-cell labels, full phase-sheet continuation, and the
-  centered-residue argument establishing the top-$n$ theorem.
-
-The full prominence result is now incorporated in the main article: for odd
-$n$ and every $0<k<1$, the anchored crests are precisely the $n$ highest
-local maxima.
+- #raw("húplet-deformation-energy.typ"): a labeled squared-displacement energy
+  and its numerical research programme.
+- #raw("entropy-and-zero-temperature-selection.typ"): a clearly separated
+  finite-competitor Gibbs model for static rotation selection.
