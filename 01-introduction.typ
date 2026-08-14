@@ -54,8 +54,9 @@ nearest-grid corridor. Its endpoint is
   $
 ]
 
-Additional unanchored stationary points may bifurcate elsewhere; the result
-concerns only the $n$ components issued from the initial crests.
+Additional unanchored stationary pairs may bifurcate elsewhere. Nevertheless,
+for every $0<k<1$, the anchored branches remain precisely the $n$ highest
+local maxima of $F_k$.
 
 Because cyclic order is preserved, choose lifts satisfying
 
@@ -112,6 +113,10 @@ onsets on the $d$-pulse grid, recalled in @section4.
     pairwise disjoint corridors, and end at the unique nearest $d$-grid sites
     $X_i (1) = 1 / d floor((d i) / n + 1 / 2)$
     (@anchored-continuation, @nearest-grid-endpoints).
+
+  + *Full prominence ranking.* For every $0<k<1$, the anchored branches are
+    precisely the $n$ highest local maxima of $F_k$, even when additional
+    stationary pairs bifurcate elsewhere (@full-prominence-ranking).
 
   + *Euclidean endpoint.* For every $i$ and every $ell in {1,dots,n-1}$, the
     clockwise distance spanning $ell$ successive endpoint onsets lies in
@@ -174,11 +179,12 @@ characterization of maximal evenness. Its combinatorial layer
 (@nearest-grid-all-scale-balance) is elementary and kept self-contained, and the
 all-scale distance criterion of Demaine et al.
 #cite(<demaineDistanceGeometryMusic2009>) enters only to identify the
-endpoint class. The claimed novelty is the selection mechanism: global
-anchored continuation through the full deformation (part (i) of the Main
-theorem); the labeled, phase-anchored selection of a distinguished rotation
-of $E(n,d)$ (part (ii) and @section5); and the exact threshold identity of
-part (iii).
+endpoint class. The claimed novelty is the selection mechanism: global anchored continuation
+through the full deformation (part (i) of the Main theorem); the proof that
+these branches are exactly the $n$ highest crests throughout $0<k<1$ despite
+additional stationary births (part (ii)); the labeled, phase-anchored
+selection of a distinguished rotation of $E(n,d)$ (part (iii) and @section5);
+and the exact threshold identity of part (iv).
 /*
 Euclidean rhythms are discrete cyclic onset patterns. We use the terminology
 in the sense of Toussaint #cite(<toussaintEuclideanAlgorithmGenerates2005>),
@@ -205,7 +211,14 @@ is also nearby. Here, however, continuity concerns the critical-point
 trajectories of the two-frequency accent profile, rather than a Fourier-space
 metric or a discrete transformation system.
 
-Part (ii) of the Main theorem rests on the all-scale distance criterion of
+Part (ii) is a full-interval amplitude statement, not merely a crest-count
+result. Below slope balance, fixed-parameter continuation across the full
+cell-phase interval makes crest height strictly decrease with absolute phase,
+while centered residues place every unselected cell beyond every selected one.
+The threshold factorization handles $k=k_c$, and backward continuation from
+the $d$-grid handles $k>k_c$ (@section-full-ranking).
+
+Part (iii) of the Main theorem rests on the all-scale distance criterion of
 Demaine et al. #cite(<demaineDistanceGeometryMusic2009>): the two-value
 condition at every span $ell$ characterizes the Euclidean necklace up to
 cyclic rotation. The labels and the fixed branch $X_0 (k)=0$ retain
@@ -217,7 +230,7 @@ among all labeled $d$-grid selections, it minimizes every nondecreasing
 separable circular-displacement cost, uniquely for strictly increasing
 losses.
 
-The threshold identity in part (iii) comes from an exact factorization: at
+The threshold identity in part (iv) comes from an exact factorization: at
 $k_c$ the stationary equation splits into a resonant $(n+d)$-grid family and
 a complementary family, separated by amplitude, and the anchored crests are
 identified with the $n$ highest threshold crests (@section3).
@@ -231,7 +244,9 @@ branches. \
 endpoint theorem, and establishes the threshold-extension identity. \
 @section5 characterizes the canonical labeled representative by centered displacement
 symmetry and labeled nearest-grid minimality. \
-@section6 extends the endpoint selection to even $n$, where a central pitchfork
+@section-full-ranking proves that the anchored branches are precisely the $n$
+highest crests throughout $0<k<1$. \
+@section-even-n extends the endpoint selection to even $n$, where a central pitchfork
 produces a reflected canonical pair. \
 The conclusion in @conclusion summarizes this complete proved chain.
 

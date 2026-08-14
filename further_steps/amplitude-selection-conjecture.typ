@@ -1,59 +1,41 @@
 #import "../definitions.typ": *
 
-= Remaining amplitude-selection problem
+= Amplitude selection: resolved conjecture
 
-#emph[Open dynamical problem extracted from the main article. Global anchored continuation and nearest-grid endpoint selection are proved. The amplitude-selection theorem is proved in two outer parameter ranges; only the transition strip below remains open.]
+#emph[Status: resolved. The full prominence theorem is now proved and included
+in the main article. This file records the former transition-strip problem and
+its resolution.]
 
-Let $1<n<d$ be coprime, with $n$ odd, and let $X_i(k)$ denote the anchored crest branches of
+Let $1<n<d$ be coprime, with $n$ odd, and let $X_i(k)$ be the anchored crest
+branches of
+#nonum[
+  $
+  F_k(x)=k cos(2 pi d x)+(1-k)cos(2 pi n x).
+  $
+]
 
-$
-F_k(x)=k cos(2 pi d x)+(1-k) cos(2 pi n x).
-$
+#theorem(name: "Full prominence ranking")[
+  For every $0<k<1$, the anchored crests $X_i(k)$ are precisely the $n$ highest
+  local maxima of $F_k$.
+]
 
-Set
+== Resolution of the former transition strip
 
-$
-k_c = n/(n+d),
-quad
-k_0 = n^2/(n^2+2 d^2).
-$
+Put $k_c=n/(n+d)$. The threshold and upper-range arguments already establish
+the result for $k>=k_c$. For $0<k<k_c$, use the full cell-phase interval
+$[-pi,pi]$ at fixed $k$. The central crest-sheet height is even and strictly
+decreases with absolute phase. The selected cells have centered residues of
+magnitude at most $(n-1)/2$, while every unselected cell has residue magnitude
+at least $(n+1)/2$. Hence every central-sheet unanchored crest lies below
+every anchored crest. The remaining half-grid-side sheet has negative height,
+whereas every anchored crest has a positive uniform floor.
 
-== Proved amplitude-selection ranges
+This closes the former conjecture on
+#nonum[
+  $
+  n^2/(n^2+2d^2)<k<n/(n+d).
+  $
+]
 
-The anchored crests are precisely the $n$ highest local maxima of $F_k$ for
-
-$
-k in [0,k_0] union [k_c,1).
-$
-
-Near $k=0$, there are exactly $n$ crests and all are anchored. At the balanced threshold and throughout the upper range, the anchored crests are selected by the threshold and residue-ordering arguments.
-
-At $k=1$, all $d$ crests have amplitude $1$, so an amplitude ranking does not select a distinguished $n$-subset at the endpoint itself.
-
-== Remaining conjecture
-
-*Conjecture (transition-strip amplitude selection).* For every
-
-$
-k in (k_0,k_c),
-$
-
-the anchored crests are precisely the $n$ highest local maxima of $F_k$.
-
-The issue is not continuation: the anchored branches are already known to exist globally and remain nondegenerate. The missing step is to show that residual crests born in the transition region never overtake the lowest anchored crest in amplitude.
-
-== A promising comparison principle
-
-With the backward parameter $q=(1-k)/k$, write
-
-$
-G_q(x)=cos(2 pi d x)+q cos(2 pi n x).
-$
-
-Along any stationary crest branch $Y(q)$,
-
-$
-(d/dq) G_q(Y(q))=cos(2 pi n Y(q)).
-$
-
-Thus a crest closer to an $n$-grid peak gains amplitude faster as the $n$-component is increased. A proof that every anchored crest remains more $n$-aligned than every residual crest would make the anchored--residual amplitude gap increase and would settle the conjecture.
+At $k=1$, all $d$ crests have amplitude $1$, so the endpoint remains excluded
+from strict amplitude selection.

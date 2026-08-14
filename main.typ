@@ -57,6 +57,9 @@
 #include "05-quplets-as-constrained-euclidean-rhythms.typ"
 
 #v(50pt)
+#include "06-secondary-amplitude-ranking.typ"
+
+#v(50pt)
 #include "06-even-n-central-branch.typ"
 
 #v(50pt)

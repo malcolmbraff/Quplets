@@ -856,7 +856,7 @@ cyclic rotation of it and therefore represents $E(5,7)$.
 == Even $n$: paired Huplets and Quplets
 
 Let $n$ be even. The central pitchfork gives two selected crest families,
-indexed by $s in {-1,1}$, as in @section6. Denote their ordered spacing
+indexed by $s in {-1,1}$, as in @section-even-n. Denote their ordered spacing
 vectors by
 #nonum[
   $

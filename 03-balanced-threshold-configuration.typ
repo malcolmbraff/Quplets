@@ -571,13 +571,13 @@ belongs to
 
 #corollary(name: "Even anchored threshold selections")[
   Under the hypotheses of @even-threshold-mirror-pair, the two selected
-  crest families of @section6 meet the threshold slice in exactly the two
+  crest families of @section-even-n meet the threshold slice in exactly the two
   highest-amplitude selections of @even-threshold-mirror-pair.
 ] <even-anchored-threshold-selections>
 
 The proof uses the noncentral continuation @noncentral-continuation and the
 central-arm continuation @even-central-arm-continuation, which are
-established in @section6 without reference to the present section; no
+established in @section-even-n without reference to the present section; no
 circularity arises.
 
 #proof[

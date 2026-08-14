@@ -2,8 +2,8 @@
 
 = Further steps
 
-#emph[Standalone research directions and detailed derivations extracted from the
-main Quplet article. None of these files is included by #raw("../main.typ").]
+#emph[Standalone research directions, proof companions, and historical derivations
+extracted from the main Quplet article. None of these files is included by #raw("../main.typ").]
 
 == Analytic trajectories
 
@@ -14,14 +14,15 @@ main Quplet article. None of these files is included by #raw("../main.typ").]
   was proved.
 - #raw("fixed-parameter-algebraic-characterization.typ"): Chebyshev-polynomial
   characterization at fixed rational modulation parameters.
-- #raw("amplitude-selection-conjecture.typ"): background for the residual
-  conjecture on $n^2/(n^2+2d^2)<k<n/(n+d)$.
+- #raw("amplitude-selection-conjecture.typ"): historical formulation of the
+  amplitude-selection conjecture, now resolved by the full prominence theorem.
 
 == Amplitude selection
 
-- #raw("monotone-amplitudes-full-interval.typ"): conditional full-interval
-  ranking via the degeneracy window, convexity, and the crossing argument.
-- #raw("secondary-amplitude-ranking.typ"): former main-paper Section 6, preserving the proved outer amplitude-ranking ranges and the remaining open transition strip.
+- #raw("monotone-amplitudes-full-interval.typ"): historical conditional route to
+  full-interval ranking via the degeneracy window, convexity, and crossing.
+- #raw("secondary-amplitude-ranking.typ"): historical partial version of the
+  amplitude-ranking section, retained for comparison with the completed proof.
 
 == Threshold structure
 
@@ -68,3 +69,11 @@ main Quplet article. None of these files is included by #raw("../main.typ").]
 The proved threshold identity
 $Huplet(n,d,n/(n+d))=Q(n,n+d)$ remains in the main article. Only its broader
 reduction and symmetric-frequency extensions are deferred here.
+
+- #raw("d-cell-corridors-and-nearest-cell-comparison.typ"): proof companion for
+  fold orientation, fixed $d$-cell labels, full phase-sheet continuation, and the
+  centered-residue argument establishing the top-$n$ theorem.
+
+The full prominence result is now incorporated in the main article: for odd
+$n$ and every $0<k<1$, the anchored crests are precisely the $n$ highest
+local maxima.

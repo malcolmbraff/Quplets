@@ -1,6 +1,6 @@
 #import "definitions.typ": *
 
-= Even $n$: a mirror pair of canonical outcomes<section6>
+= Even $n$: a mirror pair of canonical outcomes<section-even-n>
 
 Throughout this section, let $1<n<d$ be coprime positive integers with $n$ even, let $k in [0,1]$ be the real modulation parameter, and let $x in RR / ZZ$ denote phase on the unit cycle. Coprimality then forces $d$ to be odd. The oddness assumption in the main theorem makes anchored continuation and nearest-grid selection single valued. The central anchor $x=1/2$ is fixed by the reflection
 $x -> 1-x$, and it is the sole source of the even-case difference.
