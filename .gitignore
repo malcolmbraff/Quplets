@@ -1,0 +1,31 @@
+# --- Python ---
+# Generated artefacts only. Nothing here ignores python/figures/ or python/data/:
+# figures produced by the Python code are meant to be committed and reviewed
+# before any of them is copied by hand into the curated root Figures/ folder.
+
+# Byte-code / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
