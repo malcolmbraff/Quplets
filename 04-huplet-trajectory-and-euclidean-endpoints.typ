@@ -75,7 +75,7 @@ at $k=1$, are visible.
 == Grid locking along the Huplet trajectory
 
 Call $k$ a *rational alignment parameter* when every anchored phase
-$X_i (k)$ belongs to $QQ / ZZ$. Equivalently, all anchored crests then lie on
+$X_i (k)$ belongs to $QQ \/ ZZ$. Equivalently, all anchored crests then lie on
 one finite pulse grid, and every component of $Huplet(n,d,k)$ is rational.
 The proved configurations at $k=0$, $k=k_c$, and $k=1$ are such grid-locking
 instants along an otherwise continuous Huplet trajectory. Musically, a

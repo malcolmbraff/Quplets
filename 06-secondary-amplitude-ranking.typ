@@ -260,7 +260,21 @@ For each anchored branch, define its crest amplitude by
 
 The floor is positive because $d>n$. It records a global feature of the
 anchored family: every anchored amplitude reaches its minimum at slope
-balance, even though extra unanchored extrema may occur elsewhere.
+balance, even though extra unanchored extrema may occur elsewhere. 
+@fig-anchored-amplitude-trajectories illustrates this behavior for $(n,d)=(5,7)$.
+
+#figure(
+  image(
+    "Figures/amplitude-trajectories-n5-d7.svg",
+    width: 72%,
+  ),
+  caption: [
+    Anchored crest amplitudes for $(n,d)=(5,7)$. Reflection gives
+    $A_4=A_1$ and $A_3=A_2$, leaving the three displayed curves. Each attains
+    its global minimum at $k_c=5/12$, as in @anchored-amplitude-floor.
+    Unanchored extrema are not shown.
+  ],
+) <fig-anchored-amplitude-trajectories>
 
 == Fixed-parameter phase sheets below slope balance <fixed-parameter-phase-sheets>
 

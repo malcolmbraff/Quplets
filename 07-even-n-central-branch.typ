@@ -2,7 +2,7 @@
 
 = Even $n$: a mirror pair of canonical outcomes<section-even-n>
 
-Throughout this section, let $1<n<d$ be coprime positive integers with $n$ even, let $k in [0,1]$ be the real modulation parameter, and let $x in RR / ZZ$ denote phase on the unit cycle. Coprimality then forces $d$ to be odd. The oddness assumption in the main theorem makes anchored continuation and nearest-grid selection single valued. The central anchor $x=1/2$ is fixed by the reflection
+Throughout this section, let $1<n<d$ be coprime positive integers with $n$ even, let $k in [0,1]$ be the real modulation parameter, and let $x in RR \/ ZZ$ denote phase on the unit cycle. Coprimality then forces $d$ to be odd. The oddness assumption in the main theorem makes anchored continuation and nearest-grid selection single valued. The central anchor $x=1/2$ is fixed by the reflection
 $x -> 1-x$, and it is the sole source of the even-case difference.
 
 == The central pitchfork
@@ -49,7 +49,7 @@ replaced locally by two crest arms, exchanged by reflection.
   unique continuous branches
   #nonum[
     $
-    X_- , X_+ : [k_*,1] -> RR / ZZ
+    X_- , X_+ : [k_*,1] -> RR \/ ZZ
     $
   ]
   such that
@@ -227,6 +227,20 @@ $n-1$ noncentral branches and the central component
 where $X_1=X_+$ and $X_(-1)=X_minus$. Each $Y_(n/2)^s$ is continuous, is a crest
 away from $k_*$, and selects one arm after the pitchfork. Thus each selected
 family has a well-defined endpoint set of $n$ points.
+@fig-even-central-pitchfork shows the two choices simultaneously for $(n,d)=(4,7)$.
+
+#figure(
+  image(
+    "Figures/pitchfork.svg",
+    width: 78%,
+  ),
+  caption: [
+    Selected crest-position trajectories for $(n,d)=(4,7)$. At
+    $k_*=16/65$, the central crest splits into two reflected arms, which end
+    at $3/7$ and $4/7$. The plot displays both possible selected families
+    simultaneously.
+  ],
+) <fig-even-central-pitchfork>
 
 At the central index, the two possible endpoint sites are
 #nonum[

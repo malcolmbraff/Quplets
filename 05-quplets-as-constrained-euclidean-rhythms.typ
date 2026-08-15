@@ -31,7 +31,7 @@ The Euclidean class $E(n,d)$ determines a cyclic gap class but does not retain
 the labels of the initial $n$-grid. The anchored dynamics supply a distinguished
 representative by nearest-grid selection.
 
-For $x,y in RR / ZZ$, define
+For $x,y in RR \/ ZZ$, define
 
 #nonum[
   $
