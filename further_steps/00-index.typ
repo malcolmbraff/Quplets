@@ -22,6 +22,9 @@ proof routes duplicated verbatim in the article have been removed.
   stationary families, joint criticality, and amplitude spectrum.
 - #raw("threshold-reduction-and-symmetric-extension.typ"): proved large-skew
   reduction and the open symmetric-frequency extension.
+- #raw("selector-curves-and-triggering.typ"): canonical selector interpolation,
+  its limitations as a crest characterization, and certified thresholdless
+  corridor and residue trigger gates.
 - #raw("rational-alignment-rigidity.typ"): rational-grid rigidity results and
   the remaining rigidity problem.
 
