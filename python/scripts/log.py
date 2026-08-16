@@ -2,6 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy.signal import argrelextrema
+from pathlib import Path
+
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 # Fonction pour affiner un maximum local par interpolation quadratique
 def refine_peak(x_vals, y_vals, index):
@@ -85,7 +89,7 @@ plt.title('Comparaison : Modèle quadratique vs logarithmique autour de k_c')
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig("modele_log_vs_quad_Ak.pdf", bbox_inches="tight")
+plt.savefig(FIGURES_DIR / "modele_log_vs_quad_Ak.pdf", bbox_inches="tight")
 plt.show()
 
 # Affichage des équations

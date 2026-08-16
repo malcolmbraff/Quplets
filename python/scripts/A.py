@@ -10,7 +10,7 @@ from pathlib import Path
 
 # Répertoire de sortie commun pour toutes les figures
 FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
-FIGURES_DIR.mkdir(exist_ok=True)
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 
 

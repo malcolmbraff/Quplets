@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import argrelextrema
+from pathlib import Path
+
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 # Paramètres
 n = 5
@@ -44,5 +48,5 @@ plt.ylabel('F(x)')
 plt.xticks([])
 plt.yticks([])
 plt.grid(False)
-plt.savefig("Fk(x).svg", format='svg')
+plt.savefig(FIGURES_DIR / "Fk(x).svg", format='svg')
 plt.show()

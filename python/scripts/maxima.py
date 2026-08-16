@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
+
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 n, d = 5, 12
 x = np.linspace(0, 1, 2000)
@@ -23,5 +27,5 @@ plt.scatter(x_i, f_i, color="red", zorder=5)
 plt.title(r"$f(x)$ pour n=5, d=7")
 plt.xlabel("x"); plt.ylabel("f(x)")
 plt.grid(True); plt.legend()
-plt.savefig("f_maxima_n5_d7_correct.png", dpi=200)
+plt.savefig(FIGURES_DIR / "f_maxima_n5_d7_correct.png", dpi=200)
 plt.show()

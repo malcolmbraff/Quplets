@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.signal import find_peaks
+from pathlib import Path
+
+FIGURES_DIR = Path(__file__).resolve().parent.parent / "figures"
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 def get_maxima(n, d, k, resolution=100000):
     def f(x):
@@ -97,5 +101,5 @@ plt.xticks(x_ticks, x_tick_labels)
 plt.grid(False)
 # plt.legend()
 plt.tight_layout()
-plt.savefig("Spacing Vector.svg", format='svg')
+plt.savefig(FIGURES_DIR / "Spacing Vector.svg", format='svg')
 plt.show()
