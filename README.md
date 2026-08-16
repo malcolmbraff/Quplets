@@ -4,19 +4,19 @@ This repository contains the paper **“Crest continuation and canonical
 Euclidean-rhythm selection: a two-frequency cosine model”** and the Python
 experiments used to explore and illustrate it.
 
-For coprime integers \(1<n<d\), the paper studies the cyclic profile
+For coprime integers $1<n<d$, the paper studies the cyclic profile
 
-\[
+$$
 F_k(x)=k\cos(2\pi d x)+(1-k)\cos(2\pi n x),
 \qquad k\in[0,1],\quad x\in\mathbb{R}/\mathbb{Z}.
-\]
+$$
 
-As \(k\) moves from 0 to 1, the \(n\) crests that start on the regular
-\(n\)-grid are continued toward the \(d\)-grid. Their cyclic spacings form a
+As $k$ moves from 0 to 1, the $n$ crests that start on the regular
+$n$-grid are continued toward the $d$-grid. Their cyclic spacings form a
 continuous **Huplet** path and end at a distinguished Euclidean-rhythm
-representative, the **Quplet** \(Q(n,d)\). At the balanced value
-\(k_c=n/(n+d)\), the construction also gives the relation
-\(Huplet(n,d,k_c)=Q(n,n+d)\). When \(n\) is even, the central crest undergoes
+representative, the **Quplet** $Q(n,d)$. At the balanced value
+$k_c=n/(n+d)$, the construction also gives the relation
+$Huplet(n,d,k_c)=Q(n,n+d)$. When $n$ is even, the central crest undergoes
 a symmetric pitchfork and produces a reflected pair of endpoint selections.
 
 ## Repository layout
@@ -79,9 +79,9 @@ typst watch main.typ
 Open
 [`python/notebooks/paper_plot_examples.ipynb`](python/notebooks/paper_plot_examples.ipynb),
 select the virtual environment as its Python kernel, and run all cells from the
-top. The controls for \(n\), \(d\), and \(k\) redraw the examples in the
-notebook; choose coprime values with \(1<n<d\). The main examples use odd
-\(n\), while the pitchfork example intentionally advances \(n\) in even
+top. The controls for $n$, $d$, and $k$ redraw the examples in the
+notebook; choose coprime values with $1<n<d$. The main examples use odd
+$n$, while the pitchfork example intentionally advances $n$ in even
 steps.
 
 To start JupyterLab from the repository root:
@@ -92,7 +92,7 @@ jupyter lab python/notebooks/paper_plot_examples.ipynb
 
 ## Run individual plots
 
-The command-line trajectory example accepts odd, coprime \(n,d\):
+The command-line trajectory example accepts odd, coprime $n,d$:
 
 ```sh
 python python/scripts/crest_trajectories_cli.py 5 7 \
