@@ -219,10 +219,11 @@ $(5,7),(7,50),(3,100),(9,20)$ and $49$ values of $k$ spanning
 $(0,1)$; the phase-sheet monotonicity underlying it was confirmed on
 $18$ configurations across six pairs, with reflection ties exactly equal;
 the slope-balance identity of Proposition 2.3 holds to $3 dot 10^(-15)$;
-and the interpolant clearances of Section 3 are as reported. An
-interactive tracer (`../python/scripts/T_k(x).py`) draws $F_k$, $T_k$,
-and the anchored crests under a live $k$ slider, with the
-$cos(2 pi n x)$ coincidence displayed near $k_c$.
+and the interpolant clearances of Section 3 are as reported. The interactive
+notebook (`../python/notebooks/selector_curves_and_triggering.ipynb`), backed
+by the script (`../python/scripts/T_k(x).py`), draws $F_k$, $T_k$, and the
+anchored crests under a live $k$ slider, with the $cos(2 pi n x)$ coincidence
+displayed near $k_c$.
 
 Nothing in this note is needed by the main paper; it records the
 selector-curve exploration and the certified trigger design built on
