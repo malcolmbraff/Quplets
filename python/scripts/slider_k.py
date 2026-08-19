@@ -7,7 +7,8 @@ from scipy.signal import argrelextrema
 # paramètres fixes
 # -----------------
 n = 7
-d = 50
+d = 11
+
 
 
 
