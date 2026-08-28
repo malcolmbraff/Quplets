@@ -40,7 +40,7 @@
 
 
 
-#include "02-crest-position-and-amplitude-trajectories.typ"
+#include "02-crest-position-and-amplitude-trajectories-revised.typ"
 
 #v(50pt)
 #include "03-balanced-threshold-configuration.typ"
