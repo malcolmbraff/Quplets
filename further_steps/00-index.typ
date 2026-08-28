@@ -56,6 +56,14 @@ proof routes duplicated verbatim in the article have been removed.
   generalized Euclidean endpoint theorem distinguishing $2^g$ local branch
   resolutions from the two coherent period-respecting outputs.
 
+== Three frequencies
+
+- #raw("three-frequency-crest-lattice.typ"): the balanced three-frequency
+  profile, its unweighted sine-sum gradient, an exact cyclotomic criterion for
+  rational crests, and the two additive families ($e=n+d$ and $n+e=2d$) that
+  alone produce a rational crest lattice. The two-frequency $(n+d)$-grid does
+  not generalize to $i\/(n+d+e)$.
+
 == Additional models
 
 - #raw("húplet-deformation-energy.typ"): a labeled squared-displacement energy
