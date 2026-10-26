@@ -4,6 +4,39 @@
 
 The anchored continuation theorem identifies the labeled crest family and its Euclidean endpoint. This section proves the complementary prominence statement: although additional stationary pairs may appear, the anchored family remains exactly the set of highest crests throughout the open modulation interval. Put $k_c=n/(n+d)$.
 
+We retain the hypotheses $1<n<d$, $gcd(n,d)=1$, and $n$ odd. The following
+observation ensures that ranking crests, defined by strictly negative
+curvature, ranks all local maxima.
+
+#lemma(name: "Nondegeneracy of odd-case local maxima")[
+  For every $0<k<1$, every local maximum of $F_k$ is nondegenerate.
+] <odd-local-maxima-nondegenerate>
+
+#proof[
+  Write $D=2 pi d x$ and $S=2 pi n x$. At a stationary point,
+  $k d sin D=-(1-k)n sin S$, so
+  #nonum[
+    $
+    F_k^((3))(x)=(2 pi)^3 (1-k)n(n^2-d^2)sin S.
+    $
+  ]
+  If $F_k^((2))(x)=0$ and $sin S!=0$, the third derivative is nonzero,
+  and Taylor expansion excludes a local extremum. If $sin S=0$,
+  stationarity also gives $sin D=0$. Coprimality then implies $2x in ZZ$,
+  so $x=0$ or $x=1/2$ modulo $1$. At $0$ the curvature is strictly
+  negative. At $1/2$, both cosines are $-1$ when $d$ is odd, giving
+  strictly positive curvature. When $d$ is even, the only zero curvature
+  occurs at $k=n^2/(n^2+d^2)$, where
+  #nonum[
+    $
+    F_k^((4))(1/2)
+    =(2 pi)^4 (n^2 d^2(d^2-n^2))/(n^2+d^2)>0.
+    $
+  ]
+  This point is a strict quartic minimum. Thus no degenerate stationary
+  point is a local maximum, proving the claim.
+]
+
 == Ranking above slope balance
 
 For the upper parameter range, it is useful to run the deformation backward
@@ -282,13 +315,25 @@ balance, even though extra unanchored extrema may occur elsewhere.
 Write $mu=n/d$ and $k_c=n/(n+d)=mu/(1+mu)$. The threshold and upper-range ranking are already known for $k >= k_c$, so the only open range is $0<k<k_c$.
 
 
- Fix $k<k_c$ and a grid-side crest in the $p$-th $d$-cell relative to the $n$-grid crest $i/n$. As above, put
+Fix $0<k<k_c$. For any stationary point, choose integer grid labels $i,p$
+and real lifts so that
 #nonum[
   $ t=2 pi d(x-p/d), quad
     s=2 pi n(x-i/n), quad
     alpha=2 pi n(p/d-i/n), $
 ]
-so that $s=alpha+mu t$ and $-pi<t<pi$. By reflection it is enough to consider $s>0$. Stationarity then forces $t<0$. Set
+with $s,t in [-pi,pi]$. Then $s=alpha+mu t$. First account for the
+boundaries and zero phases. If $s=0$, stationarity gives $n divides 2d i$;
+oddness and coprimality force $n divides i$, hence $x=0$ modulo $1$ and
+$t=0$. This is the fixed anchored crest. If $abs(s)=pi$, stationarity
+forces $sin t=0$. Since both $2n x$ and $2d x$ are integers, coprimality
+forces $x=1/2$ modulo $1$. When $d$ is odd this is a trough; when $d$ is
+even its height is $2k-1<0$, so it cannot compete with the positive anchored
+floor. Conversely, $t=0$ or $abs(t)=pi$ forces $s=0$ or $abs(s)=pi$, so
+these cases exhaust the cell boundaries and zero phases.
+
+For the remaining stationary points, reflection allows $0<s<pi$.
+Stationarity then forces $-pi<t<0$. Set
 #nonum[
   $ u=-t in (0,pi), quad
     sigma=(k d)/((1-k)n)=k/((1-k)mu)<1. $
@@ -299,7 +344,9 @@ The stationary equation becomes
 ]
 
 
-On the grid-side sheet, $0<s<pi/2$, hence
+There are exactly two sine branches: $s=arcsin(sigma sin u)$ and
+$s=pi-arcsin(sigma sin u)$. Since $sigma<1$, neither has $s=pi/2$.
+On the central, grid-side sheet, $0<s<pi/2$, hence
 #nonum[
   $ s=arcsin(sigma sin u), quad
     alpha(u)=arcsin(sigma sin u)+mu u. $
@@ -317,7 +364,7 @@ Differentiating the phase gives
 Since $cos s>0$, a stationary point on this sheet is a nondegenerate crest exactly when $alpha'(u)>0$.
 
 
-For $0<u<=pi/2$, both terms in $alpha'(u)$ are positive. For $pi/2<u<pi$, put $z=-cos u$ and
+For $0<u<=pi/2$, the first term in $alpha'(u)$ is positive and the second is nonnegative. For $pi/2<u<pi$, put $z=-cos u$ and
 #nonum[
   $ B(z)= (sigma z)/sqrt(1-sigma^2+sigma^2 z^2). $
 ]
@@ -343,17 +390,21 @@ The full phase interval also contains the second sine branch
 #nonum[
   $ s_"out"(u)=pi-arcsin(sigma sin u). $
 ]
-For $sigma<1$, this outer branch contains a crest segment only when
-$mu<sigma<1$. It is the half-grid-side component. At its phase endpoint
-$u=0$, its height is
+Every stationary point on this outer sheet has negative height. Indeed,
 #nonum[
-  $ M=2k-1<0, $
+  $ M=k cos u-(1-k)sqrt(1-sigma^2 sin^2 u). $
 ]
-because $k<k_c<1/2$. At its terminal fold, $C(u)=0$, and therefore
+If $cos u<=0$, this is strictly negative. If $cos u>0$, then $0<u<pi$
+and $sigma<1$ give
 #nonum[
-  $ M=-(1-k)(1-mu^2) abs(cos s)<0. $
+  $ sqrt(1-sigma^2 sin^2 u)>sqrt(1-sin^2 u)=cos u, $
 ]
-Since $partial M/partial alpha=-(1-k)sin s<0$ for $0<s<pi$, the height is monotone between these two endpoints. Hence the entire disconnected outer crest component has negative height. The boundary values introduce no further crest: $s=0$ forces $x$ onto both grids, hence $x=0=X_0$ by coprimality, while $s=pi$ is the $u=0$ endpoint of the outer component. Thus every crest capable of competing with the anchored family lies on the central grid-side sheet proved above.
+and hence $M<(2k-1)cos u<0$, because $k<k_c<1/2$. The limiting heights
+at $u=0$ and $u=pi$ are respectively $2k-1$ and $-1$, also negative.
+This argument includes any fold values. Together with the boundary
+classification above, it shows that every crest capable of competing with
+the anchored family lies on the central grid-side sheet or is the fixed
+anchor at $0$.
 
 
 == Global phase ordering
@@ -361,7 +412,7 @@ Since $partial M/partial alpha=-(1-k)sin s<0$ for $0<s<pi$, the height is monoto
 
 Let $M_k (alpha)$ be the height on the central fixed-$k$ crest sheet. The envelope identity gives
 #nonum[
-  $ partial M_k/partial alpha=-(1-k)sin s. $
+  $ (partial M_k)/(partial alpha)=-(1-k)sin s. $
 ]
 On the positive phase side this derivative is strictly negative. Reflection gives
 #nonum[
@@ -457,7 +508,8 @@ for every anchored crest $X_j (k)$. In particular, a grid-side unanchored crest 
 ] <full-prominence-ranking>
 
 #proof[
-  For $0<k<k_c$, the two sine sheets in
+  By @odd-local-maxima-nondegenerate, every local maximum is a crest.
+  For $0<k<k_c$, the two sine sheets and boundary classification in
   @fixed-parameter-phase-sheets exhaust the stationary possibilities. The
   fixed-parameter continuation and @centered-residue-phase-gap place every
   central-sheet unanchored crest strictly below every anchored crest. Every

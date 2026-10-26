@@ -141,7 +141,7 @@ replaced locally by two crest arms, exchanged by reflection.
     lim_(y -> 1/(2d)) R(y)=infinity.
     $
   ]
-  Therefore, for every $k>k_*$, the stationarity equation has exactly one
+  Therefore, for every $k_*<k<1$, the stationarity equation has exactly one
   solution $y_+ (k)$ in $(0,1/(2d))$. It satisfies
   #nonum[
     $
@@ -161,18 +161,17 @@ replaced locally by two crest arms, exchanged by reflection.
     $
   ]
   This derivative is positive before $y_+ (k)$ and negative afterwards, so
-  the unique stationary point is a strict local maximum. Nondegeneracy is
-  direct: with $R=k d sin(2 pi d y_+)=(1-k)n sin(2 pi n y_+)>0$, the second
-  derivative is
+  the unique stationary point is a strict local maximum. Differentiating
+  the factored expression at its root gives
   #nonum[
     $
     partial_y^2 F_k (1/2+y_+)
     =
-    (2 pi)^2 R (d cot(2 pi d y_+)-n cot(2 pi n y_+))
+    -2 pi (1-k)d sin(2 pi d y_+)R'(y_+)
     <0
     $
   ]
-  by the displayed cotangent inequality. The
+  because $R'>0$. The
   implicit-function theorem gives its analyticity for $k in (k_*,1)$; its
   endpoint limits give the stated continuous extension. Set
   #nonum[
@@ -181,6 +180,25 @@ replaced locally by two crest arms, exchanged by reflection.
     $
   ]
   Reflection gives $X_- (k)=1-X_+ (k)$ and the other endpoint.
+
+  At $k=1$, direct evaluation at either endpoint gives
+  #nonum[
+    $ H_1(X_-(1))=H_1(X_+(1))=-(2 pi)^2 d^2<0. $
+  ]
+  Thus the endpoint maxima are also nondegenerate. The implicit-function
+  theorem supplies a real-analytic extension near $k=1$ agreeing with each
+  constructed arm on the left.
+
+  To prove uniqueness among continuous branches in the proposition, let
+  $Z$ be any such right-hand branch. Continuity at $k_*$ gives a local
+  real lift with $0<Z(k)-1/2<1/(2d)$ for all sufficiently close $k>k_*$.
+  The ratio equation then forces $Z(k)=X_+(k)$. On $(k_*,1)$ the equality
+  set is closed by continuity and open by the implicit-function theorem:
+  at each equality point the curvature is negative, so both continuous
+  stationary branches must follow the same local graph. Connectedness
+  gives equality throughout $(k_*,1)$, and continuity gives equality at
+  both endpoints. Reflection proves the corresponding uniqueness on the
+  left.
 ]
 
 == The two selected families
@@ -212,7 +230,7 @@ replaced locally by two crest arms, exchanged by reflection.
   @even-central-arm-continuation.
 ]
 
-For $s in {-1,1}$, define an $n$-crest selected family by taking these
+For $s in {-1,1}$, define a selected family of $n$ local maxima by taking these
 $n-1$ noncentral branches and the central component
 #nonum[
   $
@@ -224,8 +242,9 @@ $n-1$ noncentral branches and the central component
   )
   $
 ]
-where $X_1=X_+$ and $X_(-1)=X_minus$. Each $Y_(n/2)^s$ is continuous, is a crest
-away from $k_*$, and selects one arm after the pitchfork. Thus each selected
+where $X_1=X_+$ and $X_(-1)=X_minus$. Each $Y_(n/2)^s$ is continuous, is a
+nondegenerate crest away from $k_*$, is a strict quartic local maximum at
+$k_*$, and selects one arm after the pitchfork. Thus each selected
 family has a well-defined endpoint set of $n$ points.
 @fig-even-central-pitchfork shows the two choices simultaneously for $(n,d)=(4,7)$.
 

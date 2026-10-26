@@ -588,10 +588,26 @@ circularity arises.
 
 #proof[
   The noncentral labels follow their unique nearest-grid corridors. The
-  central label follows either branch of @even-central-arm-continuation.
-  Substituting $k=k_c$ in the corridor formula gives the upper or lower
-  nearest $N$-grid index, respectively. These are precisely the two sets
-  identified in @even-threshold-mirror-pair.
+  same stationary-point substitution as in @anchored-threshold-selection
+  gives their nearest $N$-grid sites at $k_c$.
+
+  For the central label, put $k_*=n^2/(n^2+d^2)$ and note that
+  #nonum[
+    $ k_c-k_*=(n d(d-n))/((n+d)(n^2+d^2))>0. $
+  ]
+  Put $y=1/(2N)$. The angles $2 pi n y$ and $2 pi d y$ sum to $pi$,
+  so their sines coincide. In the ratio equation of
+  @even-central-arm-continuation this gives
+  #nonum[
+    $ (n sin(2 pi n y))/(d sin(2 pi d y))=n/d=k_c/(1-k_c). $
+  ]
+  Uniqueness of the two central arms therefore yields
+  #nonum[
+    $ X_-(k_c)=1/2-1/(2N), quad X_+(k_c)=1/2+1/(2N). $
+  ]
+  These are the lower and upper nearest $N$-grid sites at the central
+  anchor. Together with the noncentral sites they give precisely the two
+  sets identified in @even-threshold-mirror-pair.
 ]
 
 
