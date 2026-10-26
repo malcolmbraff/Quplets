@@ -2,6 +2,7 @@
 #import "@preview/tiptoe:0.4.0":*
 = Introduction
 
+
 A cyclic rhythm can be represented by points on a circle, or equivalently by the cyclic spacings between consecutive points. This paper asks how a distinguished discrete rhythm can be selected dynamically when two regular subdivisions interfere. We interpret $F_k$ as a cyclic accent profile: its local maxima are candidate onset phases, $k$ continuously shifts the relative influence of the two subdivision layers, and continuation follows $n$ of the maxima across the deformation. For example, the pair $(n,d) = (5,7)$ produces a continuous five-onset timing path whose endpoint is a distinguished five-onset representative on the seven-pulse grid.
 
 Let $1<n<d$ be coprime positive integers with $n$ odd. Let $k in [0,1]$ be a real modulation parameter, and let $x in RR \/ ZZ$ denote phase on the unit cycle.#footnote[

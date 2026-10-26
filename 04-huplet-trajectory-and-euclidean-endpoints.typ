@@ -439,8 +439,7 @@ distance in grid pulses from $r_i$ to $r_(i+ell)$ belongs to
 ]
 
 In the source, the criterion appears with $k$ onsets on an $n$-pulse circle
-and spans $ell in {1,dots,k}$; the case $ell=k$ is the trivial full cycle
-and is omitted above. Their theorem further lists equivalent
+and spans $ell in {1,dots,k-1}$. Their theorem further lists equivalent
 characterizations, including maximum evenness and three generating
 algorithms; only the displayed criterion is used here.
 
